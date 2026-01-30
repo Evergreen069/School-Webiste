@@ -23,6 +23,7 @@
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* Navigation */
@@ -61,6 +62,7 @@
             font-weight: 700;
             margin-bottom: 20px;
         }
+
         .btn-custom {
             background-color: var(--accent-orange);
             color: white;
@@ -69,6 +71,8 @@
             font-weight: 600;
             border: none;
             transition: transform 0.3s;
+            text-decoration: none;
+            display: inline-block;
         }
         .btn-custom:hover {
             transform: translateY(-3px);
@@ -77,13 +81,8 @@
         }
 
         /* Section Styling */
-        section {
-            padding: 80px 0;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+        section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; }
         .section-title h2 {
             font-weight: 700;
             color: var(--primary-green);
@@ -96,43 +95,31 @@
             height: 3px;
             background: var(--accent-orange);
             position: absolute;
-            bottom: 0;
-            left: 50%;
+            bottom: 0; left: 50%;
             transform: translateX(-50%);
         }
 
-        /* Cards */
-        .feature-card {
+        /* Cards & Blog Card */
+        .feature-card, .blog-card {
             border: none;
             border-radius: 15px;
-            padding: 30px;
-            text-align: center;
             background: white;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
             transition: 0.3s;
             height: 100%;
         }
-        .feature-card:hover {
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-        }
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--secondary-green);
-            margin-bottom: 20px;
-        }
+        .feature-card { padding: 30px; text-align: center; }
+        .feature-card:hover, .blog-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.1); transform: translateY(-5px); }
+        .feature-icon { font-size: 3rem; color: var(--secondary-green); margin-bottom: 20px; }
 
-        /* Footer */
-        footer {
-            background-color: var(--primary-green);
-            color: white;
-            padding: 60px 0 20px;
+        /* Social Icons Size */
+        .social-icons a {
+            font-size: 2rem;
+            transition: 0.3s;
         }
-        .footer-link {
-            color: #d1fae5;
-            text-decoration: none;
-        }
-        .footer-link:hover {
-            color: white;
+        .social-icons a:hover {
+            color: var(--accent-orange) !important;
+            transform: scale(1.2);
         }
 
         @media (max-width: 768px) {
@@ -152,7 +139,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#academics">Academics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="#facilities">Facilities</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -164,7 +151,7 @@
     <header id="home" class="hero">
         <div class="container">
             <h1>Nurturing Excellence, <br> Rooted in Values.</h1>
-            <p class="lead mb-4">Evergreen International School, Therkkupalayam - Where your child's future begins.</p>
+            <p class="lead mb-4">Evergreen International School, Therkkupalayam — Where your child's future begins.</p>
             <a href="#about" class="btn btn-custom btn-lg">Explore Our Vision</a>
         </div>
     </header>
@@ -177,8 +164,8 @@
                 </div>
                 <div class="col-lg-6 mt-4 mt-lg-0">
                     <h2 class="fw-bold mb-4" style="color: var(--primary-green);">Rooted Since 2015</h2>
-                    <p>Established with a mission to provide world class education in the heart of Namakkal, Evergreen International Nursery and Primary School focuses on a child centric learning approach.</p>
-                    <p>We combine the rigor of the Tamil Nadu State Board curriculum with modern ICT tools, ensuring our 150+ students are prepared for the digital era while staying connected to their cultural heritage.</p>
+                    <p>Established with a mission to provide world-class education in the heart of Namakkal, Evergreen International Nursery and Primary School focuses on a child-centric learning approach.</p>
+                    <p>We combine the rigor of the Tamil Nadu State Board curriculum with modern ICT tools, ensuring our 200+ students are prepared for the digital era while staying connected to their cultural heritage.</p>
                     <div class="row mt-4">
                         <div class="col-6">
                             <h4 class="text-orange fw-bold" style="color: var(--accent-orange);">200+</h4>
@@ -194,7 +181,29 @@
         </div>
     </section>
 
-    <section id="facilities" style="background-color: var(--light-bg);">
+    <section id="blog" style="background-color: var(--light-bg);">
+        <div class="container">
+            <div class="section-title">
+                <h2>School Blog & Updates</h2>
+                <p>Latest stories from the Evergreen campus.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="blog-card card border-0 p-3">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=500&q=60" class="card-img-top rounded" alt="Blog">
+                        <div class="card-body px-0">
+                            <h5 class="fw-bold">Welcome to Our New Website</h5>
+                            <p class="text-muted small">Jan 30, 2026</p>
+                            <p>We are thrilled to launch our new digital platform to stay connected with parents...</p>
+                            <a href="#" class="text-success fw-bold text-decoration-none">Read Full Post →</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="facilities">
         <div class="container">
             <div class="section-title">
                 <h2>Our World-Class Facilities</h2>
@@ -226,14 +235,14 @@
                     <div class="feature-card">
                         <i class="fas fa-heartbeat feature-icon"></i>
                         <h4>Health Care</h4>
-                        <p>Regular medical checkups and a focus on student hygiene.</p>
+                        <p>Regular medical checkups and student hygiene.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" style="background-color: var(--light-bg);">
         <div class="container">
             <div class="section-title">
                 <h2>Get In Touch</h2>
@@ -241,11 +250,11 @@
             </div>
             <div class="row g-5">
                 <div class="col-lg-5">
-                    <div class="p-4 rounded-3 shadow-sm" style="background: white;">
+                    <div class="p-4 rounded-3 shadow-sm bg-white">
                         <h4 class="mb-4">Contact Information</h4>
                         <div class="d-flex mb-3">
                             <i class="fas fa-map-marker-alt me-3 mt-1 text-success"></i>
-                            <p>Alangadu, Vediyarasam Palayam Road, Therkkupalayam, Pallipalayam, Namakkal, TN – 638006.</p>
+                            <p>Alangadu, Vediyarasam Palayam Road, Therkkupalayam, Namakkal, TN – 638006.</p>
                         </div>
                         <div class="d-flex mb-3">
                             <i class="fas fa-phone-alt me-3 mt-1 text-success"></i>
@@ -258,15 +267,15 @@
                     </div>
                 </div>
                 <div class="col-lg-7">
-                    <form class="row g-3 p-4 rounded-3 shadow-sm bg-white">
+                    <form action="https://formspree.io/f/meekpdpr" method="POST" class="row g-3 p-4 rounded-3 shadow-sm bg-white">
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Parent's Name" required>
+                            <input type="text" name="parent_name" class="form-control" placeholder="Parent's Name" required>
                         </div>
                         <div class="col-md-6">
-                            <input type="email" class="form-control" placeholder="Email Address" required>
+                            <input type="email" name="email" class="form-control" placeholder="Email Address" required>
                         </div>
                         <div class="col-12">
-                            <select class="form-select">
+                            <select name="grade" class="form-select">
                                 <option selected>Interested Grade</option>
                                 <option>Nursery / Pre-KG</option>
                                 <option>LKG / UKG</option>
@@ -274,7 +283,7 @@
                             </select>
                         </div>
                         <div class="col-12">
-                            <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                            <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-custom w-100">Send Inquiry</button>
@@ -295,36 +304,23 @@
                 <div class="col-md-4">
                     <h5 class="fw-bold mb-3">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#about" class="footer-link">About Our Mission</a></li>
-                        <li><a href="#academics" class="footer-link">Academic Programs</a></li>
-                        <li><a href="#facilities" class="footer-link">School Facilities</a></li>
-                        <li><a href="#contact" class="footer-link">Admissions</a></li>
+                        <li><a href="#about" class="footer-link">About Us</a></li>
+                        <li><a href="#blog" class="footer-link">School Blog</a></li>
+                        <li><a href="#facilities" class="footer-link">Facilities</a></li>
+                        <li><a href="#contact" class="footer-link">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">School Hours</h5>
-                    <p>Mon - Fri: 9:00 AM - 4:00 PM<br>Sat: 9:00 AM - 12:30 PM</p>
+                    <h5 class="fw-bold mb-3">Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/evergreeninternationalschooltherkkupalayam/" target="_blank" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="text-white me-4"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/evergreen-international-school-therkkupalayam/" target="_blank" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
             <hr class="mt-5 mb-4" style="background-color: rgba(255,255,255,0.2);">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="small mb-0">&copy; 2026 Evergreen International School. All Rights Reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                   <div class="social-icons">
-    <a href="https://www.facebook.com/evergreeninternationalschooltherkkupalayam/" target="_blank" class="text-white me-3 fs-2">
-        <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="text-white me-3 fs-2">
-        <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.linkedin.com/company/evergreen-international-school-therkkupalayam/" target="_blank" class="text-white fs-2">
-        <i class="fab fa-linkedin-in"></i>
-    </a>
-</div>
-                </div>
-            </div>
+            <p class="small text-center mb-0">&copy; 2026 Evergreen International School. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -334,9 +330,7 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
