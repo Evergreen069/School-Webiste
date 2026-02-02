@@ -100,7 +100,7 @@
         }
 
         /* Cards & Blog Card */
-        .feature-card, .blog-card {
+        .feature-card, .blog-card, .testimonial-card {
             border: none;
             border-radius: 15px;
             background: white;
@@ -108,8 +108,11 @@
             transition: 0.3s;
             height: 100%;
         }
-        .feature-card { padding: 30px; text-align: center; }
-        .feature-card:hover, .blog-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.1); transform: translateY(-5px); }
+        .feature-card, .testimonial-card { padding: 30px; text-align: center; }
+        .feature-card:hover, .blog-card:hover, .testimonial-card:hover { 
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1); 
+            transform: translateY(-5px); 
+        }
         .feature-icon { font-size: 3rem; color: var(--secondary-green); margin-bottom: 20px; }
 
         /* Social Icons Size */
@@ -165,7 +168,7 @@
                 <div class="col-lg-6 mt-4 mt-lg-0">
                     <h2 class="fw-bold mb-4" style="color: var(--primary-green);">Rooted Since 2015</h2>
                     <p>Established with a mission to provide world-class education in the heart of Namakkal, Evergreen International Nursery and Primary School focuses on a child-centric learning approach.</p>
-                    <p>We combine the rigor of the Tamil Nadu State Board curriculum with modern ICT tools, ensuring our 200+ students are prepared for the digital era while staying connected to their cultural heritage.</p>
+                    <p>We combine the rigor of the Tamil Nadu State Board curriculum with modern ICT tools, ensuring our **200+ students** are prepared for the digital era while staying connected to their cultural heritage.</p>
                     <div class="row mt-4">
                         <div class="col-6">
                             <h4 class="text-orange fw-bold" style="color: var(--accent-orange);">200+</h4>
@@ -242,6 +245,60 @@
         </div>
     </section>
 
+    <section id="testimonials" style="background-color: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Parents Say</h2>
+                <div class="mb-3">
+                    <span class="fs-4 fw-bold text-dark">4.9</span>
+                    <span class="text-warning">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </span>
+                    <p class="text-muted small">Average Rating on Google Maps</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="text-warning mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="fst-italic text-muted">"Best school in Therkkupalayam for primary kids. The teachers are very dedicated and the ICT lab facilities are excellent."</p>
+                        <h6 class="fw-bold mt-3 mb-0">Parent Name</h6>
+                        <p class="small text-muted">Google Reviewer</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="text-warning mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="fst-italic text-muted">"The individual attention given to each student is impressive. My child has grown so much in confidence since joining Evergreen."</p>
+                        <h6 class="fw-bold mt-3 mb-0">Parent Name</h6>
+                        <p class="small text-muted">Google Reviewer</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="text-warning mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="fst-italic text-muted">"A great environment for holistic growth. The play area and modern classroom facilities set it apart from other schools."</p>
+                        <h6 class="fw-bold mt-3 mb-0">Parent Name</h6>
+                        <p class="small text-muted">Google Reviewer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" style="background-color: var(--light-bg);">
         <div class="container">
             <div class="section-title">
@@ -267,7 +324,7 @@
                         
                         <div class="rounded-3 overflow-hidden shadow-sm" style="height: 250px;">
                             <iframe 
-                                src="https://www.google.com/maps?q=Evergreen%20International%20School%20Pallipalayam&output=embed" 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.39655866164!2d77.77161811124694!3d11.378779688755038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba967a39e9481bb%3A0x1aae55d7deca9e49!2sEvergreen%20International%20School!5e0!3m2!1sen!2sin!4v1738521500000!5m2!1sen!2sin" 
                                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
                             </iframe>
                         </div>
@@ -327,7 +384,7 @@
                 </div>
             </div>
             <hr class="mt-5 mb-4" style="background-color: rgba(255,255,255,0.2);">
-            <p class="small text-center mb-0">&copy; 2026 Evergreen International School. All Rights Reserved.</p>
+            <p class="small text-center mb-0">© 2026 Evergreen International School. All Rights Reserved.</p>
         </div>
     </footer>
 
