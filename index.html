@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evergreen International School | Therkkupalayam</title>
-    <meta name="description" content="Evergreen International School - Providing quality education in Therkkupalayam, Namakkal. Nursery and Primary excellence since 2015.">
+    <title>Evergreen International School | CBSE | Pallipalayam</title>
+    <meta name="description" content="Evergreen International School - Quality CBSE education in Pallipalayam, Namakkal since 2015.">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
+        /* Navbar Styling */
         .navbar {
             background-color: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -35,7 +35,8 @@
         .navbar-brand {
             font-weight: 700;
             color: var(--primary-green) !important;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
+            white-space: normal;
         }
         .nav-link {
             font-weight: 500;
@@ -43,9 +44,7 @@
             margin: 0 10px;
             transition: color 0.3s;
         }
-        .nav-link:hover {
-            color: var(--secondary-green) !important;
-        }
+        .nav-link:hover { color: var(--secondary-green) !important; }
 
         /* Hero Section */
         .hero {
@@ -57,11 +56,7 @@
             padding: 160px 0;
             text-align: center;
         }
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; }
 
         .btn-custom {
             background-color: var(--accent-orange);
@@ -74,13 +69,9 @@
             text-decoration: none;
             display: inline-block;
         }
-        .btn-custom:hover {
-            transform: translateY(-3px);
-            color: white;
-            background-color: #ea580c;
-        }
+        .btn-custom:hover { transform: translateY(-3px); background-color: #ea580c; color: white; }
 
-        /* Section Styling */
+        /* Section Spacing */
         section { padding: 80px 0; }
         .section-title { text-align: center; margin-bottom: 50px; }
         .section-title h2 {
@@ -90,44 +81,26 @@
             padding-bottom: 15px;
         }
         .section-title h2::after {
-            content: '';
-            width: 60px;
-            height: 3px;
-            background: var(--accent-orange);
-            position: absolute;
-            bottom: 0; left: 50%;
-            transform: translateX(-50%);
+            content: ''; width: 60px; height: 3px; background: var(--accent-orange);
+            position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
         }
 
-        /* Cards & Blog Card */
+        /* Card Designs */
         .feature-card, .blog-card, .testimonial-card {
-            border: none;
-            border-radius: 15px;
-            background: white;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            height: 100%;
+            border: none; border-radius: 15px; background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s; height: 100%;
         }
         .feature-card, .testimonial-card { padding: 30px; text-align: center; }
         .feature-card:hover, .blog-card:hover, .testimonial-card:hover { 
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1); 
-            transform: translateY(-5px); 
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1); transform: translateY(-5px); 
         }
         .feature-icon { font-size: 3rem; color: var(--secondary-green); margin-bottom: 20px; }
 
-        /* Social Icons Size */
-        .social-icons a {
-            font-size: 2rem;
-            transition: 0.3s;
-        }
-        .social-icons a:hover {
-            color: var(--accent-orange) !important;
-            transform: scale(1.2);
-        }
+        /* Social Icons */
+        .social-icons a { font-size: 2rem; transition: 0.3s; color: var(--primary-green); }
+        .social-icons a:hover { color: var(--accent-orange); transform: scale(1.2); }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-        }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
@@ -142,6 +115,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tour">Tour</a></li>
                     <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="#facilities">Facilities</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -154,7 +128,7 @@
     <header id="home" class="hero">
         <div class="container">
             <h1>Nurturing Excellence, <br> Rooted in Values.</h1>
-            <p class="lead mb-4">Evergreen International School, Therkkupalayam — Where your child's future begins.</p>
+            <p class="lead mb-4">Evergreen International School, Pallipalayam — Your child's future begins here.</p>
             <a href="#about" class="btn btn-custom btn-lg">Explore Our Vision</a>
         </div>
     </header>
@@ -166,29 +140,39 @@
                     <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-3 shadow" alt="School Classroom">
                 </div>
                 <div class="col-lg-6 mt-4 mt-lg-0">
-                    <h2 class="fw-bold mb-4" style="color: var(--primary-green);">Rooted Since 2015</h2>
-                    <p>Established with a mission to provide world-class education in the heart of Namakkal, Evergreen International Nursery and Primary School focuses on a child-centric learning approach.</p>
-                    <p>We combine the rigor of the Tamil Nadu State Board curriculum with modern ICT tools, ensuring our **200+ students** are prepared for the digital era while staying connected to their cultural heritage.</p>
-                    <div class="row mt-4">
-                        <div class="col-6">
-                            <h4 class="text-orange fw-bold" style="color: var(--accent-orange);">200+</h4>
-                            <p>Active Students</p>
-                        </div>
-                        <div class="col-6">
-                            <h4 class="text-orange fw-bold" style="color: var(--accent-orange);">100%</h4>
-                            <p>Dedication</p>
-                        </div>
+                    <h2 class="fw-bold mb-4" style="color: var(--primary-green);">CBSE Excellence Since 2015</h2>
+                    <p>Evergreen International School is dedicated to providing world-class education based on the **CBSE syllabus**.</p>
+                    <p>We combine high academic standards with modern ICT tools, ensuring our **200+ students** are prepared for a global future while staying connected to their roots.</p>
+                    <div class="row mt-4 text-center">
+                        <div class="col-6"><h4 style="color: var(--accent-orange); font-weight: bold;">200+</h4><p>Active Students</p></div>
+                        <div class="col-6"><h4 style="color: var(--accent-orange); font-weight: bold;">100%</h4><p>Dedication</p></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="blog" style="background-color: var(--light-bg);">
+    <section id="tour" style="background-color: var(--light-bg);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experience Evergreen</h2>
+                <p>A glimpse into the learning and life on our campus.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="School Tour" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
         <div class="container">
             <div class="section-title">
                 <h2>School Blog & Updates</h2>
-                <p>Latest stories from the Evergreen campus.</p>
+                <p>Stay informed with the latest news from our campus.</p>
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
@@ -196,8 +180,8 @@
                         <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=500&q=60" class="card-img-top rounded" alt="Blog">
                         <div class="card-body px-0">
                             <h5 class="fw-bold">Welcome to Our New Website</h5>
-                            <p class="text-muted small">Jan 30, 2026</p>
-                            <p>We are thrilled to launch our new digital platform to stay connected with parents...</p>
+                            <p class="text-muted small">Feb 3, 2026</p>
+                            <p>We are thrilled to launch our new digital home for parents and students...</p>
                             <a href="#" class="text-success fw-bold text-decoration-none">Read Full Post →</a>
                         </div>
                     </div>
@@ -206,138 +190,82 @@
         </div>
     </section>
 
-    <section id="facilities">
+    <section id="facilities" style="background-color: var(--light-bg);">
         <div class="container">
             <div class="section-title">
                 <h2>Our World-Class Facilities</h2>
-                <p>Designed to provide a safe and stimulating environment for growth.</p>
+                <p>A stimulating environment designed for growth.</p>
             </div>
-            <div class="row g-4">
-                <div class="col-md-3">
-                    <div class="feature-card">
-                        <i class="fas fa-laptop-code feature-icon"></i>
-                        <h4>ICT Lab</h4>
-                        <p>Modern computing facilities to bridge the digital divide.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="feature-card">
-                        <i class="fas fa-book-reader feature-icon"></i>
-                        <h4>Library</h4>
-                        <p>A curated collection of books to foster a lifelong love for reading.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="feature-card">
-                        <i class="fas fa-running feature-icon"></i>
-                        <h4>Play Area</h4>
-                        <p>Spacious grounds for physical education and outdoor sports.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="feature-card">
-                        <i class="fas fa-heartbeat feature-icon"></i>
-                        <h4>Health Care</h4>
-                        <p>Regular medical checkups and student hygiene.</p>
-                    </div>
-                </div>
+            <div class="row g-4 text-center">
+                <div class="col-md-3"><div class="feature-card"><i class="fas fa-laptop-code feature-icon"></i><h4>ICT Lab</h4><p>Modern computing facilities.</p></div></div>
+                <div class="col-md-3"><div class="feature-card"><i class="fas fa-book-reader feature-icon"></i><h4>Library</h4><p>A wide collection of books.</p></div></div>
+                <div class="col-md-3"><div class="feature-card"><i class="fas fa-running feature-icon"></i><h4>Play Area</h4><p>Spacious sports grounds.</p></div></div>
+                <div class="col-md-3"><div class="feature-card"><i class="fas fa-heartbeat feature-icon"></i><h4>Health Care</h4><p>Regular checkups for kids.</p></div></div>
             </div>
         </div>
     </section>
 
-    <section id="testimonials" style="background-color: white;">
+    <section id="testimonials">
         <div class="container">
             <div class="section-title">
                 <h2>What Our Parents Say</h2>
                 <div class="mb-3">
-                    <span class="fs-4 fw-bold text-dark">4.9</span>
-                    <span class="text-warning">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </span>
-                    <p class="text-muted small">Average Rating on Google Maps</p>
+                    <span class="fs-4 fw-bold">4.9</span> 
+                    <span class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span>
+                    <p class="small text-muted">Google Maps Rating</p>
                 </div>
             </div>
-            
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="text-warning mb-3">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <div class="col-md-4"><div class="testimonial-card"><p class="fst-italic">"Best CBSE school in Pallipalayam. Excellent teachers and ICT lab."</p><h6 class="fw-bold mt-3">Parent Reviewer</h6></div></div>
+                <div class="col-md-4"><div class="testimonial-card"><p class="fst-italic">"My child has learned so much here. Highly recommend this school."</p><h6 class="fw-bold mt-3">Parent Reviewer</h6></div></div>
+                <div class="col-md-4"><div class="testimonial-card"><p class="fst-italic">"Wonderful environment and great individual attention to students."</p><h6 class="fw-bold mt-3">Parent Reviewer</h6></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" style="background-color: var(--light-bg);">
+        <div class="container">
+            <div class="section-title"><h2>Frequently Asked Questions</h2></div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="schoolFAQ">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1">What syllabus do you follow?</button></h2>
+                            <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#schoolFAQ">
+                                <div class="accordion-body">We follow the **CBSE syllabus** integrated with modern ICT learning tools.</div>
+                            </div>
                         </div>
-                        <p class="fst-italic text-muted">"Best school in Therkkupalayam for primary kids. The teachers are very dedicated and the ICT lab facilities are excellent."</p>
-                        <h6 class="fw-bold mt-3 mb-0">Parent Name</h6>
-                        <p class="small text-muted">Google Reviewer</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="text-warning mb-3">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2">Where is the school situated?</button></h2>
+                            <div id="c2" class="accordion-collapse collapse" data-bs-parent="#schoolFAQ">
+                                <div class="accordion-body">We are on Vediyarasampalayam Road in **Pallipalayam**, situated just after **Therkkupalayam**, Namakkal.</div>
+                            </div>
                         </div>
-                        <p class="fst-italic text-muted">"The individual attention given to each student is impressive. My child has grown so much in confidence since joining Evergreen."</p>
-                        <h6 class="fw-bold mt-3 mb-0">Parent Name</h6>
-                        <p class="small text-muted">Google Reviewer</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="text-warning mb-3">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                        <p class="fst-italic text-muted">"A great environment for holistic growth. The play area and modern classroom facilities set it apart from other schools."</p>
-                        <h6 class="fw-bold mt-3 mb-0">Parent Name</h6>
-                        <p class="small text-muted">Google Reviewer</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" style="background-color: var(--light-bg);">
+    <section id="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-                <p>Have questions? We are here to help you.</p>
-            </div>
+            <div class="section-title"><h2>Get In Touch</h2><p>Contact us for admissions and inquiries.</p></div>
             <div class="row g-5">
                 <div class="col-lg-5">
-                    <div class="p-4 rounded-3 shadow-sm bg-white h-100">
+                    <div class="p-4 rounded-3 shadow-sm bg-white h-100 border">
                         <h4 class="mb-4">Contact Information</h4>
-                        <div class="d-flex mb-3">
-                            <i class="fas fa-map-marker-alt me-3 mt-1 text-success"></i>
-                            <p>Near Water Tank, Vediyarasampalayam Road, Therkkupalayam, Pallipalayam, Namakkal - 638006.</p>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <i class="fas fa-phone-alt me-3 mt-1 text-success"></i>
-                            <p>+91 98427 12666<br>+91 98427 12912</p>
-                        </div>
-                        <div class="d-flex mb-4">
-                            <i class="fas fa-envelope me-3 mt-1 text-success"></i>
-                            <p>support@evergreen-school.in</p>
-                        </div>
-                        
-                        <div class="rounded-3 overflow-hidden shadow-sm" style="height: 250px;">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.39655866164!2d77.77161811124694!3d11.378779688755038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba967a39e9481bb%3A0x1aae55d7deca9e49!2sEvergreen%20International%20School!5e0!3m2!1sen!2sin!4v1738521500000!5m2!1sen!2sin" 
-                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-                            </iframe>
+                        <p><i class="fas fa-map-marker-alt text-success me-2"></i> Vediyarasampalayam Road, Pallipalayam, Namakkal - 638006.</p>
+                        <p><i class="fas fa-phone-alt text-success me-2"></i> +91 98427 12666</p>
+                        <p><i class="fas fa-envelope text-success me-2"></i> support@evergreen-school.in</p>
+                        <div class="rounded-3 overflow-hidden mt-4" style="height: 250px;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.182476545224!2d77.78505517409536!3d11.321307648931112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba967a36e948bbb%3A0x1aae56d5dedb9e49!2sEvergreen%20International%20School!5e0!3m2!1sen!2sin!4v1738541818296!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7">
-                    <form action="https://formspree.io/f/meekpdpr" method="POST" class="row g-3 p-4 rounded-3 shadow-sm bg-white">
-                        <div class="col-md-6">
-                            <input type="text" name="parent_name" class="form-control" placeholder="Parent's Name" required>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-                        </div>
+                    <form action="https://formspree.io/f/meekpdpr" method="POST" class="row g-3 p-4 rounded-3 shadow-sm bg-white border">
+                        <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Parent's Name" required></div>
+                        <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="Email Address" required></div>
                         <div class="col-12">
                             <select name="grade" class="form-select">
                                 <option selected>Interested Grade</option>
@@ -346,50 +274,26 @@
                                 <option>Primary (1st - 5th)</option>
                             </select>
                         </div>
-                        <div class="col-12">
-                            <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-custom w-100">Send Inquiry</button>
-                        </div>
+                        <div class="col-12"><textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea></div>
+                        <div class="col-12"><button type="submit" class="btn btn-custom w-100">Send Inquiry</button></div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <footer class="text-center py-5">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">EVERGREEN SCHOOL</h5>
-                    <p>Providing a foundation for a lifetime of learning. Join the Evergreen family today.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#about" class="footer-link">About Us</a></li>
-                        <li><a href="#blog" class="footer-link">School Blog</a></li>
-                        <li><a href="#facilities" class="footer-link">Facilities</a></li>
-                        <li><a href="#contact" class="footer-link">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">Follow Us</h5>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/evergreeninternationalschooltherkkupalayam/" target="_blank" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="text-white me-4"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/evergreen-international-school-therkkupalayam/" target="_blank" class="text-white"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
+            <div class="social-icons mb-4">
+                <a href="https://www.facebook.com/evergreeninternationalschooltherkkupalayam/" target="_blank" class="me-4"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="me-4"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/evergreen-international-school-therkkupalayam/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <hr class="mt-5 mb-4" style="background-color: rgba(255,255,255,0.2);">
-            <p class="small text-center mb-0">© 2026 Evergreen International School. All Rights Reserved.</p>
+            <p class="small text-muted mb-0">© 2026 Evergreen International School. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
