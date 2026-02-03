@@ -3,30 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evergreen International School | CBSE | Pallipalayam</title>
-    <meta name="description" content="Evergreen International School - Excellence in CBSE Education in Pallipalayam since 2015.">
-    
     <title>Evergreen International School | CBSE Primary School in Pallipalayam, Erode</title>
     <meta name="description" content="Evergreen International School is a CBSE-aligned English-medium primary school in Therkkupalayam, Pallipalayam, Erode, offering Pre-KG to Grade 5 education.">
-    <meta name="keywords" content="CBSE school Erode, primary school Pallipalayam, English medium school Therkkupalayam">
+    <meta name="keywords" content="CBSE school Erode, primary school Pallipalayam, English medium school Therkkupalayam, Pre-KG, Kindergarten">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
 
     <style>
         :root {
-            --primary-green: #2d6a4f;
-            --secondary-green: #52b788;
             --primary-green: #1f5f4a;
             --secondary-green: #3d9a75;
             --accent-orange: #f97316;
-            --light-bg: #f8f9fa;
-            --text-dark: #1b4332;
             --light-bg: #f6f9f7;
             --text-dark: #15382a;
             --deep-green: #0f2b20;
@@ -35,7 +26,6 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
             font-family: 'Inter', sans-serif;
             color: var(--text-dark);
             line-height: 1.8;
@@ -43,22 +33,38 @@
             background: var(--soft-cream);
         }
 
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Merriweather', serif;
+        }
+
         section {
             padding: 90px 0;
         }
 
+        /* --- Utility Classes --- */
         .bg-blur {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(8px);
         }
 
+        .highlight-section {
+            background: linear-gradient(120deg, rgba(31,95,74,0.05), rgba(61,154,117,0.1));
+        }
+
+        .divider-line {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(45,106,79,0.3), transparent);
+            margin: 36px 0;
+        }
+
+        /* --- Top Info Banner --- */
         .info-banner {
             background: var(--deep-green);
             color: #fff;
             padding: 10px 0;
             font-size: 0.9rem;
         }
-
         .info-banner a {
             color: var(--gold);
             text-decoration: none;
@@ -68,164 +74,194 @@
         /* --- Navigation --- */
         .navbar {
             background-color: white;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-            padding: 1.2rem 0;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             padding: 0.9rem 0;
             transition: all 0.4s ease;
         }
-
         .navbar-brand {
             font-weight: 700;
             color: var(--primary-green) !important;
             letter-spacing: -0.5px;
             text-transform: uppercase;
+            font-size: 1.1rem;
         }
-
         .nav-link {
             font-weight: 500;
-            margin: 0 12px;
+            margin: 0 10px;
             color: var(--text-dark) !important;
             transition: 0.3s;
+            font-size: 0.95rem;
         }
-
         .nav-link:hover {
             color: var(--secondary-green) !important;
         }
 
         /* --- Hero Section --- */
         .hero {
-            background: linear-gradient(rgba(45, 106, 79, 0.75), rgba(45, 106, 79, 0.75)), 
-                        url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=1600&q=80');
             background: linear-gradient(110deg, rgba(15,43,32,0.92), rgba(31,95,74,0.75)),
                         url('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            padding: 180px 0;
-            text-align: center;
-            padding: 170px 0 140px;
+            padding: 180px 0 140px;
             color: white;
             position: relative;
-            overflow: hidden;
         }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at top right, rgba(255,255,255,0.2), transparent 50%);
-        }
-
         .hero-content {
             position: relative;
             z-index: 2;
         }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Merriweather', serif;
-        }
-
         .hero h1 {
-            font-size: 4rem;
-            font-size: 3.4rem;
+            font-size: 3.2rem;
             font-weight: 700;
-            margin-bottom: 25px;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            line-height: 1.2;
         }
-
-        /* --- Buttons --- */
         .hero-subtitle {
             font-size: 1.15rem;
-            color: rgba(255,255,255,0.85);
+            color: rgba(255,255,255,0.9);
             max-width: 680px;
+            font-family: 'Inter', sans-serif;
         }
-
+        
+        /* Hero Badges */
         .hero-badges {
             display: inline-flex;
             gap: 12px;
             flex-wrap: wrap;
             margin-bottom: 22px;
         }
-
         .hero-badge {
-            background: rgba(255,255,255,0.12);
-            border: 1px solid rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
             color: #fff;
-            padding: 8px 16px;
-            border-radius: 999px;
+            padding: 6px 14px;
+            border-radius: 50px;
             font-size: 0.85rem;
-            letter-spacing: 0.3px;
+            font-weight: 500;
         }
 
+        /* Hero Cards */
         .hero-card {
-            background: rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.1);
             border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 20px;
-            padding: 24px;
-            backdrop-filter: blur(6px);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+            color: white;
         }
 
+        /* --- Buttons --- */
         .btn-custom {
             background-color: var(--accent-orange);
             color: white;
-            padding: 14px 35px;
+            padding: 12px 30px;
             border-radius: 50px;
             font-weight: 600;
             border: none;
-            transition: all 0.4s;
+            transition: all 0.3s;
             text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 12px 25px rgba(249,115,22,0.25);
-        }
-
-        .btn-custom:hover {
-            transform: translateY(-5px);
-            background-color: #ea580c;
             box-shadow: 0 10px 20px rgba(249,115,22,0.3);
+        }
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            background-color: #ea580c;
             color: white;
         }
-
-        /* --- Interactive Flip Cards --- */
-        .facility-card {
-            perspective: 1000px;
-            height: 320px;
-            background: transparent;
-            border: none;
         .btn-outline-light {
             border: 1px solid rgba(255,255,255,0.6);
             color: white;
-            padding: 14px 30px;
+            padding: 12px 30px;
             border-radius: 50px;
             text-decoration: none;
+            font-weight: 600;
             transition: 0.3s;
         }
-
-        .facility-inner {
         .btn-outline-light:hover {
-            background: rgba(255,255,255,0.15);
-            color: white;
-            transform: translateY(-3px);
+            background: white;
+            color: var(--primary-green);
         }
 
+        /* --- Standard Content Cards --- */
+        .content-card {
+            border: none;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            padding: 35px;
+            height: 100%;
+            transition: 0.3s;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        /* --- Components --- */
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(61,154,117,0.15);
+            color: var(--primary-green);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .list-check {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        .list-check li {
+            margin-bottom: 12px;
+            display: flex;
+            gap: 10px;
+        }
+        .list-check li i {
+            color: var(--secondary-green);
+            margin-top: 5px;
+        }
+
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(61,154,117,0.12);
+            color: var(--primary-green);
+            font-size: 1.3rem;
+        }
+
+        /* --- Notice Board Frame --- */
+        .notice-frame {
+            border: 1px solid rgba(31,95,74,0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        /* --- Section Titles --- */
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
-
         .section-title h2 {
             font-weight: 700;
             color: var(--primary-green);
             position: relative;
-            width: 100%;
-            padding-bottom: 16px;
+            padding-bottom: 15px;
             display: inline-block;
         }
-
         .section-title h2::after {
             content: '';
-            width: 70px;
+            width: 60px;
             height: 4px;
             background: var(--accent-orange);
             position: absolute;
@@ -234,171 +270,39 @@
             transform: translateX(-50%);
         }
 
-        .content-card {
-            border: none;
-            border-radius: 20px;
-            background: white;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-            transition: 0.3s;
-            padding: 36px;
-            height: 100%;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-style: preserve-3d;
-            cursor: pointer;
-        }
-
-        .facility-card:hover .facility-inner {
-            transform: rotateY(180deg);
-        .content-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 50px rgba(0,0,0,0.1);
-        }
-
-        .facility-front, .facility-back {
-            position: absolute;
-        .pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(61,154,117,0.16);
-            color: var(--primary-green);
-            padding: 8px 16px;
-            border-radius: 999px;
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-
-        .divider-line {
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(45,106,79,0.3), transparent);
-            margin: 36px 0;
-        }
-
-        .icon-circle {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            background: rgba(61,154,117,0.12);
-            color: var(--primary-green);
-            font-size: 1.2rem;
-        }
-
-        .facility-front { background: white; }
-        .list-check {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 0;
-        }
-
-        .facility-back {
-            background: var(--primary-green);
-            color: white;
-            transform: rotateY(180deg);
-            text-align: center;
-        .list-check li {
-            margin-bottom: 10px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .facility-icon {
-            font-size: 3.5rem;
-        .list-check li i {
-            color: var(--secondary-green);
-            margin-bottom: 20px;
-            margin-top: 6px;
-        }
-
-        /* --- Section Titles --- */
-        section { padding: 100px 0; }
-        .section-title { text-align: center; margin-bottom: 70px; }
-        .section-title h2 {
-            font-weight: 700;
-            color: var(--primary-green);
-            position: relative;
-            padding-bottom: 20px;
-            display: inline-block;
-        .highlight-section {
-            background: linear-gradient(120deg, rgba(31,95,74,0.08), rgba(61,154,117,0.12));
-        }
-        .section-title h2::after {
-            content: ''; width: 70px; height: 4px; background: var(--accent-orange);
-            position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-
-        .contact-card {
-            background: white;
-            border: 1px solid rgba(45,106,79,0.08);
-        }
-
-        /* --- Content Cards --- */
-        .content-card {
-            border: none;
-            border-radius: 20px;
+        /* --- Footer --- */
         footer {
             background: white;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
             padding: 50px 0;
             border-top: 1px solid rgba(0,0,0,0.05);
         }
-
         .social-icons a {
             color: var(--primary-green);
-            font-size: 1.35rem;
+            font-size: 1.2rem;
             transition: 0.3s;
-            padding: 40px;
-            width: 42px;
-            height: 42px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: rgba(31,95,74,0.1);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .social-icons a:hover {
-            color: var(--accent-orange);
-            transform: translateY(-3px);
-        }
-
-        .notice-frame {
-            border: 1px solid rgba(31,95,74,0.2);
-            border-radius: 18px;
-            overflow: hidden;
-            background: #fff;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } }
-        .notice-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-        }
-
-        .notice-actions a {
             text-decoration: none;
-            font-weight: 600;
+        }
+        .social-icons a:hover {
+            background: var(--accent-orange);
+            color: white;
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.4rem; }
+            .hero h1 { font-size: 2.2rem; }
             .hero-badges { justify-content: center; }
+            section { padding: 60px 0; }
         }
     </style>
 </head>
 <body>
+
     <div class="info-banner">
         <div class="container d-flex flex-wrap justify-content-between align-items-center">
             <span><i class="fas fa-bullhorn me-2"></i>Admissions open for Pre-KG to Grade 5 (2026-27)</span>
@@ -408,7 +312,6 @@
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">EVERGREEN INTERNATIONAL SCHOOL</a>
             <a class="navbar-brand" href="#home">Evergreen International School</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -417,32 +320,17 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#tour">Tour</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#facilities">Facilities</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#academics">Academics</a></li>
                     <li class="nav-item"><a class="nav-link" href="#admissions">Admissions</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#infrastructure">Infrastructure</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#student-life">Student Life</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faculty">Faculty</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#parent-corner">Parent Corner</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#why-choose">Why Choose</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#disclosure">Mandatory Disclosure</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#notice-board">Notices</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
-                <a href="tel:+919842712666" class="btn btn-custom ms-lg-4">Inquiry</a>
-                <a href="#contact" class="btn btn-custom ms-lg-4">Enquiry</a>
+                <a href="#contact" class="btn btn-custom ms-lg-3">Enquiry</a>
             </div>
         </div>
     </nav>
 
     <header id="home" class="hero">
-        <div class="container" data-aos="fade-up" data-aos-duration="1200">
-            <h1>Nurturing Excellence, <br> Rooted in Values.</h1>
-            <p class="fs-4 mb-5">Evergreen International School, Pallipalayam - Your child's future begins here.</p>
-            <a href="#about" class="btn btn-custom btn-lg shadow">Explore Our Vision</a>
         <div class="container hero-content" data-aos="fade-up" data-aos-duration="1200">
             <div class="hero-badges">
                 <span class="hero-badge"><i class="fas fa-award me-2"></i>CBSE Aligned</span>
@@ -450,11 +338,13 @@
                 <span class="hero-badge"><i class="fas fa-child me-2"></i>Pre-KG to Grade 5</span>
             </div>
             <h1>Welcome to Evergreen International School</h1>
-            <p class="hero-subtitle mb-5">Evergreen International School is a CBSE-aligned, English-medium, co-educational school in Therkkupalayam, Pallipalayam, Erode District. We focus on academic excellence, character development, and holistic growth in a safe, supportive environment.</p>
+            <p class="hero-subtitle mb-5">Evergreen International School is a CBSE-aligned, English-medium, co-educational school in Therkkupalayam, Pallipalayam, Erode District. We focus on academic excellence, character development, and holistic growth.</p>
+            
             <div class="d-flex flex-wrap gap-3">
                 <a href="#about" class="btn btn-custom btn-lg">Explore Our Vision</a>
-                <a href="#contact" class="btn-outline-light btn-lg">Schedule a Visit</a>
+                <a href="#contact" class="btn btn-outline-light btn-lg">Schedule a Visit</a>
             </div>
+
             <div class="row mt-5 g-3">
                 <div class="col-md-4">
                     <div class="hero-card">
@@ -471,14 +361,13 @@
                 <div class="col-md-4">
                     <div class="hero-card">
                         <p class="text-uppercase small mb-1">School Type</p>
-                        <h4 class="fw-bold mb-0">Co-educational Day School</h4>
+                        <h4 class="fw-bold mb-0">Co-ed Day School</h4>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="about">
     <section id="about" class="highlight-section">
         <div class="container">
             <div class="row align-items-center">
@@ -487,23 +376,11 @@
                 </div>
                 <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left">
                     <div class="ps-lg-5">
-                        <h2 class="fw-bold mb-4" style="color: var(--primary-green);">CBSE Excellence Since 2015</h2>
-                        <p class="lead text-muted">Dedicated to providing world-class education through the CBSE syllabus.</p>
-                        <p>We combine high academic standards with modern ICT tools, ensuring our **200+ students** are prepared for a global future while staying connected to their roots.</p>
-                        <div class="row mt-5 text-center g-4">
-                            <div class="col-6"><div class="p-3 border rounded-3"><h3 class="fw-bold mb-0" style="color: var(--accent-orange);">200+</h3><small class="text-uppercase fw-bold text-muted">Active Students</small></div></div>
-                            <div class="col-6"><div class="p-3 border rounded-3"><h3 class="fw-bold mb-0" style="color: var(--accent-orange);">100%</h3><small class="text-uppercase fw-bold text-muted">Dedication</small></div></div>
                         <span class="pill mb-3"><i class="fas fa-school"></i>School Overview</span>
                         <h2 class="fw-bold mb-4" style="color: var(--primary-green);">Strong foundations for lifelong learning.</h2>
-                        <p class="lead text-muted">Evergreen International School provides quality primary education rooted in strong values and modern teaching practices, aligned with the CBSE curriculum framework.</p>
-                        <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>Board: CBSE (Aligned)</li>
-                            <li><i class="fas fa-check-circle"></i>Medium of Instruction: English</li>
-                            <li><i class="fas fa-check-circle"></i>Classes Offered: Pre-KG, Junior KG, Senior KG, Grades 1 to 5</li>
-                            <li><i class="fas fa-check-circle"></i>School Type: Co-educational Day School</li>
-                        </ul>
-                        <div class="divider-line"></div>
-                        <div class="row g-4">
+                        <p class="lead text-muted">Evergreen International School provides quality primary education rooted in strong values and modern teaching practices.</p>
+                        
+                        <div class="row g-4 mt-4">
                             <div class="col-12">
                                 <div class="content-card">
                                     <h5 class="fw-bold">Vision</h5>
@@ -514,10 +391,9 @@
                                 <div class="content-card">
                                     <h5 class="fw-bold">Mission</h5>
                                     <ul class="list-check">
-                                        <li><i class="fas fa-check-circle"></i>Deliver CBSE-aligned education with strong foundational learning.</li>
-                                        <li><i class="fas fa-check-circle"></i>Encourage conceptual understanding and critical thinking.</li>
-                                        <li><i class="fas fa-check-circle"></i>Create a safe, inclusive, and disciplined learning environment.</li>
-                                        <li><i class="fas fa-check-circle"></i>Foster values, creativity, and social responsibility.</li>
+                                        <li><i class="fas fa-check-circle"></i>Deliver CBSE-aligned education with strong foundations.</li>
+                                        <li><i class="fas fa-check-circle"></i>Encourage critical thinking and creativity.</li>
+                                        <li><i class="fas fa-check-circle"></i>Create a safe, inclusive environment.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -528,11 +404,6 @@
         </div>
     </section>
 
-    <section id="tour" style="background-color: var(--light-bg);">
-        <div class="container" data-aos="zoom-in">
-            <div class="section-title">
-                <h2>Experience Evergreen</h2>
-                <p>A glimpse into our campus life and modern learning environment.</p>
     <section id="notice-board">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -540,74 +411,42 @@
                 <p>Important circulars and updates for parents and staff.</p>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden">
-                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="School Tour" allowfullscreen></iframe>
                 <div class="col-lg-10" data-aos="fade-up">
                     <div class="notice-frame">
-                        <iframe title="Evergreen Notice Board" src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://share.google/VHPQB6PMQOBHYO4me" width="100%" height="480" style="border:0;" loading="lazy"></iframe>
+                        <iframe title="Evergreen Notice Board" src="https://drive.google.com/file/d/1B6J8sQ8w9z.../preview" width="100%" height="480" style="border:0;" loading="lazy"></iframe>
                     </div>
-                    <p class="text-muted mt-3 text-center">If the notice board does not appear, ensure the file is shared as “Anyone with the link can view.” You can also open it directly.</p>
-                    <div class="notice-actions mt-2">
-                        <a class="btn btn-custom btn-sm" href="https://share.google/VHPQB6PMQOBHYO4me" target="_blank" rel="noopener">Open Notice Board</a>
-                        <a class="btn btn-outline-success btn-sm" href="https://share.google/VHPQB6PMQOBHYO4me" target="_blank" rel="noopener">Open in New Tab</a>
-                    </div>
+                    <p class="text-muted mt-3 text-center small">If the notice board does not appear, please contact the school office.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="academics">
+    <section id="academics" class="highlight-section">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
                 <h2>Academics</h2>
-                <p>CBSE curriculum with a focus on foundational literacy, numeracy, and NEP 2020 alignment.</p>
+                <p>Curriculum focused on foundational literacy and NEP 2020 alignment.</p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-6" data-aos="fade-up">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Curriculum Framework</h5>
-                        <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>Strong foundational literacy and numeracy.</li>
-                            <li><i class="fas fa-check-circle"></i>Concept-based learning with continuous evaluation.</li>
-                            <li><i class="fas fa-check-circle"></i>Alignment with National Education Policy (NEP) 2020.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="content-card">
                         <h5 class="fw-bold mb-3">Teaching Methodology</h5>
                         <ul class="list-check">
                             <li><i class="fas fa-check-circle"></i>Activity-based learning.</li>
                             <li><i class="fas fa-check-circle"></i>Visual and audio teaching aids.</li>
                             <li><i class="fas fa-check-circle"></i>Interactive classroom practices.</li>
-                            <li><i class="fas fa-check-circle"></i>Continuous assessment and observation.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-4 mt-2">
-                <div class="col-lg-6" data-aos="fade-up">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Early Years (Pre-KG, JKG, SKG)</h5>
-                        <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>Language development.</li>
-                            <li><i class="fas fa-check-circle"></i>Pre-number concepts.</li>
-                            <li><i class="fas fa-check-circle"></i>Motor skill development.</li>
-                            <li><i class="fas fa-check-circle"></i>Creative expression.</li>
-                            <li><i class="fas fa-check-circle"></i>Social and emotional learning.</li>
+                            <li><i class="fas fa-check-circle"></i>Continuous assessment.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="content-card">
-                        <h5 class="fw-bold mb-3">Primary Classes (Grades 1 to 5)</h5>
+                        <h5 class="fw-bold mb-3">Primary Classes (Grades 1-5)</h5>
                         <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>English, Mathematics.</li>
-                            <li><i class="fas fa-check-circle"></i>Environmental Studies / Science.</li>
+                            <li><i class="fas fa-check-circle"></i>English, Mathematics, Science.</li>
                             <li><i class="fas fa-check-circle"></i>Social Studies, General Knowledge.</li>
-                            <li><i class="fas fa-check-circle"></i>Computer Education, Art and Craft.</li>
-                            <li><i class="fas fa-check-circle"></i>Physical Education.</li>
+                            <li><i class="fas fa-check-circle"></i>Computer Education.</li>
+                            <li><i class="fas fa-check-circle"></i>Physical Education & Arts.</li>
                         </ul>
                     </div>
                 </div>
@@ -615,28 +454,18 @@
         </div>
     </section>
 
-    <section id="blog">
-    <section id="admissions" class="highlight-section">
+    <section id="admissions">
         <div class="container">
-            <div class="section-title" data-aos="fade-up"><h2>School Blog & Updates</h2></div>
             <div class="section-title" data-aos="fade-up">
                 <h2>Admissions</h2>
-                <p>Admissions are open for Pre-KG to Grade 5 based on seat availability and age eligibility.</p>
+                <p>Open for Pre-KG to Grade 5 based on seat availability.</p>
             </div>
             <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="content-card">
-                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600" class="img-fluid rounded-3 mb-4" alt="Blog">
-                        <h5 class="fw-bold mb-3">Welcome to our CBSE Portal</h5>
-                        <p class="small text-muted mb-3"><i class="far fa-calendar-alt me-2"></i> Feb 3, 2026</p>
-                        <p class="text-muted">We are thrilled to launch our new digital home for students in Pallipalayam...</p>
-                        <a href="blog.html" class="text-success fw-bold text-decoration-none">Read Full Post <i class="fas fa-arrow-right ms-1"></i></a>
-                        <h5 class="fw-bold mb-3">Admission Policy</h5>
-                        <p class="text-muted">Admissions are open for Pre-KG to Grade 5 based on availability of seats and age eligibility as prescribed by CBSE and school norms.</p>
-                        <h6 class="fw-bold mt-4">Admission Process</h6>
+                        <h5 class="fw-bold mb-3">Admission Process</h5>
                         <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>Enquiry and interaction with school authorities.</li>
+                            <li><i class="fas fa-check-circle"></i>Enquiry and interaction with school.</li>
                             <li><i class="fas fa-check-circle"></i>Submission of application form.</li>
                             <li><i class="fas fa-check-circle"></i>Verification of documents.</li>
                             <li><i class="fas fa-check-circle"></i>Confirmation of admission.</li>
@@ -649,59 +478,29 @@
                         <ul class="list-check">
                             <li><i class="fas fa-check-circle"></i>Birth Certificate.</li>
                             <li><i class="fas fa-check-circle"></i>Passport-size photographs.</li>
-                            <li><i class="fas fa-check-circle"></i>Transfer Certificate (for Grades 2 and above).</li>
+                            <li><i class="fas fa-check-circle"></i>Transfer Certificate (Grade 2+).</li>
                             <li><i class="fas fa-check-circle"></i>Aadhaar copy (optional).</li>
                         </ul>
-                        <div class="divider-line"></div>
-                        <p class="text-muted mb-0">For application support, please contact the school office for guidance.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="facilities" style="background-color: white;">
-    <section id="infrastructure">
+    <section id="infrastructure" class="highlight-section">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <h2>Our World-Class Facilities</h2>
-                <p>Designed for the holistic growth of our students.</p>
                 <h2>Infrastructure</h2>
-                <p>A safe, hygienic, and child-friendly campus with essential facilities.</p>
+                <p>A safe, hygienic, and child-friendly campus.</p>
             </div>
             <div class="row g-4">
-                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="facility-card"><div class="facility-inner">
-                        <div class="facility-front"><i class="fas fa-laptop-code facility-icon"></i><h4>ICT Lab</h4></div>
-                        <div class="facility-back"><h4>Smart Tech</h4><p>High-speed computing facilities for 21st-century skills.</p></div>
-                    </div></div>
-                </div>
-                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="facility-card"><div class="facility-inner">
-                        <div class="facility-front"><i class="fas fa-book-reader facility-icon"></i><h4>Library</h4></div>
-                        <div class="facility-back"><h4>Reading Zone</h4><p>A peaceful haven with a diverse collection of books.</p></div>
-                    </div></div>
-                </div>
-                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="facility-card"><div class="facility-inner">
-                        <div class="facility-front"><i class="fas fa-running facility-icon"></i><h4>Play Area</h4></div>
-                        <div class="facility-back"><h4>Active Life</h4><p>Large outdoor grounds for physical education.</p></div>
-                    </div></div>
-                </div>
-                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="facility-card"><div class="facility-inner">
-                        <div class="facility-front"><i class="fas fa-heartbeat facility-icon"></i><h4>Health Care</h4></div>
-                        <div class="facility-back"><h4>Safety First</h4><p>Regular medical checkups and student hygiene.</p></div>
-                    </div></div>
                 <div class="col-md-6" data-aos="fade-up">
                     <div class="content-card">
                         <h5 class="fw-bold mb-3">Facilities</h5>
                         <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>Spacious and ventilated classrooms.</li>
+                            <li><i class="fas fa-check-circle"></i>Spacious, ventilated classrooms.</li>
                             <li><i class="fas fa-check-circle"></i>Library with age-appropriate books.</li>
                             <li><i class="fas fa-check-circle"></i>Outdoor play area.</li>
-                            <li><i class="fas fa-check-circle"></i>Drinking water facility.</li>
-                            <li><i class="fas fa-check-circle"></i>Separate sanitation facilities for boys and girls.</li>
                             <li><i class="fas fa-check-circle"></i>Smart classroom support.</li>
                         </ul>
                     </div>
@@ -712,47 +511,7 @@
                         <ul class="list-check">
                             <li><i class="fas fa-check-circle"></i>Regular medical check-ups.</li>
                             <li><i class="fas fa-check-circle"></i>Child-safe campus environment.</li>
-                            <li><i class="fas fa-check-circle"></i>Supervised play and activities.</li>
-                        </ul>
-                        <div class="bg-blur mt-4 p-3 rounded-4">
-                            <p class="text-muted mb-0">We maintain a safe learning environment with a focus on cleanliness, health, and student wellbeing.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" style="background-color: var(--light-bg);">
-    <section id="student-life" class="highlight-section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up"><h2>Frequently Asked Questions</h2></div>
-            <div class="row justify-content-center">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Student Life</h2>
-                <p>Co-curricular activities and values that support holistic development.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Co-Curricular Activities</h5>
-                        <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>Art and craft.</li>
-                            <li><i class="fas fa-check-circle"></i>Music and cultural activities.</li>
-                            <li><i class="fas fa-check-circle"></i>Physical education and games.</li>
-                            <li><i class="fas fa-check-circle"></i>Environmental awareness programs.</li>
-                            <li><i class="fas fa-check-circle"></i>Festival and celebration activities.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Student Development Focus</h5>
-                        <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>Confidence building.</li>
-                            <li><i class="fas fa-check-circle"></i>Communication skills.</li>
-                            <li><i class="fas fa-check-circle"></i>Teamwork and cooperation.</li>
-                            <li><i class="fas fa-check-circle"></i>Discipline and values.</li>
+                            <li><i class="fas fa-check-circle"></i>Clean drinking water & sanitation.</li>
                         </ul>
                     </div>
                 </div>
@@ -760,213 +519,41 @@
         </div>
     </section>
 
-    <section id="faculty">
+    <section id="leadership">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <h2>Faculty</h2>
-                <p>Qualified, trained, and dedicated educators who mentor students with care.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4" data-aos="fade-up">
-                    <div class="content-card text-center">
-                        <div class="icon-circle mb-3"><i class="fas fa-chalkboard-teacher"></i></div>
-                        <h5 class="fw-bold mb-2">Professional Educators</h5>
-                        <p class="text-muted mb-0">Professionally qualified teachers with experience in early childhood and primary education.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="content-card text-center">
-                        <div class="icon-circle mb-3"><i class="fas fa-book-open"></i></div>
-                        <h5 class="fw-bold mb-2">Continuous Development</h5>
-                        <p class="text-muted mb-0">Regular training programs to keep teaching practices aligned with CBSE standards.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="content-card text-center">
-                        <div class="icon-circle mb-3"><i class="fas fa-heart"></i></div>
-                        <h5 class="fw-bold mb-2">Student-Friendly Approach</h5>
-                        <p class="text-muted mb-0">Mentoring-focused classrooms that build confidence and strong values.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="leadership" class="highlight-section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Leadership Messages</h2>
-                <p>Child-focused guidance from our school leadership.</p>
+                <h2>Leadership</h2>
             </div>
             <div class="row g-4">
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="content-card">
                         <h5 class="fw-bold mb-3">Principal’s Message</h5>
-                        <p>At Evergreen International School, we understand that the early years of a child’s education are the most important. These years shape not only academic ability, but also confidence, curiosity, and character.</p>
-                        <p>Our school follows the CBSE-aligned curriculum with a strong focus on foundational learning, conceptual understanding, and age-appropriate teaching practices. We believe that children learn best in an environment that is safe, caring, and encouraging. Therefore, we give equal importance to academics, physical activity, values, and emotional well-being.</p>
-                        <p>Our teachers are committed to guiding each child with patience and dedication, while working closely with parents to support every learner’s individual growth. We aim to create a joyful learning experience that prepares children for future academic stages with confidence.</p>
-                        <p class="mb-0">At Evergreen International School, we strive to nurture happy learners, responsible individuals, and lifelong students of learning.</p>
-                        <p class="mt-3 mb-0"><strong>Principal</strong><br>Evergreen International School</p>
+                        <p class="text-muted">"At Evergreen International School, we foster foundational learning, values, and emotional well-being. We aim to nurture happy learners and responsible individuals."</p>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="content-card">
                         <h5 class="fw-bold mb-3">Correspondent’s Message</h5>
-                        <p>Evergreen International School was established with a simple and sincere purpose: to provide young children with a strong, caring, and meaningful start to their educational journey.</p>
-                        <p>We believe that education at the primary level should focus on understanding, values, and overall development rather than pressure or competition. Our school follows the CBSE framework and adopts teaching practices that respect each child’s pace of learning, curiosity, and individuality.</p>
-                        <p>Along with academic learning, we give importance to moral values, discipline, physical well-being, and social skills. A supportive environment, dedicated teachers, and active parent involvement are the pillars of our institution.</p>
-                        <p>Our commitment is to continuously improve our educational practices and facilities, ensuring that every child at Evergreen International School feels safe, valued, and encouraged to grow.</p>
-                        <p class="mt-3 mb-0"><strong>Correspondent: Mr. Raja A P</strong><br>Evergreen International School</p>
+                        <p class="text-muted">"We established this school to provide a strong, caring start to education. We focus on values, discipline, and active parent involvement to help every child grow."</p>
+                        <p class="mt-2 mb-0 fw-bold">- Mr. Raja A P, Correspondent</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="parent-corner" class="highlight-section">
+    <section id="disclosure" class="highlight-section">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <h2>Parent Corner</h2>
-                <p>We believe in strong collaboration between parents and teachers.</p>
+                <h2>Mandatory Public Disclosure</h2>
+                <p>Transparency as per CBSE norms.</p>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Parent-School Partnership</h5>
-                        <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>Regular parent-teacher meetings.</li>
-                            <li><i class="fas fa-check-circle"></i>Open communication channels.</li>
-                            <li><i class="fas fa-check-circle"></i>Guidance on child development and learning.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">School Communication</h5>
-                        <p class="text-muted mb-0">Updates, circulars, and learning guidance are shared with parents to ensure consistent support at home and school.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="why-choose">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Why Choose Evergreen International School</h2>
-                <p>A caring, structured, and child-centered environment for early education.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">A Strong Foundation for Lifelong Learning</h5>
-                        <p>Early education lays the foundation for a child’s academic and personal development. We focus on building strong foundational skills in literacy, numeracy, and communication, ensuring children are prepared for future academic stages.</p>
-                        <p class="mb-0">Our curriculum follows the CBSE-aligned framework and is delivered in a structured yet flexible manner, respecting each child’s pace of learning.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Child-Centric and Concept-Based Teaching</h5>
-                        <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>Activity-based learning.</li>
-                            <li><i class="fas fa-check-circle"></i>Conceptual understanding.</li>
-                            <li><i class="fas fa-check-circle"></i>Age-appropriate teaching methods.</li>
-                            <li><i class="fas fa-check-circle"></i>Learning through observation, interaction, and practice.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-4 mt-2">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Safe, Caring, and Supportive Environment</h5>
-                        <p>A child’s emotional well-being is as important as academic growth. Evergreen International School provides a safe, disciplined, and nurturing environment where children feel comfortable, respected, and encouraged.</p>
-                        <p class="mb-0">Our campus is designed to be child-friendly, with supervised classrooms and play areas that support both learning and physical development.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Qualified and Dedicated Teachers</h5>
-                        <p>Our teachers are trained, experienced, and committed to early childhood and primary education. They guide students with patience and care, ensuring individual attention and positive reinforcement.</p>
-                        <p class="mb-0">Regular interaction between teachers and parents helps us understand each child’s needs and support their overall development effectively.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-4 mt-2">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Balanced Focus on Academics and Holistic Development</h5>
-                        <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>Physical activity and movement.</li>
-                            <li><i class="fas fa-check-circle"></i>Creative expression through art and cultural activities.</li>
-                            <li><i class="fas fa-check-circle"></i>Social skills and teamwork.</li>
-                            <li><i class="fas fa-check-circle"></i>Moral values and discipline.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Strong Parent–School Partnership</h5>
-                        <p>We believe that parents are partners in a child’s education. The school maintains open communication with parents through regular interactions, discussions, and feedback, ensuring transparency and mutual understanding.</p>
-                        <h6 class="fw-bold mt-4">Our Promise to Parents</h6>
-                        <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>A safe and caring learning environment.</li>
-                            <li><i class="fas fa-check-circle"></i>Strong academic foundations.</li>
-                            <li><i class="fas fa-check-circle"></i>Individual attention to each child.</li>
-                            <li><i class="fas fa-check-circle"></i>Respect for every child’s uniqueness.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-4 mt-2">
-                <div class="col-12" data-aos="fade-up">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">A School That Grows With Your Child</h5>
-                        <p class="mb-0">Evergreen International School is committed to continuous improvement in teaching practices, infrastructure, and student support. Our goal is to provide a stable and encouraging learning journey that helps every child grow academically, socially, and emotionally.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="disclosure">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Mandatory Public Disclosure (CBSE)</h2>
-                <p>Information provided as per CBSE norms for transparency and inspection readiness.</p>
-            </div>
-            <div class="row g-4">
+            <div class="row justify-content-center">
                 <div class="col-lg-8" data-aos="fade-up">
-                    <div class="accordion shadow-sm rounded-4 overflow-hidden border-0" id="schoolFAQ">
-                        <div class="accordion-item border-0">
-                            <h2 class="accordion-header"><button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#c1">What syllabus do you follow?</button></h2>
-                            <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#schoolFAQ">
-                                <div class="accordion-body">We follow the **CBSE syllabus** integrated with modern ICT learning tools.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#c2">Where is the school situated?</button></h2>
-                            <div id="c2" class="accordion-collapse collapse" data-bs-parent="#schoolFAQ">
-                                <div class="accordion-body">Near Water Tank, Vediyarasampalayam Road, Therkkupalayam, Pallipalayam, Namakkal(DT), Erode - 638008, Tamil Nadu.</div>
-                            </div>
-                        </div>
-                    <div class="content-card">
-                        <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>School name and address.</li>
-                            <li><i class="fas fa-check-circle"></i>Affiliation status.</li>
-                            <li><i class="fas fa-check-circle"></i>Academic session information.</li>
-                            <li><i class="fas fa-check-circle"></i>Fee structure.</li>
-                            <li><i class="fas fa-check-circle"></i>Staff details.</li>
-                            <li><i class="fas fa-check-circle"></i>Infrastructure details.</li>
-                        </ul>
-                        <p class="text-muted mt-3 mb-0">Content can be updated or expanded in this section as per CBSE disclosure requirements.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="content-card text-center">
                         <div class="icon-circle mb-3"><i class="fas fa-file-alt"></i></div>
-                        <h5 class="fw-bold">Transparency</h5>
-                        <p class="text-muted mb-0">We maintain clear, accessible records for parents, staff, and inspection teams.</p>
+                        <h5 class="fw-bold">Public Records</h5>
+                        <p class="text-muted">We maintain clear records regarding school address, affiliation status, fees, staff details, and infrastructure as required by state and central norms.</p>
                     </div>
                 </div>
             </div>
@@ -974,36 +561,38 @@
     </section>
 
     <section id="contact">
-    <section id="contact" class="highlight-section">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
                 <h2>Contact Us</h2>
-                <p>Evergreen International School, Therkkupalayam, Pallipalayam, Erode District, Tamil Nadu.</p>
             </div>
             <div class="row g-5">
                 <div class="col-lg-5" data-aos="fade-right">
-                    <div class="content-card h-100 border">
-                    <div class="content-card h-100 contact-card">
-                        <h4 class="fw-bold mb-4">Contact Details</h4>
+                    <div class="content-card h-100">
+                        <h4 class="fw-bold mb-4">Get in Touch</h4>
                         <div class="d-flex mb-3"><i class="fas fa-map-marker-alt text-success me-3 mt-1"></i><p>Near Water Tank, Vediyarasampalayam Road, Therkkupalayam, Pallipalayam, Namakkal(DT), Erode - 638008.</p></div>
                         <div class="d-flex mb-3"><i class="fas fa-phone-alt text-success me-2 mt-1"></i><p>+91 98427 12666</p></div>
                         <div class="d-flex mb-4"><i class="fas fa-envelope text-success me-3 mt-1"></i><p>support@evergreen-school.in</p></div>
-                        <div class="d-flex mb-3"><i class="fas fa-map-marker-alt text-success me-3 mt-1"></i><p>Therkkupalayam, Pallipalayam, Erode District, Tamil Nadu.</p></div>
-                        <div class="d-flex mb-3"><i class="fas fa-phone-alt text-success me-2 mt-1"></i><p>Phone: To be updated</p></div>
-                        <div class="d-flex mb-4"><i class="fas fa-envelope text-success me-3 mt-1"></i><p>Email: To be updated</p></div>
+                        
                         <div class="rounded-4 overflow-hidden border shadow-sm" style="height: 250px;">
-                            <iframe src="https://maps.google.com/maps/contrib/115001270106857640331" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                            <iframe src="https://www.google.com/maps?q=Therkkupalayam,+Pallipalayam,+Erode,+Tamil+Nadu&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe 
+                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.726249629854!2d77.76632427452445!3d11.35471624825964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba968ce12573215%3A0x7d87922d3e137b0!2sEvergreen%20International%20School!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                              width="100%" 
+                              height="100%" 
+                              style="border:0;" 
+                              allowfullscreen="" 
+                              loading="lazy" 
+                              referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7" data-aos="fade-left">
-                    <form action="https://formspree.io/f/meekpdpr" method="POST" class="content-card h-100 border">
-                    <form action="https://formspree.io/f/meekpdpr" method="POST" class="content-card h-100 contact-card">
+                    <form action="https://formspree.io/f/meekpdpr" method="POST" class="content-card h-100">
                         <div class="row g-3">
-                            <div class="col-md-6"><input type="text" name="name" class="form-control p-3 bg-light border-0" placeholder="Name" required></div>
-                            <div class="col-md-6"><input type="email" name="email" class="form-control p-3 bg-light border-0" placeholder="Email" required></div>
-                            <div class="col-12"><textarea name="message" class="form-control p-3 bg-light border-0" rows="6" placeholder="Your Message" required></textarea></div>
+                            <div class="col-md-6"><input type="text" name="name" class="form-control p-3 bg-light border-0" placeholder="Parent's Name" required></div>
+                            <div class="col-md-6"><input type="email" name="email" class="form-control p-3 bg-light border-0" placeholder="Email Address" required></div>
+                            <div class="col-12"><input type="text" name="phone" class="form-control p-3 bg-light border-0" placeholder="Phone Number" required></div>
+                            <div class="col-12"><textarea name="message" class="form-control p-3 bg-light border-0" rows="5" placeholder="Message / Admission Enquiry" required></textarea></div>
                             <div class="col-12"><button type="submit" class="btn btn-custom w-100 py-3 mt-2">Send Message</button></div>
                         </div>
                     </form>
@@ -1015,13 +604,31 @@
     <footer class="text-center">
         <div class="container">
             <div class="social-icons mb-4">
-                <a href="#" class="me-4"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="me-4"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <p class="small text-muted">© 2026 Evergreen International School. All Rights Reserved.</p>
+            <p class="small text-muted mb-0">© 2026 Evergreen International School. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({ 
+            once: true, 
+            duration: 1000, 
+            offset: 120 
+        });
+        
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
