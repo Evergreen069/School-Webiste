@@ -6,53 +6,113 @@
     <title>Photo Gallery | Evergreen International School</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
+        /* --- BRAND BOOK VARIABLES --- */
         :root {
-            --primary-green: #1f5f4a;
-            --soft-cream: #f9faf7;
-            --accent-orange: #f97316;
+            --brand-green: #2F6B3A;   /* Evergreen Green */
+            --leaf-green: #7FB77E;    /* Secondary Accent */
+            --accent-yellow: #F4C542; /* Highlight Accent */
+            --bg: #FAFBF9;            /* Soft Off-White */
+            --card: #FFFFFF;
+            --text: #1B1B1B;          /* Charcoal Black */
+            
+            /* UI Specs */
+            --radius-md: 10px;
+            --radius-pill: 20px;
+            --shadow-s: 0 4px 10px rgba(27, 27, 27, 0.06);
         }
-        body { font-family: 'Inter', sans-serif; background: var(--soft-cream); }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.5;
+        }
+
+        /* --- Navigation (Identical to Home) --- */
+        .navbar {
+            background-color: var(--card);
+            box-shadow: var(--shadow-s);
+            padding: 1rem 0;
+        }
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--brand-green) !important;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+        }
         
-        .navbar { background: white; box-shadow: 0 5px 20px rgba(0,0,0,0.05); padding: 1rem 0; }
-        .navbar-brand { font-weight: 700; color: var(--primary-green) !important; text-transform: uppercase; font-size: 1.1rem; }
-        .btn-back { background: var(--accent-orange); color: white; padding: 8px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; }
-        .btn-back:hover { background: #e06900; color: white; }
+        /* Back Button Style */
+        .btn-back {
+            background: var(--brand-green);
+            color: white;
+            padding: 8px 24px;
+            border-radius: var(--radius-pill);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+        }
+        .btn-back:hover {
+            background-color: #24522c;
+            color: white;
+            transform: translateY(-2px);
+        }
         
+        /* --- Gallery Header --- */
         .gallery-header {
-            background: linear-gradient(110deg, rgba(31,95,74,0.9), rgba(61,154,117,0.8));
+            /* Brand Green Gradient */
+            background: linear-gradient(110deg, rgba(47, 107, 58, 0.95), rgba(127, 183, 126, 0.9));
             color: white;
             padding: 80px 0;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+        }
+        .gallery-header h1 {
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
         }
 
+        /* --- Album Titles --- */
         .album-title {
-            color: var(--primary-green);
+            color: var(--brand-green);
+            font-family: 'Poppins', sans-serif;
             font-weight: 700;
-            border-bottom: 3px solid var(--accent-orange);
+            border-bottom: 4px solid var(--accent-yellow);
             display: inline-block;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
             margin-bottom: 30px;
             margin-top: 40px;
-            font-family: 'Merriweather', serif;
         }
         
+        /* --- Photo Cards --- */
         .gallery-card {
-            border-radius: 12px;
+            border-radius: var(--radius-md);
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-s);
             transition: 0.3s;
-            background: white;
+            background: var(--card);
             cursor: pointer;
             height: 220px; 
+            border: 1px solid rgba(0,0,0,0.03);
         }
-        .gallery-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(27, 27, 27, 0.1);
+        }
         
         .gallery-img {
             width: 100%;
@@ -60,16 +120,19 @@
             object-fit: cover;
             transition: 0.5s;
         }
-        .gallery-card:hover .gallery-img { transform: scale(1.08); }
+        .gallery-card:hover .gallery-img { transform: scale(1.05); }
 
-        footer { padding: 60px 0; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 50px; }
+        footer { padding: 60px 0; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 50px; background: var(--card); }
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Evergreen International School</a>
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="logo.png" alt="School Logo" height="50" class="me-2 rounded">
+                <span>Evergreen International School</span>
+            </a>
             <div class="ms-auto">
                 <a href="index.html" class="btn-back"><i class="fas fa-arrow-left me-2"></i>Back to Home</a>
             </div>
@@ -78,8 +141,8 @@
 
     <header class="gallery-header">
         <div class="container" data-aos="fade-up">
-            <h1 class="display-4 fw-bold">School Gallery</h1>
-            <p class="lead opacity-90">Capturing the vibrant moments of our student life.</p>
+            <h1 class="display-4">School Gallery</h1>
+            <p class="lead opacity-90" style="font-family: 'Nunito', sans-serif;">Capturing the vibrant moments of our student life.</p>
         </div>
     </header>
 
@@ -91,8 +154,6 @@
         <div class="row g-4 mb-5" id="vijaya-gallery">
             </div>
 
-        <div class="my-5 border-top opacity-25"></div>
-
         <div data-aos="fade-right">
             <h3 class="album-title">Annual Day 2025</h3>
         </div>
@@ -101,7 +162,7 @@
 
     </div>
 
-    <footer class="text-center bg-white">
+    <footer class="text-center">
         <p class="small text-muted mb-0">© 2026 Evergreen International School. All Rights Reserved.</p>
     </footer>
 
@@ -112,7 +173,7 @@
         // Initialize AOS
         AOS.init({ duration: 800, once: true });
 
-        // Gallery Config
+        // Gallery Config - Keeps your photos working exactly as before
         const galleryData = [
             {
                 id: 'vijaya-gallery',
