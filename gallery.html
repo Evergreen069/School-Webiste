@@ -14,16 +14,13 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        /* --- BRAND BOOK VARIABLES --- */
         :root {
-            --brand-green: #2F6B3A;   /* Evergreen Green */
-            --leaf-green: #7FB77E;    /* Secondary Accent */
-            --accent-yellow: #F4C542; /* Highlight Accent */
-            --bg: #FAFBF9;            /* Soft Off-White */
+            --brand-green: #2F6B3A;
+            --leaf-green: #7FB77E;
+            --accent-yellow: #F4C542;
+            --bg: #FAFBF9;
             --card: #FFFFFF;
-            --text: #1B1B1B;          /* Charcoal Black */
-            
-            /* UI Specs */
+            --text: #1B1B1B;
             --radius-md: 10px;
             --radius-pill: 20px;
             --shadow-s: 0 4px 10px rgba(27, 27, 27, 0.06);
@@ -34,113 +31,116 @@
             color: var(--text);
             background-color: var(--bg);
             line-height: 1.5;
+            padding-top: 105px; /* FIXED HEADER SPACER */
         }
 
-        /* --- Navigation (Identical to Home) --- */
-        .navbar {
-            background-color: var(--card);
+        /* --- FIXED HEADER --- */
+        .header-fixed-wrapper {
+            background: white;
             box-shadow: var(--shadow-s);
-            padding: 1rem 0;
         }
+
+        .navbar { padding: 0.8rem 0; background: var(--card); }
         .navbar-brand {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            color: var(--brand-green) !important;
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
-            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--brand-green) !important;
+            text-transform: uppercase; font-size: 1.1rem;
         }
         
-        /* Back Button Style */
+        /* Back Button */
         .btn-back {
-            background: var(--brand-green);
-            color: white;
-            padding: 8px 24px;
-            border-radius: var(--radius-pill);
-            text-decoration: none;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.3s;
-            display: inline-flex;
-            align-items: center;
+            background: var(--brand-green); color: white; padding: 8px 24px;
+            border-radius: var(--radius-pill); text-decoration: none;
+            font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.9rem;
+            transition: 0.3s; display: inline-flex; align-items: center;
         }
-        .btn-back:hover {
-            background-color: #24522c;
-            color: white;
-            transform: translateY(-2px);
-        }
+        .btn-back:hover { background-color: #24522c; color: white; transform: translateY(-2px); }
         
-        /* --- Gallery Header --- */
+        /* --- SLIDESHOW HEADER --- */
         .gallery-header {
-            /* Brand Green Gradient */
-            background: linear-gradient(110deg, rgba(47, 107, 58, 0.95), rgba(127, 183, 126, 0.9));
-            color: white;
-            padding: 80px 0;
+            position: relative;
+            padding: 100px 0;
             text-align: center;
+            color: white;
+            overflow: hidden;
+            background: #1f5f4a; /* Fallback */
             margin-bottom: 50px;
         }
-        .gallery-header h1 {
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 800;
+        .gallery-header h1 { color: white; font-family: 'Poppins', sans-serif; font-weight: 800; }
+
+        /* Slideshow */
+        .hero-slideshow {
+            position: absolute; width: 100%; height: 100%; top: 0; left: 0;
+            z-index: 0; list-style: none; margin: 0; padding: 0;
+        }
+        .hero-slideshow li {
+            width: 100%; height: 100%; position: absolute; top: 0; left: 0;
+            background-size: cover; background-position: center; background-repeat: no-repeat;
+            opacity: 0; z-index: 0; animation: imageAnimation 18s linear infinite;
+        }
+        /* Using same images as home */
+        .hero-slideshow li:nth-child(1) { background-image: url('gallery/1.jpg'); animation-delay: 0s; }
+        .hero-slideshow li:nth-child(2) { background-image: url('gallery/2.jpg'); animation-delay: 6s; }
+        .hero-slideshow li:nth-child(3) { background-image: url('gallery/3.jpg'); animation-delay: 12s; }
+
+        @keyframes imageAnimation { 
+            0% { opacity: 0; animation-timing-function: ease-in; }
+            10% { opacity: 1; animation-timing-function: ease-out; }
+            33% { opacity: 1; } 43% { opacity: 0; } 100% { opacity: 0; }
         }
 
-        /* --- Album Titles --- */
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(110deg, rgba(47, 107, 58, 0.95), rgba(127, 183, 126, 0.9));
+            z-index: 1;
+        }
+        .gallery-header-content { position: relative; z-index: 2; }
+
+        /* --- Content --- */
         .album-title {
-            color: var(--brand-green);
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            border-bottom: 4px solid var(--accent-yellow);
-            display: inline-block;
-            padding-bottom: 8px;
-            margin-bottom: 30px;
-            margin-top: 40px;
+            color: var(--brand-green); font-family: 'Poppins', sans-serif; font-weight: 700;
+            border-bottom: 4px solid var(--accent-yellow); display: inline-block;
+            padding-bottom: 8px; margin-bottom: 30px; margin-top: 40px;
         }
         
-        /* --- Photo Cards --- */
         .gallery-card {
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-s);
-            transition: 0.3s;
-            background: var(--card);
-            cursor: pointer;
-            height: 220px; 
+            border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-s);
+            transition: 0.3s; background: var(--card); cursor: pointer; height: 220px; 
             border: 1px solid rgba(0,0,0,0.03);
         }
-        .gallery-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(27, 27, 27, 0.1);
-        }
-        
-        .gallery-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.5s;
-        }
+        .gallery-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(27, 27, 27, 0.1); }
+        .gallery-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .gallery-card:hover .gallery-img { transform: scale(1.05); }
 
         footer { padding: 60px 0; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 50px; background: var(--card); }
+        
+        @media (max-width: 991px) { body { padding-top: 100px; } }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="logo.png" alt="School Logo" height="50" class="me-2 rounded">
-                <span>Evergreen International School</span>
-            </a>
-            <div class="ms-auto">
-                <a href="index.html" class="btn-back"><i class="fas fa-arrow-left me-2"></i>Back to Home</a>
+    <header class="fixed-top header-fixed-wrapper">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="logo.png" alt="School Logo" height="50" class="me-2 rounded">
+                    <span>Evergreen International School</span>
+                </a>
+                <div class="ms-auto">
+                    <a href="index.html" class="btn-back"><i class="fas fa-arrow-left me-2"></i>Back to Home</a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <header class="gallery-header">
-        <div class="container" data-aos="fade-up">
+        <ul class="hero-slideshow">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="hero-overlay"></div>
+        
+        <div class="container gallery-header-content" data-aos="fade-up">
             <h1 class="display-4">School Gallery</h1>
             <p class="lead opacity-90" style="font-family: 'Nunito', sans-serif;">Capturing the vibrant moments of our student life.</p>
         </div>
@@ -173,7 +173,7 @@
         // Initialize AOS
         AOS.init({ duration: 800, once: true });
 
-        // Gallery Config - Keeps your photos working exactly as before
+        // Gallery Config
         const galleryData = [
             {
                 id: 'vijaya-gallery',
