@@ -25,7 +25,7 @@
             --text: #1B1B1B;
             --radius-md: 10px;
             --radius-pill: 20px;
-            --shadow-s: 0 4px 15px rgba(0, 0, 0, 0.05); /* Soft, clean shadow */
+            --shadow-s: 0 4px 15px rgba(0, 0, 0, 0.05);
             --header-height: 110px;
         }
 
@@ -52,7 +52,7 @@
         /* --- PROFESSIONAL HEADER --- */
         .header-fixed-wrapper {
             background: white;
-            box-shadow: var(--shadow-s); /* Restored the professional soft shadow */
+            box-shadow: var(--shadow-s);
             height: var(--header-height);
             transition: all 0.3s ease;
         }
@@ -70,7 +70,7 @@
 
         .navbar {
             padding: 0;
-            height: 74px; /* Balanced height */
+            height: 74px;
             background: white;
             display: flex;
             align-items: center;
@@ -80,12 +80,12 @@
             font-weight: 700;
             color: var(--brand-green) !important;
             text-transform: uppercase;
-            font-size: 1.25rem; /* Larger, bolder text */
+            font-size: 1.25rem;
             letter-spacing: -0.5px;
         }
         .nav-link {
             font-family: 'Nunito', sans-serif;
-            font-weight: 700; /* Darker, clearly visible font weight */
+            font-weight: 700;
             margin: 0 12px;
             color: var(--text) !important;
             transition: 0.3s;
@@ -94,7 +94,6 @@
         }
         .nav-link:hover, .nav-link.active { color: var(--brand-green) !important; }
         
-        /* Active Indicator */
         .nav-link.active::after {
             content: ''; position: absolute; width: 6px; height: 6px;
             background-color: var(--accent-yellow); border-radius: 50%;
@@ -105,8 +104,8 @@
         .hero {
             position: relative;
             width: 100%;
-            height: 85vh; /* Optimal height */
-            min-height: 600px;
+            height: 85vh;
+            min-height: 550px;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -132,21 +131,23 @@
             33% { opacity: 1; } 43% { opacity: 0; } 100% { opacity: 0; }
         }
 
-        /* LIGHTER OVERLAY: 60% Opacity so photos are clearly visible */
+        /* LIGHTER OVERLAY FOR BETTER PHOTO QUALITY */
         .hero-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(110deg, rgba(47, 107, 58, 0.7), rgba(31, 71, 38, 0.6));
+            /* Reduced opacity to 0.5 - 0.6 range */
+            background: linear-gradient(110deg, rgba(31, 71, 38, 0.6), rgba(47, 107, 58, 0.5));
             z-index: 1;
         }
         .hero-content { position: relative; z-index: 2; width: 100%; padding: 0 15px; }
         
         .hero h1 { 
-            color: #ffffff; font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; 
-            text-shadow: 0 4px 20px rgba(0,0,0,0.3); /* Stronger shadow for readability */
+            color: #ffffff; font-size: 3.8rem; font-weight: 800; margin-bottom: 25px; 
+            text-shadow: 0 4px 30px rgba(0,0,0,0.4); /* Stronger shadow for readability */
         }
         .hero-subtitle { 
-            font-size: 1.3rem; color: rgba(255,255,255,1); max-width: 750px; font-weight: 600; 
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            font-size: 1.35rem; color: rgba(255,255,255,1); max-width: 800px; font-weight: 600; 
+            text-shadow: 0 2px 15px rgba(0,0,0,0.4);
+            margin-bottom: 40px !important;
         }
 
         /* --- UI COMPONENTS --- */
@@ -171,34 +172,11 @@
         }
         .content-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
 
-        /* HERO STATS - CLEAN WHITE STYLE */
-        /* Changed to solid white cards so they don't look messy */
-        .hero-card {
-            background: #FFFFFF; 
-            border-radius: var(--radius-md); 
-            padding: 20px 24px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            color: var(--brand-green); /* Green Text on White */
-            text-align: left;
-        }
-        .hero-card p {
-            color: var(--leaf-green);
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 5px;
-        }
-        .hero-card h4 {
-            color: var(--brand-green);
-            margin-bottom: 0;
-            font-weight: 700;
-        }
-
         .pill {
-            display: inline-flex; align-items: center; gap: 8px; background: rgba(126, 200, 227, 0.2);
-            color: var(--brand-green); padding: 6px 16px; border-radius: var(--radius-pill);
-            font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.85rem;
+            display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.2);
+            color: #fff; padding: 6px 16px; border-radius: var(--radius-pill);
+            font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.9rem;
+            backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3);
         }
 
         .list-check { list-style: none; padding-left: 0; margin-bottom: 0; }
@@ -250,7 +228,7 @@
         .social-icons a {
             color: var(--brand-green); font-size: 1.2rem; transition: 0.3s; width: 44px; height: 44px; border-radius: 50%;
             background: white; 
-            display: inline-flex; align-items: center; justify-content: center;
+            display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
         }
         .social-icons a:hover { background: var(--accent-yellow); color: var(--text); }
 
@@ -317,9 +295,9 @@
 
         <div class="container hero-content text-center text-lg-start" data-aos="fade-up" data-aos-duration="1200">
             <div class="d-inline-flex gap-2 mb-4 flex-wrap justify-content-center justify-content-lg-start">
-                <span class="badge bg-white text-success rounded-pill px-3 py-2 fw-bold"><i class="fas fa-award me-2"></i>CBSE Aligned</span>
-                <span class="badge bg-white text-success rounded-pill px-3 py-2 fw-bold"><i class="fas fa-language me-2"></i>English Medium</span>
-                <span class="badge bg-white text-success rounded-pill px-3 py-2 fw-bold"><i class="fas fa-child me-2"></i>Pre-KG to Grade 5</span>
+                <span class="pill"><i class="fas fa-award me-2"></i>CBSE Aligned</span>
+                <span class="pill"><i class="fas fa-language me-2"></i>English Medium</span>
+                <span class="pill"><i class="fas fa-child me-2"></i>Pre-KG to Grade 5</span>
             </div>
             
             <h1>Welcome to Evergreen International School</h1>
@@ -330,27 +308,7 @@
                 <a href="#contact" class="btn-hero-outline">Schedule a Visit</a>
             </div>
             
-            <div class="row mt-5 g-3">
-                <div class="col-md-4">
-                    <div class="hero-card">
-                        <p>ESTABLISHED</p>
-                        <h4>2015</h4>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="hero-card">
-                        <p>CLASSES</p>
-                        <h4>Pre-KG to Grade 5</h4>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="hero-card">
-                        <p>TYPE</p>
-                        <h4>Co-ed Day School</h4>
-                    </div>
-                </div>
             </div>
-        </div>
     </section>
 
     <section id="about" class="highlight-section">
@@ -361,8 +319,8 @@
                 </div>
                 <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left">
                     <div class="ps-lg-5">
-                        <span class="pill mb-3"><i class="fas fa-school"></i>School Overview</span>
-                        <h2 class="fw-bold mb-4">Strong foundations for lifelong learning.</h2>
+                        <span class="pill" style="color: var(--brand-green); background: rgba(47,107,58,0.1); border:none;"><i class="fas fa-school"></i>School Overview</span>
+                        <h2 class="fw-bold mb-4 mt-3">Strong foundations for lifelong learning.</h2>
                         <p class="lead text-muted mb-4">Evergreen International School provides quality primary education rooted in strong values and modern teaching practices, aligned with the CBSE curriculum framework.</p>
                         
                         <div class="content-card mb-4">
