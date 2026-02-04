@@ -7,7 +7,7 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -24,7 +24,7 @@
             --radius-md: 10px;
             --radius-pill: 20px;
             --shadow-s: 0 4px 10px rgba(27, 27, 27, 0.06);
-            --header-height: 120px;
+            --header-height: 110px;
         }
 
         body {
@@ -43,55 +43,54 @@
         }
 
         section {
-            padding: 80px 0;
+            padding: 90px 0;
             scroll-margin-top: var(--header-height);
         }
 
         /* --- FIXED HEADER --- */
         .header-fixed-wrapper {
             background: white;
-            box-shadow: var(--shadow-s);
-            height: var(--header-height);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
         }
 
         .info-banner {
             background: var(--brand-green);
             color: #fff;
-            padding: 8px 0;
+            padding: 10px 0;
             font-size: 0.9rem;
-            height: 40px;
             display: flex;
             align-items: center;
         }
         .info-banner a { color: var(--accent-yellow); text-decoration: none; font-weight: 700; }
 
         .navbar {
-            padding: 0;
-            height: 80px;
+            padding: 1rem 0;
             background: var(--card);
-            display: flex;
-            align-items: center;
         }
         .navbar-brand {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
             color: var(--brand-green) !important;
             text-transform: uppercase;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
         }
         .nav-link {
             font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            margin: 0 8px;
+            font-weight: 600;
+            margin: 0 10px;
             color: var(--text) !important;
             transition: 0.3s;
+            font-size: 1rem;
             position: relative;
         }
         .nav-link:hover, .nav-link.active { color: var(--brand-green) !important; }
+        
         .nav-link.active::after {
             content: ''; position: absolute; width: 6px; height: 6px;
             background-color: var(--accent-yellow); border-radius: 50%;
-            bottom: 0; left: 50%; transform: translateX(-50%);
+            bottom: -5px; left: 50%; transform: translateX(-50%);
         }
 
         /* --- HERO SLIDESHOW --- */
@@ -104,8 +103,7 @@
             display: flex;
             align-items: center;
             color: white;
-            margin-top: 0; 
-            padding: 0;
+            margin-top: 0; padding: 0;
         }
         .hero-slideshow {
             position: absolute; width: 100%; height: 100%; top: 0; left: 0;
@@ -128,24 +126,18 @@
 
         .hero-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(110deg, rgba(31, 71, 38, 0.8), rgba(47, 107, 58, 0.6));
+            background: linear-gradient(110deg, rgba(31, 71, 38, 0.75), rgba(47, 107, 58, 0.6));
             z-index: 1;
         }
         .hero-content { position: relative; z-index: 2; width: 100%; padding: 0 15px; }
         
         .hero h1 { 
-            color: #ffffff; 
-            font-size: 3.5rem; 
-            font-weight: 800; 
-            margin-bottom: 20px; 
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3); 
+            color: #ffffff; font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; 
+            text-shadow: 0 2px 15px rgba(0,0,0,0.2); 
         }
         .hero-subtitle { 
-            font-size: 1.25rem; 
-            color: rgba(255,255,255,0.95); 
-            max-width: 700px; 
-            font-weight: 600; 
-            text-shadow: 0 1px 5px rgba(0,0,0,0.3); 
+            font-size: 1.25rem; color: rgba(255,255,255,0.95); max-width: 700px; font-weight: 600; 
+            text-shadow: 0 1px 5px rgba(0,0,0,0.2); 
         }
 
         /* --- UI COMPONENTS --- */
@@ -166,22 +158,17 @@
 
         .content-card {
             border: none; border-radius: var(--radius-md); background: var(--card);
-            box-shadow: var(--shadow-s); padding: 32px; height: 100%; transition: 0.3s;
+            box-shadow: var(--shadow-s); padding: 35px; height: 100%; transition: 0.3s;
         }
-        
-        /* HERO STATS CARD FIX - Forced White Text */
+        .content-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+
+        /* HERO STATS */
         .hero-card {
-            background: rgba(255,255,255,0.2); 
-            border: 1px solid rgba(255,255,255,0.4);
-            border-radius: var(--radius-md); 
-            padding: 24px; 
-            backdrop-filter: blur(8px); 
-            color: white !important; /* Forces text to be white */
+            background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4);
+            border-radius: var(--radius-md); padding: 24px; backdrop-filter: blur(8px); 
+            color: white !important;
         }
-        .hero-card p, .hero-card h4 {
-            color: white !important; /* Extra safety to ensure white text */
-            margin-bottom: 0;
-        }
+        .hero-card h4, .hero-card p { color: white !important; margin-bottom: 0; }
 
         .pill {
             display: inline-flex; align-items: center; gap: 8px; background: rgba(126, 200, 227, 0.2);
@@ -193,15 +180,18 @@
         .list-check li { margin-bottom: 12px; display: flex; gap: 12px; color: var(--text); align-items: start; }
         .list-check li i { color: var(--leaf-green); margin-top: 4px; font-size: 1.1rem; }
 
-        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { font-weight: 700; position: relative; padding-bottom: 15px; display: inline-block; }
         .section-title h2::after { content: ''; width: 70px; height: 4px; background: var(--accent-yellow); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 2px; }
 
+        /* --- UPDATED TESTIMONIAL CARD --- */
         .testimonial-card {
             background: var(--card); border-radius: var(--radius-md); padding: 32px;
             box-shadow: var(--shadow-s); border-left: 6px solid var(--accent-yellow); height: 100%;
+            position: relative;
         }
         .quote-icon { color: rgba(127, 183, 126, 0.4); font-size: 2rem; margin-bottom: 15px; }
+        
         .highlight-section { background-color: rgba(126, 200, 227, 0.08); }
 
         /* --- RACK GALLERY --- */
@@ -210,30 +200,33 @@
             border-bottom: 3px solid var(--accent-yellow); display: inline-block; padding-bottom: 5px; margin-bottom: 15px;
         }
         .gallery-track {
-            display: flex; overflow-x: auto; gap: 15px; padding: 10px 5px 25px 5px;
+            display: flex; overflow-x: auto; gap: 20px; padding: 10px 5px 25px 5px;
             scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
         }
         .gallery-track::-webkit-scrollbar { height: 6px; }
         .gallery-track::-webkit-scrollbar-track { background: rgba(47, 107, 58, 0.1); border-radius: 10px; }
         .gallery-track::-webkit-scrollbar-thumb { background: var(--brand-green); border-radius: 10px; }
-        .gallery-item { min-width: 260px; flex: 0 0 auto; }
+        
+        .gallery-item { min-width: 280px; flex: 0 0 auto; }
         .gallery-card {
             border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-s);
-            transition: 0.3s; background: var(--card); cursor: pointer; height: 180px; 
+            transition: 0.3s; background: var(--card); cursor: pointer; height: 200px; 
+            border: 1px solid rgba(0,0,0,0.03);
         }
+        .gallery-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(27, 27, 27, 0.1); }
         .gallery-img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- FOOTER FIX --- */
+        /* --- FOOTER --- */
         footer { 
-            background: var(--brand-green); /* Dark Green Background */
-            color: white !important;        /* White text */
+            background: var(--brand-green); 
+            color: white; 
             padding: 60px 0; 
-            border-top: 5px solid var(--accent-yellow); 
+            border-top: 5px solid var(--accent-yellow);
         }
-        footer p { color: rgba(255,255,255,0.8); }
+        footer p { color: rgba(255,255,255,0.85); }
         .social-icons a {
             color: var(--brand-green); font-size: 1.2rem; transition: 0.3s; width: 44px; height: 44px; border-radius: 50%;
-            background: white; /* White circle */
+            background: white; 
             display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
         }
         .social-icons a:hover { background: var(--accent-yellow); color: var(--text); }
@@ -241,29 +234,17 @@
         /* --- MOBILE OPTIMIZATION --- */
         @media (max-width: 991px) {
             :root { --header-height: 100px; }
-            
             body { padding-top: 100px; }
-            
-            section { 
-                padding: 50px 0; 
-                scroll-margin-top: 100px;
-            }
-            
+            section { padding: 50px 0; scroll-margin-top: 100px; }
             .hero { min-height: 500px; height: auto; padding: 100px 0; }
             .hero h1 { font-size: 2.2rem; }
             
             .navbar-collapse {
-                background: white;
-                padding: 20px;
-                border-radius: 0 0 15px 15px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                max-height: 80vh; 
-                overflow-y: auto;
+                background: white; padding: 20px; border-radius: 0 0 15px 15px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1); max-height: 80vh; overflow-y: auto;
             }
-            
             .navbar-nav { gap: 10px; }
             .content-card { padding: 25px; }
-            
             .info-banner { font-size: 0.8rem; text-align: center; justify-content: center; }
             .info-banner a { display: none; }
         }
@@ -484,29 +465,32 @@
     <section id="testimonials">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <h2>Parent Voices</h2>
-                <p class="text-muted">What our community says about the Evergreen experience.</p>
+                <h2>What Parents Say</h2>
+                <p class="text-muted">Real feedback from our Evergreen community.</p>
             </div>
             <div class="row g-4">
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="testimonial-card">
                         <i class="fas fa-quote-left quote-icon"></i>
                         <p class="mb-4 text-muted">"The focus on values and discipline at Evergreen is exactly what we were looking for. My child loves going to school every day."</p>
-                        <h6 class="fw-bold" style="color: var(--brand-green);">— Parent of Grade 2 Student</h6>
+                        <h6 class="fw-bold text-success">- Google Review</h6>
+                        <a href="https://maps.app.goo.gl/9yQ2" target="_blank" class="small text-decoration-none">View on Google Maps</a>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="testimonial-card">
                         <i class="fas fa-quote-left quote-icon"></i>
                         <p class="mb-4 text-muted">"A wonderful environment for early learners. The teachers are very caring and the new facilities are excellent."</p>
-                        <h6 class="fw-bold" style="color: var(--brand-green);">— Parent of KG Student</h6>
+                        <h6 class="fw-bold text-success">- Google Review</h6>
+                        <a href="https://maps.app.goo.gl/9yQ2" target="_blank" class="small text-decoration-none">View on Google Maps</a>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="testimonial-card">
                         <i class="fas fa-quote-left quote-icon"></i>
                         <p class="mb-4 text-muted">"We have seen remarkable improvement in our son's confidence. The activity-based learning approach really works."</p>
-                        <h6 class="fw-bold" style="color: var(--brand-green);">— Parent of Grade 4 Student</h6>
+                        <h6 class="fw-bold text-success">- Google Review</h6>
+                        <a href="https://maps.app.goo.gl/9yQ2" target="_blank" class="small text-decoration-none">View on Google Maps</a>
                     </div>
                 </div>
             </div>
@@ -564,7 +548,7 @@
                         </div>
                         
                         <div class="rounded overflow-hidden mt-4 shadow-sm" style="height: 250px;">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.233497984714!2d77.77194431480624!3d11.38533329190059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f30a993c1bb%3A0xaeda7ddeccecd209!2sEvergreen%20International%20School!5e0!3m2!1sen!2sin!4v1675345678901!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://maps.google.com/maps?q=Evergreen+International+School,+Vediyarasampalayam+Road,+Pallipalayam&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
@@ -614,7 +598,7 @@
     <script>
         AOS.init({ once: true, duration: 1000, offset: 120 });
         
-        // Gallery Config - Rack Style
+        // Gallery Config
         const galleryData = [
             {
                 id: 'vijaya-gallery',
@@ -630,13 +614,13 @@
             }
         ];
 
-        // Automatic Image Generation for Horizontal Rack
+        // Rack Logic
         galleryData.forEach(album => {
             const container = document.getElementById(album.id);
             if(container) {
                 for (let i = 1; i <= album.count; i++) {
                     const item = document.createElement('div');
-                    item.className = 'gallery-item'; // Fixed width class
+                    item.className = 'gallery-item';
                     
                     item.innerHTML = `
                         <div class="gallery-card">
