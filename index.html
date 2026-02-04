@@ -24,7 +24,7 @@
             --radius-md: 10px;
             --radius-pill: 20px;
             --shadow-s: 0 4px 10px rgba(27, 27, 27, 0.06);
-            --header-height: 120px; /* Desktop Header Height */
+            --header-height: 120px;
         }
 
         body {
@@ -42,7 +42,6 @@
             font-weight: 700;
         }
 
-        /* --- DESKTOP SECTION SPACING --- */
         section {
             padding: 80px 0;
             scroll-margin-top: var(--header-height);
@@ -53,7 +52,6 @@
             background: white;
             box-shadow: var(--shadow-s);
             height: var(--header-height);
-            transition: height 0.3s;
         }
 
         .info-banner {
@@ -100,13 +98,14 @@
         .hero {
             position: relative;
             width: 100%;
-            height: 90vh; /* Full height on desktop */
+            height: 90vh;
             min-height: 600px;
             overflow: hidden;
             display: flex;
             align-items: center;
             color: white;
-            margin-top: 0; padding: 0;
+            margin-top: 0; 
+            padding: 0;
         }
         .hero-slideshow {
             position: absolute; width: 100%; height: 100%; top: 0; left: 0;
@@ -117,7 +116,6 @@
             background-size: cover; background-position: center; background-repeat: no-repeat;
             opacity: 0; z-index: 0; animation: imageAnimation 18s linear infinite;
         }
-        /* Using YOUR uploaded images */
         .hero-slideshow li:nth-child(1) { background-image: url('gallery/1.jpg'); animation-delay: 0s; }
         .hero-slideshow li:nth-child(2) { background-image: url('gallery/2.jpg'); animation-delay: 6s; }
         .hero-slideshow li:nth-child(3) { background-image: url('gallery/3.jpg'); animation-delay: 12s; }
@@ -128,7 +126,6 @@
             33% { opacity: 1; } 43% { opacity: 0; } 100% { opacity: 0; }
         }
 
-        /* Updated Overlay: Lighter for better photo visibility */
         .hero-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(110deg, rgba(31, 71, 38, 0.8), rgba(47, 107, 58, 0.6));
@@ -151,7 +148,7 @@
             text-shadow: 0 1px 5px rgba(0,0,0,0.3); 
         }
 
-        /* --- COMPONENTS --- */
+        /* --- UI COMPONENTS --- */
         .btn-custom {
             background-color: var(--brand-green); color: white; padding: 0 32px; height: 48px;
             border-radius: var(--radius-pill); font-family: 'Poppins', sans-serif; font-weight: 600;
@@ -172,6 +169,20 @@
             box-shadow: var(--shadow-s); padding: 32px; height: 100%; transition: 0.3s;
         }
         
+        /* HERO STATS CARD FIX - Forced White Text */
+        .hero-card {
+            background: rgba(255,255,255,0.2); 
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: var(--radius-md); 
+            padding: 24px; 
+            backdrop-filter: blur(8px); 
+            color: white !important; /* Forces text to be white */
+        }
+        .hero-card p, .hero-card h4 {
+            color: white !important; /* Extra safety to ensure white text */
+            margin-bottom: 0;
+        }
+
         .pill {
             display: inline-flex; align-items: center; gap: 8px; background: rgba(126, 200, 227, 0.2);
             color: var(--brand-green); padding: 6px 16px; border-radius: var(--radius-pill);
@@ -212,32 +223,41 @@
         }
         .gallery-img { width: 100%; height: 100%; object-fit: cover; }
 
-        footer { background: var(--card); padding: 60px 0; border-top: 1px solid rgba(0,0,0,0.05); }
+        /* --- FOOTER FIX --- */
+        footer { 
+            background: var(--brand-green); /* Dark Green Background */
+            color: white !important;        /* White text */
+            padding: 60px 0; 
+            border-top: 5px solid var(--accent-yellow); 
+        }
+        footer p { color: rgba(255,255,255,0.8); }
         .social-icons a {
             color: var(--brand-green); font-size: 1.2rem; transition: 0.3s; width: 44px; height: 44px; border-radius: 50%;
-            background: rgba(127, 183, 126, 0.15); display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
+            background: white; /* White circle */
+            display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
         }
+        .social-icons a:hover { background: var(--accent-yellow); color: var(--text); }
 
-        /* --- MOBILE OPTIMIZATION (THE FIX) --- */
+        /* --- MOBILE OPTIMIZATION --- */
         @media (max-width: 991px) {
-            :root { --header-height: 100px; } /* Smaller header on mobile */
+            :root { --header-height: 100px; }
             
             body { padding-top: 100px; }
             
             section { 
-                padding: 50px 0; /* Reduced padding for mobile */
+                padding: 50px 0; 
                 scroll-margin-top: 100px;
             }
             
             .hero { min-height: 500px; height: auto; padding: 100px 0; }
-            .hero h1 { font-size: 2.2rem; } /* Smaller Title */
+            .hero h1 { font-size: 2.2rem; }
             
             .navbar-collapse {
                 background: white;
                 padding: 20px;
                 border-radius: 0 0 15px 15px;
                 box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                max-height: 80vh; /* Scrollable menu if too long */
+                max-height: 80vh; 
                 overflow-y: auto;
             }
             
@@ -245,7 +265,7 @@
             .content-card { padding: 25px; }
             
             .info-banner { font-size: 0.8rem; text-align: center; justify-content: center; }
-            .info-banner a { display: none; } /* Hide 'Apply Now' text in top banner on tiny screens to save space */
+            .info-banner a { display: none; }
         }
     </style>
 </head>
@@ -297,8 +317,10 @@
                 <span class="badge bg-white text-success rounded-pill px-3 py-2 fw-bold"><i class="fas fa-language me-2"></i>English Medium</span>
                 <span class="badge bg-white text-success rounded-pill px-3 py-2 fw-bold"><i class="fas fa-child me-2"></i>Pre-KG to Grade 5</span>
             </div>
+            
             <h1>Welcome to Evergreen International School</h1>
-            <p class="hero-subtitle mb-5 mx-auto mx-lg-0">Evergreen International School is a CBSE-aligned, English-medium, co-educational school in Therkkupalayam, Pallipalayam, Erode District. We focus on academic excellence, character development, and holistic growth.</p>
+            <p class="hero-subtitle mb-5 mx-auto mx-lg-0">Empowering the next generation with values, creativity, and academic excellence. We provide a safe, nature-inspired environment where every child's potential is nurtured with care.</p>
+            
             <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
                 <a href="#about" class="btn-custom">Explore Our Vision</a>
                 <a href="#contact" class="btn-hero-outline">Schedule a Visit</a>
@@ -398,7 +420,7 @@
         <div class="container text-center">
             <div class="section-title" data-aos="fade-up">
                 <h2>Admissions</h2>
-                <p>Admissions are open for Pre-KG to Grade 5 based on seat availability.</p>
+                <p>Admissions are open for Pre-KG to Grade 5 based on seat availability and age eligibility.</p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-6" data-aos="fade-right">
@@ -521,12 +543,28 @@
                 <div class="col-lg-5" data-aos="fade-right">
                     <div class="content-card h-100">
                         <h4 class="fw-bold mb-4">Get in Touch</h4>
-                        <div class="d-flex mb-3"><i class="fas fa-map-marker-alt text-success me-3 mt-1"></i><p class="mb-0">Near Water Tank, Vediyarasampalayam Road, Therkkupalayam, Pallipalayam, Namakkal(DT), Erode - 638008.</p></div>
-                        <div class="d-flex mb-3"><i class="fas fa-phone-alt text-success me-3 mt-1"></i><p class="mb-0">+91 98427 12666</p></div>
-                        <div class="d-flex mb-4"><i class="fas fa-envelope text-success me-3 mt-1"></i><p class="mb-0">support@evergreen-school.in</p></div>
+                        
+                        <div class="d-flex mb-3 align-items-start">
+                            <i class="fas fa-map-marker-alt text-success me-3 mt-1"></i>
+                            <p class="mb-0">Near Water Tank, Vediyarasampalayam Road, Therkkupalayam, Pallipalayam, Namakkal(DT), Erode - 638008.</p>
+                        </div>
+                        
+                        <div class="d-flex mb-3 align-items-start">
+                            <i class="fas fa-phone-alt text-success me-3 mt-1"></i>
+                            <div>
+                                <p class="mb-1">+91 98427 12666</p>
+                                <p class="mb-1">+91 98427 12912</p>
+                                <p class="mb-0">+91 99767 98007</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-4 align-items-center">
+                            <i class="fas fa-envelope text-success me-3"></i>
+                            <p class="mb-0">support@evergreen-school.in</p>
+                        </div>
                         
                         <div class="rounded overflow-hidden mt-4 shadow-sm" style="height: 250px;">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.776632420364!2d77.77196907481394!3d11.350993048325998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9688d3e94c1bb%3A0xa5de17ecdecd9e09!2sEvergreen%20International%20School!5e0!3m2!1sen!2sin!4v1709664539827!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.233497984714!2d77.77194431480624!3d11.38533329190059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f30a993c1bb%3A0xaeda7ddeccecd209!2sEvergreen%20International%20School!5e0!3m2!1sen!2sin!4v1675345678901!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
@@ -566,7 +604,7 @@
                 <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <p class="small text-muted mb-0">© 2026 Evergreen International School. All Rights Reserved.</p>
+            <p class="small mb-0">© 2026 Evergreen International School. All Rights Reserved.</p>
         </div>
     </footer>
 
