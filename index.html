@@ -42,7 +42,7 @@
         body {
             font-family: 'Nunito', sans-serif;
             color: var(--text);
-            line-height: 1.6; /* Body Line Height 1.5-1.6 */
+            line-height: 1.6;
             background-color: var(--bg);
             overflow-x: hidden;
         }
@@ -54,15 +54,7 @@
             font-weight: 700;
         }
 
-        section {
-            padding: 80px 0;
-        }
-
-        /* --- 6. ACCESSIBILITY STANDARDS (Focus State) --- */
-        :focus {
-            outline: 3px solid rgba(126,200,227,0.25);
-            outline-offset: 2px;
-        }
+        section { padding: 80px 0; }
 
         /* --- UI ELEMENTS --- */
         
@@ -83,7 +75,7 @@
         }
         .nav-link {
             font-family: 'Nunito', sans-serif;
-            font-weight: 700; /* Increased weight for readability */
+            font-weight: 700;
             margin: 0 12px;
             color: var(--text) !important;
             transition: 0.3s;
@@ -107,19 +99,70 @@
             font-weight: 700;
         }
 
-        /* Hero Section */
+        /* --- HERO SLIDESHOW SECTION --- */
         .hero {
-            /* Warm tone overlay mixed with Brand Green */
-            background: linear-gradient(110deg, rgba(47, 107, 58, 0.92), rgba(127, 183, 126, 0.8)),
-                        url('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1600&q=80');
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        /* The Slideshow Background */
+        .hero-slideshow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .hero-slideshow li {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
-            padding: 160px 0 120px;
-            color: white;
-            position: relative;
+            background-repeat: no-repeat;
+            opacity: 0;
+            z-index: 0;
+            animation: imageAnimation 18s linear infinite;
         }
+        /* Using your existing gallery images */
+        .hero-slideshow li:nth-child(1) { background-image: url('gallery/1.jpg'); animation-delay: 0s; }
+        .hero-slideshow li:nth-child(2) { background-image: url('gallery/2.jpg'); animation-delay: 6s; }
+        .hero-slideshow li:nth-child(3) { background-image: url('gallery/3.jpg'); animation-delay: 12s; }
+
+        /* The Animation Keyframes */
+        @keyframes imageAnimation { 
+            0% { opacity: 0; animation-timing-function: ease-in; }
+            10% { opacity: 1; animation-timing-function: ease-out; }
+            33% { opacity: 1; } 
+            43% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        /* The Brand Green Overlay (Crucial for text readability) */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(110deg, rgba(47, 107, 58, 0.92), rgba(127, 183, 126, 0.85)); /* Brand Green tint */
+            z-index: 1;
+        }
+
         .hero-content { position: relative; z-index: 2; }
+        
         .hero h1 {
             color: #ffffff;
             font-size: 3.5rem;
@@ -131,15 +174,15 @@
             font-size: 1.25rem;
             color: rgba(255,255,255,0.95);
             max-width: 700px;
-            font-weight: 600; /* Slightly bolder for readability */
+            font-weight: 600; 
         }
 
         /* 5. BUTTON STYLES */
         .btn-custom {
             background-color: var(--brand-green);
             color: white;
-            padding: 0 32px; /* Horizontal padding */
-            height: 48px;    /* Min height per brand book */
+            padding: 0 32px;
+            height: 48px;
             border-radius: var(--radius-pill);
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
@@ -152,32 +195,11 @@
             justify-content: center;
         }
         .btn-custom:hover {
-            background-color: #24522c; /* Darker green on hover */
+            background-color: #24522c;
             transform: translateY(-2px);
             color: white;
         }
-
-        .btn-secondary-brand {
-            background-color: var(--card);
-            border: 1.5px solid var(--leaf-green);
-            color: var(--brand-green);
-            padding: 0 32px;
-            height: 48px;
-            border-radius: var(--radius-pill);
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            transition: 0.3s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .btn-secondary-brand:hover {
-            background-color: var(--leaf-green);
-            color: white;
-        }
         
-        /* Hero specific Outline Button (White) */
         .btn-hero-outline {
             background: transparent;
             border: 2px solid white;
@@ -203,7 +225,7 @@
             border-radius: var(--radius-md);
             background: var(--card);
             box-shadow: var(--shadow-s);
-            padding: 32px; /* Generous padding */
+            padding: 32px;
             height: 100%;
             transition: 0.3s;
         }
@@ -329,7 +351,7 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#home">
-                <img src="logo.png" alt="School Logo" height="50" class="me-2 rounded">
+                <img src="logo.png" alt="School Logo" height="50" class="me-2">
                 <span>Evergreen International School</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -352,6 +374,12 @@
     </nav>
 
     <header id="home" class="hero">
+        
+        <ul class="hero-slideshow">
+            <li></li> <li></li> <li></li> </ul>
+        
+        <div class="hero-overlay"></div>
+
         <div class="container hero-content text-center text-lg-start" data-aos="fade-up" data-aos-duration="1200">
             <div class="d-inline-flex gap-2 mb-4 flex-wrap justify-content-center justify-content-lg-start">
                 <span class="badge bg-white text-success rounded-pill px-3 py-2 fw-bold"><i class="fas fa-award me-2"></i>CBSE Aligned</span>
@@ -407,7 +435,7 @@
         <div class="container text-center">
             <div class="section-title" data-aos="fade-up">
                 <h2>Academics</h2>
-                <p class="text-muted">Curriculum focused on foundational literacy and NEP 2020 alignment.</p>
+                <p>Curriculum focused on foundational literacy and NEP 2020 alignment.</p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-6" data-aos="fade-up">
@@ -512,21 +540,21 @@
                     <div class="testimonial-card">
                         <i class="fas fa-quote-left quote-icon"></i>
                         <p class="mb-4 text-muted">"The focus on values and discipline at Evergreen is exactly what we were looking for. My child loves going to school every day."</p>
-                        <h6 class="fw-bold" style="color: var(--brand-green);"> </h6>
+                        <h6 class="fw-bold" style="color: var(--brand-green);">— Parent of Grade 2 Student</h6>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="testimonial-card">
                         <i class="fas fa-quote-left quote-icon"></i>
                         <p class="mb-4 text-muted">"A wonderful environment for early learners. The teachers are very caring and the new facilities are excellent."</p>
-                        <h6 class="fw-bold" style="color: var(--brand-green);"> </h6>
+                        <h6 class="fw-bold" style="color: var(--brand-green);">— Parent of KG Student</h6>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="testimonial-card">
                         <i class="fas fa-quote-left quote-icon"></i>
                         <p class="mb-4 text-muted">"We have seen remarkable improvement in our son's confidence. The activity-based learning approach really works."</p>
-                        <h6 class="fw-bold" style="color: var(--brand-green);"> </h6>
+                        <h6 class="fw-bold" style="color: var(--brand-green);">— Parent of Grade 4 Student</h6>
                     </div>
                 </div>
             </div>
@@ -549,7 +577,7 @@
                         <h5 class="fw-bold mb-3">Correspondent’s Message</h5>
                         <p class="text-muted">"Evergreen International School was established with a simple and sincere purpose: to provide young children with a strong, caring, and meaningful start to their educational journey."</p>
                         <p class="text-muted">"Our commitment is to continuously improve our educational practices and facilities, ensuring that every child at Evergreen International School feels safe, valued, and encouraged to grow."</p>
-                        <p class="fw-bold text-success mt-3"> </p>
+                        <p class="fw-bold text-success mt-3">- Mr. Raja A P, Correspondent</p>
                     </div>
                 </div>
             </div>
@@ -564,10 +592,10 @@
                     <div class="content-card h-100">
                         <h4 class="fw-bold mb-4">Get in Touch</h4>
                         <p><i class="fas fa-map-marker-alt text-success me-2"></i> Near Water Tank, Vediyarasampalayam Road, Therkkupalayam, Pallipalayam, Namakkal(DT), Erode - 638008.</p>
-                        <p><i class="fas fa-phone-alt text-success me-2"></i> +91 98427 12666, 98427 12912, 99767 98007</p>
+                        <p><i class="fas fa-phone-alt text-success me-2"></i> +91 98427 12666</p>
                         <p><i class="fas fa-envelope text-success me-2"></i> support@evergreen-school.in</p>
                         <div class="rounded overflow-hidden mt-4 shadow-sm" style="height: 250px;">
-                            <iframe src="https://maps.google.com/maps?q=Evergreen+International+School+Pallipalayam+Erode&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.3995646000213!2d77.7734160757041!3d11.378942248589715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba968a33e94c1bb%3A0x2aae77ecddcb9e09!2sEvergreen%20International%20School!5e0!3m2!1sen!2sin!4v1707038000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
