@@ -9,9 +9,7 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -19,10 +17,10 @@
 
     <style>
         :root {
-            --brand-green: #2F6B3A;   /* Primary */
-            --leaf-green: #7FB77E;    /* Secondary */
-            --accent-yellow: #F4C542; /* Highlight */
-            --bg: #FAFBF9;            /* Background */
+            --brand-green: #2F6B3A;
+            --leaf-green: #7FB77E;
+            --accent-yellow: #F4C542;
+            --bg: #FAFBF9;
             --card: #FFFFFF;
             --text: #1B1B1B;
             --radius-md: 10px;
@@ -46,208 +44,139 @@
             font-weight: 700;
         }
 
-        section {
-            padding: 90px 0;
-            scroll-margin-top: var(--header-height);
-        }
+        section { padding: 90px 0; scroll-margin-top: var(--header-height); }
 
-        /* --- PROFESSIONAL HEADER --- */
-        .header-fixed-wrapper {
-            background: white;
-            box-shadow: var(--shadow-s);
-            height: var(--header-height);
+        /* --- HEADER --- */
+        .header-fixed-wrapper { 
+            background: white; 
+            box-shadow: var(--shadow-s); 
+            height: var(--header-height); 
             transition: all 0.3s ease;
         }
-
-        .info-banner {
-            background: var(--brand-green);
-            color: #fff;
-            padding: 8px 0;
-            font-size: 0.85rem;
-            height: 36px;
-            display: flex;
-            align-items: center;
+        .info-banner { 
+            background: var(--brand-green); 
+            color: #fff; 
+            padding: 8px 0; 
+            font-size: 0.85rem; 
+            height: 36px; 
+            display: flex; 
+            align-items: center; 
         }
         .info-banner a { color: var(--accent-yellow); text-decoration: none; font-weight: 700; margin-left: 10px; }
 
-        .navbar {
-            padding: 0;
-            height: 74px;
-            background: white;
-            display: flex;
-            align-items: center;
+        .navbar { padding: 0; height: 74px; background: white; }
+        .navbar-brand { 
+            font-weight: 700; 
+            color: var(--brand-green) !important; 
+            text-transform: uppercase; 
+            font-size: 1.25rem; 
+            letter-spacing: -0.5px; 
         }
-        .navbar-brand {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            color: var(--brand-green) !important;
-            text-transform: uppercase;
-            font-size: 1.25rem;
-            letter-spacing: -0.5px;
-        }
-        .nav-link {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            margin: 0 12px;
-            color: var(--text) !important;
+
+        .nav-link { 
+            font-weight: 700; 
+            margin: 0 5px; 
+            padding: 10px 20px !important; 
+            color: var(--text) !important; 
+            border-radius: var(--radius-pill); 
             transition: 0.3s;
-            font-size: 1rem;
-            position: relative;
+            font-size: 0.95rem;
         }
-        .nav-link:hover, .nav-link.active { color: var(--brand-green) !important; }
-        
-        .nav-link.active::after {
-            content: ''; position: absolute; width: 6px; height: 6px;
-            background-color: var(--accent-yellow); border-radius: 50%;
-            bottom: 5px; left: 50%; transform: translateX(-50%);
+        .nav-link:hover { background-color: rgba(47, 107, 58, 0.05); color: var(--brand-green) !important; }
+        .nav-link.active { 
+            background-color: var(--brand-green) !important; 
+            color: #fff !important; 
+            box-shadow: 0 4px 10px rgba(47, 107, 58, 0.2);
         }
 
         /* --- HERO SLIDESHOW --- */
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 85vh;
-            min-height: 550px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            color: white;
-            margin-top: 0; padding: 0;
-        }
-        .hero-slideshow {
-            position: absolute; width: 100%; height: 100%; top: 0; left: 0;
-            z-index: 0; list-style: none; margin: 0; padding: 0;
-        }
-        .hero-slideshow li {
-            width: 100%; height: 100%; position: absolute; top: 0; left: 0;
-            background-size: cover; background-position: center; background-repeat: no-repeat;
-            opacity: 0; z-index: 0; animation: imageAnimation 18s linear infinite;
-        }
+        .hero { position: relative; height: 85vh; min-height: 550px; display: flex; align-items: center; overflow: hidden; color: white; }
+        .hero-slideshow { position: absolute; width: 100%; height: 100%; top: 0; left: 0; list-style: none; padding: 0; }
+        .hero-slideshow li { width: 100%; height: 100%; position: absolute; background-size: cover; background-position: center; opacity: 0; animation: imageAnimation 18s linear infinite; }
+        
         .hero-slideshow li:nth-child(1) { background-image: url('gallery/1.jpg'); animation-delay: 0s; }
         .hero-slideshow li:nth-child(2) { background-image: url('gallery/2.jpg'); animation-delay: 6s; }
         .hero-slideshow li:nth-child(3) { background-image: url('gallery/3.jpg'); animation-delay: 12s; }
-
-        @keyframes imageAnimation { 
-            0% { opacity: 0; animation-timing-function: ease-in; }
-            10% { opacity: 1; animation-timing-function: ease-out; }
-            33% { opacity: 1; } 43% { opacity: 0; } 100% { opacity: 0; }
-        }
-
-        /* LIGHTER OVERLAY (50-60%) */
-        .hero-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(110deg, rgba(31, 71, 38, 0.6), rgba(47, 107, 58, 0.5));
-            z-index: 1;
-        }
-        .hero-content { position: relative; z-index: 2; width: 100%; padding: 0 15px; }
         
+        @keyframes imageAnimation { 0% { opacity: 0; } 10% { opacity: 1; } 33% { opacity: 1; } 43% { opacity: 0; } 100% { opacity: 0; } }
+        
+        /* 50% OPACITY OVERLAY FOR CLEARER PHOTOS */
+        .hero-overlay { 
+            position: absolute; width: 100%; height: 100%; top: 0; left: 0; 
+            background: linear-gradient(110deg, rgba(31, 71, 38, 0.5), rgba(47, 107, 58, 0.4)); 
+            z-index: 1; 
+        }
+        .hero-content { position: relative; z-index: 2; width: 100%; text-align: center; padding: 0 15px; }
         .hero h1 { 
-            color: #ffffff; font-size: 3.8rem; font-weight: 800; margin-bottom: 25px; 
-            text-shadow: 0 4px 30px rgba(0,0,0,0.4); 
+            font-size: 3.8rem; font-weight: 800; margin-bottom: 25px; 
+            text-shadow: 0 4px 30px rgba(0,0,0,0.6); 
         }
         .hero-subtitle { 
-            font-size: 1.35rem; color: rgba(255,255,255,1); max-width: 800px; font-weight: 600; 
-            text-shadow: 0 2px 15px rgba(0,0,0,0.4);
-            margin-bottom: 40px !important;
+            font-size: 1.35rem; color: #fff; max-width: 800px; margin: 0 auto 40px auto; font-weight: 600; 
+            text-shadow: 0 2px 15px rgba(0,0,0,0.6);
         }
 
         /* --- UI COMPONENTS --- */
-        .btn-custom {
-            background-color: var(--brand-green); color: white; padding: 0 32px; height: 48px;
-            border-radius: var(--radius-pill); font-family: 'Poppins', sans-serif; font-weight: 600;
-            border: none; transition: all 0.3s; text-decoration: none; box-shadow: var(--shadow-s);
-            display: inline-flex; align-items: center; justify-content: center;
-        }
-        .btn-custom:hover { background-color: #24522c; transform: translateY(-2px); color: white; }
+        .btn-custom { background-color: var(--brand-green); color: white; padding: 12px 35px; border-radius: var(--radius-pill); font-weight: 600; border: none; text-decoration: none; box-shadow: var(--shadow-s); display: inline-flex; align-items: center; justify-content: center; }
+        .btn-custom:hover { background-color: #24522c; color: white; transform: translateY(-2px); }
         
-        .btn-hero-outline {
-            background: transparent; border: 2px solid white; color: white; padding: 0 32px; height: 48px;
-            border-radius: var(--radius-pill); font-family: 'Poppins', sans-serif; font-weight: 600;
-            text-decoration: none; display: inline-flex; align-items: center; transition: 0.3s;
-        }
+        .btn-hero-outline { background: transparent; border: 2px solid white; color: white; padding: 10px 35px; border-radius: var(--radius-pill); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; }
         .btn-hero-outline:hover { background: white; color: var(--brand-green); }
 
-        .content-card {
-            border: none; border-radius: var(--radius-md); background: var(--card);
-            box-shadow: var(--shadow-s); padding: 35px; height: 100%; transition: 0.3s;
-        }
+        .content-card { border: none; border-radius: var(--radius-md); background: var(--card); box-shadow: var(--shadow-s); padding: 35px; height: 100%; transition: 0.3s; }
         .content-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
 
-        .pill {
-            display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.2);
-            color: #fff; padding: 6px 16px; border-radius: var(--radius-pill);
-            font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.9rem;
+        .pill { 
+            display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.2); 
+            color: #fff; padding: 6px 16px; border-radius: var(--radius-pill); 
+            font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.9rem; 
             backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3);
         }
 
-        .list-check { list-style: none; padding-left: 0; margin-bottom: 0; }
-        .list-check li { margin-bottom: 12px; display: flex; gap: 12px; color: var(--text); align-items: start; }
-        .list-check li i { color: var(--leaf-green); margin-top: 4px; font-size: 1.1rem; }
+        .list-check { list-style: none; padding-left: 0; }
+        .list-check li { margin-bottom: 12px; display: flex; gap: 12px; align-items: start; }
+        .list-check li i { color: var(--leaf-green); margin-top: 4px; }
 
         .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-weight: 700; position: relative; padding-bottom: 15px; display: inline-block; }
+        .section-title h2 { position: relative; padding-bottom: 15px; display: inline-block; }
         .section-title h2::after { content: ''; width: 70px; height: 4px; background: var(--accent-yellow); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 2px; }
 
-        .testimonial-card {
-            background: var(--card); border-radius: var(--radius-md); padding: 32px;
-            box-shadow: var(--shadow-s); border-left: 5px solid var(--accent-yellow); height: 100%;
-        }
+        .testimonial-card { border-radius: var(--radius-md); padding: 32px; box-shadow: var(--shadow-s); border-left: 5px solid var(--accent-yellow); height: 100%; background: white; }
         .quote-icon { color: rgba(127, 183, 126, 0.4); font-size: 2rem; margin-bottom: 15px; }
+        
         .highlight-section { background-color: rgba(126, 200, 227, 0.08); }
 
         /* --- RACK GALLERY --- */
-        .album-title {
-            color: var(--brand-green); font-family: 'Poppins', sans-serif; font-weight: 700;
-            border-bottom: 3px solid var(--accent-yellow); display: inline-block; padding-bottom: 5px; margin-bottom: 15px;
-        }
-        .gallery-track {
-            display: flex; overflow-x: auto; gap: 20px; padding: 10px 5px 25px 5px;
-            scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
-        }
+        .album-title { color: var(--brand-green); font-weight: 700; border-bottom: 3px solid var(--accent-yellow); display: inline-block; padding-bottom: 5px; margin-bottom: 15px; }
+        .gallery-track { display: flex; overflow-x: auto; gap: 20px; padding: 10px 5px 25px 5px; scroll-behavior: smooth; }
         .gallery-track::-webkit-scrollbar { height: 6px; }
         .gallery-track::-webkit-scrollbar-track { background: rgba(47, 107, 58, 0.1); border-radius: 10px; }
         .gallery-track::-webkit-scrollbar-thumb { background: var(--brand-green); border-radius: 10px; }
-        
         .gallery-item { min-width: 280px; flex: 0 0 auto; }
-        .gallery-card {
-            border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-s);
-            transition: 0.3s; background: var(--card); cursor: pointer; height: 200px; 
-            border: 1px solid rgba(0,0,0,0.03);
-        }
-        .gallery-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(27, 27, 27, 0.1); }
+        .gallery-card { border-radius: var(--radius-md); overflow: hidden; height: 200px; box-shadow: var(--shadow-s); cursor: pointer; transition: 0.3s; }
+        .gallery-card:hover { transform: translateY(-5px); }
         .gallery-img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- FOOTER FIX --- */
-        footer { 
-            background: var(--brand-green); 
-            color: white; 
-            padding: 70px 0; 
-            border-top: 5px solid var(--accent-yellow);
-        }
+        /* --- FOOTER --- */
+        footer { background: var(--brand-green); color: white; padding: 70px 0; border-top: 5px solid var(--accent-yellow); }
         footer p, footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
         footer a:hover { color: var(--accent-yellow); }
-        .social-icons a {
-            color: var(--brand-green); font-size: 1.2rem; transition: 0.3s; width: 44px; height: 44px; border-radius: 50%;
-            background: white; 
-            display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
+        .social-icons a { 
+            color: var(--brand-green); width: 44px; height: 44px; border-radius: 50%; background: white; 
+            display: inline-flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s;
         }
         .social-icons a:hover { background: var(--accent-yellow); color: var(--text); }
 
-        /* --- MOBILE OPTIMIZATION --- */
+        /* --- MOBILE --- */
         @media (max-width: 991px) {
             :root { --header-height: 100px; }
             body { padding-top: 100px; }
             section { padding: 50px 0; scroll-margin-top: 100px; }
             .hero { min-height: 500px; height: auto; padding: 100px 0; }
             .hero h1 { font-size: 2.2rem; }
-            
-            .navbar-collapse {
-                background: white; padding: 20px; border-radius: 0 0 15px 15px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1); max-height: 80vh; overflow-y: auto;
-            }
+            .navbar-collapse { background: white; padding: 20px; border-radius: 0 0 15px 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); max-height: 80vh; overflow-y: auto; }
             .navbar-nav { gap: 10px; }
-            .content-card { padding: 25px; }
-            .info-banner { font-size: 0.75rem; text-align: center; justify-content: center; }
+            .info-banner { font-size: 0.75rem; justify-content: center; }
             .info-banner a { display: none; }
         }
     </style>
@@ -257,12 +186,11 @@
 
     <header class="fixed-top header-fixed-wrapper">
         <div class="info-banner">
-            <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <div class="container d-flex justify-content-between align-items-center">
                 <span><i class="fas fa-bullhorn me-2"></i>Admissions open for Pre-KG to Grade 5</span>
                 <a href="#admissions">Apply Now</a>
             </div>
         </div>
-
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="#home">
@@ -290,20 +218,16 @@
     </header>
 
     <section id="home" class="hero">
-        <ul class="hero-slideshow">
-            <li></li> <li></li> <li></li> </ul>
+        <ul class="hero-slideshow"><li></li><li></li><li></li></ul>
         <div class="hero-overlay"></div>
-
         <div class="container hero-content text-center text-lg-start" data-aos="fade-up" data-aos-duration="1200">
             <div class="d-inline-flex gap-2 mb-4 flex-wrap justify-content-center justify-content-lg-start">
                 <span class="pill"><i class="fas fa-award me-2"></i>CBSE Aligned</span>
                 <span class="pill"><i class="fas fa-language me-2"></i>English Medium</span>
                 <span class="pill"><i class="fas fa-child me-2"></i>Pre-KG to Grade 5</span>
             </div>
-            
             <h1>Welcome to Evergreen International School</h1>
-            <p class="hero-subtitle mb-5 mx-auto mx-lg-0">Empowering the next generation with values, creativity, and academic excellence. We provide a safe, nature-inspired environment where every child's potential is nurtured with care.</p>
-            
+            <p class="hero-subtitle">Empowering the next generation with values, creativity, and academic excellence. We provide a safe, nature-inspired environment where every child's potential is nurtured with care.</p>
             <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
                 <a href="#about" class="btn-custom">Explore Our Vision</a>
                 <a href="#contact" class="btn-hero-outline">Schedule a Visit</a>
@@ -322,7 +246,6 @@
                         <span class="pill" style="color: var(--brand-green); background: rgba(47,107,58,0.1); border:none;"><i class="fas fa-school"></i>School Overview</span>
                         <h2 class="fw-bold mb-4 mt-3">Strong foundations for lifelong learning.</h2>
                         <p class="lead text-muted mb-4">Evergreen International School provides quality primary education rooted in strong values and modern teaching practices, aligned with the CBSE curriculum framework.</p>
-                        
                         <div class="content-card mb-4">
                             <h5 class="fw-bold mb-3" style="color: var(--brand-green);">Our Vision</h5>
                             <p class="mb-0 text-muted">To provide holistic education that nurtures intellectual, physical, emotional, and moral development, enabling students to become responsible global citizens.</p>
@@ -333,7 +256,6 @@
                                 <li><i class="fas fa-check-circle"></i>Deliver CBSE-aligned education with strong foundational learning.</li>
                                 <li><i class="fas fa-check-circle"></i>Encourage conceptual understanding and critical thinking.</li>
                                 <li><i class="fas fa-check-circle"></i>Create a safe, inclusive, and disciplined learning environment.</li>
-                                <li><i class="fas fa-check-circle"></i>Foster values, creativity, and social responsibility.</li>
                             </ul>
                         </div>
                     </div>
@@ -344,17 +266,14 @@
 
     <section id="academics">
         <div class="container text-center">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Academics</h2>
-                <p class="text-muted">Curriculum focused on foundational literacy and NEP 2020 alignment.</p>
-            </div>
+            <div class="section-title" data-aos="fade-up"><h2>Academics</h2><p class="text-muted">Curriculum focused on foundational literacy and NEP 2020 alignment.</p></div>
             <div class="row g-4">
                 <div class="col-lg-6" data-aos="fade-up">
                     <div class="content-card">
                         <h5 class="fw-bold mb-3">Teaching Methodology</h5>
                         <ul class="list-check text-start">
                             <li><i class="fas fa-check-circle"></i>Activity-based learning techniques.</li>
-                            <li><i class="fas fa-check-circle"></i>Visual and audio teaching aids for better retention.</li>
+                            <li><i class="fas fa-check-circle"></i>Visual and audio teaching aids.</li>
                             <li><i class="fas fa-check-circle"></i>Interactive classroom practices.</li>
                             <li><i class="fas fa-check-circle"></i>Continuous assessment and observation.</li>
                         </ul>
@@ -364,7 +283,7 @@
                     <div class="content-card">
                         <h5 class="fw-bold mb-3">Primary Classes (Grades 1-5)</h5>
                         <ul class="list-check text-start">
-                            <li><i class="fas fa-check-circle"></i>English, Mathematics, Environmental Studies / Science.</li>
+                            <li><i class="fas fa-check-circle"></i>English, Mathematics, Environmental Science.</li>
                             <li><i class="fas fa-check-circle"></i>Social Studies, General Knowledge.</li>
                             <li><i class="fas fa-check-circle"></i>Computer Education, Art and Craft.</li>
                             <li><i class="fas fa-check-circle"></i>Physical Education.</li>
@@ -377,29 +296,17 @@
 
     <section id="gallery" class="highlight-section">
         <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>School Gallery</h2>
-                <p class="text-muted">Swipe horizontally to view our latest moments.</p>
-            </div>
-
-            <div data-aos="fade-right">
-                <h4 class="album-title">Vijayadhasami Celebration 2025</h4>
-            </div>
+            <div class="section-title" data-aos="fade-up"><h2>School Gallery</h2><p class="text-muted">Swipe horizontally to view our latest moments.</p></div>
+            <div data-aos="fade-right"><h4 class="album-title">Vijayadhasami Celebration 2025</h4></div>
             <div class="gallery-track mb-5" id="vijaya-gallery"></div>
-
-            <div data-aos="fade-right">
-                <h4 class="album-title">Annual Day 2025</h4>
-            </div>
+            <div data-aos="fade-right"><h4 class="album-title">Annual Day 2025</h4></div>
             <div class="gallery-track" id="annual-gallery"></div>
         </div>
     </section>
 
     <section id="admissions">
         <div class="container text-center">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Admissions</h2>
-                <p>Admissions are open for Pre-KG to Grade 5 based on seat availability.</p>
-            </div>
+            <div class="section-title" data-aos="fade-up"><h2>Admissions</h2><p>Admissions are open for Pre-KG to Grade 5.</p></div>
             <div class="row g-4">
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="content-card text-start">
@@ -418,7 +325,7 @@
                         <ul class="list-check">
                             <li><i class="fas fa-check-circle"></i>Birth Certificate (Original & Copy).</li>
                             <li><i class="fas fa-check-circle"></i>Passport-size photographs.</li>
-                            <li><i class="fas fa-check-circle"></i>Transfer Certificate (for Grades 2 and above).</li>
+                            <li><i class="fas fa-check-circle"></i>Transfer Certificate (for Grades 2+).</li>
                             <li><i class="fas fa-check-circle"></i>Aadhaar copy (optional).</li>
                         </ul>
                     </div>
@@ -429,10 +336,7 @@
 
     <section id="infrastructure" class="highlight-section">
         <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Infrastructure</h2>
-                <p>A safe, hygienic, and child-friendly campus with essential facilities.</p>
-            </div>
+            <div class="section-title" data-aos="fade-up"><h2>Infrastructure</h2></div>
             <div class="row g-4">
                 <div class="col-md-6" data-aos="fade-up">
                     <div class="content-card">
@@ -461,17 +365,14 @@
 
     <section id="testimonials">
         <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Parent Voices</h2>
-                <p class="text-muted">Real feedback from our Evergreen community.</p>
-            </div>
+            <div class="section-title" data-aos="fade-up"><h2>Parent Voices</h2><p class="text-muted">Real feedback from our Evergreen community.</p></div>
             <div class="row g-4">
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="testimonial-card">
                         <i class="fas fa-quote-left quote-icon"></i>
                         <p class="mb-4 text-muted">"The focus on values and discipline at Evergreen is exactly what we were looking for. My child loves going to school every day."</p>
                         <h6 class="fw-bold text-success">- Google Review</h6>
-                        <a href="https://maps.app.goo.gl/YourLinkHere" target="_blank" class="small text-decoration-none text-muted">View on Google Maps</a>
+                        <a href="https://maps.google.com/maps?q=Evergreen+International+School+Therkkupalayam+Pallipalayam" target="_blank" class="small text-decoration-none text-muted">View on Google Maps</a>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
@@ -479,7 +380,7 @@
                         <i class="fas fa-quote-left quote-icon"></i>
                         <p class="mb-4 text-muted">"A wonderful environment for early learners. The teachers are very caring and the new facilities are excellent."</p>
                         <h6 class="fw-bold text-success">- Google Review</h6>
-                        <a href="https://maps.app.goo.gl/YourLinkHere" target="_blank" class="small text-decoration-none text-muted">View on Google Maps</a>
+                        <a href="https://maps.google.com/maps?q=Evergreen+International+School+Therkkupalayam+Pallipalayam" target="_blank" class="small text-decoration-none text-muted">View on Google Maps</a>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
@@ -487,7 +388,7 @@
                         <i class="fas fa-quote-left quote-icon"></i>
                         <p class="mb-4 text-muted">"We have seen remarkable improvement in our son's confidence. The activity-based learning approach really works."</p>
                         <h6 class="fw-bold text-success">- Google Review</h6>
-                        <a href="https://maps.app.goo.gl/YourLinkHere" target="_blank" class="small text-decoration-none text-muted">View on Google Maps</a>
+                        <a href="https://maps.google.com/maps?q=Evergreen+International+School+Therkkupalayam+Pallipalayam" target="_blank" class="small text-decoration-none text-muted">View on Google Maps</a>
                     </div>
                 </div>
             </div>
@@ -524,12 +425,10 @@
                 <div class="col-lg-5" data-aos="fade-right">
                     <div class="content-card h-100">
                         <h4 class="fw-bold mb-4">Get in Touch</h4>
-                        
                         <div class="d-flex mb-3 align-items-start">
                             <i class="fas fa-map-marker-alt text-success me-3 mt-1"></i>
                             <p class="mb-0">Near Water Tank, Vediyarasampalayam Road, Therkkupalayam, Pallipalayam, Namakkal(DT), Erode - 638008.</p>
                         </div>
-                        
                         <div class="d-flex mb-3 align-items-start">
                             <i class="fas fa-phone-alt text-success me-3 mt-1"></i>
                             <div>
@@ -538,39 +437,23 @@
                                 <p class="mb-0">+91 99767 98007</p>
                             </div>
                         </div>
-                        
                         <div class="d-flex mb-4 align-items-center">
                             <i class="fas fa-envelope text-success me-3"></i>
                             <p class="mb-0">support@evergreen-school.in</p>
                         </div>
-                        
                         <div class="rounded overflow-hidden mt-4 shadow-sm" style="height: 250px;">
-                            <iframe src="https://maps.google.com/maps?q=Evergreen+International+School,+Therkkupalayam,+Pallipalayam&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe src="https://maps.google.com/maps?q=Evergreen+International+School+Therkkupalayam+Pallipalayam+Erode&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7" data-aos="fade-left">
                     <form action="https://formspree.io/f/meekpdpr" method="POST" class="content-card">
                         <div class="row g-4">
-                            <div class="col-md-6">
-                                <label class="form-label fw-bold small text-muted">Parent's Name</label>
-                                <input type="text" name="name" class="form-control p-3 bg-light border-0" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label fw-bold small text-muted">Email Address</label>
-                                <input type="email" name="email" class="form-control p-3 bg-light border-0" required>
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label fw-bold small text-muted">Phone Number</label>
-                                <input type="text" name="phone" class="form-control p-3 bg-light border-0" required>
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label fw-bold small text-muted">Message / Admission Enquiry</label>
-                                <textarea name="message" class="form-control p-3 bg-light border-0" rows="5" required></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn-custom w-100">Send Message</button>
-                            </div>
+                            <div class="col-md-6"><label class="form-label fw-bold small text-muted">Parent's Name</label><input type="text" name="name" class="form-control p-3 bg-light border-0" required></div>
+                            <div class="col-md-6"><label class="form-label fw-bold small text-muted">Email Address</label><input type="email" name="email" class="form-control p-3 bg-light border-0" required></div>
+                            <div class="col-12"><label class="form-label fw-bold small text-muted">Phone Number</label><input type="text" name="phone" class="form-control p-3 bg-light border-0" required></div>
+                            <div class="col-12"><label class="form-label fw-bold small text-muted">Message / Admission Enquiry</label><textarea name="message" class="form-control p-3 bg-light border-0" rows="5" required></textarea></div>
+                            <div class="col-12"><button type="submit" class="btn-custom w-100">Send Message</button></div>
                         </div>
                     </form>
                 </div>
@@ -595,30 +478,17 @@
     <script>
         AOS.init({ once: true, duration: 1000, offset: 120 });
         
-        // Gallery Config - Rack Style
         const galleryData = [
-            {
-                id: 'vijaya-gallery',
-                path: 'gallery/vijaya/',
-                count: 8,
-                title: 'Vijayadhasami 2025'
-            },
-            {
-                id: 'annual-gallery',
-                path: 'gallery/',
-                count: 23,
-                title: 'Annual Day 2025'
-            }
+            { id: 'vijaya-gallery', path: 'gallery/vijaya/', count: 8, title: 'Vijayadhasami 2025' },
+            { id: 'annual-gallery', path: 'gallery/', count: 23, title: 'Annual Day 2025' }
         ];
 
-        // Automatic Image Generation for Horizontal Rack
         galleryData.forEach(album => {
             const container = document.getElementById(album.id);
             if(container) {
                 for (let i = 1; i <= album.count; i++) {
                     const item = document.createElement('div');
                     item.className = 'gallery-item';
-                    
                     item.innerHTML = `
                         <div class="gallery-card">
                             <a href="${album.path}${i}.jpg" data-lightbox="${album.id}" data-title="${album.title} - Photo ${i}">
