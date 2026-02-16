@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evergreen International School | CBSE Primary School in Pallipalayam, Erode</title>
-    <meta name="description" content="Evergreen International School is a CBSE-aligned English-medium primary school in Therkkupalayam, Pallipalayam, Erode, offering Pre-KG to Grade 5 education.">
+    <title>Evergreen International School | CBSE Primary School in Pallipalayam</title>
+    <meta name="description" content="Evergreen International School is a CBSE-aligned English-medium primary school in Therkkupalayam, Pallipalayam, Erode.">
+    
     <meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE" />
     
     <link rel="icon" href="logo.png" type="image/png">
@@ -28,8 +29,7 @@
             --card: #FFFFFF;
             --text: #1B1B1B;
             --radius-md: 10px;
-            --radius-pill: 20px;
-            --shadow-s: 0 4px 15px rgba(0, 0, 0, 0.05);
+            --radius-pill: 30px; /* More rounded for modern look */
             --header-height: 100px;
         }
 
@@ -53,7 +53,7 @@
         /* --- CLEAN HEADER --- */
         .header-fixed-wrapper { 
             background: white; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             height: var(--header-height); 
             transition: all 0.3s ease;
         }
@@ -63,8 +63,7 @@
             padding: 5px 0; 
             font-size: 0.85rem; 
             height: 30px; 
-            display: flex; 
-            align-items: center; 
+            display: flex; align-items: center; 
         }
         .info-banner a { color: var(--accent-yellow); text-decoration: none; font-weight: 700; margin-left: 10px; }
 
@@ -74,7 +73,7 @@
             font-weight: 700; 
             color: var(--brand-green) !important; 
             text-transform: uppercase; 
-            font-size: 1.25rem; 
+            font-size: 1.2rem; 
             letter-spacing: -0.5px; 
         }
 
@@ -106,106 +105,68 @@
         
         @keyframes imageAnimation { 0% { opacity: 0; } 10% { opacity: 1; } 33% { opacity: 1; } 43% { opacity: 0; } 100% { opacity: 0; } }
         
-        /* 50% OVERLAY */
-        .hero-overlay { 
-            position: absolute; width: 100%; height: 100%; top: 0; left: 0; 
-            background: linear-gradient(110deg, rgba(31, 71, 38, 0.5), rgba(47, 107, 58, 0.4)); 
-            z-index: 1; 
-        }
+        .hero-overlay { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: linear-gradient(110deg, rgba(31, 71, 38, 0.5), rgba(47, 107, 58, 0.4)); z-index: 1; }
         
-        .hero-content { 
-            position: relative; 
-            z-index: 2; 
-            width: 100%; 
-            padding: 0 15px; 
-            /* Default Mobile Alignment: Center */
-            text-align: center; 
-        }
+        .hero-content { position: relative; z-index: 2; width: 100%; padding: 0 15px; text-align: center; }
         
-        /* White Text */
-        .hero h1 { 
-            color: #ffffff !important; 
-            font-size: 3.8rem; 
-            font-weight: 800; 
-            margin-bottom: 25px; 
-            text-shadow: 0 4px 30px rgba(0,0,0,0.6); 
-        }
-        
-        /* Subtitle Alignment Fix */
-        .hero-subtitle { 
-            color: #ffffff !important;
-            font-size: 1.35rem; 
-            font-weight: 600; 
-            text-shadow: 0 2px 15px rgba(0,0,0,0.6);
-            margin-bottom: 40px;
-            /* Mobile Center Logic */
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 800px;
+        @media (min-width: 992px) {
+            .hero-content { text-align: left; padding-left: 50px; }
+            .hero-subtitle { margin-left: 0; margin-right: 0; }
         }
 
-        /* Desktop Alignment Overrides */
-        @media (min-width: 992px) {
-            .hero-content {
-                text-align: left; /* Force Left Alignment on Desktop */
-                padding-left: 50px;
-            }
-            .hero-subtitle {
-                margin-left: 0; /* Remove auto margin to align left */
-                margin-right: 0;
-            }
+        .hero h1 { color: #ffffff !important; font-size: 3.8rem; font-weight: 800; margin-bottom: 25px; text-shadow: 0 4px 30px rgba(0,0,0,0.6); }
+        .hero-subtitle { color: #ffffff !important; font-size: 1.35rem; font-weight: 600; text-shadow: 0 2px 15px rgba(0,0,0,0.6); margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; }
+
+        /* --- FIX: PILLS (BADGES) --- */
+        /* Changed to Solid White for crisp visibility */
+        .pill { 
+            display: inline-flex; align-items: center; gap: 8px; 
+            background: #ffffff; /* Solid White */
+            color: var(--brand-green) !important; /* Green Text */
+            padding: 8px 20px; border-radius: var(--radius-pill); 
+            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.95rem; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* Nice shadow */
+            margin-right: 10px; margin-bottom: 10px;
         }
+        .pill i { color: var(--accent-yellow); font-size: 1.1rem; }
 
         /* --- UI COMPONENTS --- */
         .btn-custom { background-color: var(--brand-green); color: white; padding: 12px 35px; border-radius: var(--radius-pill); font-weight: 600; border: none; text-decoration: none; box-shadow: var(--shadow-s); display: inline-flex; align-items: center; justify-content: center; }
         .btn-custom:hover { background-color: #24522c; color: white; transform: translateY(-2px); }
-        
         .btn-hero-outline { background: transparent; border: 2px solid white; color: white; padding: 10px 35px; border-radius: var(--radius-pill); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; }
         .btn-hero-outline:hover { background: white; color: var(--brand-green); }
 
         .content-card { border: none; border-radius: var(--radius-md); background: var(--card); box-shadow: var(--shadow-s); padding: 35px; height: 100%; transition: 0.3s; }
         .content-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
 
-        .pill { 
-            display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.25); 
-            color: #fff !important; padding: 6px 16px; border-radius: var(--radius-pill); 
-            font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.9rem; 
-            backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.4);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .list-check { list-style: none; padding-left: 0; }
-        .list-check li { margin-bottom: 12px; display: flex; gap: 12px; align-items: start; }
-        .list-check li i { color: var(--leaf-green); margin-top: 4px; }
-
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { position: relative; padding-bottom: 15px; display: inline-block; }
         .section-title h2::after { content: ''; width: 70px; height: 4px; background: var(--accent-yellow); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 2px; }
 
-        .testimonial-card { border-radius: var(--radius-md); padding: 32px; box-shadow: var(--shadow-s); border-left: 5px solid var(--accent-yellow); height: 100%; background: white; }
-        .quote-icon { color: rgba(127, 183, 126, 0.4); font-size: 2rem; margin-bottom: 15px; }
-        
         .highlight-section { background-color: rgba(126, 200, 227, 0.08); }
 
-        /* --- RACK GALLERY --- */
-        .album-title { color: var(--brand-green); font-weight: 700; border-bottom: 3px solid var(--accent-yellow); display: inline-block; padding-bottom: 5px; margin-bottom: 15px; }
-        .gallery-track { display: flex; overflow-x: auto; gap: 20px; padding: 10px 5px 25px 5px; scroll-behavior: smooth; }
-        .gallery-track::-webkit-scrollbar { height: 6px; }
-        .gallery-track::-webkit-scrollbar-track { background: rgba(47, 107, 58, 0.1); border-radius: 10px; }
-        .gallery-track::-webkit-scrollbar-thumb { background: var(--brand-green); border-radius: 10px; }
-        .gallery-item { min-width: 280px; flex: 0 0 auto; }
-        .gallery-card { border-radius: var(--radius-md); overflow: hidden; height: 200px; box-shadow: var(--shadow-s); cursor: pointer; transition: 0.3s; }
-        .gallery-card:hover { transform: translateY(-5px); }
-        .gallery-img { width: 100%; height: 100%; object-fit: cover; }
+        /* --- LIFE @ EVERGREEN (INSTAGRAM GRID) --- */
+        .insta-grid-item {
+            position: relative; overflow: hidden; border-radius: var(--radius-md); 
+            aspect-ratio: 1/1; cursor: pointer; display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .insta-grid-item img {
+            width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
+        }
+        .insta-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(47, 107, 58, 0.8); display: flex; align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        .insta-overlay i { color: white; font-size: 2.5rem; }
+        .insta-grid-item:hover img { transform: scale(1.1); }
+        .insta-grid-item:hover .insta-overlay { opacity: 1; }
 
         /* --- FOOTER --- */
         footer { background: var(--brand-green); color: white; padding: 70px 0; border-top: 5px solid var(--accent-yellow); }
-        footer p, footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
-        footer a:hover { color: var(--accent-yellow); }
-        .social-icons a { 
-            color: var(--brand-green); width: 44px; height: 44px; border-radius: 50%; background: white; 
-            display: inline-flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s;
-        }
+        footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
+        .social-icons a { color: var(--brand-green); width: 44px; height: 44px; border-radius: 50%; background: white; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; }
         .social-icons a:hover { background: var(--accent-yellow); color: var(--text); }
 
         /* --- MOBILE --- */
@@ -216,10 +177,10 @@
             .hero { min-height: 500px; height: auto; padding: 100px 0; }
             .hero h1 { font-size: 2.2rem; }
             .navbar-collapse { background: white; padding: 20px; border-radius: 0 0 15px 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); max-height: 80vh; overflow-y: auto; }
-            .navbar-nav { gap: 10px; }
             .info-banner { font-size: 0.75rem; justify-content: center; }
             .info-banner a { display: none; }
-            .hero-badges, .hero-btns { justify-content: center !important; } /* Force Center on Mobile */
+            .hero-content { text-align: center; }
+            .hero-badges, .hero-btns { justify-content: center !important; }
         }
     </style>
 </head>
@@ -247,6 +208,7 @@
                         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#academics">Academics</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#life">Life@Evergreen</a></li>
                         <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link" href="#admissions">Admissions</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -264,9 +226,9 @@
         <div class="hero-overlay"></div>
         <div class="container hero-content" data-aos="fade-up" data-aos-duration="1200">
             <div class="d-inline-flex gap-2 mb-4 flex-wrap hero-badges">
-                <span class="pill"><i class="fas fa-award me-2"></i>CBSE Aligned</span>
-                <span class="pill"><i class="fas fa-language me-2"></i>English Medium</span>
-                <span class="pill"><i class="fas fa-child me-2"></i>Pre-KG to Grade 5</span>
+                <span class="pill"><i class="fas fa-award"></i>CBSE Aligned</span>
+                <span class="pill"><i class="fas fa-language"></i>English Medium</span>
+                <span class="pill"><i class="fas fa-child"></i>Pre-KG to Grade 5</span>
             </div>
             <h1>Welcome to Evergreen International School</h1>
             <p class="hero-subtitle">Empowering the next generation with values, creativity, and academic excellence. We provide a safe, nature-inspired environment where every child's potential is nurtured with care.</p>
@@ -285,20 +247,12 @@
                 </div>
                 <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left">
                     <div class="ps-lg-5">
-                        <span class="pill" style="color: var(--brand-green); background: rgba(47,107,58,0.1); border:none;"><i class="fas fa-school"></i>School Overview</span>
-                        <h2 class="fw-bold mb-4 mt-3">Strong foundations for lifelong learning.</h2>
+                        <span class="badge bg-light text-success rounded-pill px-3 py-2 fw-bold mb-3"><i class="fas fa-school me-2"></i>School Overview</span>
+                        <h2 class="fw-bold mb-4">Strong foundations for lifelong learning.</h2>
                         <p class="lead text-muted mb-4">Evergreen International School provides quality primary education rooted in strong values and modern teaching practices, aligned with the CBSE curriculum framework.</p>
                         <div class="content-card mb-4">
                             <h5 class="fw-bold mb-3" style="color: var(--brand-green);">Our Vision</h5>
                             <p class="mb-0 text-muted">To provide holistic education that nurtures intellectual, physical, emotional, and moral development, enabling students to become responsible global citizens.</p>
-                        </div>
-                        <div class="content-card">
-                            <h5 class="fw-bold mb-3" style="color: var(--brand-green);">Our Mission</h5>
-                            <ul class="list-check">
-                                <li><i class="fas fa-check-circle"></i>Deliver CBSE-aligned education with strong foundational learning.</li>
-                                <li><i class="fas fa-check-circle"></i>Encourage conceptual understanding and critical thinking.</li>
-                                <li><i class="fas fa-check-circle"></i>Create a safe, inclusive, and disciplined learning environment.</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -317,7 +271,6 @@
                             <li><i class="fas fa-check-circle"></i>Activity-based learning techniques.</li>
                             <li><i class="fas fa-check-circle"></i>Visual and audio teaching aids.</li>
                             <li><i class="fas fa-check-circle"></i>Interactive classroom practices.</li>
-                            <li><i class="fas fa-check-circle"></i>Continuous assessment and observation.</li>
                         </ul>
                     </div>
                 </div>
@@ -328,7 +281,6 @@
                             <li><i class="fas fa-check-circle"></i>English, Mathematics, Environmental Science.</li>
                             <li><i class="fas fa-check-circle"></i>Social Studies, General Knowledge.</li>
                             <li><i class="fas fa-check-circle"></i>Computer Education, Art and Craft.</li>
-                            <li><i class="fas fa-check-circle"></i>Physical Education.</li>
                         </ul>
                     </div>
                 </div>
@@ -336,7 +288,49 @@
         </div>
     </section>
 
-    <section id="gallery" class="highlight-section">
+    <section id="life" class="highlight-section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Life @ Evergreen</h2>
+                <p class="text-muted">Follow our daily moments on <a href="https://www.instagram.com/evergreen.campus/" target="_blank" style="color: var(--brand-green); font-weight: bold;">@evergreen.campus</a></p>
+            </div>
+            
+            <div class="row g-3">
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+                    <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="insta-grid-item">
+                        <img src="gallery/1.jpg" alt="Evergreen Moment">
+                        <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="insta-grid-item">
+                        <img src="gallery/2.jpg" alt="Evergreen Moment">
+                        <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
+                    <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="insta-grid-item">
+                        <img src="gallery/3.jpg" alt="Evergreen Moment">
+                        <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="400">
+                    <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="insta-grid-item">
+                        <img src="gallery/4.jpg" alt="Evergreen Moment">
+                        <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="btn-custom">
+                    <i class="fab fa-instagram me-2"></i> View Full Feed
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
         <div class="container">
             <div class="section-title" data-aos="fade-up"><h2>School Gallery</h2><p class="text-muted">Swipe horizontally to view our latest moments.</p></div>
             <div data-aos="fade-right"><h4 class="album-title">Vijayadhasami Celebration 2025</h4></div>
@@ -346,7 +340,7 @@
         </div>
     </section>
 
-    <section id="admissions">
+    <section id="admissions" class="highlight-section">
         <div class="container text-center">
             <div class="section-title" data-aos="fade-up"><h2>Admissions</h2><p>Admissions are open for Pre-KG to Grade 5.</p></div>
             <div class="row g-4">
@@ -376,68 +370,7 @@
         </div>
     </section>
 
-    <section id="infrastructure" class="highlight-section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up"><h2>Infrastructure</h2></div>
-            <div class="row g-4">
-                <div class="col-md-6" data-aos="fade-up">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Facilities</h5>
-                        <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>Spacious and ventilated classrooms.</li>
-                            <li><i class="fas fa-check-circle"></i>Library with age-appropriate books.</li>
-                            <li><i class="fas fa-check-circle"></i>Outdoor play area.</li>
-                            <li><i class="fas fa-check-circle"></i>Smart classroom support.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Health & Safety</h5>
-                        <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>Regular medical check-ups.</li>
-                            <li><i class="fas fa-check-circle"></i>Child-safe campus environment.</li>
-                            <li><i class="fas fa-check-circle"></i>Clean drinking water & sanitation.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up"><h2>Parent Voices</h2><p class="text-muted">Real feedback from our Evergreen community.</p></div>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial-card">
-                        <i class="fas fa-quote-left quote-icon"></i>
-                        <p class="mb-4 text-muted">"The focus on values and discipline at Evergreen is exactly what we were looking for. My child loves going to school every day."</p>
-                        <h6 class="fw-bold text-success">- Google Review</h6>
-                        <a href="https://www.google.com/search?q=Evergreen+International+School+Therkkupalayam" target="_blank" class="small text-decoration-none text-muted">View on Google Maps</a>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-card">
-                        <i class="fas fa-quote-left quote-icon"></i>
-                        <p class="mb-4 text-muted">"A wonderful environment for early learners. The teachers are very caring and the new facilities are excellent."</p>
-                        <h6 class="fw-bold text-success">- Google Review</h6>
-                        <a href="https://www.google.com/search?q=Evergreen+International+School+Therkkupalayam" target="_blank" class="small text-decoration-none text-muted">View on Google Maps</a>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="testimonial-card">
-                        <i class="fas fa-quote-left quote-icon"></i>
-                        <p class="mb-4 text-muted">"We have seen remarkable improvement in our son's confidence. The activity-based learning approach really works."</p>
-                        <h6 class="fw-bold text-success">- Google Review</h6>
-                        <a href="https://www.google.com/search?q=Evergreen+International+School+Therkkupalayam" target="_blank" class="small text-decoration-none text-muted">View on Google Maps</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="leadership" class="highlight-section">
+    <section id="leadership">
         <div class="container">
             <div class="section-title" data-aos="fade-up"><h2>Leadership</h2></div>
             <div class="row g-4">
@@ -445,14 +378,12 @@
                     <div class="content-card">
                         <h5 class="fw-bold mb-3">Principal’s Message</h5>
                         <p class="text-muted">"At Evergreen International School, we understand that the early years of a child’s education are the most important. These years shape not only academic ability, but also confidence, curiosity, and character."</p>
-                        <p class="text-muted">"Our teachers are committed to guiding each child with patience and dedication, while working closely with parents to support every learner’s individual growth. We aim to create a joyful learning experience that prepares children for future academic stages with confidence."</p>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="content-card">
                         <h5 class="fw-bold mb-3">Correspondent’s Message</h5>
                         <p class="text-muted">"Evergreen International School was established with a simple and sincere purpose: to provide young children with a strong, caring, and meaningful start to their educational journey."</p>
-                        <p class="text-muted">"Our commitment is to continuously improve our educational practices and facilities, ensuring that every child at Evergreen International School feels safe, valued, and encouraged to grow."</p>
                         <p class="fw-bold text-success mt-3">- Mr. Raja A P, Correspondent</p>
                     </div>
                 </div>
@@ -460,7 +391,7 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="highlight-section">
         <div class="container">
             <div class="section-title" data-aos="fade-up"><h2>Contact Us</h2></div>
             <div class="row g-5">
