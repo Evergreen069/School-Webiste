@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evergreen International School | CBSE Primary School in Pallipalayam</title>
     <meta name="description" content="Evergreen International School is a CBSE-aligned English-medium primary school in Therkkupalayam, Pallipalayam, Erode.">
-    
     <meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE" />
     
     <link rel="icon" href="logo.png" type="image/png">
@@ -29,7 +28,8 @@
             --card: #FFFFFF;
             --text: #1B1B1B;
             --radius-md: 10px;
-            --radius-pill: 30px; /* More rounded for modern look */
+            --radius-pill: 20px;
+            --shadow-s: 0 4px 15px rgba(0, 0, 0, 0.05);
             --header-height: 100px;
         }
 
@@ -50,10 +50,10 @@
 
         section { padding: 90px 0; scroll-margin-top: var(--header-height); }
 
-        /* --- CLEAN HEADER --- */
+        /* --- HEADER --- */
         .header-fixed-wrapper { 
             background: white; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow-s); 
             height: var(--header-height); 
             transition: all 0.3s ease;
         }
@@ -94,8 +94,8 @@
             box-shadow: 0 4px 10px rgba(47, 107, 58, 0.2);
         }
 
-        /* --- HERO SECTION --- */
-        .hero { position: relative; height: 85vh; min-height: 550px; display: flex; align-items: center; overflow: hidden; color: white; margin-top: 0; padding: 0; }
+        /* --- HERO SLIDESHOW --- */
+        .hero { position: relative; height: 90vh; min-height: 600px; display: flex; align-items: center; overflow: hidden; color: white; margin-top: 0; padding: 0; }
         .hero-slideshow { position: absolute; width: 100%; height: 100%; top: 0; left: 0; list-style: none; margin: 0; padding: 0; }
         .hero-slideshow li { width: 100%; height: 100%; position: absolute; background-size: cover; background-position: center; opacity: 0; animation: imageAnimation 18s linear infinite; }
         
@@ -105,30 +105,26 @@
         
         @keyframes imageAnimation { 0% { opacity: 0; } 10% { opacity: 1; } 33% { opacity: 1; } 43% { opacity: 0; } 100% { opacity: 0; } }
         
-        .hero-overlay { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: linear-gradient(110deg, rgba(31, 71, 38, 0.5), rgba(47, 107, 58, 0.4)); z-index: 1; }
+        /* 50% OVERLAY */
+        .hero-overlay { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: linear-gradient(110deg, rgba(31, 71, 38, 0.6), rgba(47, 107, 58, 0.5)); z-index: 1; }
         
         .hero-content { position: relative; z-index: 2; width: 100%; padding: 0 15px; text-align: center; }
         
-        @media (min-width: 992px) {
-            .hero-content { text-align: left; padding-left: 50px; }
-            .hero-subtitle { margin-left: 0; margin-right: 0; }
-        }
-
         .hero h1 { color: #ffffff !important; font-size: 3.8rem; font-weight: 800; margin-bottom: 25px; text-shadow: 0 4px 30px rgba(0,0,0,0.6); }
         .hero-subtitle { color: #ffffff !important; font-size: 1.35rem; font-weight: 600; text-shadow: 0 2px 15px rgba(0,0,0,0.6); margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; }
 
-        /* --- FIX: PILLS (BADGES) --- */
-        /* Changed to Solid White for crisp visibility */
-        .pill { 
-            display: inline-flex; align-items: center; gap: 8px; 
-            background: #ffffff; /* Solid White */
-            color: var(--brand-green) !important; /* Green Text */
-            padding: 8px 20px; border-radius: var(--radius-pill); 
-            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.95rem; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* Nice shadow */
-            margin-right: 10px; margin-bottom: 10px;
+        /* --- RESTORED STATS BOXES (The 3 Buttons) --- */
+        .hero-card {
+            background: rgba(255,255,255,0.9); 
+            border-radius: var(--radius-md); 
+            padding: 20px; 
+            text-align: left;
+            border-left: 5px solid var(--accent-yellow);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            height: 100%;
         }
-        .pill i { color: var(--accent-yellow); font-size: 1.1rem; }
+        .hero-card p { color: var(--brand-green); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 5px; }
+        .hero-card h4 { color: var(--text); margin-bottom: 0; font-weight: 800; }
 
         /* --- UI COMPONENTS --- */
         .btn-custom { background-color: var(--brand-green); color: white; padding: 12px 35px; border-radius: var(--radius-pill); font-weight: 600; border: none; text-decoration: none; box-shadow: var(--shadow-s); display: inline-flex; align-items: center; justify-content: center; }
@@ -139,48 +135,56 @@
         .content-card { border: none; border-radius: var(--radius-md); background: var(--card); box-shadow: var(--shadow-s); padding: 35px; height: 100%; transition: 0.3s; }
         .content-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
 
+        .pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.25); color: #fff !important; padding: 6px 16px; border-radius: var(--radius-pill); font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.9rem; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.4); text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+
+        .list-check { list-style: none; padding-left: 0; }
+        .list-check li { margin-bottom: 12px; display: flex; gap: 12px; align-items: start; }
+        .list-check li i { color: var(--leaf-green); margin-top: 4px; }
+
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { position: relative; padding-bottom: 15px; display: inline-block; }
         .section-title h2::after { content: ''; width: 70px; height: 4px; background: var(--accent-yellow); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 2px; }
 
         .highlight-section { background-color: rgba(126, 200, 227, 0.08); }
 
-        /* --- LIFE @ EVERGREEN (INSTAGRAM GRID) --- */
-        .insta-grid-item {
-            position: relative; overflow: hidden; border-radius: var(--radius-md); 
-            aspect-ratio: 1/1; cursor: pointer; display: block;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        .insta-grid-item img {
-            width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
-        }
-        .insta-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(47, 107, 58, 0.8); display: flex; align-items: center; justify-content: center;
-            opacity: 0; transition: opacity 0.3s ease;
-        }
-        .insta-overlay i { color: white; font-size: 2.5rem; }
-        .insta-grid-item:hover img { transform: scale(1.1); }
-        .insta-grid-item:hover .insta-overlay { opacity: 1; }
+        /* --- RACK GALLERY --- */
+        .album-title { color: var(--brand-green); font-weight: 700; border-bottom: 3px solid var(--accent-yellow); display: inline-block; padding-bottom: 5px; margin-bottom: 15px; }
+        .gallery-track { display: flex; overflow-x: auto; gap: 20px; padding: 10px 5px 25px 5px; scroll-behavior: smooth; }
+        .gallery-track::-webkit-scrollbar { height: 6px; }
+        .gallery-track::-webkit-scrollbar-track { background: rgba(47, 107, 58, 0.1); border-radius: 10px; }
+        .gallery-track::-webkit-scrollbar-thumb { background: var(--brand-green); border-radius: 10px; }
+        .gallery-item { min-width: 280px; flex: 0 0 auto; }
+        .gallery-card { border-radius: var(--radius-md); overflow: hidden; height: 200px; box-shadow: var(--shadow-s); cursor: pointer; transition: 0.3s; }
+        .gallery-card:hover { transform: translateY(-5px); }
+        .gallery-img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- FOOTER --- */
-        footer { background: var(--brand-green); color: white; padding: 70px 0; border-top: 5px solid var(--accent-yellow); }
+        .testimonial-card { border-radius: var(--radius-md); padding: 32px; box-shadow: var(--shadow-s); border-left: 5px solid var(--accent-yellow); height: 100%; background: white; }
+        .quote-icon { color: rgba(127, 183, 126, 0.4); font-size: 2rem; margin-bottom: 15px; }
+
+        /* --- FOOTER & LIFE@EVERGREEN BUTTON --- */
+        footer { background: var(--brand-green); color: white; padding: 60px 0; border-top: 5px solid var(--accent-yellow); position: relative; }
         footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
         .social-icons a { color: var(--brand-green); width: 44px; height: 44px; border-radius: 50%; background: white; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; }
         .social-icons a:hover { background: var(--accent-yellow); color: var(--text); }
+
+        .life-btn-container { text-align: center; margin-bottom: 20px; }
+        .btn-life {
+            background: transparent; border: 2px solid rgba(255,255,255,0.8); color: white;
+            padding: 10px 25px; border-radius: 30px; font-weight: 700; text-decoration: none;
+            transition: 0.3s; display: inline-flex; align-items: center; gap: 10px;
+        }
+        .btn-life:hover { background: white; color: var(--brand-green); }
 
         /* --- MOBILE --- */
         @media (max-width: 991px) {
             :root { --header-height: 100px; }
             body { padding-top: 100px; }
             section { padding: 50px 0; scroll-margin-top: 100px; }
-            .hero { min-height: 500px; height: auto; padding: 100px 0; }
+            .hero { min-height: 600px; height: auto; padding: 100px 0; }
             .hero h1 { font-size: 2.2rem; }
             .navbar-collapse { background: white; padding: 20px; border-radius: 0 0 15px 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); max-height: 80vh; overflow-y: auto; }
             .info-banner { font-size: 0.75rem; justify-content: center; }
             .info-banner a { display: none; }
-            .hero-content { text-align: center; }
-            .hero-badges, .hero-btns { justify-content: center !important; }
         }
     </style>
 </head>
@@ -208,7 +212,6 @@
                         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#academics">Academics</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#life">Life@Evergreen</a></li>
                         <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link" href="#admissions">Admissions</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -224,17 +227,38 @@
     <section id="home" class="hero">
         <ul class="hero-slideshow"><li></li><li></li><li></li></ul>
         <div class="hero-overlay"></div>
-        <div class="container hero-content" data-aos="fade-up" data-aos-duration="1200">
-            <div class="d-inline-flex gap-2 mb-4 flex-wrap hero-badges">
+        <div class="container hero-content text-center" data-aos="fade-up" data-aos-duration="1200">
+            <div class="d-inline-flex gap-2 mb-4 flex-wrap justify-content-center">
                 <span class="pill"><i class="fas fa-award"></i>CBSE Aligned</span>
                 <span class="pill"><i class="fas fa-language"></i>English Medium</span>
                 <span class="pill"><i class="fas fa-child"></i>Pre-KG to Grade 5</span>
             </div>
             <h1>Welcome to Evergreen International School</h1>
             <p class="hero-subtitle">Empowering the next generation with values, creativity, and academic excellence. We provide a safe, nature-inspired environment where every child's potential is nurtured with care.</p>
-            <div class="d-flex flex-wrap gap-3 hero-btns">
+            <div class="d-flex flex-wrap justify-content-center gap-3">
                 <a href="#about" class="btn-custom">Explore Our Vision</a>
                 <a href="#contact" class="btn-hero-outline">Schedule a Visit</a>
+            </div>
+
+            <div class="row mt-5 g-3 justify-content-center">
+                <div class="col-md-4">
+                    <div class="hero-card">
+                        <p>ESTABLISHED</p>
+                        <h4>2015</h4>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="hero-card">
+                        <p>CLASSES</p>
+                        <h4>Pre-KG to Grade 5</h4>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="hero-card">
+                        <p>TYPE</p>
+                        <h4>Co-ed Day School</h4>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -288,49 +312,7 @@
         </div>
     </section>
 
-    <section id="life" class="highlight-section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Life @ Evergreen</h2>
-                <p class="text-muted">Follow our daily moments on <a href="https://www.instagram.com/evergreen.campus/" target="_blank" style="color: var(--brand-green); font-weight: bold;">@evergreen.campus</a></p>
-            </div>
-            
-            <div class="row g-3">
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
-                    <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="insta-grid-item">
-                        <img src="gallery/1.jpg" alt="Evergreen Moment">
-                        <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
-                    </a>
-                </div>
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
-                    <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="insta-grid-item">
-                        <img src="gallery/2.jpg" alt="Evergreen Moment">
-                        <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
-                    </a>
-                </div>
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
-                    <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="insta-grid-item">
-                        <img src="gallery/3.jpg" alt="Evergreen Moment">
-                        <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
-                    </a>
-                </div>
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="400">
-                    <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="insta-grid-item">
-                        <img src="gallery/4.jpg" alt="Evergreen Moment">
-                        <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="text-center mt-5">
-                <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="btn-custom">
-                    <i class="fab fa-instagram me-2"></i> View Full Feed
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery">
+    <section id="gallery" class="highlight-section">
         <div class="container">
             <div class="section-title" data-aos="fade-up"><h2>School Gallery</h2><p class="text-muted">Swipe horizontally to view our latest moments.</p></div>
             <div data-aos="fade-right"><h4 class="album-title">Vijayadhasami Celebration 2025</h4></div>
@@ -340,7 +322,7 @@
         </div>
     </section>
 
-    <section id="admissions" class="highlight-section">
+    <section id="admissions">
         <div class="container text-center">
             <div class="section-title" data-aos="fade-up"><h2>Admissions</h2><p>Admissions are open for Pre-KG to Grade 5.</p></div>
             <div class="row g-4">
@@ -370,7 +352,7 @@
         </div>
     </section>
 
-    <section id="leadership">
+    <section id="leadership" class="highlight-section">
         <div class="container">
             <div class="section-title" data-aos="fade-up"><h2>Leadership</h2></div>
             <div class="row g-4">
@@ -391,7 +373,7 @@
         </div>
     </section>
 
-    <section id="contact" class="highlight-section">
+    <section id="contact">
         <div class="container">
             <div class="section-title" data-aos="fade-up"><h2>Contact Us</h2></div>
             <div class="row g-5">
@@ -443,6 +425,13 @@
 
     <footer class="text-center">
         <div class="container">
+            
+            <div class="life-btn-container">
+                <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="btn-life">
+                    <i class="fab fa-instagram"></i> Life@Evergreen
+                </a>
+            </div>
+
             <div class="social-icons mb-4">
                 <a href="https://www.facebook.com/evergreeninternationalschooltherkkupalayam/" target="_blank" class="me-3"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="me-3"><i class="fab fa-instagram"></i></a>
