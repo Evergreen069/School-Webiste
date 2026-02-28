@@ -4,787 +4,1301 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evergreen International School | CBSE Primary School in Pallipalayam</title>
-    <meta name="description" content="Evergreen International School is a CBSE-aligned English-medium primary school in Therkkupalayam, Pallipalayam, Erode.">
-    <meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE" />
-    
+    <meta name="description" content="Evergreen International School is a CBSE-aligned English-medium primary school in Therkkupalayam, Pallipalayam, Erode. Admissions open for Pre-KG to Grade 5.">
+    <meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE">
     <link rel="icon" href="logo.png" type="image/png">
     <link rel="shortcut icon" href="logo.png" type="image/png">
     <link rel="apple-touch-icon" href="logo.png">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Lightbox requires jQuery -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
 
     <style>
+        /* ====================================================
+           VARIABLES
+        ==================================================== */
         :root {
-            --brand-green: #2F6B3A;
-            --leaf-green: #7FB77E;
-            --accent-yellow: #F4C542;
-            --bg: #FAFBF9;
-            --card: #FFFFFF;
-            --text: #1B1B1B;
-            --radius-md: 10px;
-            --radius-pill: 30px;
-            --header-height: 100px;
+            --green:     #2F6B3A;
+            --green-dk:  #1E4726;
+            --green-lt:  #7FB77E;
+            --yellow:    #F4C542;
+            --sky:       #7EC8E3;
+            --bg:        #FAFBF9;
+            --card:      #FFFFFF;
+            --text:      #1B1B1B;
+            --muted:     #5B6A64;
+            --border:    rgba(47,107,58,0.12);
+            --sh-s:      0 4px 14px rgba(0,0,0,0.06);
+            --sh-m:      0 10px 32px rgba(0,0,0,0.09);
+            --sh-l:      0 20px 56px rgba(0,0,0,0.12);
+            --r-sm:      8px;
+            --r-md:      14px;
+            --r-pill:    50px;
+            --nav-h:     76px;
+            --bar-h:     36px;
         }
-
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Nunito', sans-serif;
             color: var(--text);
-            line-height: 1.6;
-            background-color: var(--bg);
-            padding-top: var(--header-height);
+            background: var(--bg);
+            line-height: 1.65;
+            padding-top: calc(var(--nav-h) + var(--bar-h));
+            overflow-x: hidden;
         }
-
-        h1, h2, h3, h4, h5, h6 {
+        h1,h2,h3,h4,h5,h6 {
             font-family: 'Poppins', sans-serif;
-            color: var(--brand-green);
-            line-height: 1.3;
             font-weight: 700;
+            line-height: 1.25;
+            color: var(--green-dk);
         }
+        img { display: block; max-width: 100%; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        section { scroll-margin-top: calc(var(--nav-h) + var(--bar-h)); }
 
-        section {
-            padding: 90px 0;
-            scroll-margin-top: var(--header-height);
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: var(--green-lt); border-radius: 3px; }
+
+        /* ====================================================
+           LAYOUT HELPERS
+        ==================================================== */
+        .wrap { max-width: 1220px; margin: 0 auto; padding: 0 28px; }
+        .sec  { padding: 92px 0; }
+        .sec-alt { background: rgba(126,200,227,0.07); }
+
+        .sec-header { text-align: center; margin-bottom: 60px; }
+        .sec-header h2 {
+            font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+            font-weight: 800;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 14px;
         }
-
-        /* --- HEADER --- */
-        .header-fixed-wrapper { 
-            background: white; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
-            height: var(--header-height); 
-            transition: all 0.3s ease;
+        .sec-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 56px; height: 4px;
+            background: var(--yellow);
+            border-radius: 2px;
         }
+        .sec-header p { color: var(--muted); margin-top: 14px; font-size: 1.05rem; font-weight: 600; }
 
-        .info-banner { 
-            background: var(--brand-green); 
-            color: #fff; 
-            padding: 5px 0; 
-            font-size: 0.85rem; 
-            height: 30px; 
-            display: flex; 
-            align-items: center; 
+        /* Buttons */
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem;
+            padding: 13px 30px; border-radius: var(--r-pill);
+            border: none; cursor: pointer; transition: all 0.25s;
         }
+        .btn-green  { background: var(--green);  color: #fff; box-shadow: 0 4px 14px rgba(47,107,58,0.3); }
+        .btn-green:hover  { background: var(--green-dk); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(47,107,58,0.4); color: #fff; }
+        .btn-yellow { background: var(--yellow); color: var(--text); }
+        .btn-yellow:hover { background: #e6b53a; transform: translateY(-2px); color: var(--text); }
+        .btn-ghost  { background: transparent; border: 2px solid rgba(255,255,255,0.7); color: #fff; }
+        .btn-ghost:hover  { background: rgba(255,255,255,0.12); border-color: #fff; color: #fff; }
 
-        .info-banner a { 
-            color: var(--accent-yellow); 
-            text-decoration: none; 
-            font-weight: 700; 
-            margin-left: 10px; 
+        /* Card */
+        .card {
+            background: var(--card); border-radius: var(--r-md);
+            box-shadow: var(--sh-s); padding: 32px;
+            height: 100%; transition: transform 0.3s, box-shadow 0.3s;
         }
+        .card:hover { transform: translateY(-5px); box-shadow: var(--sh-m); }
 
-        .navbar { 
-            padding: 0; 
-            height: 70px; 
-            background: white; 
-        }
-
-        .navbar-brand { 
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700; 
-            color: var(--brand-green) !important; 
-            text-transform: uppercase; 
-            font-size: 1.2rem; 
-            letter-spacing: -0.5px; 
-        }
-
-        .nav-link { 
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700; 
-            margin: 0 5px; 
-            padding: 8px 18px !important; 
-            color: var(--text) !important; 
-            border-radius: var(--radius-pill); 
-            transition: 0.3s; 
+        /* Plain list (no icons) */
+        .plain-list li {
+            padding: 9px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: var(--muted);
+            font-weight: 600;
             font-size: 0.95rem;
+            padding-left: 14px;
+            position: relative;
         }
-
-        .nav-link:hover { 
-            background-color: rgba(47, 107, 58, 0.05); 
-            color: var(--brand-green) !important; 
-        }
-
-        .nav-link.active { 
-            background-color: var(--brand-green) !important; 
-            color: #fff !important; 
-            box-shadow: 0 4px 10px rgba(47, 107, 58, 0.2);
-        }
-
-        /* --- HERO SLIDESHOW --- */
-        .hero { 
-            position: relative; 
-            height: 90vh; 
-            min-height: 600px; 
-            display: flex; 
-            align-items: center; 
-            overflow: hidden; 
-            color: white; 
-            margin-top: 0; 
-            padding: 0; 
-        }
-
-        .hero-slideshow { 
-            position: absolute; 
-            width: 100%; 
-            height: 100%; 
-            top: 0; 
-            left: 0; 
-            list-style: none; 
-            margin: 0; 
-            padding: 0; 
-        }
-
-        .hero-slideshow li { 
-            width: 100%; 
-            height: 100%; 
-            position: absolute; 
-            background-size: cover; 
-            background-position: center; 
-            opacity: 0; 
-            animation: imageAnimation 18s linear infinite; 
-        }
-        
-        .hero-slideshow li:nth-child(1) { background-image: url('gallery/1.jpg'); animation-delay: 0s; }
-        .hero-slideshow li:nth-child(2) { background-image: url('gallery/2.jpg'); animation-delay: 6s; }
-        .hero-slideshow li:nth-child(3) { background-image: url('gallery/3.jpg'); animation-delay: 12s; }
-        
-        @keyframes imageAnimation { 
-            0% { opacity: 0; } 10% { opacity: 1; } 33% { opacity: 1; } 43% { opacity: 0; } 100% { opacity: 0; } 
-        }
-        
-        /* 50% OVERLAY */
-        .hero-overlay { 
-            position: absolute; 
-            width: 100%; 
-            height: 100%; 
-            top: 0; 
-            left: 0; 
-            background: linear-gradient(110deg, rgba(31, 71, 38, 0.6), rgba(47, 107, 58, 0.5)); 
-            z-index: 1; 
-        }
-        
-        .hero-content { 
-            position: relative; 
-            z-index: 2; 
-            width: 100%; 
-            padding: 0 15px; 
-            text-align: center; 
-        }
-        
-        @media (min-width: 992px) {
-            .hero-content { 
-                text-align: left; 
-                padding-left: 50px; 
-            }
-            .hero-subtitle { 
-                margin-left: 0 !important; 
-                margin-right: 0 !important; 
-            }
-            .hero-badges, .hero-btns { 
-                justify-content: flex-start !important; 
-            }
-        }
-
-        .hero h1 { 
-            color: #ffffff !important; 
-            font-size: 3.8rem; 
-            font-weight: 800; 
-            margin-bottom: 25px; 
-            text-shadow: 0 4px 30px rgba(0,0,0,0.6); 
-        }
-
-        .hero-subtitle { 
-            color: #ffffff !important; 
-            font-size: 1.35rem; 
-            font-weight: 600; 
-            text-shadow: 0 2px 15px rgba(0,0,0,0.6); 
-            margin-bottom: 40px; 
-            max-width: 800px; 
-            margin-left: auto; 
-            margin-right: auto; 
-        }
-
-        /* --- RESTORED STATS BOXES --- */
-        .hero-card {
-            background: rgba(255,255,255,0.95); 
-            border-radius: var(--radius-md); 
-            padding: 20px; 
-            text-align: left;
-            border-left: 5px solid var(--brand-green);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            height: 100%;
-        }
-
-        .hero-card p { 
-            color: var(--leaf-green); 
-            font-size: 0.8rem; 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            margin-bottom: 5px; 
-            letter-spacing: 1px; 
-        }
-
-        .hero-card h4 { 
-            color: var(--text); 
-            margin-bottom: 0; 
-            font-weight: 800; 
-            font-size: 1.2rem; 
-        }
-
-        /* --- PILLS --- */
-        .pill { 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 8px; 
-            background: #ffffff; /* Solid White for Pop */
-            color: var(--brand-green) !important; /* Brand Green Text */
-            padding: 10px 25px; 
-            border-radius: var(--radius-pill); 
-            font-family: 'Nunito', sans-serif; 
-            font-weight: 800; 
-            font-size: 0.9rem; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
-            margin-right: 10px; 
-            margin-bottom: 10px;
-        }
-
-        /* --- UI COMPONENTS --- */
-        .btn-custom { 
-            background-color: var(--brand-green); 
-            color: white; 
-            padding: 12px 35px; 
-            border-radius: var(--radius-pill); 
-            font-weight: 600; 
-            border: none; 
-            text-decoration: none; 
-            box-shadow: var(--shadow-s); 
-            display: inline-flex; 
-            align-items: center; 
-            justify-content: center; 
-        }
-
-        .btn-custom:hover { 
-            background-color: #24522c; 
-            color: white; 
-            transform: translateY(-2px); 
-        }
-
-        .btn-hero-outline { 
-            background: transparent; 
-            border: 2px solid white; 
-            color: white; 
-            padding: 10px 35px; 
-            border-radius: var(--radius-pill); 
-            font-weight: 600; 
-            text-decoration: none; 
-            display: inline-flex; 
-            align-items: center; 
-        }
-
-        .btn-hero-outline:hover { 
-            background: white; 
-            color: var(--brand-green); 
-        }
-
-        .content-card { 
-            border: none; 
-            border-radius: var(--radius-md); 
-            background: var(--card); 
-            box-shadow: var(--shadow-s); 
-            padding: 35px; 
-            height: 100%; 
-            transition: 0.3s; 
-        }
-
-        .content-card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08); 
-        }
-
-        .list-check { list-style: none; padding-left: 0; }
-        .list-check li { margin-bottom: 12px; display: flex; gap: 12px; align-items: start; }
-        .list-check li i { color: var(--leaf-green); margin-top: 4px; }
-
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { position: relative; padding-bottom: 15px; display: inline-block; }
-        .section-title h2::after { content: ''; width: 70px; height: 4px; background: var(--accent-yellow); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 2px; }
-
-        .highlight-section { background-color: rgba(126, 200, 227, 0.08); }
-
-        /* --- RACK GALLERY --- */
-        .album-title { color: var(--brand-green); font-weight: 700; border-bottom: 3px solid var(--accent-yellow); display: inline-block; padding-bottom: 5px; margin-bottom: 15px; }
-        .gallery-track { display: flex; overflow-x: auto; gap: 20px; padding: 10px 5px 25px 5px; scroll-behavior: smooth; }
-        .gallery-track::-webkit-scrollbar { height: 8px; }
-        .gallery-track::-webkit-scrollbar-track { background: rgba(47, 107, 58, 0.1); border-radius: 10px; }
-        .gallery-track::-webkit-scrollbar-thumb { background: var(--brand-green); border-radius: 10px; }
-        .gallery-item { min-width: 280px; flex: 0 0 auto; }
-        .gallery-card { border-radius: var(--radius-md); overflow: hidden; height: 200px; box-shadow: var(--shadow-s); cursor: pointer; transition: 0.3s; background: white; border: 1px solid rgba(0,0,0,0.05); }
-        .gallery-card:hover { transform: translateY(-5px); }
-        .gallery-img { width: 100%; height: 100%; object-fit: cover; }
-
-        .testimonial-card { border-radius: var(--radius-md); padding: 32px; box-shadow: var(--shadow-s); border-left: 5px solid var(--accent-yellow); height: 100%; background: white; }
-        .quote-icon { color: rgba(127, 183, 126, 0.4); font-size: 2rem; margin-bottom: 15px; }
-
-        /* --- BIRDSCALE STYLE FOOTER --- */
-        footer { 
-            background: #111; /* Dark background like Birdscale */
-            color: #ddd; 
-            padding: 70px 0 30px 0; 
-            font-size: 0.9rem;
-        }
-        footer h5 {
-            color: #fff;
-            font-weight: 700;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        footer ul { list-style: none; padding: 0; }
-        footer ul li { margin-bottom: 12px; }
-        footer ul li a { 
-            color: #bbb; 
-            text-decoration: none; 
-            transition: 0.3s; 
-        }
-        footer ul li a:hover { 
-            color: var(--accent-yellow); 
-            padding-left: 5px; 
-        }
-        
-        .footer-logo {
-            max-width: 180px;
-            margin-bottom: 20px;
-            background: white;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        
-        .footer-social-icons {
-            margin-top: 25px;
-        }
-        .footer-social-icons a {
-            display: inline-flex;
-            width: 35px;
-            height: 35px;
-            background: rgba(255,255,255,0.1);
-            color: #fff;
-            align-items: center;
-            justify-content: center;
+        .plain-list li::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 50%;
+            transform: translateY(-50%);
+            width: 5px; height: 5px;
             border-radius: 50%;
-            margin-right: 10px;
-            text-decoration: none;
+            background: var(--green-lt);
+        }
+        .plain-list li:last-child { border-bottom: none; }
+
+        /* Tag pill */
+        .tag {
+            display: inline-flex; align-items: center; gap: 7px;
+            background: rgba(47,107,58,0.09);
+            color: var(--green);
+            padding: 6px 16px; border-radius: var(--r-pill);
+            font-size: 0.78rem; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 0.6px;
+            margin-bottom: 16px;
+        }
+
+        /* Reveal animation */
+        .reveal {
+            opacity: 0; transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.d1 { transition-delay: 0.1s; }
+        .reveal.d2 { transition-delay: 0.2s; }
+        .reveal.d3 { transition-delay: 0.3s; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+        /* ====================================================
+           ANNOUNCE BAR
+        ==================================================== */
+        .announce {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1002;
+            height: var(--bar-h);
+            background: var(--green); color: #fff;
+            font-size: 0.82rem; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            gap: 6px;
+        }
+        .announce a { color: var(--yellow); font-weight: 800; }
+        .announce a:hover { text-decoration: underline; }
+
+        /* ====================================================
+           HEADER / NAV
+        ==================================================== */
+        .site-header {
+            position: fixed; top: var(--bar-h); left: 0; right: 0; z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            height: var(--nav-h);
+            transition: box-shadow 0.3s;
+        }
+        .site-header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.1); }
+        .header-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 100%; max-width: 1220px; margin: 0 auto; padding: 0 28px;
+        }
+        .brand {
+            display: flex; align-items: center; gap: 11px; flex-shrink: 0;
+        }
+        .brand img { height: 48px; width: auto; border-radius: 4px; }
+        .brand-text {
+            font-family: 'Poppins', sans-serif; font-weight: 800;
+            font-size: 0.88rem; color: var(--green); line-height: 1.2; max-width: 160px;
+        }
+        .brand-text small { display: block; font-weight: 500; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .nav-links { display: flex; align-items: center; gap: 2px; }
+        .nav-links a {
+            font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.86rem;
+            padding: 7px 13px; border-radius: var(--r-pill); color: var(--text);
+            transition: all 0.22s; white-space: nowrap;
+        }
+        .nav-links a:hover { background: rgba(47,107,58,0.07); color: var(--green); }
+        .nav-links a.active { background: var(--green); color: #fff; }
+        .nav-links a.life-link {
+            color: var(--green); font-weight: 800;
+            background: rgba(244,197,66,0.15);
+        }
+        .nav-links a.life-link:hover { background: rgba(244,197,66,0.28); }
+
+        .nav-cta {
+            margin-left: 8px;
+            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.86rem;
+            background: var(--green); color: #fff;
+            padding: 10px 22px; border-radius: var(--r-pill);
+            transition: all 0.25s; white-space: nowrap;
+        }
+        .nav-cta:hover { background: var(--green-dk); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(47,107,58,0.35); color: #fff; }
+
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: var(--green); border-radius: 2px; transition: 0.3s; }
+
+        /* Mobile nav */
+        .mobile-nav {
+            display: none; position: fixed;
+            top: calc(var(--nav-h) + var(--bar-h));
+            left: 0; right: 0; z-index: 999;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 0 0 16px 16px;
+            padding: 16px 20px 20px;
+        }
+        .mobile-nav.open { display: block; }
+        .mobile-nav a {
+            display: block; padding: 11px 14px;
+            font-family: 'Nunito', sans-serif; font-weight: 700;
+            color: var(--text); border-radius: var(--r-sm);
+            transition: 0.2s; font-size: 0.95rem;
+        }
+        .mobile-nav a:hover { background: rgba(47,107,58,0.07); color: var(--green); }
+        .mobile-nav a.life-link { color: var(--green); font-weight: 800; }
+        .mobile-nav .m-cta {
+            display: block; text-align: center; margin-top: 14px;
+            background: var(--green); color: #fff;
+            padding: 13px; border-radius: var(--r-pill);
+            font-family: 'Nunito', sans-serif; font-weight: 800;
+        }
+
+        /* ====================================================
+           HERO
+        ==================================================== */
+        #home {
+            position: relative;
+            min-height: calc(100vh - var(--nav-h) - var(--bar-h));
+            display: flex; align-items: center; overflow: hidden;
+        }
+        .hero-slides { position: absolute; inset: 0; }
+        .slide {
+            position: absolute; inset: 0;
+            background-size: cover; background-position: center;
+            opacity: 0; animation: slideShow 21s infinite;
+        }
+        .slide:nth-child(1) { background-image: url('gallery/1.jpg'); animation-delay: 0s; }
+        .slide:nth-child(2) { background-image: url('gallery/2.jpg'); animation-delay: 7s; }
+        .slide:nth-child(3) { background-image: url('gallery/3.jpg'); animation-delay: 14s; }
+        @keyframes slideShow {
+            0%   { opacity: 0; transform: scale(1.05); }
+            8%   { opacity: 1; transform: scale(1); }
+            33%  { opacity: 1; }
+            41%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+        .hero-overlay {
+            position: absolute; inset: 0; z-index: 1;
+            background: linear-gradient(135deg, rgba(18,46,24,0.78) 0%, rgba(30,72,38,0.62) 60%, rgba(47,107,58,0.48) 100%);
+        }
+        .hero-deco {
+            position: absolute; z-index: 2; pointer-events: none;
+            width: 480px; height: 480px;
+            border: 1px solid rgba(244,197,66,0.12);
+            border-radius: 50%;
+            right: -80px; top: -80px;
+        }
+        .hero-body {
+            position: relative; z-index: 3;
+            width: 100%; max-width: 1220px; margin: 0 auto;
+            padding: 80px 28px 100px;
+        }
+        .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+        .hero-pill {
+            display: inline-flex; align-items: center; gap: 7px;
+            background: rgba(255,255,255,0.16);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.28);
+            color: #fff;
+            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.8rem;
+            padding: 7px 18px; border-radius: var(--r-pill);
+        }
+        .hero-pill i { color: var(--yellow); font-size: 0.72rem; }
+        .hero-body h1 {
+            color: #fff;
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            font-weight: 900; line-height: 1.1;
+            max-width: 780px;
+            text-shadow: 0 4px 28px rgba(0,0,0,0.4);
+            margin-bottom: 20px;
+        }
+        .hero-body h1 em { font-style: normal; color: var(--yellow); }
+        .hero-sub {
+            color: rgba(255,255,255,0.88); font-size: 1.1rem; font-weight: 600;
+            max-width: 580px; margin-bottom: 38px;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+            line-height: 1.7;
+        }
+        .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 62px; }
+        .hero-stats {
+            display: grid; grid-template-columns: repeat(3,1fr);
+            gap: 14px; max-width: 640px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.96);
+            border-radius: var(--r-md); padding: 17px 20px;
+            border-left: 4px solid var(--green);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+        }
+        .stat-label { font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--green-lt); margin-bottom: 4px; }
+        .stat-value { font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 800; color: var(--text); }
+        .scroll-hint {
+            position: absolute; bottom: 28px; left: 50%;
+            transform: translateX(-50%);
+            z-index: 3; text-align: center;
+            color: rgba(255,255,255,0.55);
+            font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase;
+            animation: float 2.5s ease infinite;
+        }
+        .scroll-hint i { display: block; margin-top: 5px; font-size: 0.9rem; }
+
+        /* ====================================================
+           INFO STRIP
+        ==================================================== */
+        .info-strip { background: var(--green); padding: 28px 0; }
+        .strip-grid {
+            display: grid; grid-template-columns: repeat(4,1fr);
+        }
+        .strip-item {
+            display: flex; align-items: center; gap: 14px;
+            padding: 0 24px;
+            border-right: 1px solid rgba(255,255,255,0.14);
+            color: #fff;
+        }
+        .strip-item:last-child { border-right: none; }
+        .strip-item i { font-size: 1.5rem; color: var(--yellow); flex-shrink: 0; }
+        .strip-item strong { display: block; font-size: 0.92rem; font-weight: 700; font-family: 'Poppins', sans-serif; }
+        .strip-item span { font-size: 0.78rem; color: rgba(255,255,255,0.68); font-weight: 600; }
+
+        /* ====================================================
+           ABOUT
+        ==================================================== */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-img-wrap { position: relative; }
+        .about-img {
+            width: 100%; height: 460px; object-fit: cover;
+            border-radius: 20px; box-shadow: var(--sh-l);
+        }
+        .about-badge {
+            position: absolute; bottom: -18px; right: -18px;
+            background: var(--green); color: #fff;
+            border-radius: 14px; padding: 18px 22px;
+            box-shadow: 0 8px 24px rgba(47,107,58,0.4);
+            text-align: center; animation: float 4s ease-in-out infinite;
+        }
+        .about-badge .num { font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 900; color: var(--yellow); line-height: 1; }
+        .about-badge .lbl { font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.8); margin-top: 3px; }
+        .about-mini {
+            position: absolute; top: 22px; right: -12px;
+            background: var(--yellow); color: var(--text);
+            border-radius: 10px; padding: 11px 16px;
+            font-weight: 800; font-size: 0.8rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+        .about-text h2 { font-size: 2rem; margin-bottom: 16px; }
+        .about-text > p { color: var(--muted); font-size: 1.02rem; margin-bottom: 26px; line-height: 1.75; }
+        .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 26px; }
+        .vm-box {
+            background: rgba(47,107,58,0.05);
+            border: 1px solid var(--border);
+            border-radius: var(--r-md); padding: 18px;
+        }
+        .vm-box h5 { color: var(--green); font-size: 0.92rem; margin-bottom: 8px; }
+        .vm-box p { font-size: 0.85rem; color: var(--muted); font-weight: 600; line-height: 1.55; margin: 0; }
+
+        /* ====================================================
+           ACADEMICS
+        ==================================================== */
+        .acad-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+        .acad-card {
+            background: #fff; border-radius: var(--r-md);
+            box-shadow: var(--sh-s); padding: 28px;
+            border-top: 4px solid transparent;
+            transition: all 0.3s;
+        }
+        .acad-card:hover { transform: translateY(-6px); box-shadow: var(--sh-m); border-top-color: var(--green); }
+        .acad-icon {
+            width: 50px; height: 50px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.25rem; margin-bottom: 16px;
+        }
+        .ic-g { background: rgba(47,107,58,0.1); color: var(--green); }
+        .ic-s { background: rgba(126,200,227,0.15); color: #3a9dbf; }
+        .ic-y { background: rgba(244,197,66,0.15); color: #c49a1a; }
+        .acad-card h4 { font-size: 1.02rem; margin-bottom: 10px; }
+        .acad-card p { font-size: 0.87rem; color: var(--muted); font-weight: 600; line-height: 1.62; margin: 0; }
+
+        .grade-row {
+            margin-top: 48px;
+        }
+        .grade-row h3 { text-align: center; margin-bottom: 26px; }
+        .grade-boxes {
+            display: grid; grid-template-columns: repeat(7,1fr); gap: 10px;
+        }
+        .grade-box {
+            background: #fff; border: 2px solid var(--border);
+            border-radius: var(--r-md); padding: 16px 8px;
+            text-align: center; box-shadow: var(--sh-s);
             transition: 0.3s;
         }
-        .footer-social-icons a:hover {
-            background: var(--brand-green);
-            transform: translateY(-3px);
+        .grade-box:hover { border-color: var(--green); }
+        .grade-box .gl { font-size: 0.65rem; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .grade-box .gn { font-family: 'Poppins', sans-serif; font-size: 0.95rem; font-weight: 800; color: var(--green); margin-top: 4px; }
+        .grade-box.hl { background: var(--green); border-color: var(--green); }
+        .grade-box.hl .gl { color: rgba(255,255,255,0.7); }
+        .grade-box.hl .gn { color: #fff; }
+
+        /* ====================================================
+           GALLERY
+        ==================================================== */
+        .album-label {
+            font-family: 'Poppins', sans-serif; font-weight: 700;
+            color: var(--green); font-size: 1.05rem;
+            margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
+        }
+        .album-label::before {
+            content: ''; width: 5px; height: 22px;
+            background: var(--yellow); border-radius: 3px; display: inline-block;
+        }
+        .gallery-track {
+            display: flex; overflow-x: auto; gap: 14px;
+            padding: 4px 0 18px; scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .gallery-track::-webkit-scrollbar { height: 5px; }
+        .gallery-track::-webkit-scrollbar-thumb { background: var(--green); border-radius: 10px; }
+        .g-item { min-width: 260px; flex: 0 0 auto; scroll-snap-align: start; }
+        .g-card {
+            border-radius: var(--r-md); overflow: hidden;
+            height: 200px; box-shadow: var(--sh-s); transition: 0.3s; display: block;
+        }
+        .g-card:hover { transform: translateY(-4px); box-shadow: var(--sh-m); }
+        .g-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+        .g-card:hover img { transform: scale(1.05); }
+
+        /* ====================================================
+           ADMISSIONS
+        ==================================================== */
+        .adm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .steps { display: flex; flex-direction: column; gap: 14px; }
+        .step {
+            display: flex; gap: 14px; align-items: flex-start;
+            background: #fff; border-radius: var(--r-md);
+            padding: 18px; box-shadow: var(--sh-s);
+        }
+        .step-num {
+            width: 36px; height: 36px; border-radius: 10px;
+            background: var(--green); color: #fff;
+            font-family: 'Poppins', sans-serif; font-weight: 800;
+            font-size: 0.95rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .step h5 { font-size: 0.92rem; margin-bottom: 4px; }
+        .step p { font-size: 0.84rem; color: var(--muted); font-weight: 600; margin: 0; }
+        .adm-note {
+            margin-top: 22px; padding: 16px 18px;
+            background: rgba(244,197,66,0.1);
+            border-left: 4px solid var(--yellow);
+            border-radius: var(--r-sm);
+            font-size: 0.87rem; font-weight: 700; color: var(--text);
         }
 
-        /* --- MOBILE --- */
-        @media (max-width: 991px) {
-            :root { --header-height: 100px; }
-            body { padding-top: 100px; }
-            section { padding: 50px 0; scroll-margin-top: 100px; }
-            .hero { min-height: 700px; height: auto; padding: 100px 0; }
-            .hero h1 { font-size: 2.2rem; }
-            .navbar-collapse { background: white; padding: 20px; border-radius: 0 0 15px 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); max-height: 80vh; overflow-y: auto; }
-            .info-banner { font-size: 0.75rem; justify-content: center; }
-            .info-banner a { display: none; }
-            .hero-content { text-align: center; }
-            .hero-badges, .hero-btns { justify-content: center !important; }
-            footer { text-align: center; }
-            .footer-social-icons { justify-content: center; display: flex; }
+        /* ====================================================
+           INFRASTRUCTURE
+        ==================================================== */
+        .infra-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+        .infra-card {
+            background: #fff; border-radius: var(--r-md);
+            box-shadow: var(--sh-s); padding: 26px 18px;
+            text-align: center; transition: 0.3s;
+        }
+        .infra-card:hover { transform: translateY(-4px); box-shadow: var(--sh-m); }
+        .infra-icon {
+            width: 60px; height: 60px; border-radius: 50%;
+            background: rgba(47,107,58,0.1);
+            color: var(--green); font-size: 1.5rem;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 14px;
+        }
+        .infra-card h5 { font-size: 0.92rem; margin-bottom: 6px; }
+        .infra-card p { font-size: 0.82rem; color: var(--muted); font-weight: 600; margin: 0; line-height: 1.55; }
+
+        /* ====================================================
+           TESTIMONIALS
+        ==================================================== */
+        .test-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+        .test-card {
+            background: #fff; border-radius: var(--r-md);
+            box-shadow: var(--sh-s); padding: 28px;
+            border-left: 5px solid var(--yellow); transition: 0.3s;
+        }
+        .test-card:hover { transform: translateY(-4px); box-shadow: var(--sh-m); }
+        .stars { color: var(--yellow); font-size: 0.82rem; margin-bottom: 12px; }
+        .test-card p { font-size: 0.9rem; color: var(--muted); font-weight: 600; line-height: 1.65; margin-bottom: 16px; font-style: italic; }
+        .test-foot { display: flex; align-items: center; justify-content: space-between; }
+        .test-foot h6 { color: var(--green); font-weight: 800; font-size: 0.85rem; margin: 0; }
+        .test-foot a { font-size: 0.75rem; color: var(--muted); display: flex; align-items: center; gap: 4px; }
+        .test-foot a:hover { color: var(--green); }
+
+        /* ====================================================
+           LEADERSHIP
+        ==================================================== */
+        .lead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+        .lead-card {
+            background: #fff; border-radius: var(--r-md);
+            box-shadow: var(--sh-s); padding: 34px;
+        }
+        .lead-card h4 { margin-bottom: 4px; }
+        .lead-role { font-size: 0.78rem; font-weight: 800; color: var(--green-lt); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 18px; display: block; }
+        .lead-card blockquote {
+            border-left: 3px solid var(--yellow);
+            padding-left: 16px;
+            font-style: italic;
+            color: var(--muted); font-size: 0.93rem; font-weight: 600; line-height: 1.72;
+        }
+
+        /* ====================================================
+           CONTACT
+        ==================================================== */
+        .contact-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 40px; }
+        .contact-info h3 { margin-bottom: 24px; font-size: 1.4rem; }
+        .c-row { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+        .c-icon {
+            width: 42px; height: 42px; border-radius: 11px;
+            background: rgba(47,107,58,0.1); color: var(--green);
+            font-size: 0.95rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .c-text strong { display: block; font-family: 'Poppins', sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--green); margin-bottom: 3px; }
+        .c-text p { font-size: 0.9rem; color: var(--muted); font-weight: 600; margin: 0; line-height: 1.6; }
+        .c-text a { color: var(--muted); font-weight: 600; font-size: 0.9rem; }
+        .c-text a:hover { color: var(--green); }
+        .map-box { border-radius: var(--r-md); overflow: hidden; box-shadow: var(--sh-s); margin-top: 22px; }
+        .map-box iframe { display: block; }
+
+        /* Form */
+        .form-card { background: #fff; border-radius: var(--r-md); box-shadow: var(--sh-s); padding: 34px; }
+        .form-card h3 { margin-bottom: 6px; font-size: 1.3rem; }
+        .form-card .sub { color: var(--muted); font-size: 0.88rem; font-weight: 600; margin-bottom: 26px; }
+        .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .f-group { margin-bottom: 16px; }
+        .f-group label { display: block; font-size: 0.77rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text); margin-bottom: 6px; }
+        .f-group input,
+        .f-group select,
+        .f-group textarea {
+            width: 100%; padding: 12px 15px;
+            border: 1.5px solid rgba(0,0,0,0.1);
+            border-radius: var(--r-sm);
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.93rem; font-weight: 600; color: var(--text);
+            background: #F8FAF8; outline: none; transition: border-color 0.2s;
+        }
+        .f-group input:focus, .f-group select:focus, .f-group textarea:focus {
+            border-color: var(--green); background: #fff;
+            box-shadow: 0 0 0 3px rgba(47,107,58,0.08);
+        }
+        .f-group textarea { resize: vertical; min-height: 108px; }
+        .btn-submit {
+            width: 100%; padding: 14px;
+            background: var(--green); color: #fff;
+            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem;
+            border: none; border-radius: var(--r-pill);
+            cursor: pointer; transition: all 0.25s;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+        }
+        .btn-submit:hover { background: var(--green-dk); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(47,107,58,0.35); }
+
+        /* ====================================================
+           FOOTER
+        ==================================================== */
+        footer { background: #0f1f12; color: #bbb; padding: 62px 0 26px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 38px; margin-bottom: 48px; }
+        .f-brand img { height: 50px; background: #fff; padding: 8px; border-radius: 6px; margin-bottom: 16px; }
+        .f-brand p { font-size: 0.86rem; line-height: 1.7; color: #999; font-weight: 600; margin-bottom: 18px; }
+        .social-row { display: flex; gap: 8px; }
+        .social-btn {
+            width: 34px; height: 34px; border-radius: 50%;
+            background: rgba(255,255,255,0.08); color: #ddd;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.82rem; transition: 0.3s;
+        }
+        .social-btn:hover { background: var(--green); transform: translateY(-2px); color: #fff; }
+        footer h5 { color: #fff; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 18px; }
+        .footer-links a { display: block; color: #999; font-size: 0.86rem; font-weight: 600; padding: 5px 0; transition: 0.2s; }
+        .footer-links a:hover { color: var(--yellow); padding-left: 4px; }
+        .footer-links a.f-highlight { color: var(--yellow); font-weight: 800; }
+        .f-contact-list li { display: flex; gap: 9px; align-items: flex-start; color: #999; font-size: 0.86rem; font-weight: 600; margin-bottom: 10px; }
+        .f-contact-list li i { color: var(--green-lt); margin-top: 2px; flex-shrink: 0; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.07);
+            padding-top: 22px; text-align: center;
+            font-size: 0.8rem; color: #555;
+        }
+        .footer-bottom a { color: var(--green-lt); }
+
+        /* WhatsApp float */
+        .wa-float {
+            position: fixed; bottom: 26px; right: 26px; z-index: 999;
+            width: 54px; height: 54px; border-radius: 50%;
+            background: #25D366; color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 18px rgba(37,211,102,0.5);
+            animation: float 3s ease-in-out infinite;
+            transition: transform 0.2s;
+        }
+        .wa-float:hover { transform: scale(1.1); color: #fff; }
+
+        /* ====================================================
+           RESPONSIVE
+        ==================================================== */
+        @media (max-width: 1050px) {
+            .acad-cards { grid-template-columns: 1fr 1fr; }
+            .infra-grid  { grid-template-columns: repeat(2,1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 860px) {
+            .about-grid, .adm-grid, .lead-grid, .contact-grid { grid-template-columns: 1fr; }
+            .about-img { height: 300px; }
+            .about-badge { right: 10px; bottom: 10px; }
+            .vm-grid { grid-template-columns: 1fr; }
+            .test-grid { grid-template-columns: 1fr; }
+            .strip-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+            .strip-item { border-right: none; }
+        }
+        @media (max-width: 768px) {
+            .nav-links, .nav-cta { display: none; }
+            .hamburger { display: flex; }
+            .hero-stats { grid-template-columns: 1fr 1fr; }
+            .acad-cards { grid-template-columns: 1fr; }
+            .grade-boxes { grid-template-columns: repeat(3,1fr); }
+            .f-row { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 22px; }
+        }
+        @media (max-width: 480px) {
+            .hero-stats { grid-template-columns: 1fr; max-width: 100%; }
+            .strip-grid { grid-template-columns: 1fr; }
+            .infra-grid { grid-template-columns: 1fr 1fr; }
+            .grade-boxes { grid-template-columns: repeat(2,1fr); }
         }
     </style>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbar-spy" data-bs-offset="120" tabindex="0">
+<body>
 
-    <header class="fixed-top header-fixed-wrapper">
-        <div class="info-banner">
-            <div class="container d-flex justify-content-between align-items-center">
-                <span><i class="fas fa-bullhorn me-2"></i>Admissions open for Pre-KG to Grade 5</span>
-                <a href="#admissions">Apply Now</a>
+<!-- ======================================================
+     ANNOUNCE BAR
+====================================================== -->
+<div class="announce">
+    <i class="fas fa-bullhorn" style="margin-right:6px;font-size:.75rem"></i>
+    Admissions open for Pre-KG to Grade 5 | Academic Year 2025-26
+    <a href="#admissions" style="margin-left:12px">Apply Now</a>
+</div>
+
+<!-- ======================================================
+     HEADER
+====================================================== -->
+<header class="site-header" id="siteHeader">
+    <div class="header-inner">
+        <a href="#home" class="brand">
+            <img src="logo.png" alt="Evergreen International School Logo">
+            <div class="brand-text">
+                Evergreen International School
+                <small>Pallipalayam, Erode</small>
             </div>
-        </div>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand d-flex align-items-center" href="#home">
-                    <img src="logo.png" alt="School Logo" height="50" class="me-2">
-                    <span>Evergreen International School</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-spy">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar-spy">
-                    <ul class="navbar-nav ms-auto text-center align-items-center">
-                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#academics">Academics</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-                        
-                        <li class="nav-item"><a class="nav-link" href="lifeatevergreen.html" style="color: var(--brand-green); font-weight: 800;">Life@Evergreen</a></li>
-                        
-                        <li class="nav-item"><a class="nav-link" href="#admissions">Admissions</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        <li class="nav-item ms-lg-2 mt-3 mt-lg-0">
-                            <a href="#contact" class="btn-custom">Enquiry</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        </a>
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#academics">Academics</a>
+            <a href="#gallery">Gallery</a>
+            <a href="lifeatevergreen.html" class="life-link">Life @ Evergreen</a>
+            <a href="#admissions">Admissions</a>
+            <a href="#contact">Contact</a>
         </nav>
-    </header>
+        <a href="#contact" class="nav-cta">Enquiry</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
 
-    <section id="home" class="hero">
-        <ul class="hero-slideshow">
-            <li></li><li></li><li></li>
-        </ul>
-        <div class="hero-overlay"></div>
-        <div class="container hero-content" data-aos="fade-up" data-aos-duration="1200">
-            <div class="d-inline-flex gap-2 mb-4 flex-wrap hero-badges">
-                <span class="pill"><i class="fas fa-award"></i>CBSE Aligned</span>
-                <span class="pill"><i class="fas fa-language"></i>English Medium</span>
-                <span class="pill"><i class="fas fa-child"></i>Pre-KG to Grade 5</span>
-            </div>
-            <h1>Welcome to Evergreen International School</h1>
-            <p class="hero-subtitle">Empowering the next generation with values, creativity, and academic excellence. We provide a safe, nature-inspired environment where every child's potential is nurtured with care.</p>
-            <div class="d-flex flex-wrap gap-3 hero-btns">
-                <a href="#about" class="btn-custom">Explore Our Vision</a>
-                <a href="#contact" class="btn-hero-outline">Schedule a Visit</a>
-            </div>
+<!-- Mobile nav -->
+<nav class="mobile-nav" id="mobileNav">
+    <a href="#home"    onclick="closeMob()">Home</a>
+    <a href="#about"   onclick="closeMob()">About</a>
+    <a href="#academics" onclick="closeMob()">Academics</a>
+    <a href="#gallery" onclick="closeMob()">Gallery</a>
+    <a href="lifeatevergreen.html" class="life-link">Life @ Evergreen</a>
+    <a href="#admissions" onclick="closeMob()">Admissions</a>
+    <a href="#contact" onclick="closeMob()">Contact</a>
+    <a href="#contact" class="m-cta" onclick="closeMob()">Send Enquiry</a>
+</nav>
 
-            <div class="row mt-5 g-3 justify-content-center justify-content-lg-start">
-                <div class="col-md-4">
-                    <div class="hero-card">
-                        <p>ESTABLISHED</p>
-                        <h4>2015</h4>
-                    </div>
+<!-- ======================================================
+     HERO
+====================================================== -->
+<section id="home">
+    <div class="hero-slides" aria-hidden="true">
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-deco"></div>
+
+    <div class="hero-body">
+        <div class="hero-pills">
+            <span class="hero-pill"><i class="fas fa-award"></i> CBSE Aligned</span>
+            <span class="hero-pill"><i class="fas fa-language"></i> English Medium</span>
+            <span class="hero-pill"><i class="fas fa-child"></i> Pre-KG to Grade 5</span>
+        </div>
+        <h1>Growing Minds,<br><em>Shaping Futures.</em></h1>
+        <p class="hero-sub">A CBSE-aligned English-medium primary school in Pallipalayam where every child's potential is nurtured with care, values, and purpose.</p>
+        <div class="hero-btns">
+            <a href="#about"   class="btn btn-yellow"><i class="fas fa-compass"></i> Explore Our School</a>
+            <a href="#contact" class="btn btn-ghost"><i class="fas fa-calendar-alt"></i> Schedule a Visit</a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card"><div class="stat-label">Established</div><div class="stat-value">2015</div></div>
+            <div class="stat-card"><div class="stat-label">Classes</div><div class="stat-value">Pre-KG to Gr. 5</div></div>
+            <div class="stat-card"><div class="stat-label">School Type</div><div class="stat-value">Co-ed Day School</div></div>
+        </div>
+    </div>
+    <div class="scroll-hint">Scroll<i class="fas fa-chevron-down"></i></div>
+</section>
+
+<!-- ======================================================
+     INFO STRIP
+====================================================== -->
+<div class="info-strip">
+    <div class="wrap">
+        <div class="strip-grid">
+            <div class="strip-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>Therkkupalayam, Pallipalayam</strong>
+                    <span>Namakkal District, Erode 638008</span>
                 </div>
-                <div class="col-md-4">
-                    <div class="hero-card">
-                        <p>CLASSES</p>
-                        <h4>Pre-KG to Grade 5</h4>
-                    </div>
+            </div>
+            <div class="strip-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                    <strong>+91 98427 12666</strong>
+                    <span>+91 98427 12912 / +91 99767 98007</span>
                 </div>
-                <div class="col-md-4">
-                    <div class="hero-card">
-                        <p>TYPE</p>
-                        <h4>Co-ed Day School</h4>
-                    </div>
+            </div>
+            <div class="strip-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <strong>support@evergreen-school.in</strong>
+                    <span>We reply within one working day</span>
+                </div>
+            </div>
+            <div class="strip-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <strong>Monday to Saturday</strong>
+                    <span>8:00 AM to 4:00 PM</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
 
-    <section id="about" class="highlight-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <img src="gallery/4.jpg" class="img-fluid rounded-4 shadow-lg w-100" style="min-height: 300px; object-fit: cover;" alt="School Classroom">
+<!-- ======================================================
+     ABOUT
+====================================================== -->
+<section id="about" class="sec">
+    <div class="wrap">
+        <div class="about-grid">
+            <div class="about-img-wrap reveal">
+                <img src="gallery/4.jpg" alt="Students at Evergreen International School" class="about-img">
+                <div class="about-badge">
+                    <div class="num">10+</div>
+                    <div class="lbl">Years of<br>Excellence</div>
                 </div>
-                <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left">
-                    <div class="ps-lg-5">
-                        <span class="pill" style="padding: 5px 15px; font-size: 0.8rem; background: rgba(47,107,58,0.1); color: var(--brand-green) !important;"><i class="fas fa-school"></i>School Overview</span>
-                        <h2 class="fw-bold mb-4 mt-3">Strong foundations for lifelong learning.</h2>
-                        <p class="lead text-muted mb-4">Evergreen International School provides quality primary education rooted in strong values and modern teaching practices, aligned with the CBSE curriculum framework.</p>
-                        <div class="content-card mb-4">
-                            <h5 class="fw-bold mb-3" style="color: var(--brand-green);">Our Vision</h5>
-                            <p class="mb-0 text-muted">To provide holistic education that nurtures intellectual, physical, emotional, and moral development, enabling students to become responsible global citizens.</p>
-                        </div>
-                        <div class="content-card">
-                            <h5 class="fw-bold mb-3" style="color: var(--brand-green);">Our Mission</h5>
-                            <ul class="list-check">
-                                <li><i class="fas fa-check-circle"></i>Deliver CBSE-aligned education with strong foundational learning.</li>
-                                <li><i class="fas fa-check-circle"></i>Encourage conceptual understanding and critical thinking.</li>
-                                <li><i class="fas fa-check-circle"></i>Create a safe, inclusive, and disciplined learning environment.</li>
-                            </ul>
-                        </div>
+                <div class="about-mini">CBSE Aligned</div>
+            </div>
+            <div class="about-text reveal d2">
+                <span class="tag"><i class="fas fa-school"></i> School Overview</span>
+                <h2>Strong foundations for lifelong learning.</h2>
+                <p>Evergreen International School provides quality primary education rooted in strong values and modern teaching practices, aligned with the CBSE curriculum framework. We believe the early years shape a child's entire future.</p>
+                <div class="vm-grid">
+                    <div class="vm-box">
+                        <h5>Our Vision</h5>
+                        <p>To nurture intellectual, physical, emotional, and moral development, enabling students to become responsible global citizens.</p>
+                    </div>
+                    <div class="vm-box">
+                        <h5>Our Mission</h5>
+                        <p>Deliver CBSE-aligned education with strong foundational learning, conceptual understanding, and an inclusive environment.</p>
                     </div>
                 </div>
+                <ul class="plain-list">
+                    <li>Activity-based, child-centric teaching methods</li>
+                    <li>Dedicated and experienced teaching faculty</li>
+                    <li>Safe, nature-inspired campus environment</li>
+                    <li>Aligned with NEP 2020 guidelines</li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="academics">
-        <div class="container text-center">
-            <div class="section-title" data-aos="fade-up"><h2>Academics</h2><p class="text-muted">Curriculum focused on foundational literacy and NEP 2020 alignment.</p></div>
-            <div class="row g-4">
-                <div class="col-lg-6" data-aos="fade-up">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Teaching Methodology</h5>
-                        <ul class="list-check text-start">
-                            <li><i class="fas fa-check-circle"></i>Activity-based learning techniques.</li>
-                            <li><i class="fas fa-check-circle"></i>Visual and audio teaching aids.</li>
-                            <li><i class="fas fa-check-circle"></i>Interactive classroom practices.</li>
-                            <li><i class="fas fa-check-circle"></i>Continuous assessment and observation.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Primary Classes (Grades 1-5)</h5>
-                        <ul class="list-check text-start">
-                            <li><i class="fas fa-check-circle"></i>English, Mathematics, Environmental Science.</li>
-                            <li><i class="fas fa-check-circle"></i>Social Studies, General Knowledge.</li>
-                            <li><i class="fas fa-check-circle"></i>Computer Education, Art and Craft.</li>
-                            <li><i class="fas fa-check-circle"></i>Physical Education.</li>
-                        </ul>
-                    </div>
-                </div>
+<!-- ======================================================
+     ACADEMICS
+====================================================== -->
+<section id="academics" class="sec sec-alt">
+    <div class="wrap">
+        <div class="sec-header reveal">
+            <h2>Academics</h2>
+            <p>Curriculum designed to build strong foundations with NEP 2020 alignment and child-centric methodology.</p>
+        </div>
+        <div class="acad-cards">
+            <div class="acad-card reveal">
+                <div class="acad-icon ic-g"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h4>Teaching Methodology</h4>
+                <p>Activity-based learning using visual and audio teaching aids, interactive classroom techniques, and continuous assessment tailored to each child's pace.</p>
+            </div>
+            <div class="acad-card reveal d1">
+                <div class="acad-icon ic-s"><i class="fas fa-book-open"></i></div>
+                <h4>Pre-Primary (Pre-KG and KG)</h4>
+                <p>Play-based learning, phonics, basic numeracy, drawing, storytelling, and social skills that lay a joyful foundation for formal schooling.</p>
+            </div>
+            <div class="acad-card reveal d2">
+                <div class="acad-icon ic-y"><i class="fas fa-calculator"></i></div>
+                <h4>Primary Classes (Grades 1 to 5)</h4>
+                <p>English, Mathematics, Environmental Science, Social Studies, General Knowledge, Computer Education, Art and Craft, and Physical Education.</p>
             </div>
         </div>
-    </section>
+        <div class="grade-row reveal">
+            <h3>Classes Offered</h3>
+            <div class="grade-boxes">
+                <div class="grade-box hl"><div class="gl">Pre-Primary</div><div class="gn">Pre-KG</div></div>
+                <div class="grade-box hl"><div class="gl">Pre-Primary</div><div class="gn">KG</div></div>
+                <div class="grade-box"><div class="gl">Primary</div><div class="gn">Grade 1</div></div>
+                <div class="grade-box"><div class="gl">Primary</div><div class="gn">Grade 2</div></div>
+                <div class="grade-box"><div class="gl">Primary</div><div class="gn">Grade 3</div></div>
+                <div class="grade-box"><div class="gl">Primary</div><div class="gn">Grade 4</div></div>
+                <div class="grade-box"><div class="gl">Primary</div><div class="gn">Grade 5</div></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <section id="gallery" class="highlight-section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up"><h2>School Gallery</h2><p class="text-muted">Swipe horizontally to view our latest moments.</p></div>
-            <div data-aos="fade-right"><h4 class="album-title">Vijayadhasami Celebration 2025</h4></div>
-            <div class="gallery-track mb-5" id="vijaya-gallery"></div>
-            <div data-aos="fade-right"><h4 class="album-title">Annual Day 2025</h4></div>
+<!-- ======================================================
+     GALLERY
+====================================================== -->
+<section id="gallery" class="sec">
+    <div class="wrap">
+        <div class="sec-header reveal">
+            <h2>School Gallery</h2>
+            <p>Moments from our vibrant school life. Scroll sideways to explore each album.</p>
+        </div>
+
+        <div class="reveal" style="margin-bottom:40px;">
+            <div class="album-label">Vijayadhasami Celebration 2025</div>
+            <div class="gallery-track" id="vijaya-gallery"></div>
+        </div>
+
+        <div class="reveal">
+            <div class="album-label">Annual Day 2025</div>
             <div class="gallery-track" id="annual-gallery"></div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="admissions">
-        <div class="container text-center">
-            <div class="section-title" data-aos="fade-up"><h2>Admissions</h2><p>Admissions are open for Pre-KG to Grade 5.</p></div>
-            <div class="row g-4">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="content-card text-start">
-                        <h5 class="fw-bold mb-3">Admission Process</h5>
-                        <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>Enquiry and interaction with school authorities.</li>
-                            <li><i class="fas fa-check-circle"></i>Submission of application form.</li>
-                            <li><i class="fas fa-check-circle"></i>Verification of documents.</li>
-                            <li><i class="fas fa-check-circle"></i>Confirmation of admission.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="content-card text-start">
-                        <h5 class="fw-bold mb-3">Documents Required</h5>
-                        <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>Birth Certificate (Original & Copy).</li>
-                            <li><i class="fas fa-check-circle"></i>Passport-size photographs.</li>
-                            <li><i class="fas fa-check-circle"></i>Transfer Certificate (for Grades 2+).</li>
-                            <li><i class="fas fa-check-circle"></i>Aadhaar copy (optional).</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<!-- ======================================================
+     ADMISSIONS
+====================================================== -->
+<section id="admissions" class="sec sec-alt">
+    <div class="wrap">
+        <div class="sec-header reveal">
+            <h2>Admissions</h2>
+            <p>We welcome new students for the academic year 2025-26. Admissions are open for Pre-KG to Grade 5.</p>
         </div>
-    </section>
-
-    <section id="infrastructure" class="highlight-section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up"><h2>Infrastructure</h2></div>
-            <div class="row g-4">
-                <div class="col-md-6" data-aos="fade-up">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Facilities</h5>
-                        <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>Spacious and ventilated classrooms.</li>
-                            <li><i class="fas fa-check-circle"></i>Library with age-appropriate books.</li>
-                            <li><i class="fas fa-check-circle"></i>Outdoor play area.</li>
-                            <li><i class="fas fa-check-circle"></i>Smart classroom support.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Health & Safety</h5>
-                        <ul class="list-check">
-                            <li><i class="fas fa-check-circle"></i>Regular medical check-ups.</li>
-                            <li><i class="fas fa-check-circle"></i>Child-safe campus environment.</li>
-                            <li><i class="fas fa-check-circle"></i>Clean drinking water & sanitation.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up"><h2>Parent Voices</h2><p class="text-muted">Real feedback from our Evergreen community.</p></div>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial-card">
-                        <i class="fas fa-quote-left quote-icon"></i>
-                        <p class="mb-4 text-muted">"The focus on values and discipline at Evergreen is exactly what we were looking for. My child loves going to school every day."</p>
-                        <h6 class="fw-bold text-success">- Google Review</h6>
-                        <a href="https://www.google.com/search?q=Evergreen+International+School+Therkkupalayam" target="_blank" class="small text-decoration-none text-muted">View on Google Maps</a>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-card">
-                        <i class="fas fa-quote-left quote-icon"></i>
-                        <p class="mb-4 text-muted">"A wonderful environment for early learners. The teachers are very caring and the new facilities are excellent."</p>
-                        <h6 class="fw-bold text-success">- Google Review</h6>
-                        <a href="https://www.google.com/search?q=Evergreen+International+School+Therkkupalayam" target="_blank" class="small text-decoration-none text-muted">View on Google Maps</a>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="testimonial-card">
-                        <i class="fas fa-quote-left quote-icon"></i>
-                        <p class="mb-4 text-muted">"We have seen remarkable improvement in our son's confidence. The activity-based learning approach really works."</p>
-                        <h6 class="fw-bold text-success">- Google Review</h6>
-                        <a href="https://www.google.com/search?q=Evergreen+International+School+Therkkupalayam" target="_blank" class="small text-decoration-none text-muted">View on Google Maps</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="leadership" class="highlight-section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up"><h2>Leadership</h2></div>
-            <div class="row g-4">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Principal’s Message</h5>
-                        <p class="text-muted">"At Evergreen International School, we understand that the early years of a child’s education are the most important. These years shape not only academic ability, but also confidence, curiosity, and character."</p>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="content-card">
-                        <h5 class="fw-bold mb-3">Correspondent’s Message</h5>
-                        <p class="text-muted">"Evergreen International School was established with a simple and sincere purpose: to provide young children with a strong, caring, and meaningful start to their educational journey."</p>
-                        <p class="fw-bold text-success mt-3">- Mr. Raja A P, Correspondent</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up"><h2>Contact Us</h2></div>
-            <div class="row g-5">
-                <div class="col-lg-5" data-aos="fade-right">
-                    <div class="content-card h-100">
-                        <h4 class="fw-bold mb-4">Get in Touch</h4>
-                        <div class="d-flex mb-3 align-items-start">
-                            <i class="fas fa-map-marker-alt text-success me-3 mt-1"></i>
-                            <p class="mb-0">Near Water Tank, Vediyarasampalayam Road, Therkkupalayam, Pallipalayam, Namakkal(DT), Erode - 638008.</p>
+        <div class="adm-grid">
+            <div class="reveal">
+                <h3 style="margin-bottom:22px;font-size:1.25rem;">Admission Process</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div>
+                            <h5>Enquiry and Interaction</h5>
+                            <p>Visit the school or call us. Speak with our admissions team and get a campus tour.</p>
                         </div>
-                        <div class="d-flex mb-3 align-items-start">
-                            <i class="fas fa-phone-alt text-success me-3 mt-1"></i>
-                            <div>
-                                <p class="mb-1">+91 98427 12666</p>
-                                <p class="mb-1">+91 98427 12912</p>
-                                <p class="mb-0">+91 99767 98007</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div>
+                            <h5>Application Form</h5>
+                            <p>Fill and submit the application form, available at the school office or via our enquiry form.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div>
+                            <h5>Document Verification</h5>
+                            <p>Submit the required documents. Our team will verify and confirm eligibility.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">4</div>
+                        <div>
+                            <h5>Admission Confirmed</h5>
+                            <p>Complete the fee process and receive your admission confirmation and class details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal d2">
+                <h3 style="margin-bottom:22px;font-size:1.25rem;">Documents Required</h3>
+                <div class="card">
+                    <ul class="plain-list">
+                        <li>Birth Certificate (Original and Photocopy)</li>
+                        <li>Passport-size photographs (4 copies)</li>
+                        <li>Transfer Certificate for Grade 2 and above</li>
+                        <li>Previous class mark sheet or report card</li>
+                        <li>Parent or Guardian identity proof</li>
+                        <li>Aadhaar card copy (optional)</li>
+                    </ul>
+                    <div class="adm-note">
+                        School timings are 8:00 AM to 4:00 PM, Monday to Saturday. Contact us to schedule a personalised counselling session.
+                    </div>
+                    <a href="#contact" class="btn btn-green" style="margin-top:22px;width:100%;justify-content:center;">
+                        <i class="fas fa-paper-plane"></i> Send Admission Enquiry
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     INFRASTRUCTURE
+====================================================== -->
+<section id="infrastructure" class="sec">
+    <div class="wrap">
+        <div class="sec-header reveal">
+            <h2>Infrastructure</h2>
+            <p>A safe, modern, and child-friendly campus designed for joyful learning.</p>
+        </div>
+        <div class="infra-grid">
+            <div class="infra-card reveal">
+                <div class="infra-icon"><i class="fas fa-building"></i></div>
+                <h5>Spacious Classrooms</h5>
+                <p>Well-ventilated, bright classrooms with age-appropriate furniture and learning tools.</p>
+            </div>
+            <div class="infra-card reveal d1">
+                <div class="infra-icon"><i class="fas fa-book"></i></div>
+                <h5>School Library</h5>
+                <p>A curated collection of age-appropriate books, storybooks, and educational resources.</p>
+            </div>
+            <div class="infra-card reveal d2">
+                <div class="infra-icon"><i class="fas fa-running"></i></div>
+                <h5>Outdoor Play Area</h5>
+                <p>Safe, open play area encouraging physical activity, team sports, and outdoor learning.</p>
+            </div>
+            <div class="infra-card reveal d3">
+                <div class="infra-icon"><i class="fas fa-desktop"></i></div>
+                <h5>Smart Classrooms</h5>
+                <p>Digital teaching aids and audio-visual tools that make learning engaging and effective.</p>
+            </div>
+            <div class="infra-card reveal">
+                <div class="infra-icon"><i class="fas fa-heartbeat"></i></div>
+                <h5>Health and Safety</h5>
+                <p>Regular medical check-ups, clean drinking water, proper sanitation, and a child-safe campus.</p>
+            </div>
+            <div class="infra-card reveal d1">
+                <div class="infra-icon"><i class="fas fa-palette"></i></div>
+                <h5>Art and Activity Room</h5>
+                <p>Dedicated space for creative arts, craft work, and co-curricular activities.</p>
+            </div>
+            <div class="infra-card reveal d2">
+                <div class="infra-icon"><i class="fas fa-utensils"></i></div>
+                <h5>Clean Canteen</h5>
+                <p>Hygienic and nutritious meals prepared under safe conditions for all students.</p>
+            </div>
+            <div class="infra-card reveal d3">
+                <div class="infra-icon"><i class="fas fa-shield-alt"></i></div>
+                <h5>Secure Campus</h5>
+                <p>Monitored entry, responsible supervision, and a fully child-safe environment at all times.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     TESTIMONIALS
+====================================================== -->
+<section id="testimonials" class="sec sec-alt">
+    <div class="wrap">
+        <div class="sec-header reveal">
+            <h2>Parent Voices</h2>
+            <p>What families from our Evergreen community are saying.</p>
+        </div>
+        <div class="test-grid">
+            <div class="test-card reveal">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"The focus on values and discipline at Evergreen is exactly what we were looking for. My child loves going to school every single day!"</p>
+                <div class="test-foot">
+                    <h6>Google Review</h6>
+                    <a href="https://www.google.com/search?q=Evergreen+International+School+Therkkupalayam" target="_blank" rel="noopener"><i class="fab fa-google"></i> View</a>
+                </div>
+            </div>
+            <div class="test-card reveal d1">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"A wonderful environment for early learners. The teachers are very caring and the facilities are excellent."</p>
+                <div class="test-foot">
+                    <h6>Google Review</h6>
+                    <a href="https://www.google.com/search?q=Evergreen+International+School+Therkkupalayam" target="_blank" rel="noopener"><i class="fab fa-google"></i> View</a>
+                </div>
+            </div>
+            <div class="test-card reveal d2">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"We have seen remarkable improvement in our son's confidence. The activity-based learning approach really works."</p>
+                <div class="test-foot">
+                    <h6>Google Review</h6>
+                    <a href="https://www.google.com/search?q=Evergreen+International+School+Therkkupalayam" target="_blank" rel="noopener"><i class="fab fa-google"></i> View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     LEADERSHIP
+====================================================== -->
+<section id="leadership" class="sec">
+    <div class="wrap">
+        <div class="sec-header reveal">
+            <h2>Leadership</h2>
+        </div>
+        <div class="lead-grid">
+            <div class="lead-card reveal">
+                <h4>Principal's Message</h4>
+                <span class="lead-role">School Principal</span>
+                <blockquote>
+                    "At Evergreen International School, we understand that the early years of a child's education are the most important. These years shape not only academic ability, but also confidence, curiosity, and character. We are committed to nurturing every child as an individual."
+                </blockquote>
+            </div>
+            <div class="lead-card reveal d2">
+                <h4>Correspondent's Message</h4>
+                <span class="lead-role">Mr. Raja A P, Correspondent</span>
+                <blockquote>
+                    "Evergreen International School was established with a simple and sincere purpose: to provide young children with a strong, caring, and meaningful start to their educational journey. We continue to grow with that commitment at our core."
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     CONTACT
+====================================================== -->
+<section id="contact" class="sec sec-alt">
+    <div class="wrap">
+        <div class="sec-header reveal">
+            <h2>Contact Us</h2>
+            <p>We would love to hear from you. Fill in the form or visit us directly at the school.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="reveal">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="c-row">
+                        <div class="c-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="c-text">
+                            <strong>Address</strong>
+                            <p>Near Water Tank, Vediyarasampalayam Road, Therkkupalayam, Pallipalayam, Namakkal (DT), Erode 638008.</p>
+                        </div>
+                    </div>
+                    <div class="c-row">
+                        <div class="c-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="c-text">
+                            <strong>Phone</strong>
+                            <p>
+                                <a href="tel:+919842712666">+91 98427 12666</a><br>
+                                <a href="tel:+919842712912">+91 98427 12912</a><br>
+                                <a href="tel:+919976798007">+91 99767 98007</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="c-row">
+                        <div class="c-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="c-text">
+                            <strong>Email</strong>
+                            <p><a href="mailto:support@evergreen-school.in">support@evergreen-school.in</a></p>
+                        </div>
+                    </div>
+                    <div class="c-row">
+                        <div class="c-icon"><i class="fas fa-globe"></i></div>
+                        <div class="c-text">
+                            <strong>Website</strong>
+                            <p><a href="https://evergreen-school.in" target="_blank" rel="noopener">evergreen-school.in</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-box">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Evergreen+International+School+Therkkupalayam+Pallipalayam&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="220" frameborder="0" allowfullscreen loading="lazy"
+                        title="School Location on Google Maps" style="border:0;">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="reveal d2">
+                <div class="form-card">
+                    <h3>Send an Enquiry</h3>
+                    <p class="sub">Fill in the form and we will get back to you within one working day.</p>
+                    <form action="https://formspree.io/f/meekpdpr" method="POST">
+                        <div class="f-row">
+                            <div class="f-group">
+                                <label for="name">Parent's Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your full name" required>
+                            </div>
+                            <div class="f-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
                             </div>
                         </div>
-                        <div class="d-flex mb-4 align-items-center">
-                            <i class="fas fa-envelope text-success me-3"></i>
-                            <p class="mb-0">support@evergreen-school.in</p>
+                        <div class="f-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
                         </div>
-                        <div class="rounded overflow-hidden mt-4 shadow-sm" style="height: 250px;">
-                            <iframe 
-                                width="100%" 
-                                height="100%" 
-                                frameborder="0" 
-                                style="border:0" 
-                                src="https://maps.google.com/maps?q=Evergreen+International+School+Therkkupalayam+Pallipalayam&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-                                allowfullscreen>
-                            </iframe>
+                        <div class="f-group">
+                            <label for="grade">Enquiry for Grade</label>
+                            <select id="grade" name="grade">
+                                <option value="">Select a grade</option>
+                                <option>Pre-KG</option>
+                                <option>KG</option>
+                                <option>Grade 1</option>
+                                <option>Grade 2</option>
+                                <option>Grade 3</option>
+                                <option>Grade 4</option>
+                                <option>Grade 5</option>
+                                <option>General Enquiry</option>
+                            </select>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-7" data-aos="fade-left">
-                    <form action="https://formspree.io/f/meekpdpr" method="POST" class="content-card">
-                        <div class="row g-4">
-                            <div class="col-md-6"><label class="form-label fw-bold small text-muted">Parent's Name</label><input type="text" name="name" class="form-control p-3 bg-light border-0" required></div>
-                            <div class="col-md-6"><label class="form-label fw-bold small text-muted">Email Address</label><input type="email" name="email" class="form-control p-3 bg-light border-0" required></div>
-                            <div class="col-12"><label class="form-label fw-bold small text-muted">Phone Number</label><input type="text" name="phone" class="form-control p-3 bg-light border-0" required></div>
-                            <div class="col-12"><label class="form-label fw-bold small text-muted">Message / Admission Enquiry</label><textarea name="message" class="form-control p-3 bg-light border-0" rows="5" required></textarea></div>
-                            <div class="col-12"><button type="submit" class="btn-custom w-100">Send Message</button></div>
+                        <div class="f-group">
+                            <label for="message">Message or Questions</label>
+                            <textarea id="message" name="message" placeholder="Write your message or questions here..."></textarea>
                         </div>
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <img src="logo.png" class="footer-logo" alt="Evergreen Logo">
-                    <p>Empowering the next generation with values and academic excellence.</p>
-                    <div class="footer-social-icons">
-                        <a href="https://www.facebook.com/evergreeninternationalschooltherkkupalayam/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/evergreen.campus/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/evergreen-international-school-therkkupalayam/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5>About Us</h5>
-                    <ul>
-                        <li><a href="#about">Our Vision</a></li>
-                        <li><a href="#about">Our Mission</a></li>
-                        <li><a href="#leadership">Leadership</a></li>
-                        <li><a href="lifeatevergreen.html" style="color: var(--accent-yellow); font-weight: bold;">Life @ Evergreen</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5>Quick Links</h5>
-                    <ul>
-                        <li><a href="#academics">Academics</a></li>
-                        <li><a href="#admissions">Admissions</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5>Our Location</h5>
-                    <p class="mb-2">Near Water Tank, Vediyarasampalayam Road, Therkkupalayam, Pallipalayam, Erode - 638008.</p>
-                    <p class="mb-0"><strong>Phone:</strong> +91 98427 12666</p>
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+<footer>
+    <div class="wrap">
+        <div class="footer-grid">
+            <div class="f-brand">
+                <img src="logo.png" alt="Evergreen International School Logo">
+                <p>Empowering the next generation with values, creativity, and academic excellence. A CBSE-aligned primary school in the heart of Pallipalayam since 2015.</p>
+                <div class="social-row">
+                    <a href="https://www.facebook.com/evergreeninternationalschooltherkkupalayam/" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/evergreen.campus/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/evergreen-international-school-therkkupalayam/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/919842712666" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-            
-            <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
-            <p class="text-center mb-0 small">© 2026 Evergreen International School. All Rights Reserved.</p>
+            <div>
+                <h5>About</h5>
+                <div class="footer-links">
+                    <a href="#about">Our Vision</a>
+                    <a href="#about">Our Mission</a>
+                    <a href="#leadership">Leadership</a>
+                    <a href="lifeatevergreen.html" class="f-highlight">Life @ Evergreen</a>
+                </div>
+            </div>
+            <div>
+                <h5>Quick Links</h5>
+                <div class="footer-links">
+                    <a href="#academics">Academics</a>
+                    <a href="#admissions">Admissions</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#infrastructure">Infrastructure</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+            </div>
+            <div>
+                <h5>Contact</h5>
+                <ul class="f-contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i>Near Water Tank, Vediyarasampalayam Road, Therkkupalayam, Pallipalayam, Erode 638008.</li>
+                    <li><i class="fas fa-phone-alt"></i><a href="tel:+919842712666" style="color:#999;">+91 98427 12666</a></li>
+                    <li><i class="fas fa-envelope"></i><a href="mailto:support@evergreen-school.in" style="color:#999;">support@evergreen-school.in</a></li>
+                </ul>
+            </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            <p>2026 Evergreen International School. All Rights Reserved. | <a href="https://evergreen-school.in" target="_blank">evergreen-school.in</a> | Therkkupalayam, Pallipalayam, Erode, Tamil Nadu</p>
+        </div>
+    </div>
+</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    <script>
-        AOS.init({ once: true, duration: 1000, offset: 120 });
-        
-        const galleryData = [
-            { id: 'vijaya-gallery', path: 'gallery/vijaya/', count: 8, title: 'Vijayadhasami 2025' },
-            { id: 'annual-gallery', path: 'gallery/', count: 23, title: 'Annual Day 2025' }
-        ];
+<!-- WhatsApp float -->
+<a href="https://wa.me/919842712666?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20admissions%20at%20Evergreen%20International%20School."
+   target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
-        galleryData.forEach(album => {
-            const container = document.getElementById(album.id);
-            if(container) {
-                for (let i = 1; i <= album.count; i++) {
-                    const item = document.createElement('div');
-                    item.className = 'gallery-item';
-                    item.innerHTML = `
-                        <div class="gallery-card">
-                            <a href="${album.path}${i}.jpg" data-lightbox="${album.id}" data-title="${album.title} - Photo ${i}">
-                                <img src="${album.path}${i}.jpg" alt="${album.title}" class="gallery-img" loading="lazy">
-                            </a>
-                        </div>
-                    `;
-                    container.appendChild(item);
-                }
-            }
+<!-- ======================================================
+     SCRIPTS: jQuery first, then Lightbox2
+====================================================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script>
+    // Lightbox settings
+    lightbox.option({ resizeDuration: 200, wrapAround: true, albumLabel: 'Photo %1 of %2' });
+
+    // Gallery builder
+    var galleries = [
+        { id: 'vijaya-gallery', path: 'gallery/vijaya/', count: 8,  album: 'Vijayadhasami 2025' },
+        { id: 'annual-gallery', path: 'gallery/',         count: 23, album: 'Annual Day 2025'   }
+    ];
+    galleries.forEach(function(g) {
+        var track = document.getElementById(g.id);
+        if (!track) return;
+        for (var i = 1; i <= g.count; i++) {
+            var src = g.path + i + '.jpg';
+            var el  = document.createElement('div');
+            el.className = 'g-item';
+            el.innerHTML =
+                '<a href="' + src + '" data-lightbox="' + g.id + '" data-title="' + g.album + ' - Photo ' + i + '" class="g-card">' +
+                '<img src="' + src + '" alt="' + g.album + ' photo ' + i + '" loading="lazy">' +
+                '</a>';
+            track.appendChild(el);
+        }
+    });
+
+    // Scroll reveal
+    var revealObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+            if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
         });
-    </script>
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(function(el) { revealObs.observe(el); });
+
+    // Active nav on scroll
+    var sections  = document.querySelectorAll('section[id]');
+    var navAs     = document.querySelectorAll('.nav-links a[href^="#"]');
+    window.addEventListener('scroll', function() {
+        var cur = '';
+        sections.forEach(function(s) { if (window.scrollY >= s.offsetTop - 130) cur = s.id; });
+        navAs.forEach(function(a) {
+            a.classList.remove('active');
+            if (a.getAttribute('href') === '#' + cur) a.classList.add('active');
+        });
+    }, { passive: true });
+
+    // Header shadow on scroll
+    var hdr = document.getElementById('siteHeader');
+    window.addEventListener('scroll', function() {
+        hdr.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // Hamburger
+    var burger  = document.getElementById('hamburger');
+    var mobNav  = document.getElementById('mobileNav');
+    burger.addEventListener('click', function() { mobNav.classList.toggle('open'); });
+    document.addEventListener('click', function(e) {
+        if (!burger.contains(e.target) && !mobNav.contains(e.target)) mobNav.classList.remove('open');
+    });
+    function closeMob() { mobNav.classList.remove('open'); }
+</script>
 </body>
 </html>
