@@ -4,60 +4,622 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Life @ Evergreen | Evergreen International School</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Follow campus life at Evergreen International School on Instagram. See our events, celebrations, and daily moments.">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
     <style>
         :root {
-            --brand-green: #2F6B3A;
-            --accent-yellow: #F4C542;
-            --bg: #FAFBF9;
+            --green:    #2F6B3A;
+            --green-dk: #1E4726;
+            --green-lt: #7FB77E;
+            --yellow:   #F4C542;
+            --bg:       #FAFBF9;
+            --card:     #FFFFFF;
+            --text:     #1B1B1B;
+            --muted:    #5B6A64;
+            --border:   rgba(47,107,58,0.12);
+            --sh-s:     0 4px 14px rgba(0,0,0,0.06);
+            --sh-m:     0 10px 32px rgba(0,0,0,0.09);
+            --r-sm:     8px;
+            --r-md:     14px;
+            --r-pill:   50px;
+            --nav-h:    76px;
+            --bar-h:    36px;
         }
-        body { font-family: 'Nunito', sans-serif; background: var(--bg); }
-        h1, h2 { font-family: 'Poppins', sans-serif; color: var(--brand-green); font-weight: 700; }
-        
-        .header-simple { background: white; padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; }
-        .back-link { position: absolute; left: 20px; top: 25px; color: var(--brand-green); text-decoration: none; font-weight: 700; }
-        
-        .insta-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; padding: 40px 0; }
-        .insta-item { position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .insta-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
-        .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 3rem; text-shadow: 0 2px 5px rgba(0,0,0,0.5); opacity: 0.8; }
-        .insta-item:hover img { transform: scale(1.05); }
-        
-        footer { background: var(--brand-green); color: white; padding: 30px 0; text-align: center; margin-top: 50px; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.65;
+            padding-top: calc(var(--nav-h) + var(--bar-h));
+            overflow-x: hidden;
+        }
+        h1,h2,h3,h4,h5 { font-family: 'Poppins', sans-serif; font-weight: 700; line-height: 1.25; color: var(--green-dk); }
+        img { display: block; max-width: 100%; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: var(--green-lt); border-radius: 3px; }
+
+        .wrap { max-width: 1220px; margin: 0 auto; padding: 0 28px; }
+
+        /* ====================================================
+           ANNOUNCE BAR
+        ==================================================== */
+        .announce {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1002;
+            height: var(--bar-h);
+            background: var(--green); color: #fff;
+            font-size: 0.82rem; font-weight: 700;
+            display: flex; align-items: center; justify-content: center; gap: 6px;
+        }
+        .announce a { color: var(--yellow); font-weight: 800; margin-left: 12px; }
+
+        /* ====================================================
+           HEADER
+        ==================================================== */
+        .site-header {
+            position: fixed; top: var(--bar-h); left: 0; right: 0; z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            height: var(--nav-h); transition: box-shadow 0.3s;
+        }
+        .site-header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.1); }
+        .header-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 100%; max-width: 1220px; margin: 0 auto; padding: 0 28px;
+        }
+        .brand { display: flex; align-items: center; gap: 11px; flex-shrink: 0; }
+        .brand img { height: 48px; border-radius: 4px; }
+        .brand-text { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 0.88rem; color: var(--green); line-height: 1.2; max-width: 160px; }
+        .brand-text small { display: block; font-weight: 500; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .nav-links { display: flex; align-items: center; gap: 2px; }
+        .nav-links a { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.86rem; padding: 7px 13px; border-radius: var(--r-pill); color: var(--text); transition: all 0.22s; white-space: nowrap; }
+        .nav-links a:hover { background: rgba(47,107,58,0.07); color: var(--green); }
+        .nav-links a.active { background: var(--green); color: #fff; }
+        .nav-links a.life-link { color: var(--green); font-weight: 800; background: rgba(244,197,66,0.15); }
+
+        .nav-cta { margin-left: 8px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.86rem; background: var(--green); color: #fff; padding: 10px 22px; border-radius: var(--r-pill); transition: all 0.25s; }
+        .nav-cta:hover { background: var(--green-dk); color: #fff; transform: translateY(-1px); }
+
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: var(--green); border-radius: 2px; }
+
+        .mobile-nav {
+            display: none; position: fixed;
+            top: calc(var(--nav-h) + var(--bar-h)); left: 0; right: 0; z-index: 999;
+            background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 0 0 16px 16px; padding: 16px 20px 20px;
+        }
+        .mobile-nav.open { display: block; }
+        .mobile-nav a { display: block; padding: 11px 14px; font-family: 'Nunito', sans-serif; font-weight: 700; color: var(--text); border-radius: var(--r-sm); transition: 0.2s; font-size: 0.95rem; }
+        .mobile-nav a:hover { background: rgba(47,107,58,0.07); color: var(--green); }
+        .mobile-nav a.life-link { color: var(--green); font-weight: 800; }
+        .mobile-nav .m-cta { display: block; text-align: center; margin-top: 14px; background: var(--green); color: #fff; padding: 13px; border-radius: var(--r-pill); font-family: 'Nunito', sans-serif; font-weight: 800; }
+
+        /* ====================================================
+           PAGE HERO
+        ==================================================== */
+        .page-hero {
+            background: linear-gradient(135deg, var(--green-dk) 0%, var(--green) 100%);
+            padding: 56px 0 52px; position: relative; overflow: hidden;
+        }
+        .page-hero::before {
+            content: ''; position: absolute; right: -60px; top: -60px;
+            width: 340px; height: 340px;
+            border: 1px solid rgba(244,197,66,0.14); border-radius: 50%;
+        }
+        .page-hero::after {
+            content: ''; position: absolute; right: 50px; top: 50px;
+            width: 180px; height: 180px;
+            border: 1px solid rgba(255,255,255,0.06); border-radius: 50%;
+        }
+        .page-hero-body { position: relative; z-index: 2; }
+        .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+        .breadcrumb a { color: rgba(255,255,255,0.6); font-size: 0.82rem; font-weight: 700; transition: 0.2s; }
+        .breadcrumb a:hover { color: var(--yellow); }
+        .breadcrumb span { color: rgba(255,255,255,0.35); }
+        .breadcrumb strong { color: rgba(255,255,255,0.9); font-size: 0.82rem; font-weight: 700; }
+        .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; margin-bottom: 10px; }
+        .page-hero p { color: rgba(255,255,255,0.78); font-size: 1.02rem; font-weight: 600; max-width: 520px; }
+
+        /* Instagram profile card */
+        .insta-profile-card {
+            position: absolute; right: 28px; top: 50%; transform: translateY(-50%);
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 16px; padding: 20px 24px;
+            display: flex; align-items: center; gap: 16px;
+            z-index: 2;
+        }
+        .insta-avatar {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; color: #fff; flex-shrink: 0;
+        }
+        .insta-info strong { display: block; color: #fff; font-family: 'Poppins', sans-serif; font-size: 0.95rem; font-weight: 700; }
+        .insta-info span { color: rgba(255,255,255,0.65); font-size: 0.78rem; font-weight: 600; }
+        .insta-follow {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: var(--yellow); color: var(--text);
+            padding: 7px 16px; border-radius: var(--r-pill);
+            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.8rem;
+            margin-top: 8px; transition: 0.2s;
+        }
+        .insta-follow:hover { background: #e6b53a; }
+
+        /* ====================================================
+           HOW TO EMBED GUIDE BOX
+        ==================================================== */
+        .guide-box {
+            background: rgba(126,200,227,0.1);
+            border: 1.5px solid rgba(126,200,227,0.3);
+            border-radius: var(--r-md);
+            padding: 22px 26px;
+            margin: 40px 0 0;
+            display: flex; gap: 16px; align-items: flex-start;
+        }
+        .guide-box i { color: var(--green); font-size: 1.3rem; margin-top: 2px; flex-shrink: 0; }
+        .guide-box h5 { font-size: 0.95rem; margin-bottom: 6px; color: var(--green); }
+        .guide-box p { font-size: 0.86rem; color: var(--muted); font-weight: 600; margin: 0; line-height: 1.6; }
+        .guide-box code {
+            background: rgba(47,107,58,0.08); color: var(--green);
+            padding: 2px 7px; border-radius: 4px;
+            font-size: 0.82rem; font-family: monospace;
+        }
+        .guide-steps { margin-top: 10px; padding-left: 0; }
+        .guide-steps li {
+            font-size: 0.84rem; color: var(--muted); font-weight: 600;
+            padding: 4px 0 4px 18px; position: relative;
+        }
+        .guide-steps li::before {
+            content: attr(data-n);
+            position: absolute; left: 0;
+            font-family: 'Poppins', sans-serif; font-weight: 800;
+            color: var(--green); font-size: 0.78rem;
+        }
+
+        /* ====================================================
+           SECTION STYLES
+        ==================================================== */
+        .sec { padding: 72px 0; }
+        .sec-alt { background: rgba(126,200,227,0.07); }
+        .sec-header { text-align: center; margin-bottom: 48px; }
+        .sec-header h2 { font-size: clamp(1.7rem, 3vw, 2.2rem); display: inline-block; position: relative; padding-bottom: 14px; }
+        .sec-header h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 52px; height: 4px; background: var(--yellow); border-radius: 2px; }
+        .sec-header p { color: var(--muted); margin-top: 12px; font-size: 1rem; font-weight: 600; }
+
+        /* Insta handle label */
+        .insta-label {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(47,107,58,0.08); color: var(--green);
+            padding: 6px 16px; border-radius: var(--r-pill);
+            font-size: 0.8rem; font-weight: 800; margin-bottom: 14px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .insta-label i { color: #e1306c; }
+
+        /* ====================================================
+           EMBED GRID
+        ==================================================== */
+        .embed-intro {
+            text-align: center; margin-bottom: 36px;
+            font-size: 0.9rem; color: var(--muted); font-weight: 600;
+        }
+        .embed-intro a { color: var(--green); font-weight: 800; }
+
+        /* 3-col grid for embeds */
+        .embed-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            align-items: start;
+        }
+
+        /* Each embed wrapper */
+        .embed-wrap {
+            background: #fff;
+            border-radius: var(--r-md);
+            box-shadow: var(--sh-s);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            min-height: 420px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .embed-wrap:hover { transform: translateY(-4px); box-shadow: var(--sh-m); }
+
+        /* Placeholder shown before embed code is added */
+        .embed-placeholder {
+            width: 100%;
+            padding: 40px 24px;
+            text-align: center;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: 14px;
+        }
+        .embed-placeholder .ph-icon {
+            width: 64px; height: 64px; border-radius: 50%;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; color: #fff; margin: 0 auto;
+        }
+        .embed-placeholder h5 { font-size: 0.95rem; color: var(--text); margin: 0; }
+        .embed-placeholder p { font-size: 0.8rem; color: var(--muted); font-weight: 600; margin: 0; line-height: 1.55; }
+        .embed-placeholder code {
+            background: rgba(47,107,58,0.07); color: var(--green);
+            padding: 4px 10px; border-radius: 4px;
+            font-size: 0.75rem; font-family: monospace; display: block;
+            word-break: break-all; margin-top: 4px;
+        }
+        .embed-placeholder .ph-label {
+            font-size: 0.72rem; font-weight: 800; text-transform: uppercase;
+            letter-spacing: 0.5px; color: var(--muted);
+        }
+
+        /* When real embed is placed, hide placeholder and show blockquote */
+        .embed-wrap blockquote { width: 100%; }
+
+        /* ====================================================
+           GALLERY PREVIEW STRIP (your existing photos)
+        ==================================================== */
+        .album-label {
+            font-family: 'Poppins', sans-serif; font-weight: 700;
+            color: var(--green); font-size: 1.02rem;
+            margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
+        }
+        .album-label::before { content: ''; width: 5px; height: 20px; background: var(--yellow); border-radius: 3px; display: inline-block; }
+        .gallery-track {
+            display: flex; overflow-x: auto; gap: 12px;
+            padding: 4px 0 16px; scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .gallery-track::-webkit-scrollbar { height: 5px; }
+        .gallery-track::-webkit-scrollbar-thumb { background: var(--green); border-radius: 10px; }
+        .g-item { min-width: 220px; flex: 0 0 auto; scroll-snap-align: start; }
+        .g-card { border-radius: var(--r-md); overflow: hidden; height: 180px; box-shadow: var(--sh-s); transition: 0.3s; display: block; }
+        .g-card:hover { transform: translateY(-3px); box-shadow: var(--sh-m); }
+        .g-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+        .g-card:hover img { transform: scale(1.05); }
+
+        /* ====================================================
+           CTA STRIP
+        ==================================================== */
+        .cta-strip {
+            background: linear-gradient(135deg, var(--green-dk), var(--green));
+            padding: 52px 0; text-align: center; position: relative; overflow: hidden;
+        }
+        .cta-strip::before {
+            content: ''; position: absolute; right: -40px; top: -40px;
+            width: 220px; height: 220px;
+            border: 1px solid rgba(244,197,66,0.12); border-radius: 50%;
+        }
+        .cta-strip h2 { color: #fff; font-size: 1.8rem; margin-bottom: 10px; position: relative; z-index: 2; }
+        .cta-strip p { color: rgba(255,255,255,0.75); font-weight: 600; margin-bottom: 28px; position: relative; z-index: 2; }
+        .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 2; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem;
+            padding: 13px 28px; border-radius: var(--r-pill); border: none; cursor: pointer; transition: all 0.25s;
+        }
+        .btn-yellow { background: var(--yellow); color: var(--text); }
+        .btn-yellow:hover { background: #e6b53a; transform: translateY(-2px); color: var(--text); }
+        .btn-ghost { background: transparent; border: 2px solid rgba(255,255,255,0.6); color: #fff; }
+        .btn-ghost:hover { background: rgba(255,255,255,0.12); border-color: #fff; color: #fff; }
+
+        /* ====================================================
+           FOOTER
+        ==================================================== */
+        footer { background: #0f1f12; color: #bbb; padding: 62px 0 26px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 38px; margin-bottom: 48px; }
+        .f-brand img { height: 50px; background: #fff; padding: 8px; border-radius: 6px; margin-bottom: 16px; }
+        .f-brand p { font-size: 0.86rem; line-height: 1.7; color: #999; font-weight: 600; margin-bottom: 18px; }
+        .social-row { display: flex; gap: 8px; }
+        .social-btn { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #ddd; display: flex; align-items: center; justify-content: center; font-size: 0.82rem; transition: 0.3s; }
+        .social-btn:hover { background: var(--green); transform: translateY(-2px); color: #fff; }
+        footer h5 { color: #fff; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 18px; }
+        .footer-links a { display: block; color: #999; font-size: 0.86rem; font-weight: 600; padding: 5px 0; transition: 0.2s; }
+        .footer-links a:hover { color: var(--yellow); padding-left: 4px; }
+        .footer-links a.f-highlight { color: var(--yellow); font-weight: 800; }
+        .f-contact-list li { display: flex; gap: 9px; align-items: flex-start; color: #999; font-size: 0.86rem; font-weight: 600; margin-bottom: 10px; }
+        .f-contact-list li i { color: var(--green-lt); margin-top: 2px; flex-shrink: 0; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 22px; text-align: center; font-size: 0.8rem; color: #555; }
+        .footer-bottom a { color: var(--green-lt); }
+
+        .wa-float { position: fixed; bottom: 26px; right: 26px; z-index: 999; width: 54px; height: 54px; border-radius: 50%; background: #25D366; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 18px rgba(37,211,102,0.5); transition: transform 0.2s; }
+        .wa-float:hover { transform: scale(1.1); color: #fff; }
+
+        /* Reveal */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.d1 { transition-delay: 0.1s; }
+        .reveal.d2 { transition-delay: 0.2s; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ====================================================
+           RESPONSIVE
+        ==================================================== */
+        @media (max-width: 960px) {
+            .embed-grid { grid-template-columns: 1fr 1fr; }
+            .insta-profile-card { display: none; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links, .nav-cta { display: none; }
+            .hamburger { display: flex; }
+            .embed-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 22px; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="header-simple">
-        <div class="container position-relative">
-            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
-            <img src="logo.png" alt="Logo" height="50">
+<!-- ANNOUNCE BAR -->
+<div class="announce">
+    <i class="fas fa-bullhorn" style="font-size:.75rem"></i>
+    Admissions open for Pre-KG to Grade 5 | Academic Year 2025-26
+    <a href="index.html#admissions">Apply Now</a>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+    <div class="header-inner">
+        <a href="index.html" class="brand">
+            <img src="logo.png" alt="Evergreen International School Logo">
+            <div class="brand-text">Evergreen International School<small>Pallipalayam, Erode</small></div>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#academics">Academics</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="lifeatevergreen.html" class="life-link active">Life @ Evergreen</a>
+            <a href="faculty.html">Faculty</a>
+            <a href="index.html#admissions">Admissions</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+        <a href="index.html#contact" class="nav-cta">Enquiry</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#academics">Academics</a>
+    <a href="index.html#gallery">Gallery</a>
+    <a href="lifeatevergreen.html" class="life-link">Life @ Evergreen</a>
+    <a href="faculty.html">Faculty</a>
+    <a href="index.html#admissions">Admissions</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="index.html#contact" class="m-cta">Send Enquiry</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+    <div class="wrap" style="position:relative;">
+        <div class="page-hero-body">
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fas fa-home" style="font-size:.75rem"></i> Home</a>
+                <span>/</span>
+                <strong>Life @ Evergreen</strong>
+            </div>
+            <h1>Life @ Evergreen</h1>
+            <p>A real-time window into our campus life: events, celebrations, learning moments, and more, straight from our Instagram.</p>
+        </div>
+        <!-- Instagram profile card (desktop only) -->
+        <div class="insta-profile-card">
+            <div class="insta-avatar"><i class="fab fa-instagram"></i></div>
+            <div class="insta-info">
+                <strong>@evergreen.campus</strong>
+                <span>Evergreen International School</span>
+                <a href="https://www.instagram.com/evergreen.campus/" target="_blank" rel="noopener" class="insta-follow">
+                    <i class="fab fa-instagram"></i> Follow Us
+                </a>
+            </div>
         </div>
     </div>
+</div>
 
-    <div class="container text-center mt-5">
-        <h1>Life @ Evergreen</h1>
-        <p class="text-muted">A glimpse into our daily campus life, events, and celebrations.</p>
-        
-        <div class="insta-grid">
-            <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="insta-item"><img src="gallery/1.jpg" alt="Event"><i class="fas fa-play-circle play-icon"></i></a>
-            <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="insta-item"><img src="gallery/2.jpg" alt="Event"><i class="fas fa-play-circle play-icon"></i></a>
-            <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="insta-item"><img src="gallery/3.jpg" alt="Event"><i class="fas fa-play-circle play-icon"></i></a>
-            <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="insta-item"><img src="gallery/4.jpg" alt="Event"><i class="fas fa-play-circle play-icon"></i></a>
-            <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="insta-item"><img src="gallery/vijaya/1.jpg" alt="Event"><i class="fas fa-play-circle play-icon"></i></a>
-            <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="insta-item"><img src="gallery/vijaya/2.jpg" alt="Event"><i class="fas fa-play-circle play-icon"></i></a>
+<!-- ====================================================
+     INSTAGRAM POSTS SECTION
+==================================================== -->
+<section class="sec">
+    <div class="wrap">
+        <div class="sec-header reveal">
+            <span class="insta-label"><i class="fab fa-instagram"></i> @evergreen.campus</span>
+            <h2>Our Instagram Posts</h2>
+            <p>Real posts from our Instagram profile. Click any post to view, like, or comment.</p>
         </div>
-        
-        <a href="https://www.instagram.com/evergreen.campus/" target="_blank" class="btn btn-warning rounded-pill px-4 fw-bold">View More on Instagram</a>
+
+        <div class="embed-intro reveal">
+            Follow us at
+            <a href="https://www.instagram.com/evergreen.campus/" target="_blank" rel="noopener">@evergreen.campus</a>
+            for daily updates.
+        </div>
+
+        <div class="embed-grid">
+
+            <div class="embed-wrap reveal">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DPY0EhwE_6m/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:100%;min-width:326px;padding:0;width:100%;"></blockquote>
+            </div>
+
+            <div class="embed-wrap reveal d1">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DPYkoZhkxTW/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:100%;min-width:326px;padding:0;width:100%;"></blockquote>
+            </div>
+
+            <div class="embed-wrap reveal d2">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DPYhXndE2cR/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:100%;min-width:326px;padding:0;width:100%;"></blockquote>
+            </div>
+
+            <div class="embed-wrap reveal">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DIZRM7MzRe5/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:100%;min-width:326px;padding:0;width:100%;"></blockquote>
+            </div>
+
+            <div class="embed-wrap reveal d1">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C-vQZZei29B/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:100%;min-width:326px;padding:0;width:100%;"></blockquote>
+            </div>
+
+            <div class="embed-wrap reveal d2">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C-vOj-KC2xm/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:100%;min-width:326px;padding:0;width:100%;"></blockquote>
+            </div>
+
+            <div class="embed-wrap reveal">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CpnOEqAvVqc/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:100%;min-width:326px;padding:0;width:100%;"></blockquote>
+            </div>
+
+            <div class="embed-wrap reveal d1">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/Cnzm6NNvQik/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:100%;min-width:326px;padding:0;width:100%;"></blockquote>
+            </div>
+
+        </div>
+
+        <!-- Instagram embed script -->
+        <script async src="//www.instagram.com/embed.js"></script>
+
     </div>
+</section>
 
-    <footer>
-        <p class="mb-0">© 2026 Evergreen International School</p>
-    </footer>
+<!-- ====================================================
+     PHOTO GALLERY PREVIEW (from your existing photos)
+==================================================== -->
+<section class="sec sec-alt">
+    <div class="wrap">
+        <div class="sec-header reveal">
+            <h2>Photo Gallery</h2>
+            <p>Highlights from our celebrations and school events.</p>
+        </div>
 
+        <div class="reveal" style="margin-bottom:38px;">
+            <div class="album-label">Vijayadhasami Celebration 2025</div>
+            <div class="gallery-track" id="vijaya-track"></div>
+        </div>
+
+        <div class="reveal">
+            <div class="album-label">Annual Day 2025</div>
+            <div class="gallery-track" id="annual-track"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ====================================================
+     CTA STRIP
+==================================================== -->
+<div class="cta-strip">
+    <div class="wrap">
+        <h2>Follow us on Instagram</h2>
+        <p>Stay updated with daily moments, events, and announcements from Evergreen.</p>
+        <div class="cta-btns">
+            <a href="https://www.instagram.com/evergreen.campus/" target="_blank" rel="noopener" class="btn btn-yellow">
+                <i class="fab fa-instagram"></i> Follow @evergreen.campus
+            </a>
+            <a href="index.html#contact" class="btn btn-ghost">
+                <i class="fas fa-calendar-alt"></i> Book a School Visit
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="wrap">
+        <div class="footer-grid">
+            <div class="f-brand">
+                <img src="logo.png" alt="Evergreen International School Logo">
+                <p>Empowering the next generation with values, creativity, and academic excellence. A CBSE-aligned primary school in Pallipalayam since 2015.</p>
+                <div class="social-row">
+                    <a href="https://www.facebook.com/evergreeninternationalschooltherkkupalayam/" target="_blank" rel="noopener" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/evergreen.campus/" target="_blank" rel="noopener" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/evergreen-international-school-therkkupalayam/" target="_blank" rel="noopener" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/919842712666" target="_blank" rel="noopener" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h5>About</h5>
+                <div class="footer-links">
+                    <a href="index.html#about">Our Vision</a>
+                    <a href="index.html#about">Our Mission</a>
+                    <a href="index.html#leadership">Leadership</a>
+                    <a href="faculty.html">Our Faculty</a>
+                    <a href="lifeatevergreen.html" class="f-highlight">Life @ Evergreen</a>
+                </div>
+            </div>
+            <div>
+                <h5>Quick Links</h5>
+                <div class="footer-links">
+                    <a href="index.html#academics">Academics</a>
+                    <a href="index.html#admissions">Admissions</a>
+                    <a href="index.html#gallery">Gallery</a>
+                    <a href="index.html#infrastructure">Infrastructure</a>
+                    <a href="index.html#contact">Contact Us</a>
+                </div>
+            </div>
+            <div>
+                <h5>Contact</h5>
+                <ul class="f-contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i>Near Water Tank, Vediyarasampalayam Road, Therkkupalayam, Pallipalayam, Erode 638008.</li>
+                    <li><i class="fas fa-phone-alt"></i><a href="tel:+919842712666" style="color:#999;">+91 98427 12666</a></li>
+                    <li><i class="fas fa-envelope"></i><a href="mailto:support@evergreen-school.in" style="color:#999;">support@evergreen-school.in</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>2026 Evergreen International School. All Rights Reserved. | <a href="https://evergreen-school.in" target="_blank">evergreen-school.in</a></p>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/919842712666?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20admissions%20at%20Evergreen%20International%20School." target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+    // Header shadow
+    var hdr = document.getElementById('siteHeader');
+    window.addEventListener('scroll', function() {
+        hdr.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // Hamburger
+    var burger = document.getElementById('hamburger');
+    var mob    = document.getElementById('mobileNav');
+    burger.addEventListener('click', function() { mob.classList.toggle('open'); });
+    document.addEventListener('click', function(e) {
+        if (!burger.contains(e.target) && !mob.contains(e.target)) mob.classList.remove('open');
+    });
+
+    // Scroll reveal
+    var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+            if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+
+    // Gallery builder
+    var galleries = [
+        { id: 'vijaya-track', path: 'gallery/vijaya/', count: 8,  label: 'Vijayadhasami 2025' },
+        { id: 'annual-track', path: 'gallery/',         count: 23, label: 'Annual Day 2025'   }
+    ];
+    galleries.forEach(function(g) {
+        var track = document.getElementById(g.id);
+        if (!track) return;
+        for (var i = 1; i <= g.count; i++) {
+            var src = g.path + i + '.jpg';
+            var div = document.createElement('div');
+            div.className = 'g-item';
+            div.innerHTML = '<a href="' + src + '" class="g-card"><img src="' + src + '" alt="' + g.label + ' photo ' + i + '" loading="lazy"></a>';
+            track.appendChild(div);
+        }
+    });
+</script>
 </body>
 </html>
