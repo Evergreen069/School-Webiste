@@ -529,19 +529,47 @@
         /* ====================================================
            LEADERSHIP
         ==================================================== */
-        .lead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+        .lead-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
         .lead-card {
             background: #fff; border-radius: var(--r-md);
-            box-shadow: var(--sh-s); padding: 34px;
+            box-shadow: var(--sh-s); padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .lead-card h4 { margin-bottom: 4px; }
-        .lead-role { font-size: 0.78rem; font-weight: 800; color: var(--green-lt); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 18px; display: block; }
+        .lead-card:hover { transform: translateY(-4px); box-shadow: var(--sh-m); }
+        .lead-card h4 { margin-bottom: 4px; font-size: 1.05rem; }
+        .lead-role { font-size: 0.76rem; font-weight: 800; color: var(--green-lt); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 18px; display: block; }
         .lead-card blockquote {
             border-left: 3px solid var(--yellow);
             padding-left: 16px;
             font-style: italic;
-            color: var(--muted); font-size: 0.93rem; font-weight: 600; line-height: 1.72;
+            color: var(--muted); font-size: 0.9rem; font-weight: 600; line-height: 1.72;
         }
+        .lead-photo {
+            width: 72px; height: 72px; border-radius: 50%;
+            object-fit: cover; object-position: top;
+            border: 3px solid rgba(47,107,58,0.15);
+            margin-bottom: 16px;
+        }
+        .lead-photo-placeholder {
+            width: 72px; height: 72px; border-radius: 50%;
+            background: rgba(47,107,58,0.09);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 16px;
+            border: 3px solid rgba(47,107,58,0.12);
+        }
+        .lead-photo-placeholder i { color: var(--green-lt); font-size: 1.8rem; }
+        .lead-contact {
+            margin-top: 16px; padding-top: 14px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            display: flex; flex-direction: column; gap: 6px;
+        }
+        .lead-contact a {
+            display: inline-flex; align-items: center; gap: 7px;
+            font-size: 0.8rem; font-weight: 700; color: var(--green);
+            transition: 0.2s;
+        }
+        .lead-contact a:hover { color: var(--green-dk); text-decoration: underline; }
+        .lead-contact a i { font-size: 0.72rem; width: 14px; }
 
         /* ====================================================
            CONTACT
@@ -641,9 +669,11 @@
             .acad-cards { grid-template-columns: 1fr 1fr; }
             .infra-grid  { grid-template-columns: repeat(2,1fr); }
             .footer-grid { grid-template-columns: 1fr 1fr; }
+            .lead-grid   { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 860px) {
-            .about-grid, .adm-grid, .lead-grid, .contact-grid { grid-template-columns: 1fr; }
+            .about-grid, .adm-grid, .contact-grid { grid-template-columns: 1fr; }
+            .lead-grid { grid-template-columns: 1fr; }
             .about-img { height: 300px; }
             .about-badge { right: 10px; bottom: 10px; }
             .vm-grid { grid-template-columns: 1fr; }
@@ -741,8 +771,8 @@
         <h1>Growing Minds,<br><em>Shaping Futures.</em></h1>
         <p class="hero-sub">A CBSE-aligned English-medium primary school in Pallipalayam where every child's potential is nurtured with care, values, and purpose.</p>
         <div class="hero-btns">
-            <a href="#about"   class="btn btn-yellow"><i class="fas fa-compass"></i> Explore Our School</a>
-            <a href="#contact" class="btn btn-ghost"><i class="fas fa-calendar-alt"></i> Schedule a Visit</a>
+            <a href="#about"   class="btn btn-yellow">Explore Our School</a>
+            <a href="#contact" class="btn btn-ghost">Schedule a Visit</a>
         </div>
         <div class="hero-stats">
             <div class="stat-card"><div class="stat-label">Established</div><div class="stat-value">2015</div></div>
@@ -806,7 +836,7 @@
                 <div class="about-mini">CBSE Aligned</div>
             </div>
             <div class="about-text reveal d2">
-                <span class="tag"><i class="fas fa-school"></i> School Overview</span>
+                <span class="tag">School Overview</span>
                 <h2>Strong foundations for lifelong learning.</h2>
                 <p>Evergreen International School provides quality primary education rooted in strong values and modern teaching practices, aligned with the CBSE curriculum framework. We believe the early years shape a child's entire future.</p>
                 <div class="vm-grid">
@@ -951,7 +981,7 @@
                         School timings are 8:00 AM to 4:00 PM, Monday to Saturday. Contact us to schedule a personalised counselling session.
                     </div>
                     <a href="#contact" class="btn btn-green" style="margin-top:22px;width:100%;justify-content:center;">
-                        <i class="fas fa-paper-plane"></i> Send Admission Enquiry
+                        Send Admission Enquiry
                     </a>
                 </div>
             </div>
@@ -1058,22 +1088,53 @@
     <div class="wrap">
         <div class="sec-header reveal">
             <h2>Leadership</h2>
+            <p>The people who guide, manage, and inspire Evergreen every day.</p>
         </div>
         <div class="lead-grid">
+
+            <!-- Correspondent -->
             <div class="lead-card reveal">
-                <h4>Principal's Message</h4>
-                <span class="lead-role">School Principal</span>
-                <blockquote>
-                    "At Evergreen International School, we understand that the early years of a child's education are the most important. These years shape not only academic ability, but also confidence, curiosity, and character. We are committed to nurturing every child as an individual."
-                </blockquote>
-            </div>
-            <div class="lead-card reveal d2">
-                <h4>Correspondent's Message</h4>
-                <span class="lead-role">Mr. Raja A P, Correspondent</span>
+                <!-- Replace with: <img src="faculty/raja.jpg" alt="Mr. Raja A P" class="lead-photo"> -->
+                <div class="lead-photo-placeholder"><i class="fas fa-user"></i></div>
+                <h4>Mr. Raja A P</h4>
+                <span class="lead-role">Correspondent</span>
                 <blockquote>
                     "Evergreen International School was established with a simple and sincere purpose: to provide young children with a strong, caring, and meaningful start to their educational journey. We continue to grow with that commitment at our core."
                 </blockquote>
+                <div class="lead-contact">
+                    <a href="tel:+919842712666"><i class="fas fa-phone-alt"></i> +91 98427 12666</a>
+                    <a href="mailto:support@evergreen-school.in"><i class="fas fa-envelope"></i> support@evergreen-school.in</a>
+                </div>
             </div>
+
+            <!-- Principal -->
+            <div class="lead-card reveal d1">
+                <!-- Replace with: <img src="faculty/santhiya.jpg" alt="Ms. Santhiya R" class="lead-photo"> -->
+                <div class="lead-photo-placeholder"><i class="fas fa-user"></i></div>
+                <h4>Ms. Santhiya R</h4>
+                <span class="lead-role">Principal</span>
+                <blockquote>
+                    "At Evergreen International School, we understand that the early years of a child's education are the most important. These years shape not only academic ability, but also confidence, curiosity, and character."
+                </blockquote>
+                <div class="lead-contact">
+                    <a href="mailto:principal@evergreen-school.in"><i class="fas fa-envelope"></i> principal@evergreen-school.in</a>
+                </div>
+            </div>
+
+            <!-- Administration Advisor -->
+            <div class="lead-card reveal d2">
+                <!-- Replace with: <img src="faculty/jabendra.jpg" alt="Mr. Jabendra Raja" class="lead-photo"> -->
+                <div class="lead-photo-placeholder"><i class="fas fa-user"></i></div>
+                <h4>Mr. Jabendra Raja</h4>
+                <span class="lead-role">Administration Advisor</span>
+                <blockquote>
+                    "Good administration is the foundation on which good education is built. At Evergreen, we are committed to creating a system that supports every teacher, every parent, and every child."
+                </blockquote>
+                <div class="lead-contact">
+                    <a href="mailto:support@evergreen-school.in"><i class="fas fa-envelope"></i> support@evergreen-school.in</a>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -1171,7 +1232,7 @@
                             <textarea id="message" name="message" placeholder="Write your message or questions here..."></textarea>
                         </div>
                         <button type="submit" class="btn-submit">
-                            <i class="fas fa-paper-plane"></i> Send Message
+                            Send Message
                         </button>
                     </form>
                 </div>
