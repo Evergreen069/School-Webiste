@@ -13,7 +13,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <!-- Lightbox requires jQuery -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
 
     <style>
@@ -41,7 +40,10 @@
             --bar-h:     36px;
         }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--nav-h) + var(--bar-h) + 20px);
+        }
         body {
             font-family: 'Nunito', sans-serif;
             color: var(--text);
@@ -59,7 +61,9 @@
         img { display: block; max-width: 100%; }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
-        section { scroll-margin-top: calc(var(--nav-h) + var(--bar-h)); }
+        section {
+            scroll-margin-top: calc(var(--nav-h) + var(--bar-h) + 20px);
+        }
 
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-thumb { background: var(--green-lt); border-radius: 3px; }
@@ -132,6 +136,15 @@
             background: var(--green-lt);
         }
         .plain-list li:last-child { border-bottom: none; }
+        .mandatory {
+            display: inline-block;
+            background: rgba(47,107,58,0.1);
+            color: var(--green);
+            font-size: 0.72rem; font-weight: 800;
+            padding: 2px 9px; border-radius: 20px;
+            margin-left: 6px; vertical-align: middle;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
 
         /* Tag pill */
         .tag {
@@ -223,7 +236,6 @@
         .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; }
         .hamburger span { display: block; width: 24px; height: 2px; background: var(--green); border-radius: 2px; transition: 0.3s; }
 
-        /* Mobile nav */
         .mobile-nav {
             display: none; position: fixed;
             top: calc(var(--nav-h) + var(--bar-h));
@@ -331,7 +343,7 @@
         .scroll-hint {
             position: absolute; bottom: 28px; left: 50%;
             transform: translateX(-50%);
-            z-index: 3; text-align: center;
+            z-index: 3; text-align: center; cursor: pointer;
             color: rgba(255,255,255,0.55);
             font-size: 0.72rem; font-weight: 700;
             letter-spacing: 2px; text-transform: uppercase;
@@ -415,9 +427,7 @@
         .acad-card h4 { font-size: 1.02rem; margin-bottom: 10px; }
         .acad-card p { font-size: 0.87rem; color: var(--muted); font-weight: 600; line-height: 1.62; margin: 0; }
 
-        .grade-row {
-            margin-top: 48px;
-        }
+        .grade-row { margin-top: 48px; }
         .grade-row h3 { text-align: center; margin-bottom: 26px; }
         .grade-boxes {
             display: grid; grid-template-columns: repeat(7,1fr); gap: 10px;
@@ -436,32 +446,23 @@
         .grade-box.hl .gn { color: #fff; }
 
         /* ====================================================
-           GALLERY
+           GALLERY TEASER
         ==================================================== */
-        .album-label {
-            font-family: 'Poppins', sans-serif; font-weight: 700;
-            color: var(--green); font-size: 1.05rem;
-            margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
+        .gallery-teaser-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-bottom: 36px;
         }
-        .album-label::before {
-            content: ''; width: 5px; height: 22px;
-            background: var(--yellow); border-radius: 3px; display: inline-block;
-        }
-        .gallery-track {
-            display: flex; overflow-x: auto; gap: 14px;
-            padding: 4px 0 18px; scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-        }
-        .gallery-track::-webkit-scrollbar { height: 5px; }
-        .gallery-track::-webkit-scrollbar-thumb { background: var(--green); border-radius: 10px; }
-        .g-item { min-width: 260px; flex: 0 0 auto; scroll-snap-align: start; }
-        .g-card {
+        .gt-item {
             border-radius: var(--r-md); overflow: hidden;
-            height: 200px; box-shadow: var(--sh-s); transition: 0.3s; display: block;
+            height: 200px; box-shadow: var(--sh-s);
+            transition: 0.3s; display: block; position: relative;
         }
-        .g-card:hover { transform: translateY(-4px); box-shadow: var(--sh-m); }
-        .g-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-        .g-card:hover img { transform: scale(1.05); }
+        .gt-item:hover { transform: translateY(-4px); box-shadow: var(--sh-m); }
+        .gt-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+        .gt-item:hover img { transform: scale(1.05); }
+        .gt-cta { text-align: center; }
 
         /* ====================================================
            ADMISSIONS
@@ -670,6 +671,7 @@
             .infra-grid  { grid-template-columns: repeat(2,1fr); }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .lead-grid   { grid-template-columns: 1fr 1fr; }
+            .gallery-teaser-grid { grid-template-columns: repeat(2,1fr); }
         }
         @media (max-width: 860px) {
             .about-grid, .adm-grid, .contact-grid { grid-template-columns: 1fr; }
@@ -689,12 +691,14 @@
             .grade-boxes { grid-template-columns: repeat(3,1fr); }
             .f-row { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 22px; }
+            .gallery-teaser-grid { grid-template-columns: repeat(2,1fr); }
         }
         @media (max-width: 480px) {
             .hero-stats { grid-template-columns: 1fr; max-width: 100%; }
             .strip-grid { grid-template-columns: 1fr; }
             .infra-grid { grid-template-columns: 1fr 1fr; }
             .grade-boxes { grid-template-columns: repeat(2,1fr); }
+            .gallery-teaser-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
@@ -740,13 +744,13 @@
 
 <!-- Mobile nav -->
 <nav class="mobile-nav" id="mobileNav">
-    <a href="#home"    onclick="closeMob()">Home</a>
-    <a href="#about"   onclick="closeMob()">About</a>
-    <a href="#academics" onclick="closeMob()">Academics</a>
-    <a href="#gallery" onclick="closeMob()">Gallery</a>
+    <a href="#home"       onclick="closeMob()">Home</a>
+    <a href="#about"      onclick="closeMob()">About</a>
+    <a href="#academics"  onclick="closeMob()">Academics</a>
+    <a href="#gallery"    onclick="closeMob()">Gallery</a>
     <a href="lifeatevergreen.html" class="life-link">Life @ Evergreen</a>
     <a href="#admissions" onclick="closeMob()">Admissions</a>
-    <a href="#contact" onclick="closeMob()">Contact</a>
+    <a href="#contact"    onclick="closeMob()">Contact</a>
     <a href="#contact" class="m-cta" onclick="closeMob()">Send Enquiry</a>
 </nav>
 
@@ -780,13 +784,13 @@
             <div class="stat-card"><div class="stat-label">School Type</div><div class="stat-value">Co-ed Day School</div></div>
         </div>
     </div>
-    <div class="scroll-hint">Scroll<i class="fas fa-chevron-down"></i></div>
+    <div class="scroll-hint" id="scrollHint">Scroll<i class="fas fa-chevron-down"></i></div>
 </section>
 
 <!-- ======================================================
      INFO STRIP
 ====================================================== -->
-<div class="info-strip">
+<div class="info-strip" id="infoStrip">
     <div class="wrap">
         <div class="strip-grid">
             <div class="strip-item">
@@ -814,7 +818,7 @@
                 <i class="fas fa-clock"></i>
                 <div>
                     <strong>Monday to Saturday</strong>
-                    <span>8:00 AM to 4:00 PM</span>
+                    <span>7:45 AM to 5:30 PM</span>
                 </div>
             </div>
         </div>
@@ -902,23 +906,32 @@
 </section>
 
 <!-- ======================================================
-     GALLERY
+     GALLERY TEASER
 ====================================================== -->
 <section id="gallery" class="sec">
     <div class="wrap">
         <div class="sec-header reveal">
             <h2>School Gallery</h2>
-            <p>Moments from our vibrant school life. Scroll sideways to explore each album.</p>
+            <p>A glimpse into campus life, celebrations, and learning moments at Evergreen.</p>
         </div>
-
-        <div class="reveal" style="margin-bottom:40px;">
-            <div class="album-label">Vijayadhasami Celebration 2025</div>
-            <div class="gallery-track" id="vijaya-gallery"></div>
+        <div class="gallery-teaser-grid reveal">
+            <a href="lifeatevergreen.html" class="gt-item">
+                <img src="gallery/1.jpg" alt="Evergreen School campus life">
+            </a>
+            <a href="lifeatevergreen.html" class="gt-item">
+                <img src="gallery/2.jpg" alt="Students at Evergreen School">
+            </a>
+            <a href="lifeatevergreen.html" class="gt-item">
+                <img src="gallery/vijaya/1.jpg" alt="Vijayadhasami Celebration">
+            </a>
+            <a href="lifeatevergreen.html" class="gt-item">
+                <img src="gallery/3.jpg" alt="Annual Day at Evergreen School">
+            </a>
         </div>
-
-        <div class="reveal">
-            <div class="album-label">Annual Day 2025</div>
-            <div class="gallery-track" id="annual-gallery"></div>
+        <div class="gt-cta reveal">
+            <a href="lifeatevergreen.html" class="btn btn-green">
+                <i class="fas fa-images"></i> View Full Gallery and Instagram
+            </a>
         </div>
     </div>
 </section>
@@ -973,12 +986,11 @@
                         <li>Birth Certificate (Original and Photocopy)</li>
                         <li>Passport-size photographs (4 copies)</li>
                         <li>Transfer Certificate for Grade 2 and above</li>
-                        <li>Previous class mark sheet or report card</li>
                         <li>Parent or Guardian identity proof</li>
-                        <li>Aadhaar card copy (optional)</li>
+                        <li>Aadhaar card copy <span class="mandatory">Mandatory</span></li>
                     </ul>
                     <div class="adm-note">
-                        School timings are 8:00 AM to 4:00 PM, Monday to Saturday. Contact us to schedule a personalised counselling session.
+                        School timings are 7:45 AM to 5:30 PM, Monday to Saturday. Contact us to schedule a personalised counselling session.
                     </div>
                     <a href="#contact" class="btn btn-green" style="margin-top:22px;width:100%;justify-content:center;">
                         Send Admission Enquiry
@@ -1030,11 +1042,6 @@
                 <p>Dedicated space for creative arts, craft work, and co-curricular activities.</p>
             </div>
             <div class="infra-card reveal d2">
-                <div class="infra-icon"><i class="fas fa-utensils"></i></div>
-                <h5>Clean Canteen</h5>
-                <p>Hygienic and nutritious meals prepared under safe conditions for all students.</p>
-            </div>
-            <div class="infra-card reveal d3">
                 <div class="infra-icon"><i class="fas fa-shield-alt"></i></div>
                 <h5>Secure Campus</h5>
                 <p>Monitored entry, responsible supervision, and a fully child-safe environment at all times.</p>
@@ -1094,7 +1101,7 @@
 
             <!-- Correspondent -->
             <div class="lead-card reveal">
-                <!-- Replace with: <img src="faculty/raja.jpg" alt="Mr. Raja A P" class="lead-photo"> -->
+                <!-- To add photo: replace the div below with <img src="faculty/raja.jpg" alt="Mr. Raja A P" class="lead-photo"> -->
                 <div class="lead-photo-placeholder"><i class="fas fa-user"></i></div>
                 <h4>Mr. Raja A P</h4>
                 <span class="lead-role">Correspondent</span>
@@ -1102,14 +1109,13 @@
                     "Evergreen International School was established with a simple and sincere purpose: to provide young children with a strong, caring, and meaningful start to their educational journey. We continue to grow with that commitment at our core."
                 </blockquote>
                 <div class="lead-contact">
-                    <a href="tel:+919842712666"><i class="fas fa-phone-alt"></i> +91 98427 12666</a>
-                    <a href="mailto:support@evergreen-school.in"><i class="fas fa-envelope"></i> support@evergreen-school.in</a>
+                    <a href="mailto:correspondent@evergreen-school.in"><i class="fas fa-envelope"></i> correspondent@evergreen-school.in</a>
                 </div>
             </div>
 
             <!-- Principal -->
             <div class="lead-card reveal d1">
-                <!-- Replace with: <img src="faculty/santhiya.jpg" alt="Ms. Santhiya R" class="lead-photo"> -->
+                <!-- To add photo: replace the div below with <img src="faculty/santhiya.jpg" alt="Ms. Santhiya R" class="lead-photo"> -->
                 <div class="lead-photo-placeholder"><i class="fas fa-user"></i></div>
                 <h4>Ms. Santhiya R</h4>
                 <span class="lead-role">Principal</span>
@@ -1123,7 +1129,7 @@
 
             <!-- Administration Advisor -->
             <div class="lead-card reveal d2">
-                <!-- Replace with: <img src="faculty/jabendra.jpg" alt="Mr. Jabendra Raja" class="lead-photo"> -->
+                <!-- To add photo: replace the div below with <img src="faculty/jabendra.jpg" alt="Mr. Jabendra Raja" class="lead-photo"> -->
                 <div class="lead-photo-placeholder"><i class="fas fa-user"></i></div>
                 <h4>Mr. Jabendra Raja</h4>
                 <span class="lead-role">Administration Advisor</span>
@@ -1131,7 +1137,7 @@
                     "Good administration is the foundation on which good education is built. At Evergreen, we are committed to creating a system that supports every teacher, every parent, and every child."
                 </blockquote>
                 <div class="lead-contact">
-                    <a href="mailto:support@evergreen-school.in"><i class="fas fa-envelope"></i> support@evergreen-school.in</a>
+                    <a href="mailto:jabendra@evergreen-school.in"><i class="fas fa-envelope"></i> jabendra@evergreen-school.in</a>
                 </div>
             </div>
 
@@ -1175,6 +1181,13 @@
                         <div class="c-text">
                             <strong>Email</strong>
                             <p><a href="mailto:support@evergreen-school.in">support@evergreen-school.in</a></p>
+                        </div>
+                    </div>
+                    <div class="c-row">
+                        <div class="c-icon"><i class="fas fa-clock"></i></div>
+                        <div class="c-text">
+                            <strong>School Timings</strong>
+                            <p>Monday to Saturday, 7:45 AM to 5:30 PM</p>
                         </div>
                     </div>
                     <div class="c-row">
@@ -1282,6 +1295,7 @@
                     <li><i class="fas fa-map-marker-alt"></i>Near Water Tank, Vediyarasampalayam Road, Therkkupalayam, Pallipalayam, Erode 638008.</li>
                     <li><i class="fas fa-phone-alt"></i><a href="tel:+919842712666" style="color:#999;">+91 98427 12666</a></li>
                     <li><i class="fas fa-envelope"></i><a href="mailto:support@evergreen-school.in" style="color:#999;">support@evergreen-school.in</a></li>
+                    <li><i class="fas fa-clock"></i>Monday to Saturday, 7:45 AM to 5:30 PM</li>
                 </ul>
             </div>
         </div>
@@ -1298,32 +1312,14 @@
 </a>
 
 <!-- ======================================================
-     SCRIPTS: jQuery first, then Lightbox2
+     SCRIPTS
 ====================================================== -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 <script>
-    // Lightbox settings
-    lightbox.option({ resizeDuration: 200, wrapAround: true, albumLabel: 'Photo %1 of %2' });
-
-    // Gallery builder
-    var galleries = [
-        { id: 'vijaya-gallery', path: 'gallery/vijaya/', count: 8,  album: 'Vijayadhasami 2025' },
-        { id: 'annual-gallery', path: 'gallery/',         count: 23, album: 'Annual Day 2025'   }
-    ];
-    galleries.forEach(function(g) {
-        var track = document.getElementById(g.id);
-        if (!track) return;
-        for (var i = 1; i <= g.count; i++) {
-            var src = g.path + i + '.jpg';
-            var el  = document.createElement('div');
-            el.className = 'g-item';
-            el.innerHTML =
-                '<a href="' + src + '" data-lightbox="' + g.id + '" data-title="' + g.album + ' - Photo ' + i + '" class="g-card">' +
-                '<img src="' + src + '" alt="' + g.album + ' photo ' + i + '" loading="lazy">' +
-                '</a>';
-            track.appendChild(el);
-        }
+    // Scroll hint button
+    document.getElementById('scrollHint').addEventListener('click', function() {
+        document.getElementById('infoStrip').scrollIntoView({ behavior: 'smooth' });
     });
 
     // Scroll reveal
@@ -1335,8 +1331,8 @@
     document.querySelectorAll('.reveal').forEach(function(el) { revealObs.observe(el); });
 
     // Active nav on scroll
-    var sections  = document.querySelectorAll('section[id]');
-    var navAs     = document.querySelectorAll('.nav-links a[href^="#"]');
+    var sections = document.querySelectorAll('section[id]');
+    var navAs    = document.querySelectorAll('.nav-links a[href^="#"]');
     window.addEventListener('scroll', function() {
         var cur = '';
         sections.forEach(function(s) { if (window.scrollY >= s.offsetTop - 130) cur = s.id; });
@@ -1353,8 +1349,8 @@
     }, { passive: true });
 
     // Hamburger
-    var burger  = document.getElementById('hamburger');
-    var mobNav  = document.getElementById('mobileNav');
+    var burger = document.getElementById('hamburger');
+    var mobNav = document.getElementById('mobileNav');
     burger.addEventListener('click', function() { mobNav.classList.toggle('open'); });
     document.addEventListener('click', function(e) {
         if (!burger.contains(e.target) && !mobNav.contains(e.target)) mobNav.classList.remove('open');
