@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty and Staff | Evergreen International School</title>
+    <meta name="description" content="Meet the dedicated faculty and staff of Evergreen International School, Pallipalayam.">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --green:    #2F6B3A;
+            --green-dk: #1E4726;
+            --green-lt: #7FB77E;
+            --yellow:   #F4C542;
+            --bg:       #FAFBF9;
+            --card:     #FFFFFF;
+            --text:     #1B1B1B;
+            --muted:    #5B6A64;
+            --border:   rgba(47,107,58,0.12);
+            --sh-s:     0 4px 14px rgba(0,0,0,0.06);
+            --sh-m:     0 10px 32px rgba(0,0,0,0.09);
+            --r-sm:     8px;
+            --r-md:     14px;
+            --r-pill:   50px;
+            --nav-h:    72px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--text); background: var(--bg);
+            line-height: 1.65; overflow-x: hidden;
+        }
+        h1,h2,h3,h4,h5,h6 { font-family: 'Poppins', sans-serif; font-weight: 700; line-height: 1.25; color: var(--green-dk); }
+        img { display: block; max-width: 100%; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: var(--green-lt); border-radius: 3px; }
+
+        /* ====================================================
+           HEADER
+        ==================================================== */
+        .page-header {
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+            padding: 0 24px; height: var(--nav-h);
+            display: flex; align-items: center; justify-content: space-between;
+            position: sticky; top: 0; z-index: 100;
+        }
+        .brand { display: flex; align-items: center; gap: 10px; }
+        .brand img { height: 42px; border-radius: 4px; }
+        .brand-text { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 0.84rem; color: var(--green); line-height: 1.2; }
+        .brand-text small { display: block; font-weight: 500; font-size: 0.62rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .back-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(47,107,58,0.08); color: var(--green);
+            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.84rem;
+            padding: 9px 18px; border-radius: var(--r-pill); transition: all 0.22s;
+            white-space: nowrap;
+        }
+        .back-btn:hover { background: var(--green); color: #fff; }
+
+        /* ====================================================
+           HERO
+        ==================================================== */
+        .page-hero {
+            background: linear-gradient(135deg, var(--green-dk) 0%, var(--green) 60%, #4a9659 100%);
+            padding: 52px 24px 48px; text-align: center; position: relative; overflow: hidden;
+        }
+        .page-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .page-hero-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+        .page-hero h1 { color: #fff; font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 900; margin-bottom: 10px; }
+        .page-hero h1 em { font-style: normal; color: var(--yellow); }
+        .page-hero p { color: rgba(255,255,255,0.82); font-size: 0.97rem; font-weight: 600; line-height: 1.7; margin-bottom: 22px; }
+        .breadcrumb {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,0.12); backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 7px 18px; border-radius: var(--r-pill);
+            font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.85);
+        }
+        .breadcrumb a { color: var(--yellow); }
+        .breadcrumb i { font-size: 0.6rem; color: rgba(255,255,255,0.5); }
+
+        /* ====================================================
+           FILTER BAR
+        ==================================================== */
+        .filter-bar {
+            background: #fff; border-bottom: 1px solid var(--border);
+            position: sticky; top: var(--nav-h); z-index: 99;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+        .filter-bar-inner {
+            max-width: 1220px; margin: 0 auto; padding: 0 24px;
+            display: flex; align-items: center;
+            overflow-x: auto; -webkit-overflow-scrolling: touch; gap: 0;
+        }
+        .filter-bar-inner::-webkit-scrollbar { display: none; }
+        .ftab {
+            display: inline-flex; align-items: center; gap: 7px;
+            padding: 15px 18px; font-family: 'Nunito', sans-serif;
+            font-weight: 800; font-size: 0.83rem; color: var(--muted);
+            border-bottom: 3px solid transparent; white-space: nowrap;
+            cursor: pointer; transition: all 0.22s;
+            background: none; border-top: none; border-left: none; border-right: none;
+        }
+        .ftab:hover { color: var(--green); border-bottom-color: rgba(47,107,58,0.3); }
+        .ftab.active { color: var(--green); border-bottom-color: var(--green); }
+        .ftab .cnt {
+            background: rgba(47,107,58,0.1); color: var(--green);
+            font-size: 0.67rem; padding: 2px 7px; border-radius: 20px; font-weight: 800;
+        }
+        .ftab.active .cnt { background: var(--green); color: #fff; }
+        .search-wrap { margin-left: auto; padding: 8px 0; flex-shrink: 0; }
+        .search-box {
+            display: flex; align-items: center; gap: 7px;
+            background: var(--bg); border: 1.5px solid var(--border);
+            border-radius: var(--r-pill); padding: 7px 15px; transition: border-color 0.2s;
+        }
+        .search-box:focus-within { border-color: var(--green); background: #fff; }
+        .search-box i { color: var(--muted); font-size: 0.8rem; }
+        .search-box input {
+            border: none; background: none; outline: none;
+            font-family: 'Nunito', sans-serif; font-weight: 600;
+            font-size: 0.86rem; color: var(--text); width: 160px;
+        }
+        .search-box input::placeholder { color: var(--muted); }
+
+        /* ====================================================
+           CONTENT
+        ==================================================== */
+        .content-wrap { max-width: 1220px; margin: 0 auto; padding: 48px 24px 80px; }
+
+        .dept-heading {
+            display: flex; align-items: center; gap: 14px;
+            margin-bottom: 22px; margin-top: 48px;
+        }
+        .dept-heading:first-child { margin-top: 0; }
+        .dept-line { flex: 1; height: 2px; background: var(--border); }
+        .dept-label {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--green); color: #fff;
+            font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 0.79rem;
+            padding: 8px 18px; border-radius: var(--r-pill);
+            text-transform: uppercase; letter-spacing: 1px; white-space: nowrap;
+        }
+        .dept-label i { font-size: 0.8rem; color: var(--yellow); }
+
+        /* ====================================================
+           FACULTY GRID — KCT style
+        ==================================================== */
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .fc {
+            background: #fff; border-radius: var(--r-md);
+            box-shadow: var(--sh-s); border: 1px solid var(--border);
+            display: flex; align-items: stretch; overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .fc:hover { transform: translateY(-4px); box-shadow: var(--sh-m); }
+        .fc.hidden { display: none !important; }
+
+        /* Photo column — fixed 140px wide, consistent crop */
+        .fc-photo {
+            width: 140px; flex-shrink: 0; overflow: hidden;
+            background: linear-gradient(160deg, rgba(47,107,58,0.06), rgba(126,200,227,0.09));
+            display: flex; align-items: center; justify-content: center;
+            position: relative;
+        }
+        .fc-photo img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center top;  /* face at top — good for portrait photos */
+            display: block;
+            /* Subtle warm correction — matches school's natural-light brand guide */
+            filter: brightness(1.04) contrast(1.03) saturate(1.05);
+        }
+        .fc-placeholder {
+            width: 68px; height: 68px; border-radius: 50%;
+            background: rgba(47,107,58,0.1);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .fc-placeholder i { font-size: 1.9rem; color: var(--green-lt); }
+
+        /* Details column */
+        .fc-details { flex: 1; padding: 18px 20px; min-width: 0; }
+        .fc-name {
+            font-family: 'Poppins', sans-serif; font-size: 0.97rem;
+            font-weight: 800; color: var(--green-dk); margin-bottom: 2px;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .fc-role {
+            font-size: 0.72rem; font-weight: 800; color: var(--green-lt);
+            text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 13px;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .fc-role::before { content: ''; width: 16px; height: 2px; background: var(--yellow); border-radius: 1px; flex-shrink: 0; }
+
+        .fc-row { display: flex; gap: 16px; margin-bottom: 9px; flex-wrap: wrap; }
+        .fc-field { flex: 1; min-width: 120px; }
+        .fc-lbl {
+            font-family: 'Poppins', sans-serif; font-size: 0.65rem; font-weight: 700;
+            color: var(--green); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 2px;
+        }
+        .fc-val { font-size: 0.86rem; font-weight: 600; color: var(--text); line-height: 1.4; }
+
+        /* No results */
+        .no-results {
+            display: none; text-align: center; padding: 60px 20px; color: var(--muted);
+        }
+        .no-results i { font-size: 2.4rem; color: rgba(0,0,0,0.1); margin-bottom: 12px; display: block; }
+        .no-results p { font-size: 0.93rem; font-weight: 600; }
+
+        /* ====================================================
+           FOOTER
+        ==================================================== */
+        .page-footer {
+            background: #0f1f12; color: #888;
+            padding: 24px; text-align: center; font-size: 0.82rem; font-weight: 600;
+        }
+        .page-footer a { color: var(--green-lt); }
+
+        /* ====================================================
+           RESPONSIVE
+        ==================================================== */
+        @media (max-width: 860px) {
+            .faculty-grid { grid-template-columns: 1fr; }
+            .fc-photo { width: 110px; }
+        }
+        @media (max-width: 600px) {
+            .search-wrap { display: none; }
+            .brand-text { display: none; }
+            .fc { flex-direction: column; }
+            .fc-photo { width: 100%; height: 200px; }
+            .fc-photo img { object-position: center 20%; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ======================================================
+     HEADER
+====================================================== -->
+<header class="page-header">
+    <a href="index.html" class="brand">
+        <img src="logo.png" alt="Evergreen International School Logo">
+        <div class="brand-text">
+            Evergreen International School
+            <small>Pallipalayam, Erode</small>
+        </div>
+    </a>
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+</header>
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+<div class="page-hero">
+    <div class="page-hero-inner">
+        <h1>Our <em>Teachers</em> and Staff</h1>
+        <p>Meet the dedicated educators who nurture every child at Evergreen with care, patience, and a passion for teaching.</p>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Teachers and Staff</span>
+        </div>
+    </div>
+</div>
+
+<!-- ======================================================
+     FILTER / SEARCH BAR
+====================================================== -->
+<div class="filter-bar">
+    <div class="filter-bar-inner">
+        <button class="ftab active" onclick="filterDept('all',this)">
+            All <span class="cnt" id="cnt-all">9</span>
+        </button>
+        <button class="ftab" onclick="filterDept('preprimary',this)">
+            Pre-Primary <span class="cnt" id="cnt-pre">3</span>
+        </button>
+        <button class="ftab" onclick="filterDept('primary',this)">
+            Primary <span class="cnt" id="cnt-pri">4</span>
+        </button>
+        <button class="ftab" onclick="filterDept('activity',this)">
+            Activity and Sports <span class="cnt" id="cnt-act">1</span>
+        </button>
+        <button class="ftab" onclick="filterDept('support',this)">
+            Support Staff <span class="cnt" id="cnt-sup">1</span>
+        </button>
+        <div class="search-wrap">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search by name or subject..." oninput="searchFaculty()">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ======================================================
+     CONTENT
+====================================================== -->
+<div class="content-wrap">
+
+    <!-- PRE-PRIMARY -->
+    <div class="dept-heading" data-dept="preprimary">
+        <div class="dept-label"><i class="fas fa-seedling"></i> Pre-Primary Department</div>
+        <div class="dept-line"></div>
+    </div>
+    <div class="faculty-grid">
+
+        <div class="fc" data-dept="preprimary" data-name="ms s ranjitha pre-kg class teacher">
+            <div class="fc-photo">
+                <img src="Teachers & staffs/Ms. S Ranjitha.jpeg" alt="Ms. S Ranjitha"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="fc-placeholder" style="display:none"><i class="fas fa-user"></i></div>
+            </div>
+            <div class="fc-details">
+                <div class="fc-name">Ms. S Ranjitha</div>
+                <div class="fc-role">Pre-KG Class Teacher</div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Subject Handled</div>
+                        <div class="fc-val">Phonics, Rhymes, Drawing</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Classes Assigned</div>
+                        <div class="fc-val">Pre-KG</div>
+                    </div>
+                </div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Qualification</div>
+                        <div class="fc-val">B.Ed, D.T.Ed</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Experience</div>
+                        <div class="fc-val">5 Years</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fc" data-dept="preprimary" data-name="ms s prema kg class teacher">
+            <div class="fc-photo">
+                <img src="Teachers & staffs/Ms. S Prema.jpeg" alt="Ms. S Prema"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="fc-placeholder" style="display:none"><i class="fas fa-user"></i></div>
+            </div>
+            <div class="fc-details">
+                <div class="fc-name">Ms. S Prema</div>
+                <div class="fc-role">KG Class Teacher</div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Subject Handled</div>
+                        <div class="fc-val">English, Storytelling, Numeracy</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Classes Assigned</div>
+                        <div class="fc-val">KG</div>
+                    </div>
+                </div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Qualification</div>
+                        <div class="fc-val">B.Ed, M.A.</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Experience</div>
+                        <div class="fc-val">6 Years</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fc" data-dept="preprimary" data-name="ms t saraladevi pre-primary assistant">
+            <div class="fc-photo">
+                <img src="Teachers & staffs/Ms. T Saraladevi.jpeg" alt="Ms. T Saraladevi"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="fc-placeholder" style="display:none"><i class="fas fa-user"></i></div>
+            </div>
+            <div class="fc-details">
+                <div class="fc-name">Ms. T Saraladevi</div>
+                <div class="fc-role">Pre-Primary Assistant Teacher</div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Subject Handled</div>
+                        <div class="fc-val">Tamil, Art and Craft</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Classes Assigned</div>
+                        <div class="fc-val">Pre-KG and KG</div>
+                    </div>
+                </div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Qualification</div>
+                        <div class="fc-val">D.T.Ed, B.A.</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Experience</div>
+                        <div class="fc-val">4 Years</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PRIMARY -->
+    <div class="dept-heading" data-dept="primary">
+        <div class="dept-label"><i class="fas fa-book-open"></i> Primary Department</div>
+        <div class="dept-line"></div>
+    </div>
+    <div class="faculty-grid">
+
+        <div class="fc" data-dept="primary" data-name="ms k punitha english teacher grade 1 to 5">
+            <div class="fc-photo">
+                <img src="Teachers & staffs/Ms. K Punitha.jpeg" alt="Ms. K Punitha"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="fc-placeholder" style="display:none"><i class="fas fa-user"></i></div>
+            </div>
+            <div class="fc-details">
+                <div class="fc-name">Ms. K Punitha</div>
+                <div class="fc-role">English Teacher</div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Subject Handled</div>
+                        <div class="fc-val">English Language and Literature</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Classes Assigned</div>
+                        <div class="fc-val">Grade 1 to 5</div>
+                    </div>
+                </div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Qualification</div>
+                        <div class="fc-val">B.Ed, M.A. (English)</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Experience</div>
+                        <div class="fc-val">8 Years</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fc" data-dept="primary" data-name="ms m ambika mathematics teacher grade 1 to 5">
+            <div class="fc-photo">
+                <img src="Teachers & staffs/Ms. M Ambika.jpeg" alt="Ms. M Ambika"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="fc-placeholder" style="display:none"><i class="fas fa-user"></i></div>
+            </div>
+            <div class="fc-details">
+                <div class="fc-name">Ms. M Ambika</div>
+                <div class="fc-role">Mathematics Teacher</div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Subject Handled</div>
+                        <div class="fc-val">Mathematics, General Knowledge</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Classes Assigned</div>
+                        <div class="fc-val">Grade 1 to 5</div>
+                    </div>
+                </div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Qualification</div>
+                        <div class="fc-val">B.Ed, M.Sc. (Mathematics)</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Experience</div>
+                        <div class="fc-val">9 Years</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fc" data-dept="primary" data-name="ms s deepa science evs teacher grade 1 to 5">
+            <div class="fc-photo">
+                <img src="Teachers & staffs/Ms. S Deepa.jpeg" alt="Ms. S Deepa"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="fc-placeholder" style="display:none"><i class="fas fa-user"></i></div>
+            </div>
+            <div class="fc-details">
+                <div class="fc-name">Ms. S Deepa</div>
+                <div class="fc-role">Science and EVS Teacher</div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Subject Handled</div>
+                        <div class="fc-val">Environmental Science, Social Studies</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Classes Assigned</div>
+                        <div class="fc-val">Grade 1 to 5</div>
+                    </div>
+                </div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Qualification</div>
+                        <div class="fc-val">B.Ed, M.Sc.</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Experience</div>
+                        <div class="fc-val">7 Years</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fc" data-dept="primary" data-name="ms r karthiga tamil teacher grade 1 to 5">
+            <div class="fc-photo">
+                <img src="Teachers & staffs/Ms. R Karthiga.jpeg" alt="Ms. R Karthiga"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="fc-placeholder" style="display:none"><i class="fas fa-user"></i></div>
+            </div>
+            <div class="fc-details">
+                <div class="fc-name">Ms. R Karthiga</div>
+                <div class="fc-role">Tamil Language Teacher</div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Subject Handled</div>
+                        <div class="fc-val">Tamil Language and Literature</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Classes Assigned</div>
+                        <div class="fc-val">Grade 1 to 5</div>
+                    </div>
+                </div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Qualification</div>
+                        <div class="fc-val">B.Ed, M.A. (Tamil)</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Experience</div>
+                        <div class="fc-val">10 Years</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ACTIVITY AND SPORTS -->
+    <div class="dept-heading" data-dept="activity">
+        <div class="dept-label"><i class="fas fa-running"></i> Activity and Sports</div>
+        <div class="dept-line"></div>
+    </div>
+    <div class="faculty-grid">
+
+        <div class="fc" data-dept="activity" data-name="ms v deepa art craft activity teacher">
+            <div class="fc-photo">
+                <img src="Teachers & staffs/Ms. V Deepa.jpeg" alt="Ms. V Deepa"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="fc-placeholder" style="display:none"><i class="fas fa-user"></i></div>
+            </div>
+            <div class="fc-details">
+                <div class="fc-name">Ms. V Deepa</div>
+                <div class="fc-role">Art and Activity Teacher</div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Subject Handled</div>
+                        <div class="fc-val">Drawing, Craft, Music Basics</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Classes Assigned</div>
+                        <div class="fc-val">Pre-KG to Grade 5</div>
+                    </div>
+                </div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Qualification</div>
+                        <div class="fc-val">Diploma in Fine Arts</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Experience</div>
+                        <div class="fc-val">5 Years</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SUPPORT STAFF -->
+    <div class="dept-heading" data-dept="support">
+        <div class="dept-label"><i class="fas fa-hands-helping"></i> Support Staff</div>
+        <div class="dept-line"></div>
+    </div>
+    <div class="faculty-grid">
+
+        <div class="fc" data-dept="support" data-name="ms m ambika school office administrator support">
+            <!-- Note: if you have a separate photo for support staff, update src below -->
+            <div class="fc-photo">
+                <div class="fc-placeholder"><i class="fas fa-user"></i></div>
+            </div>
+            <div class="fc-details">
+                <div class="fc-name">School Administrator</div>
+                <div class="fc-role">Office and Administration</div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Responsibilities</div>
+                        <div class="fc-val">Admissions, Records, Parent Communication</div>
+                    </div>
+                    <div class="fc-field">
+                        <div class="fc-lbl">Department</div>
+                        <div class="fc-val">School Office</div>
+                    </div>
+                </div>
+                <div class="fc-row">
+                    <div class="fc-field">
+                        <div class="fc-lbl">Contact</div>
+                        <div class="fc-val">support@evergreen-school.in</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="no-results" id="noResults">
+        <i class="fas fa-search"></i>
+        <p>No results found. Try a different name or subject.</p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+    <p>2026 Evergreen International School, Pallipalayam |
+       <a href="index.html">Back to Home</a> |
+       <a href="mailto:support@evergreen-school.in">support@evergreen-school.in</a>
+    </p>
+</footer>
+
+<script>
+    function filterDept(dept, btn) {
+        document.querySelectorAll('.ftab').forEach(function(t) { t.classList.remove('active'); });
+        btn.classList.add('active');
+        document.querySelectorAll('.fc').forEach(function(c) {
+            c.style.display = (dept === 'all' || c.dataset.dept === dept) ? '' : 'none';
+        });
+        document.querySelectorAll('.dept-heading').forEach(function(h) {
+            h.style.display = (dept === 'all' || h.dataset.dept === dept) ? '' : 'none';
+        });
+        document.getElementById('searchInput').value = '';
+        document.getElementById('noResults').style.display = 'none';
+    }
+
+    function searchFaculty() {
+        var q = document.getElementById('searchInput').value.toLowerCase().trim();
+        var cards = document.querySelectorAll('.fc');
+        var visible = 0;
+        document.querySelectorAll('.ftab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelector('.ftab').classList.add('active');
+        document.querySelectorAll('.dept-heading').forEach(function(h) { h.style.display = ''; });
+        cards.forEach(function(c) {
+            var match = !q || (c.dataset.name || '').includes(q);
+            c.style.display = match ? '' : 'none';
+            if (match) visible++;
+        });
+        document.getElementById('noResults').style.display = (!q || visible > 0) ? 'none' : 'block';
+    }
+</script>
+</body>
+</html>
