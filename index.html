@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evergreen International School | CBSE Primary School in Pallipalayam</title>
     <meta name="description" content="Evergreen International School is a CBSE-aligned English-medium primary school in Therkkupalayam, Pallipalayam, Erode. Admissions open for Pre-KG to Grade 5.">
+    <meta name="keywords" content="Evergreen International School, CBSE school Pallipalayam, primary school Erode, English medium school Namakkal">
     <meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE">
     <link rel="icon" href="logo.png" type="image/png">
     <link rel="shortcut icon" href="logo.png" type="image/png">
@@ -13,36 +14,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
 
     <style>
-        /* ====================================================
-           VARIABLES
-        ==================================================== */
+        /* ============================================================
+           VARIABLES — Brand Book exact palette
+        ============================================================ */
         :root {
-            --green:    #2F6B3A;
-            --green-dk: #1E4726;
-            --green-lt: #7FB77E;
-            --yellow:   #F4C542;
-            --sky:      #7EC8E3;
-            --bg:       #FAFBF9;
-            --card:     #FFFFFF;
-            --text:     #1B1B1B;
-            --muted:    #5B6A64;
-            --border:   rgba(47,107,58,0.12);
-            --sh-s:     0 4px 14px rgba(0,0,0,0.06);
-            --sh-m:     0 10px 32px rgba(0,0,0,0.09);
-            --sh-l:     0 20px 56px rgba(0,0,0,0.12);
-            --r-sm:     8px;
-            --r-md:     14px;
-            --r-pill:   50px;
-            --nav-h:    76px;
-            --bar-h:    36px;
+            --green:      #2F6B3A;
+            --green-dk:   #1E4726;
+            --green-lt:   #7FB77E;
+            --yellow:     #F4C542;
+            --sky:        #7EC8E3;
+            --bg:         #FAFBF9;
+            --card:       #FFFFFF;
+            --text:       #1B1B1B;
+            --muted:      #5B6A64;
+            --border:     rgba(47,107,58,0.13);
+            --sh-s:       0 4px 14px rgba(0,0,0,0.06);
+            --sh-m:       0 10px 32px rgba(0,0,0,0.10);
+            --sh-l:       0 22px 56px rgba(0,0,0,0.13);
+            --r-sm:       8px;
+            --r-md:       14px;
+            --r-pill:     50px;
+            --nav-h:      76px;
+            --bar-h:      36px;
         }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: calc(var(--nav-h) + var(--bar-h) + 20px);
+            scroll-padding-top: calc(var(--nav-h) + var(--bar-h) + 24px);
         }
         body {
             font-family: 'Nunito', sans-serif;
@@ -54,119 +54,140 @@
         }
         h1,h2,h3,h4,h5,h6 {
             font-family: 'Poppins', sans-serif;
-            font-weight: 700; line-height: 1.25;
+            font-weight: 700;
+            line-height: 1.25;
             color: var(--green-dk);
         }
         img { display: block; max-width: 100%; }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
-        section { scroll-margin-top: calc(var(--nav-h) + var(--bar-h) + 20px); }
+        section { scroll-margin-top: calc(var(--nav-h) + var(--bar-h) + 24px); }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-thumb { background: var(--green-lt); border-radius: 3px; }
 
-        /* ====================================================
+        /* ============================================================
            LAYOUT HELPERS
-        ==================================================== */
-        .wrap { max-width: 1220px; margin: 0 auto; padding: 0 28px; }
-        .sec  { padding: 92px 0; }
-        .sec-alt { background: rgba(126,200,227,0.07); }
+        ============================================================ */
+        .wrap   { max-width: 1220px; margin: 0 auto; padding: 0 28px; }
+        .sec    { padding: 96px 0; }
+        .sec-alt { background: linear-gradient(180deg, rgba(126,200,227,0.06) 0%, rgba(47,107,58,0.03) 100%); }
 
-        .sec-header { text-align: center; margin-bottom: 60px; }
+        .sec-header { text-align: center; margin-bottom: 64px; }
         .sec-header h2 {
-            font-size: clamp(1.9rem,3.5vw,2.6rem); font-weight: 800;
-            display: inline-block; position: relative; padding-bottom: 14px;
+            font-size: clamp(1.9rem, 3.5vw, 2.65rem);
+            font-weight: 800;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 16px;
         }
         .sec-header h2::after {
-            content: ''; position: absolute;
-            bottom: 0; left: 50%; transform: translateX(-50%);
-            width: 56px; height: 4px; background: var(--yellow); border-radius: 2px;
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 52px; height: 4px;
+            background: var(--yellow);
+            border-radius: 2px;
         }
-        .sec-header p { color: var(--muted); margin-top: 14px; font-size: 1.05rem; font-weight: 600; }
+        .sec-header p {
+            color: var(--muted);
+            margin-top: 16px;
+            font-size: 1.06rem;
+            font-weight: 600;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
         /* Buttons */
         .btn {
             display: inline-flex; align-items: center; gap: 8px;
-            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem;
+            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.93rem;
             padding: 13px 30px; border-radius: var(--r-pill);
             border: none; cursor: pointer; transition: all 0.25s;
+            letter-spacing: 0.2px;
         }
-        .btn-green  { background: var(--green); color: #fff; box-shadow: 0 4px 14px rgba(47,107,58,0.3); }
-        .btn-green:hover  { background: var(--green-dk); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(47,107,58,0.4); color: #fff; }
+        .btn-green  { background: var(--green); color: #fff; box-shadow: 0 4px 14px rgba(47,107,58,0.30); }
+        .btn-green:hover  { background: var(--green-dk); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(47,107,58,0.40); color: #fff; }
         .btn-yellow { background: var(--yellow); color: var(--text); }
         .btn-yellow:hover { background: #e6b53a; transform: translateY(-2px); color: var(--text); }
-        .btn-ghost  { background: transparent; border: 2px solid rgba(255,255,255,0.7); color: #fff; }
-        .btn-ghost:hover  { background: rgba(255,255,255,0.12); border-color: #fff; color: #fff; }
+        .btn-ghost  { background: transparent; border: 2px solid rgba(255,255,255,0.70); color: #fff; }
+        .btn-ghost:hover  { background: rgba(255,255,255,0.14); border-color: #fff; color: #fff; }
+        .btn-outline { background: transparent; border: 2px solid var(--green); color: var(--green); }
+        .btn-outline:hover { background: var(--green); color: #fff; }
 
-        /* Card */
-        .card {
-            background: var(--card); border-radius: var(--r-md);
-            box-shadow: var(--sh-s); padding: 32px;
-            height: 100%; transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .card:hover { transform: translateY(-5px); box-shadow: var(--sh-m); }
-
-        /* Plain list */
-        .plain-list li {
-            padding: 9px 0 9px 14px; position: relative;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            color: var(--muted); font-weight: 600; font-size: 0.95rem;
-        }
-        .plain-list li::before {
-            content: ''; position: absolute; left: 0; top: 50%;
-            transform: translateY(-50%);
-            width: 5px; height: 5px; border-radius: 50%; background: var(--green-lt);
-        }
-        .plain-list li:last-child { border-bottom: none; }
-        .mandatory {
-            display: inline-block; background: rgba(47,107,58,0.1); color: var(--green);
-            font-size: 0.72rem; font-weight: 800; padding: 2px 9px;
-            border-radius: 20px; margin-left: 6px; vertical-align: middle;
-            text-transform: uppercase; letter-spacing: 0.5px;
-        }
-
-        /* Tag */
+        /* Section pill tag */
         .tag {
             display: inline-flex; align-items: center; gap: 7px;
             background: rgba(47,107,58,0.09); color: var(--green);
             padding: 6px 16px; border-radius: var(--r-pill);
             font-size: 0.78rem; font-weight: 800;
-            text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 16px;
+            text-transform: uppercase; letter-spacing: 0.6px;
+            margin-bottom: 16px;
         }
 
-        /* Reveal */
+        /* Plain doc list */
+        .plain-list li {
+            padding: 9px 0 9px 16px; position: relative;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: var(--muted); font-weight: 600; font-size: 0.96rem;
+        }
+        .plain-list li::before {
+            content: ''; position: absolute; left: 0; top: 50%;
+            transform: translateY(-50%);
+            width: 5px; height: 5px; border-radius: 50%;
+            background: var(--green-lt);
+        }
+        .plain-list li:last-child { border-bottom: none; }
+        .mandatory {
+            display: inline-block;
+            background: rgba(47,107,58,0.10); color: var(--green);
+            font-size: 0.68rem; font-weight: 800;
+            padding: 2px 9px; border-radius: 20px;
+            margin-left: 6px; vertical-align: middle;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+
+        /* Reveal animation */
         .reveal {
             opacity: 0; transform: translateY(28px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
+            transition: opacity 0.65s ease, transform 0.65s ease;
         }
-        .reveal.d1 { transition-delay: 0.1s; }
-        .reveal.d2 { transition-delay: 0.2s; }
-        .reveal.d3 { transition-delay: 0.3s; }
+        .reveal.d1 { transition-delay: 0.10s; }
+        .reveal.d2 { transition-delay: 0.20s; }
+        .reveal.d3 { transition-delay: 0.30s; }
+        .reveal.d4 { transition-delay: 0.40s; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
-        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
-        /* ====================================================
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        @keyframes pulseRing { 0%,100% { box-shadow: 0 0 0 0 rgba(244,197,66,0.45); } 50% { box-shadow: 0 0 0 10px rgba(244,197,66,0); } }
+
+        /* ============================================================
            ANNOUNCE BAR
-        ==================================================== */
+        ============================================================ */
         .announce {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1002;
-            height: var(--bar-h); background: var(--green); color: #fff;
-            font-size: 0.82rem; font-weight: 700;
+            height: var(--bar-h);
+            background: var(--green-dk);
+            color: #fff;
+            font-size: 0.81rem; font-weight: 700;
             display: flex; align-items: center; justify-content: center; gap: 6px;
+            letter-spacing: 0.2px;
         }
-        .announce a { color: var(--yellow); font-weight: 800; }
+        .announce a { color: var(--yellow); font-weight: 800; margin-left: 10px; }
         .announce a:hover { text-decoration: underline; }
 
-        /* ====================================================
-           HEADER / NAV
-        ==================================================== */
+        /* ============================================================
+           HEADER
+        ============================================================ */
         .site-header {
             position: fixed; top: var(--bar-h); left: 0; right: 0; z-index: 1000;
             background: rgba(255,255,255,0.97);
-            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
             box-shadow: 0 2px 20px rgba(0,0,0,0.06);
             height: var(--nav-h); transition: box-shadow 0.3s;
         }
-        .site-header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.1); }
+        .site-header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.10); }
         .header-inner {
             display: flex; align-items: center; justify-content: space-between;
             height: 100%; max-width: 1220px; margin: 0 auto; padding: 0 28px;
@@ -175,19 +196,21 @@
         .brand img { height: 48px; width: auto; border-radius: 4px; }
         .brand-text {
             font-family: 'Poppins', sans-serif; font-weight: 800;
-            font-size: 0.88rem; color: var(--green); line-height: 1.2; max-width: 160px;
+            font-size: 0.87rem; color: var(--green); line-height: 1.2; max-width: 165px;
         }
-        .brand-text small { display: block; font-weight: 500; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
-
+        .brand-text small {
+            display: block; font-weight: 500; font-size: 0.63rem;
+            color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px;
+        }
         .nav-links { display: flex; align-items: center; gap: 2px; }
         .nav-links a {
-            font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.86rem;
-            padding: 7px 13px; border-radius: var(--r-pill); color: var(--text);
-            transition: all 0.22s; white-space: nowrap;
+            font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.84rem;
+            padding: 7px 11px; border-radius: var(--r-pill);
+            color: var(--text); transition: all 0.22s; white-space: nowrap;
         }
         .nav-links a:hover { background: rgba(47,107,58,0.07); color: var(--green); }
         .nav-links a.active { background: var(--green); color: #fff; }
-        .nav-links a.life-link { color: var(--green); font-weight: 800; background: rgba(244,197,66,0.15); }
+        .nav-links a.life-link { color: var(--green); background: rgba(244,197,66,0.14); font-weight: 800; }
         .nav-links a.life-link:hover { background: rgba(244,197,66,0.28); }
         .nav-cta {
             margin-left: 8px;
@@ -198,21 +221,31 @@
         }
         .nav-cta:hover { background: var(--green-dk); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(47,107,58,0.35); color: #fff; }
 
-        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; }
+        .hamburger {
+            display: none; flex-direction: column; gap: 5px;
+            cursor: pointer; padding: 6px; border: none; background: none;
+        }
         .hamburger span { display: block; width: 24px; height: 2px; background: var(--green); border-radius: 2px; transition: 0.3s; }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
         .mobile-nav {
-            display: none; position: fixed;
+            display: none;
+            position: fixed;
             top: calc(var(--nav-h) + var(--bar-h));
             left: 0; right: 0; z-index: 999;
-            background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 0 0 16px 16px; padding: 16px 20px 20px;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+            border-radius: 0 0 18px 18px;
+            padding: 16px 20px 22px;
         }
         .mobile-nav.open { display: block; }
         .mobile-nav a {
             display: block; padding: 11px 14px;
             font-family: 'Nunito', sans-serif; font-weight: 700;
-            color: var(--text); border-radius: var(--r-sm); transition: 0.2s; font-size: 0.95rem;
+            color: var(--text); border-radius: var(--r-sm);
+            transition: 0.2s; font-size: 0.95rem;
         }
         .mobile-nav a:hover { background: rgba(47,107,58,0.07); color: var(--green); }
         .mobile-nav a.life-link { color: var(--green); font-weight: 800; }
@@ -223,14 +256,16 @@
             font-family: 'Nunito', sans-serif; font-weight: 800;
         }
 
-        /* ====================================================
-           FLOATING ENQUIRY BUTTON (desktop)
-        ==================================================== */
+        /* ============================================================
+           FLOATING ENQUIRY BUTTON (desktop left edge)
+        ============================================================ */
         .float-enquiry {
-            position: fixed; left: 0; top: 50%; transform: translateY(-50%);
-            z-index: 997; background: var(--green); color: #fff;
+            position: fixed; left: 0; top: 50%;
+            transform: translateY(-50%);
+            z-index: 997;
+            background: var(--green); color: #fff;
             padding: 14px 10px; border-radius: 0 10px 10px 0;
-            box-shadow: 4px 0 18px rgba(47,107,58,0.3);
+            box-shadow: 4px 0 18px rgba(47,107,58,0.30);
             display: flex; flex-direction: column; align-items: center; gap: 10px;
             cursor: pointer; transition: all 0.3s; text-decoration: none;
         }
@@ -238,27 +273,25 @@
         .float-enquiry span {
             writing-mode: vertical-rl; text-orientation: mixed;
             font-family: 'Nunito', sans-serif; font-weight: 800;
-            font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase;
+            font-size: 0.74rem; letter-spacing: 1.5px; text-transform: uppercase;
         }
         .float-enquiry i { font-size: 1rem; }
 
-        /* ====================================================
+        /* ============================================================
            BOTTOM MOBILE NAV
-        ==================================================== */
+        ============================================================ */
         .bottom-nav {
             display: none;
             position: fixed; bottom: 0; left: 0; right: 0; z-index: 1001;
             background: #fff;
-            box-shadow: 0 -2px 20px rgba(0,0,0,0.1);
-            padding: 6px 0 env(safe-area-inset-bottom, 6px);
+            box-shadow: 0 -2px 20px rgba(0,0,0,0.10);
+            padding: 6px 0 env(safe-area-inset-bottom, 8px);
         }
-        .bottom-nav-inner {
-            display: grid; grid-template-columns: repeat(5,1fr);
-        }
+        .bottom-nav-inner { display: grid; grid-template-columns: repeat(5,1fr); }
         .bn-item {
             display: flex; flex-direction: column; align-items: center;
             gap: 3px; padding: 6px 4px;
-            color: var(--muted); font-size: 0.62rem; font-weight: 800;
+            color: var(--muted); font-size: 0.60rem; font-weight: 800;
             text-transform: uppercase; letter-spacing: 0.5px;
             transition: 0.2s; cursor: pointer; text-decoration: none;
         }
@@ -270,9 +303,22 @@
         }
         .bn-item.bn-enquire:hover { background: var(--green-dk); color: #fff; }
 
-        /* ====================================================
+        /* WhatsApp float */
+        .wa-float {
+            position: fixed; bottom: 26px; right: 26px; z-index: 999;
+            width: 56px; height: 56px; border-radius: 50%;
+            background: #25D366; color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.55rem;
+            box-shadow: 0 4px 18px rgba(37,211,102,0.50);
+            animation: float 3s ease-in-out infinite;
+            transition: transform 0.2s;
+        }
+        .wa-float:hover { transform: scale(1.1); color: #fff; }
+
+        /* ============================================================
            HERO
-        ==================================================== */
+        ============================================================ */
         #home {
             position: relative;
             min-height: calc(100vh - var(--nav-h) - var(--bar-h));
@@ -290,87 +336,102 @@
         @keyframes slideShow {
             0%   { opacity: 0; transform: scale(1.05); }
             8%   { opacity: 1; transform: scale(1); }
-            33%  { opacity: 1; }
+            33%  { opacity: 1; transform: scale(1); }
             41%  { opacity: 0; }
             100% { opacity: 0; }
         }
         .hero-overlay {
             position: absolute; inset: 0; z-index: 1;
-            background: linear-gradient(135deg,rgba(18,46,24,0.78) 0%,rgba(30,72,38,0.62) 60%,rgba(47,107,58,0.48) 100%);
+            background: linear-gradient(135deg,
+                rgba(18,46,24,0.82) 0%,
+                rgba(30,72,38,0.65) 55%,
+                rgba(47,107,58,0.52) 100%);
         }
         .hero-deco {
             position: absolute; z-index: 2; pointer-events: none;
-            width: 480px; height: 480px;
-            border: 1px solid rgba(244,197,66,0.12);
-            border-radius: 50%; right: -80px; top: -80px;
+            width: 520px; height: 520px;
+            border: 1px solid rgba(244,197,66,0.10);
+            border-radius: 50%; right: -100px; top: -100px;
+        }
+        .hero-deco2 {
+            position: absolute; z-index: 2; pointer-events: none;
+            width: 260px; height: 260px;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 50%; right: 80px; top: 80px;
         }
         .hero-body {
             position: relative; z-index: 3;
             width: 100%; max-width: 1220px; margin: 0 auto;
-            padding: 80px 28px 100px;
+            padding: 80px 28px 110px;
         }
         .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
         .hero-pill {
             display: inline-flex; align-items: center; gap: 7px;
-            background: rgba(255,255,255,0.16); backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,0.28); color: #fff;
-            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.8rem;
+            background: rgba(255,255,255,0.14); backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.26); color: #fff;
+            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.80rem;
             padding: 7px 18px; border-radius: var(--r-pill);
         }
         .hero-pill i { color: var(--yellow); font-size: 0.72rem; }
         .hero-body h1 {
-            color: #fff; font-size: clamp(2.4rem,5vw,4rem);
-            font-weight: 900; line-height: 1.1; max-width: 780px;
-            text-shadow: 0 4px 28px rgba(0,0,0,0.4); margin-bottom: 20px;
+            color: #fff;
+            font-size: clamp(2.4rem, 5.2vw, 4.1rem);
+            font-weight: 900; line-height: 1.1;
+            max-width: 800px;
+            text-shadow: 0 4px 28px rgba(0,0,0,0.40);
+            margin-bottom: 22px;
         }
         .hero-body h1 em { font-style: normal; color: var(--yellow); }
         .hero-sub {
-            color: rgba(255,255,255,0.88); font-size: 1.1rem; font-weight: 600;
-            max-width: 580px; margin-bottom: 38px;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.3); line-height: 1.7;
+            color: rgba(255,255,255,0.88);
+            font-size: 1.12rem; font-weight: 600;
+            max-width: 590px; margin-bottom: 40px;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.30);
+            line-height: 1.75;
         }
-        .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 62px; }
-        .hero-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; max-width: 640px; }
+        .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 66px; }
+        .hero-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; max-width: 650px; }
         .stat-card {
-            background: rgba(255,255,255,0.96); border-radius: var(--r-md);
-            padding: 17px 20px; border-left: 4px solid var(--green);
+            background: rgba(255,255,255,0.96);
+            border-radius: var(--r-md); padding: 18px 20px;
+            border-left: 4px solid var(--green);
             box-shadow: 0 8px 28px rgba(0,0,0,0.18);
         }
-        .stat-label { font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--green-lt); margin-bottom: 4px; }
+        .stat-label { font-size: 0.67rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--green-lt); margin-bottom: 4px; }
         .stat-value { font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 800; color: var(--text); }
         .scroll-hint {
             position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
             z-index: 3; text-align: center; cursor: pointer;
             color: rgba(255,255,255,0.55);
-            font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+            font-size: 0.70rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
             animation: float 2.5s ease infinite;
         }
         .scroll-hint i { display: block; margin-top: 5px; font-size: 0.9rem; }
 
-        /* ====================================================
+        /* ============================================================
            INFO STRIP
-        ==================================================== */
+        ============================================================ */
         .info-strip { background: var(--green); padding: 28px 0; }
         .strip-grid { display: grid; grid-template-columns: repeat(4,1fr); }
         .strip-item {
             display: flex; align-items: center; gap: 14px; padding: 0 24px;
-            border-right: 1px solid rgba(255,255,255,0.14); color: #fff;
+            border-right: 1px solid rgba(255,255,255,0.13); color: #fff;
         }
         .strip-item:last-child { border-right: none; }
         .strip-item i { font-size: 1.5rem; color: var(--yellow); flex-shrink: 0; }
         .strip-item strong { display: block; font-size: 0.92rem; font-weight: 700; font-family: 'Poppins', sans-serif; }
         .strip-item span { font-size: 0.78rem; color: rgba(255,255,255,0.68); font-weight: 600; }
 
-        /* ====================================================
+        /* ============================================================
            ACHIEVEMENTS TICKER
-        ==================================================== */
+        ============================================================ */
         .ticker-wrap {
             background: var(--yellow); overflow: hidden;
-            padding: 11px 0; border-bottom: 3px solid rgba(47,107,58,0.15);
+            padding: 11px 0; border-bottom: 3px solid rgba(47,107,58,0.14);
         }
         .ticker-track {
             display: flex; align-items: center;
-            animation: tickerScroll 38s linear infinite;
+            animation: tickerScroll 42s linear infinite;
             width: max-content;
         }
         .ticker-wrap:hover .ticker-track { animation-play-state: paused; }
@@ -380,83 +441,117 @@
         }
         .ticker-item {
             display: inline-flex; align-items: center; gap: 10px;
-            padding: 0 38px;
+            padding: 0 40px;
             font-family: 'Poppins', sans-serif; font-weight: 700;
-            font-size: 0.82rem; color: var(--green-dk);
+            font-size: 0.81rem; color: var(--green-dk);
             text-transform: uppercase; letter-spacing: 0.8px;
             white-space: nowrap;
         }
-        .ticker-dot {
-            width: 6px; height: 6px; border-radius: 50%;
-            background: var(--green); flex-shrink: 0;
-        }
+        .ticker-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
 
-        /* ====================================================
+        /* ============================================================
            ABOUT
-        ==================================================== */
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        ============================================================ */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
         .about-img-wrap { position: relative; }
-        .about-img { width: 100%; height: 460px; object-fit: cover; border-radius: 20px; box-shadow: var(--sh-l); }
+        .about-img { width: 100%; height: 480px; object-fit: cover; border-radius: 22px; box-shadow: var(--sh-l); }
         .about-badge {
-            position: absolute; bottom: -18px; right: -18px;
+            position: absolute; bottom: -20px; right: -20px;
             background: var(--green); color: #fff;
-            border-radius: 14px; padding: 18px 22px;
-            box-shadow: 0 8px 24px rgba(47,107,58,0.4);
+            border-radius: 16px; padding: 20px 24px;
+            box-shadow: 0 8px 28px rgba(47,107,58,0.42);
             text-align: center; animation: float 4s ease-in-out infinite;
         }
-        .about-badge .num { font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 900; color: var(--yellow); line-height: 1; }
-        .about-badge .lbl { font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.8); margin-top: 3px; }
+        .about-badge .big-num { font-family: 'Poppins', sans-serif; font-size: 2.1rem; font-weight: 900; color: var(--yellow); line-height: 1; }
+        .about-badge .lbl { font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.80); margin-top: 4px; }
         .about-mini {
-            position: absolute; top: 22px; right: -12px;
+            position: absolute; top: 22px; right: -14px;
             background: var(--yellow); color: var(--text);
-            border-radius: 10px; padding: 11px 16px;
-            font-weight: 800; font-size: 0.8rem;
+            border-radius: 10px; padding: 11px 17px;
+            font-weight: 800; font-size: 0.80rem;
             box-shadow: 0 6px 18px rgba(0,0,0,0.12);
         }
-        .about-text h2 { font-size: 2rem; margin-bottom: 16px; }
-        .about-text > p { color: var(--muted); font-size: 1.02rem; margin-bottom: 26px; line-height: 1.75; }
-        .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 26px; }
-        .vm-box { background: rgba(47,107,58,0.05); border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px; }
+        .about-text h2 { font-size: 2.05rem; margin-bottom: 14px; }
+        .about-text > p { color: var(--muted); font-size: 1.02rem; margin-bottom: 28px; line-height: 1.78; }
+        .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px; }
+        .vm-box {
+            background: rgba(47,107,58,0.05); border: 1px solid var(--border);
+            border-radius: var(--r-md); padding: 20px;
+        }
         .vm-box h5 { color: var(--green); font-size: 0.92rem; margin-bottom: 8px; }
-        .vm-box p { font-size: 0.85rem; color: var(--muted); font-weight: 600; line-height: 1.55; margin: 0; }
+        .vm-box p { font-size: 0.86rem; color: var(--muted); font-weight: 600; line-height: 1.58; margin: 0; }
+        .feature-chips { display: flex; flex-wrap: wrap; gap: 9px; }
+        .chip {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: #fff; border: 1.5px solid var(--border);
+            border-radius: var(--r-pill); padding: 7px 14px;
+            font-size: 0.82rem; font-weight: 700; color: var(--text);
+            box-shadow: var(--sh-s);
+        }
+        .chip i { color: var(--green); font-size: 0.75rem; }
 
-        /* ====================================================
-           STAT COUNTERS — BY THE NUMBERS
-        ==================================================== */
-        .numbers-sec {
-            background: var(--green); padding: 70px 0;
-        }
-        .numbers-grid {
-            display: grid; grid-template-columns: repeat(4,1fr); gap: 0;
-        }
+        /* ============================================================
+           BY THE NUMBERS
+        ============================================================ */
+        .numbers-sec { background: var(--green); padding: 72px 0; }
+        .numbers-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
         .num-card {
-            text-align: center; padding: 32px 24px;
-            border-right: 1px solid rgba(255,255,255,0.12);
+            text-align: center; padding: 36px 24px;
+            border-right: 1px solid rgba(255,255,255,0.11);
             position: relative;
         }
         .num-card:last-child { border-right: none; }
         .num-icon {
-            width: 56px; height: 56px; border-radius: 14px;
-            background: rgba(255,255,255,0.1);
+            width: 58px; height: 58px; border-radius: 16px;
+            background: rgba(255,255,255,0.10);
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.4rem; color: var(--yellow);
-            margin: 0 auto 18px;
+            font-size: 1.45rem; color: var(--yellow);
+            margin: 0 auto 20px;
         }
         .num-value {
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-size: clamp(2.3rem, 4vw, 3.3rem);
             font-weight: 900; color: #fff; line-height: 1;
             margin-bottom: 8px;
         }
-        .num-value span { color: var(--yellow); }
+        .num-suffix { color: var(--yellow); }
         .num-label {
-            font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.72);
+            font-size: 0.84rem; font-weight: 700;
+            color: rgba(255,255,255,0.70);
             text-transform: uppercase; letter-spacing: 1px;
         }
 
-        /* ====================================================
+        /* ============================================================
+           WHY CHOOSE EVERGREEN
+        ============================================================ */
+        .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+        .why-card {
+            background: #fff; border-radius: var(--r-md);
+            box-shadow: var(--sh-s); padding: 32px 28px;
+            border-top: 4px solid transparent;
+            transition: all 0.3s; position: relative; overflow: hidden;
+        }
+        .why-card::before {
+            content: ''; position: absolute; bottom: 0; right: 0;
+            width: 90px; height: 90px;
+            background: radial-gradient(circle at bottom right, rgba(47,107,58,0.06), transparent 70%);
+            border-radius: 50%;
+        }
+        .why-card:hover { transform: translateY(-6px); box-shadow: var(--sh-m); border-top-color: var(--green); }
+        .why-icon {
+            width: 56px; height: 56px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.35rem; margin-bottom: 20px;
+        }
+        .wi-g { background: rgba(47,107,58,0.10); color: var(--green); }
+        .wi-y { background: rgba(244,197,66,0.14); color: #c49a1a; }
+        .wi-s { background: rgba(126,200,227,0.18); color: #3a9dbf; }
+        .why-card h4 { font-size: 1.04rem; margin-bottom: 10px; }
+        .why-card p { font-size: 0.87rem; color: var(--muted); font-weight: 600; line-height: 1.68; margin: 0; }
+
+        /* ============================================================
            ACADEMICS
-        ==================================================== */
+        ============================================================ */
         .acad-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
         .acad-card {
             background: #fff; border-radius: var(--r-md);
@@ -464,45 +559,59 @@
             border-top: 4px solid transparent; transition: all 0.3s;
         }
         .acad-card:hover { transform: translateY(-6px); box-shadow: var(--sh-m); border-top-color: var(--green); }
-        .acad-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 16px; }
-        .ic-g { background: rgba(47,107,58,0.1); color: var(--green); }
+        .acad-icon { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 18px; }
+        .ic-g { background: rgba(47,107,58,0.10); color: var(--green); }
         .ic-s { background: rgba(126,200,227,0.15); color: #3a9dbf; }
         .ic-y { background: rgba(244,197,66,0.15); color: #c49a1a; }
-        .acad-card h4 { font-size: 1.02rem; margin-bottom: 10px; }
-        .acad-card p { font-size: 0.87rem; color: var(--muted); font-weight: 600; line-height: 1.62; margin: 0; }
-        .grade-row { margin-top: 48px; }
-        .grade-row h3 { text-align: center; margin-bottom: 26px; }
+        .acad-card h4 { font-size: 1.03rem; margin-bottom: 10px; }
+        .acad-card p { font-size: 0.87rem; color: var(--muted); font-weight: 600; line-height: 1.65; margin: 0; }
+        .grade-row { margin-top: 52px; }
+        .grade-row h3 { text-align: center; margin-bottom: 28px; font-size: 1.3rem; }
         .grade-boxes { display: grid; grid-template-columns: repeat(7,1fr); gap: 10px; }
         .grade-box {
             background: #fff; border: 2px solid var(--border);
-            border-radius: var(--r-md); padding: 16px 8px;
+            border-radius: var(--r-md); padding: 18px 8px;
             text-align: center; box-shadow: var(--sh-s); transition: 0.3s;
         }
-        .grade-box:hover { border-color: var(--green); }
-        .grade-box .gl { font-size: 0.65rem; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
-        .grade-box .gn { font-family: 'Poppins', sans-serif; font-size: 0.95rem; font-weight: 800; color: var(--green); margin-top: 4px; }
+        .grade-box:hover { border-color: var(--green); transform: translateY(-3px); box-shadow: var(--sh-m); }
+        .grade-box .gl { font-size: 0.64rem; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .grade-box .gn { font-family: 'Poppins', sans-serif; font-size: 0.94rem; font-weight: 800; color: var(--green); margin-top: 5px; }
         .grade-box.hl { background: var(--green); border-color: var(--green); }
-        .grade-box.hl .gl { color: rgba(255,255,255,0.7); }
+        .grade-box.hl .gl { color: rgba(255,255,255,0.70); }
         .grade-box.hl .gn { color: #fff; }
 
-        /* ====================================================
+        /* ============================================================
            GALLERY TEASER
-        ==================================================== */
+        ============================================================ */
         .gallery-teaser-grid {
-            display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 36px;
+            display: grid; grid-template-columns: repeat(4,1fr);
+            gap: 14px; margin-bottom: 38px;
         }
-        .gt-item { border-radius: var(--r-md); overflow: hidden; height: 200px; box-shadow: var(--sh-s); transition: 0.3s; display: block; }
+        .gt-item {
+            border-radius: var(--r-md); overflow: hidden;
+            height: 210px; box-shadow: var(--sh-s);
+            transition: 0.3s; display: block; position: relative;
+        }
         .gt-item:hover { transform: translateY(-4px); box-shadow: var(--sh-m); }
         .gt-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
         .gt-item:hover img { transform: scale(1.05); }
+        .gt-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(18,46,24,0.50) 0%, transparent 60%);
+            display: flex; align-items: flex-end; padding: 14px;
+            opacity: 0; transition: 0.3s;
+        }
+        .gt-item:hover .gt-overlay { opacity: 1; }
+        .gt-overlay span {
+            color: #fff; font-size: 0.78rem; font-weight: 800;
+            display: flex; align-items: center; gap: 5px;
+        }
         .gt-cta { text-align: center; }
 
-        /* ====================================================
+        /* ============================================================
            EVENTS AND NOTICES
-        ==================================================== */
-        .events-grid {
-            display: grid; grid-template-columns: repeat(3,1fr); gap: 22px;
-        }
+        ============================================================ */
+        .events-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
         .event-card {
             background: #fff; border-radius: var(--r-md);
             box-shadow: var(--sh-s); overflow: hidden;
@@ -515,152 +624,252 @@
         }
         .event-date-block {
             background: var(--yellow); color: var(--text);
-            border-radius: 10px; padding: 8px 12px;
-            text-align: center; flex-shrink: 0;
-            min-width: 52px;
+            border-radius: 10px; padding: 9px 12px;
+            text-align: center; flex-shrink: 0; min-width: 52px;
         }
         .event-date-block .eday { font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 900; line-height: 1; }
-        .event-date-block .emon { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
-        .event-head-text h5 { color: #fff; font-size: 0.95rem; margin-bottom: 3px; }
-        .event-head-text span { color: rgba(255,255,255,0.7); font-size: 0.78rem; font-weight: 700; }
-        .event-body { padding: 18px 22px; }
-        .event-body p { font-size: 0.87rem; color: var(--muted); font-weight: 600; line-height: 1.65; margin: 0 0 14px; }
+        .event-date-block .emon { font-size: 0.64rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+        .event-head-text h5 { color: #fff; font-size: 0.96rem; margin-bottom: 3px; }
+        .event-head-text span { color: rgba(255,255,255,0.72); font-size: 0.78rem; font-weight: 700; }
+        .event-body { padding: 20px 22px; }
+        .event-body p { font-size: 0.87rem; color: var(--muted); font-weight: 600; line-height: 1.68; margin: 0 0 14px; }
         .event-tag {
             display: inline-block; background: rgba(47,107,58,0.08);
-            color: var(--green); font-size: 0.7rem; font-weight: 800;
-            padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;
+            color: var(--green); font-size: 0.70rem; font-weight: 800;
+            padding: 4px 12px; border-radius: 20px;
+            text-transform: uppercase; letter-spacing: 0.5px;
         }
 
-        /* ====================================================
+        /* ============================================================
            ADMISSIONS
-        ==================================================== */
-        .adm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        ============================================================ */
+        .adm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
         .steps { display: flex; flex-direction: column; gap: 14px; }
-        .step { display: flex; gap: 14px; align-items: flex-start; background: #fff; border-radius: var(--r-md); padding: 18px; box-shadow: var(--sh-s); }
-        .step-num { width: 36px; height: 36px; border-radius: 10px; background: var(--green); color: #fff; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .step h5 { font-size: 0.92rem; margin-bottom: 4px; }
-        .step p { font-size: 0.84rem; color: var(--muted); font-weight: 600; margin: 0; }
-        .adm-note { margin-top: 22px; padding: 16px 18px; background: rgba(244,197,66,0.1); border-left: 4px solid var(--yellow); border-radius: var(--r-sm); font-size: 0.87rem; font-weight: 700; color: var(--text); }
+        .step {
+            display: flex; gap: 16px; align-items: flex-start;
+            background: #fff; border-radius: var(--r-md);
+            padding: 20px; box-shadow: var(--sh-s);
+            transition: 0.3s;
+        }
+        .step:hover { box-shadow: var(--sh-m); }
+        .step-num {
+            width: 38px; height: 38px; border-radius: 11px;
+            background: var(--green); color: #fff;
+            font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 0.96rem;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .step h5 { font-size: 0.93rem; margin-bottom: 5px; }
+        .step p { font-size: 0.85rem; color: var(--muted); font-weight: 600; margin: 0; }
+        .adm-note {
+            margin-top: 22px; padding: 16px 18px;
+            background: rgba(244,197,66,0.10);
+            border-left: 4px solid var(--yellow);
+            border-radius: var(--r-sm);
+            font-size: 0.88rem; font-weight: 700; color: var(--text);
+            line-height: 1.65;
+        }
 
-        /* ====================================================
+        /* ============================================================
            INFRASTRUCTURE
-        ==================================================== */
+        ============================================================ */
         .infra-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
-        .infra-card { background: #fff; border-radius: var(--r-md); box-shadow: var(--sh-s); padding: 26px 18px; text-align: center; transition: 0.3s; }
+        .infra-card {
+            background: #fff; border-radius: var(--r-md);
+            box-shadow: var(--sh-s); padding: 28px 18px;
+            text-align: center; transition: 0.3s;
+        }
         .infra-card:hover { transform: translateY(-4px); box-shadow: var(--sh-m); }
-        .infra-icon { width: 60px; height: 60px; border-radius: 50%; background: rgba(47,107,58,0.1); color: var(--green); font-size: 1.5rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
-        .infra-card h5 { font-size: 0.92rem; margin-bottom: 6px; }
-        .infra-card p { font-size: 0.82rem; color: var(--muted); font-weight: 600; margin: 0; line-height: 1.55; }
+        .infra-icon {
+            width: 62px; height: 62px; border-radius: 50%;
+            background: rgba(47,107,58,0.10); color: var(--green);
+            font-size: 1.5rem; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px;
+        }
+        .infra-card h5 { font-size: 0.94rem; margin-bottom: 8px; }
+        .infra-card p { font-size: 0.83rem; color: var(--muted); font-weight: 600; margin: 0; line-height: 1.58; }
 
-        /* ====================================================
+        /* ============================================================
            TESTIMONIALS
-        ==================================================== */
+        ============================================================ */
         .test-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
-        .test-card { background: #fff; border-radius: var(--r-md); box-shadow: var(--sh-s); padding: 28px; border-left: 5px solid var(--yellow); transition: 0.3s; }
+        .test-card {
+            background: #fff; border-radius: var(--r-md);
+            box-shadow: var(--sh-s); padding: 30px;
+            border-left: 5px solid var(--yellow); transition: 0.3s;
+            position: relative;
+        }
+        .test-card::before {
+            content: '\201C';
+            font-family: Georgia, serif; font-size: 5rem; color: var(--yellow);
+            opacity: 0.15; position: absolute; top: 8px; right: 16px;
+            line-height: 1;
+        }
         .test-card:hover { transform: translateY(-4px); box-shadow: var(--sh-m); }
-        .stars { color: var(--yellow); font-size: 0.82rem; margin-bottom: 12px; }
-        .test-card p { font-size: 0.9rem; color: var(--muted); font-weight: 600; line-height: 1.65; margin-bottom: 16px; font-style: italic; }
+        .stars { color: var(--yellow); font-size: 0.84rem; margin-bottom: 14px; letter-spacing: 2px; }
+        .test-card p { font-size: 0.91rem; color: var(--muted); font-weight: 600; line-height: 1.70; margin-bottom: 18px; font-style: italic; }
         .test-foot { display: flex; align-items: center; justify-content: space-between; }
-        .test-foot h6 { color: var(--green); font-weight: 800; font-size: 0.85rem; margin: 0; }
-        .test-foot a { font-size: 0.75rem; color: var(--muted); display: flex; align-items: center; gap: 4px; }
+        .test-foot h6 { color: var(--green); font-weight: 800; font-size: 0.84rem; margin: 0; }
+        .test-foot a { font-size: 0.76rem; color: var(--muted); display: flex; align-items: center; gap: 5px; }
         .test-foot a:hover { color: var(--green); }
 
-        /* ====================================================
+        /* ============================================================
            LEADERSHIP
-        ==================================================== */
+        ============================================================ */
         .lead-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
-        .lead-card { background: #fff; border-radius: var(--r-md); box-shadow: var(--sh-s); padding: 30px; transition: transform 0.3s, box-shadow 0.3s; }
+        .lead-card {
+            background: #fff; border-radius: var(--r-md);
+            box-shadow: var(--sh-s); padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
         .lead-card:hover { transform: translateY(-4px); box-shadow: var(--sh-m); }
-        .lead-card h4 { margin-bottom: 4px; font-size: 1.05rem; }
-        .lead-role { font-size: 0.76rem; font-weight: 800; color: var(--green-lt); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 18px; display: block; }
-        .lead-card blockquote { border-left: 3px solid var(--yellow); padding-left: 16px; font-style: italic; color: var(--muted); font-size: 0.9rem; font-weight: 600; line-height: 1.72; }
-        .lead-photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: top; border: 3px solid rgba(47,107,58,0.15); margin-bottom: 16px; }
-        .lead-photo-placeholder { width: 72px; height: 72px; border-radius: 50%; background: rgba(47,107,58,0.09); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; border: 3px solid rgba(47,107,58,0.12); }
-        .lead-photo-placeholder i { color: var(--green-lt); font-size: 1.8rem; }
-        .lead-contact { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(0,0,0,0.06); display: flex; flex-direction: column; gap: 6px; }
-        .lead-contact a { display: inline-flex; align-items: center; gap: 7px; font-size: 0.8rem; font-weight: 700; color: var(--green); transition: 0.2s; }
+        .lead-photo-area { margin-bottom: 18px; }
+        .lead-photo {
+            width: 78px; height: 78px; border-radius: 50%;
+            object-fit: cover; object-position: top;
+            border: 3px solid rgba(47,107,58,0.15);
+        }
+        .lead-photo-placeholder {
+            width: 78px; height: 78px; border-radius: 50%;
+            background: rgba(47,107,58,0.08);
+            display: flex; align-items: center; justify-content: center;
+            border: 3px solid rgba(47,107,58,0.12);
+        }
+        .lead-photo-placeholder i { color: var(--green-lt); font-size: 1.9rem; }
+        .lead-card h4 { margin-bottom: 4px; font-size: 1.06rem; }
+        .lead-role {
+            font-size: 0.74rem; font-weight: 800; color: var(--green-lt);
+            text-transform: uppercase; letter-spacing: 1px;
+            margin-bottom: 18px; display: block;
+        }
+        .lead-card blockquote {
+            border-left: 3px solid var(--yellow); padding-left: 16px;
+            font-style: italic; color: var(--muted);
+            font-size: 0.91rem; font-weight: 600; line-height: 1.74;
+        }
+        .lead-contact {
+            margin-top: 18px; padding-top: 14px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            display: flex; flex-direction: column; gap: 7px;
+        }
+        .lead-contact a {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 0.81rem; font-weight: 700; color: var(--green);
+            transition: 0.2s;
+        }
         .lead-contact a:hover { color: var(--green-dk); text-decoration: underline; }
-        .lead-contact a i { font-size: 0.72rem; width: 14px; }
+        .lead-contact a i { font-size: 0.73rem; width: 14px; }
 
-        /* ====================================================
+        /* ============================================================
            CONTACT
-        ==================================================== */
-        .contact-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 40px; }
-        .contact-info h3 { margin-bottom: 24px; font-size: 1.4rem; }
-        .c-row { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
-        .c-icon { width: 42px; height: 42px; border-radius: 11px; background: rgba(47,107,58,0.1); color: var(--green); font-size: 0.95rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .c-text strong { display: block; font-family: 'Poppins', sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--green); margin-bottom: 3px; }
-        .c-text p { font-size: 0.9rem; color: var(--muted); font-weight: 600; margin: 0; line-height: 1.6; }
-        .c-text a { color: var(--muted); font-weight: 600; font-size: 0.9rem; }
+        ============================================================ */
+        .contact-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 42px; }
+        .contact-info h3 { margin-bottom: 26px; font-size: 1.45rem; }
+        .c-row { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 22px; }
+        .c-icon {
+            width: 44px; height: 44px; border-radius: 11px;
+            background: rgba(47,107,58,0.10); color: var(--green);
+            font-size: 0.96rem; display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .c-text strong {
+            display: block; font-family: 'Poppins', sans-serif;
+            font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.5px;
+            color: var(--green); margin-bottom: 3px;
+        }
+        .c-text p { font-size: 0.91rem; color: var(--muted); font-weight: 600; margin: 0; line-height: 1.65; }
+        .c-text a { color: var(--muted); font-weight: 600; font-size: 0.91rem; }
         .c-text a:hover { color: var(--green); }
-        .map-box { border-radius: var(--r-md); overflow: hidden; box-shadow: var(--sh-s); margin-top: 22px; }
+        .map-box { border-radius: var(--r-md); overflow: hidden; box-shadow: var(--sh-s); margin-top: 24px; }
         .map-box iframe { display: block; }
-        .form-card { background: #fff; border-radius: var(--r-md); box-shadow: var(--sh-s); padding: 34px; }
-        .form-card h3 { margin-bottom: 6px; font-size: 1.3rem; }
-        .form-card .sub { color: var(--muted); font-size: 0.88rem; font-weight: 600; margin-bottom: 26px; }
+        .form-card { background: #fff; border-radius: var(--r-md); box-shadow: var(--sh-s); padding: 36px; }
+        .form-card h3 { margin-bottom: 6px; font-size: 1.35rem; }
+        .form-card .sub { color: var(--muted); font-size: 0.89rem; font-weight: 600; margin-bottom: 28px; }
         .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
         .f-group { margin-bottom: 16px; }
-        .f-group label { display: block; font-size: 0.77rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text); margin-bottom: 6px; }
-        .f-group input, .f-group select, .f-group textarea { width: 100%; padding: 12px 15px; border: 1.5px solid rgba(0,0,0,0.1); border-radius: var(--r-sm); font-family: 'Nunito', sans-serif; font-size: 0.93rem; font-weight: 600; color: var(--text); background: #F8FAF8; outline: none; transition: border-color 0.2s; }
-        .f-group input:focus, .f-group select:focus, .f-group textarea:focus { border-color: var(--green); background: #fff; box-shadow: 0 0 0 3px rgba(47,107,58,0.08); }
-        .f-group textarea { resize: vertical; min-height: 108px; }
-        .btn-submit { width: 100%; padding: 14px; background: var(--green); color: #fff; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem; border: none; border-radius: var(--r-pill); cursor: pointer; transition: all 0.25s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .f-group label { display: block; font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text); margin-bottom: 6px; }
+        .f-group input, .f-group select, .f-group textarea {
+            width: 100%; padding: 12px 15px;
+            border: 1.5px solid rgba(0,0,0,0.10);
+            border-radius: var(--r-sm);
+            font-family: 'Nunito', sans-serif; font-size: 0.93rem; font-weight: 600;
+            color: var(--text); background: #F8FAF8; outline: none; transition: border-color 0.2s;
+        }
+        .f-group input:focus, .f-group select:focus, .f-group textarea:focus {
+            border-color: var(--green); background: #fff;
+            box-shadow: 0 0 0 3px rgba(47,107,58,0.08);
+        }
+        .f-group textarea { resize: vertical; min-height: 110px; }
+        .btn-submit {
+            width: 100%; padding: 14px;
+            background: var(--green); color: #fff;
+            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem;
+            border: none; border-radius: var(--r-pill);
+            cursor: pointer; transition: all 0.25s;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+        }
         .btn-submit:hover { background: var(--green-dk); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(47,107,58,0.35); }
 
-        /* ====================================================
+        /* ============================================================
            FOOTER
-        ==================================================== */
-        footer { background: #0f1f12; color: #bbb; padding: 62px 0 26px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 38px; margin-bottom: 48px; }
-        .f-brand img { height: 50px; background: #fff; padding: 8px; border-radius: 6px; margin-bottom: 16px; }
-        .f-brand p { font-size: 0.86rem; line-height: 1.7; color: #999; font-weight: 600; margin-bottom: 18px; }
+        ============================================================ */
+        footer { background: #0d1d10; color: #bbb; padding: 66px 0 28px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 52px; }
+        .f-brand img { height: 50px; background: #fff; padding: 8px; border-radius: 6px; margin-bottom: 18px; }
+        .f-brand p { font-size: 0.87rem; line-height: 1.72; color: #999; font-weight: 600; margin-bottom: 20px; }
         .social-row { display: flex; gap: 8px; }
-        .social-btn { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #ddd; display: flex; align-items: center; justify-content: center; font-size: 0.82rem; transition: 0.3s; }
+        .social-btn {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: rgba(255,255,255,0.08); color: #ddd;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.84rem; transition: 0.3s;
+        }
         .social-btn:hover { background: var(--green); transform: translateY(-2px); color: #fff; }
-        footer h5 { color: #fff; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 18px; }
-        .footer-links a { display: block; color: #999; font-size: 0.86rem; font-weight: 600; padding: 5px 0; transition: 0.2s; }
-        .footer-links a:hover { color: var(--yellow); padding-left: 4px; }
+        footer h5 {
+            color: #fff; font-size: 0.80rem; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px;
+        }
+        .footer-links a {
+            display: block; color: #999; font-size: 0.87rem; font-weight: 600;
+            padding: 5px 0; transition: 0.22s;
+        }
+        .footer-links a:hover { color: var(--yellow); padding-left: 5px; }
         .footer-links a.f-highlight { color: var(--yellow); font-weight: 800; }
-        .f-contact-list li { display: flex; gap: 9px; align-items: flex-start; color: #999; font-size: 0.86rem; font-weight: 600; margin-bottom: 10px; }
-        .f-contact-list li i { color: var(--green-lt); margin-top: 2px; flex-shrink: 0; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 22px; text-align: center; font-size: 0.8rem; color: #555; }
+        .f-contact-list li {
+            display: flex; gap: 9px; align-items: flex-start;
+            color: #999; font-size: 0.87rem; font-weight: 600; margin-bottom: 11px;
+        }
+        .f-contact-list li i { color: var(--green-lt); margin-top: 3px; flex-shrink: 0; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.07);
+            padding-top: 24px; text-align: center;
+            font-size: 0.80rem; color: #555;
+        }
         .footer-bottom a { color: var(--green-lt); }
 
-        /* WhatsApp float */
-        .wa-float {
-            position: fixed; bottom: 26px; right: 26px; z-index: 999;
-            width: 54px; height: 54px; border-radius: 50%;
-            background: #25D366; color: #fff;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem; box-shadow: 0 4px 18px rgba(37,211,102,0.5);
-            animation: float 3s ease-in-out infinite; transition: transform 0.2s;
-        }
-        .wa-float:hover { transform: scale(1.1); color: #fff; }
-
-        /* ====================================================
+        /* ============================================================
            RESPONSIVE
-        ==================================================== */
-        @media (max-width: 1050px) {
-            .acad-cards { grid-template-columns: 1fr 1fr; }
+        ============================================================ */
+        @media (max-width: 1100px) {
+            .why-grid    { grid-template-columns: 1fr 1fr; }
+            .acad-cards  { grid-template-columns: 1fr 1fr; }
             .infra-grid  { grid-template-columns: repeat(2,1fr); }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
             .lead-grid   { grid-template-columns: 1fr 1fr; }
-            .gallery-teaser-grid { grid-template-columns: repeat(2,1fr); }
             .numbers-grid { grid-template-columns: repeat(2,1fr); }
-            .num-card { border-bottom: 1px solid rgba(255,255,255,0.12); }
+            .num-card { border-bottom: 1px solid rgba(255,255,255,0.11); }
             .num-card:nth-child(2) { border-right: none; }
-            .events-grid { grid-template-columns: 1fr; }
+            .gallery-teaser-grid { grid-template-columns: repeat(2,1fr); }
         }
-        @media (max-width: 860px) {
+        @media (max-width: 900px) {
             .about-grid, .adm-grid, .contact-grid { grid-template-columns: 1fr; }
-            .lead-grid { grid-template-columns: 1fr; }
-            .about-img { height: 300px; }
-            .about-badge { right: 10px; bottom: 10px; }
-            .vm-grid { grid-template-columns: 1fr; }
-            .test-grid { grid-template-columns: 1fr; }
-            .strip-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-            .strip-item { border-right: none; }
+            .lead-grid   { grid-template-columns: 1fr; }
+            .about-img   { height: 320px; }
+            .about-badge { right: 12px; bottom: 12px; }
+            .vm-grid     { grid-template-columns: 1fr; }
+            .test-grid   { grid-template-columns: 1fr; }
             .events-grid { grid-template-columns: 1fr; }
+            .strip-grid  { grid-template-columns: 1fr 1fr; gap: 22px; }
+            .strip-item  { border-right: none; }
             .float-enquiry { display: none; }
         }
         @media (max-width: 768px) {
@@ -668,39 +877,44 @@
             .hamburger { display: flex; }
             .hero-stats { grid-template-columns: 1fr 1fr; }
             .acad-cards { grid-template-columns: 1fr; }
+            .why-grid   { grid-template-columns: 1fr; }
             .grade-boxes { grid-template-columns: repeat(3,1fr); }
-            .f-row { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; gap: 22px; }
+            .f-row       { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 24px; }
             .gallery-teaser-grid { grid-template-columns: repeat(2,1fr); }
             .numbers-grid { grid-template-columns: repeat(2,1fr); }
             .float-enquiry { display: none; }
             .bottom-nav { display: flex; }
-            body { padding-bottom: 66px; }
+            body { padding-bottom: 68px; }
+            .wa-float { bottom: 82px; }
         }
-        @media (max-width: 480px) {
+        @media (max-width: 520px) {
             .hero-stats { grid-template-columns: 1fr; max-width: 100%; }
             .strip-grid { grid-template-columns: 1fr; }
             .infra-grid { grid-template-columns: 1fr 1fr; }
             .grade-boxes { grid-template-columns: repeat(2,1fr); }
             .gallery-teaser-grid { grid-template-columns: 1fr 1fr; }
+            .hero-body h1 { font-size: 2.1rem; }
+            .sec { padding: 64px 0; }
+            .wrap { padding: 0 18px; }
         }
     </style>
 </head>
 
 <body>
 
-<!-- ======================================================
+<!-- ================================================================
      ANNOUNCE BAR
-====================================================== -->
+================================================================ -->
 <div class="announce">
-    <i class="fas fa-bullhorn" style="margin-right:6px;font-size:.75rem"></i>
-    Admissions open for Pre-KG to Grade 5 | Academic Year 2025-26
-    <a href="#admissions" style="margin-left:12px">Apply Now</a>
+    <i class="fas fa-bullhorn" style="margin-right:6px;font-size:.74rem"></i>
+    Admissions open for Academic Year 2025-26 | Pre-KG to Grade 5
+    <a href="#admissions">Apply Now</a>
 </div>
 
-<!-- ======================================================
+<!-- ================================================================
      HEADER
-====================================================== -->
+================================================================ -->
 <header class="site-header" id="siteHeader">
     <div class="header-inner">
         <a href="#home" class="brand">
@@ -716,63 +930,51 @@
             <a href="#academics">Academics</a>
             <a href="#gallery">Gallery</a>
             <a href="lifeatevergreen.html" class="life-link">Life @ Evergreen</a>
+            <a href="faculty.html">Faculty</a>
             <a href="#admissions">Admissions</a>
             <a href="#contact">Contact</a>
         </nav>
         <a href="#contact" class="nav-cta">Enquiry</a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
             <span></span><span></span><span></span>
         </button>
     </div>
 </header>
 
 <!-- Mobile nav -->
-<nav class="mobile-nav" id="mobileNav">
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
     <a href="#home"       onclick="closeMob()">Home</a>
     <a href="#about"      onclick="closeMob()">About</a>
     <a href="#academics"  onclick="closeMob()">Academics</a>
     <a href="#gallery"    onclick="closeMob()">Gallery</a>
     <a href="lifeatevergreen.html" class="life-link">Life @ Evergreen</a>
+    <a href="faculty.html">Faculty and Staff</a>
     <a href="#admissions" onclick="closeMob()">Admissions</a>
     <a href="blog.html">Blog</a>
     <a href="#contact"    onclick="closeMob()">Contact</a>
     <a href="#contact" class="m-cta" onclick="closeMob()">Send Enquiry</a>
 </nav>
 
-<!-- ======================================================
-     FLOATING ENQUIRY (desktop left side)
-====================================================== -->
-<a href="#contact" class="float-enquiry" aria-label="Send Enquiry">
+<!-- Floating enquiry (desktop) -->
+<a href="#contact" class="float-enquiry" aria-label="Send an enquiry">
     <i class="fas fa-paper-plane"></i>
     <span>Enquire Now</span>
 </a>
 
-<!-- ======================================================
-     BOTTOM MOBILE NAV
-====================================================== -->
+<!-- Bottom mobile nav -->
 <nav class="bottom-nav" aria-label="Mobile bottom navigation">
     <div class="bottom-nav-inner">
-        <a href="#home" class="bn-item active" onclick="closeMob()">
-            <i class="fas fa-home"></i>Home
-        </a>
-        <a href="#gallery" class="bn-item" onclick="closeMob()">
-            <i class="fas fa-images"></i>Gallery
-        </a>
-        <a href="#contact" class="bn-item bn-enquire" onclick="closeMob()">
-            <i class="fas fa-paper-plane"></i>Enquire
-        </a>
-        <a href="lifeatevergreen.html" class="bn-item">
-            <i class="fab fa-instagram"></i>Life
-        </a>
-        <a href="#contact" class="bn-item" onclick="closeMob()">
-            <i class="fas fa-phone-alt"></i>Contact
-        </a>
+        <a href="#home"    class="bn-item active" onclick="closeMob()"><i class="fas fa-home"></i>Home</a>
+        <a href="#gallery" class="bn-item"         onclick="closeMob()"><i class="fas fa-images"></i>Gallery</a>
+        <a href="#contact" class="bn-item bn-enquire" onclick="closeMob()"><i class="fas fa-paper-plane"></i>Enquire</a>
+        <a href="lifeatevergreen.html" class="bn-item"><i class="fab fa-instagram"></i>Life</a>
+        <a href="#contact" class="bn-item"         onclick="closeMob()"><i class="fas fa-phone-alt"></i>Contact</a>
     </div>
 </nav>
 
-<!-- ======================================================
+<!-- ================================================================
      HERO
-====================================================== -->
+================================================================ -->
 <section id="home">
     <div class="hero-slides" aria-hidden="true">
         <div class="slide"></div>
@@ -780,31 +982,44 @@
         <div class="slide"></div>
     </div>
     <div class="hero-overlay"></div>
-    <div class="hero-deco"></div>
+    <div class="hero-deco" aria-hidden="true"></div>
+    <div class="hero-deco2" aria-hidden="true"></div>
     <div class="hero-body">
         <div class="hero-pills">
             <span class="hero-pill"><i class="fas fa-award"></i> CBSE Aligned</span>
             <span class="hero-pill"><i class="fas fa-language"></i> English Medium</span>
             <span class="hero-pill"><i class="fas fa-child"></i> Pre-KG to Grade 5</span>
+            <span class="hero-pill"><i class="fas fa-map-marker-alt"></i> Pallipalayam</span>
         </div>
         <h1>Growing Minds,<br><em>Shaping Futures.</em></h1>
-        <p class="hero-sub">A CBSE-aligned English-medium primary school in Pallipalayam where every child's potential is nurtured with care, values, and purpose.</p>
+        <p class="hero-sub">
+            A CBSE-aligned English-medium primary school in Pallipalayam where every child's potential is nurtured with care, strong values, and purpose-driven education.
+        </p>
         <div class="hero-btns">
-            <a href="#about"   class="btn btn-yellow">Explore Our School</a>
-            <a href="#contact" class="btn btn-ghost">Schedule a Visit</a>
+            <a href="#about"   class="btn btn-yellow"><i class="fas fa-school"></i> Explore Our School</a>
+            <a href="#contact" class="btn btn-ghost"><i class="fas fa-calendar-check"></i> Schedule a Visit</a>
         </div>
         <div class="hero-stats">
-            <div class="stat-card"><div class="stat-label">Established</div><div class="stat-value">2015</div></div>
-            <div class="stat-card"><div class="stat-label">Classes</div><div class="stat-value">Pre-KG to Gr. 5</div></div>
-            <div class="stat-card"><div class="stat-label">School Type</div><div class="stat-value">Co-ed Day School</div></div>
+            <div class="stat-card">
+                <div class="stat-label">Established</div>
+                <div class="stat-value">Since 2015</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Classes</div>
+                <div class="stat-value">Pre-KG to Gr. 5</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Medium</div>
+                <div class="stat-value">English Co-ed</div>
+            </div>
         </div>
     </div>
     <div class="scroll-hint" id="scrollHint">Scroll<i class="fas fa-chevron-down"></i></div>
 </section>
 
-<!-- ======================================================
+<!-- ================================================================
      INFO STRIP
-====================================================== -->
+================================================================ -->
 <div class="info-strip" id="infoStrip">
     <div class="wrap">
         <div class="strip-grid">
@@ -816,7 +1031,7 @@
                 </div>
             </div>
             <div class="strip-item">
-                <i class="fas fa-phone-alt"></i>
+                <i class="fas fa-phone-alt" style="transform:scaleX(-1)"></i>
                 <div>
                     <strong>+91 98427 12666</strong>
                     <span>+91 98427 12912 / +91 99767 98007</span>
@@ -840,106 +1055,152 @@
     </div>
 </div>
 
-<!-- ======================================================
+<!-- ================================================================
      ACHIEVEMENTS TICKER
-====================================================== -->
+================================================================ -->
 <div class="ticker-wrap" aria-label="School achievements">
     <div class="ticker-track" id="tickerTrack"></div>
 </div>
 
-<!-- ======================================================
+<!-- ================================================================
      ABOUT
-====================================================== -->
+================================================================ -->
 <section id="about" class="sec">
     <div class="wrap">
         <div class="about-grid">
             <div class="about-img-wrap reveal">
-                <img src="gallery/4.jpg" alt="Students at Evergreen International School" class="about-img">
+                <img src="gallery/4.jpg" alt="Students learning at Evergreen International School" class="about-img">
                 <div class="about-badge">
-                    <div class="num">10+</div>
+                    <div class="big-num">10+</div>
                     <div class="lbl">Years of<br>Excellence</div>
                 </div>
                 <div class="about-mini">CBSE Aligned</div>
             </div>
             <div class="about-text reveal d2">
-                <span class="tag">School Overview</span>
+                <span class="tag"><i class="fas fa-seedling"></i> School Overview</span>
                 <h2>Strong foundations for lifelong learning.</h2>
-                <p>Evergreen International School provides quality primary education rooted in strong values and modern teaching practices, aligned with the CBSE curriculum framework. We believe the early years shape a child's entire future.</p>
+                <p>Evergreen International School provides quality primary education rooted in strong values and modern teaching practices, aligned with the CBSE curriculum framework. We believe the early years shape a child's entire future, and every decision we make reflects that belief.</p>
                 <div class="vm-grid">
                     <div class="vm-box">
                         <h5>Our Vision</h5>
-                        <p>To nurture intellectual, physical, emotional, and moral development, enabling students to become responsible global citizens.</p>
+                        <p>To nurture intellectual, physical, emotional, and moral development, enabling students to become responsible and compassionate global citizens.</p>
                     </div>
                     <div class="vm-box">
                         <h5>Our Mission</h5>
-                        <p>Deliver CBSE-aligned education with strong foundational learning, conceptual understanding, and an inclusive environment.</p>
+                        <p>Deliver CBSE-aligned education with strong foundational learning, conceptual understanding, and a safe, inclusive environment for every child.</p>
                     </div>
                 </div>
-                <ul class="plain-list">
-                    <li>Activity-based, child-centric teaching methods</li>
-                    <li>Dedicated and experienced teaching faculty</li>
-                    <li>Safe, nature-inspired campus environment</li>
-                    <li>Aligned with NEP 2020 guidelines</li>
-                </ul>
+                <div class="feature-chips">
+                    <span class="chip"><i class="fas fa-check"></i> Activity-based learning</span>
+                    <span class="chip"><i class="fas fa-check"></i> NEP 2020 aligned</span>
+                    <span class="chip"><i class="fas fa-check"></i> Experienced faculty</span>
+                    <span class="chip"><i class="fas fa-check"></i> Safe campus</span>
+                    <span class="chip"><i class="fas fa-check"></i> Child-centric approach</span>
+                    <span class="chip"><i class="fas fa-check"></i> English medium</span>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ======================================================
-     BY THE NUMBERS — ANIMATED STAT COUNTERS
-====================================================== -->
+<!-- ================================================================
+     BY THE NUMBERS
+================================================================ -->
 <section class="numbers-sec" id="numbers">
     <div class="wrap">
         <div class="numbers-grid">
             <div class="num-card reveal">
                 <div class="num-icon"><i class="fas fa-calendar-check"></i></div>
-                <div class="num-value counter" data-target="10" data-suffix="+">0+</div>
+                <div class="num-value"><span class="counter" data-target="10" data-suffix="+">0</span><span class="num-suffix">+</span></div>
                 <div class="num-label">Years of Excellence</div>
             </div>
             <div class="num-card reveal d1">
                 <div class="num-icon"><i class="fas fa-user-graduate"></i></div>
-                <div class="num-value counter" data-target="500" data-suffix="+">0+</div>
+                <div class="num-value"><span class="counter" data-target="500" data-suffix="+">0</span><span class="num-suffix">+</span></div>
                 <div class="num-label">Students and Alumni</div>
             </div>
             <div class="num-card reveal d2">
                 <div class="num-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                <div class="num-value counter" data-target="30" data-suffix="+">0+</div>
+                <div class="num-value"><span class="counter" data-target="30" data-suffix="+">0</span><span class="num-suffix">+</span></div>
                 <div class="num-label">Faculty and Staff</div>
             </div>
             <div class="num-card reveal d3">
                 <div class="num-icon"><i class="fas fa-layer-group"></i></div>
-                <div class="num-value counter" data-target="7" data-suffix="">0</div>
+                <div class="num-value"><span class="counter" data-target="7" data-suffix="">0</span></div>
                 <div class="num-label">Classes Offered</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ======================================================
+<!-- ================================================================
+     WHY CHOOSE EVERGREEN
+================================================================ -->
+<section id="why" class="sec sec-alt">
+    <div class="wrap">
+        <div class="sec-header reveal">
+            <h2>Why Parents Choose Evergreen</h2>
+            <p>What sets us apart is not just what we teach, but how we teach it and who we are as a school community.</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card reveal">
+                <div class="why-icon wi-g"><i class="fas fa-heart"></i></div>
+                <h4>Child-Centric Care</h4>
+                <p>Every child at Evergreen is known by name, understood as an individual, and supported at their own pace. We combine academic rigor with genuine warmth.</p>
+            </div>
+            <div class="why-card reveal d1">
+                <div class="why-icon wi-y"><i class="fas fa-certificate"></i></div>
+                <h4>CBSE Aligned Curriculum</h4>
+                <p>Our structured curriculum follows CBSE guidelines and NEP 2020 principles, ensuring students are well-prepared for every stage of their academic journey.</p>
+            </div>
+            <div class="why-card reveal d2">
+                <div class="why-icon wi-s"><i class="fas fa-users"></i></div>
+                <h4>Experienced Teaching Team</h4>
+                <p>Our qualified and dedicated faculty bring patience, creativity, and expertise to every classroom, making learning joyful and effective.</p>
+            </div>
+            <div class="why-card reveal">
+                <div class="why-icon wi-g"><i class="fas fa-shield-alt"></i></div>
+                <h4>Safe and Secure Environment</h4>
+                <p>From monitored entry to clean facilities and child-appropriate spaces, your child's safety and comfort is our highest priority every single day.</p>
+            </div>
+            <div class="why-card reveal d1">
+                <div class="why-icon wi-y"><i class="fas fa-palette"></i></div>
+                <h4>Holistic Development</h4>
+                <p>Beyond academics, we nurture art, sports, music, and social skills, ensuring every child grows confidently in all aspects of life.</p>
+            </div>
+            <div class="why-card reveal d2">
+                <div class="why-icon wi-s"><i class="fas fa-handshake"></i></div>
+                <h4>Strong Parent Partnership</h4>
+                <p>We believe education works best as a team effort. Regular PTMs, open communication, and a responsive administration keep parents always in the loop.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================================================================
      ACADEMICS
-====================================================== -->
-<section id="academics" class="sec sec-alt">
+================================================================ -->
+<section id="academics" class="sec">
     <div class="wrap">
         <div class="sec-header reveal">
             <h2>Academics</h2>
-            <p>Curriculum designed to build strong foundations with NEP 2020 alignment and child-centric methodology.</p>
+            <p>Our curriculum is built to develop strong conceptual foundations, critical thinking, and a genuine love for learning from the very first day.</p>
         </div>
         <div class="acad-cards">
             <div class="acad-card reveal">
                 <div class="acad-icon ic-g"><i class="fas fa-chalkboard-teacher"></i></div>
                 <h4>Teaching Methodology</h4>
-                <p>Activity-based learning using visual and audio teaching aids, interactive classroom techniques, and continuous assessment tailored to each child's pace.</p>
+                <p>Activity-based learning with visual and audio teaching aids, interactive classroom sessions, hands-on projects, and continuous assessment tailored to each child's learning pace.</p>
             </div>
             <div class="acad-card reveal d1">
                 <div class="acad-icon ic-s"><i class="fas fa-book-open"></i></div>
                 <h4>Pre-Primary (Pre-KG and KG)</h4>
-                <p>Play-based learning, phonics, basic numeracy, drawing, storytelling, and social skills that lay a joyful foundation for formal schooling.</p>
+                <p>Play-based learning, phonics, basic numeracy, drawing, storytelling, and social skills that lay a joyful and confident foundation for formal schooling years ahead.</p>
             </div>
             <div class="acad-card reveal d2">
                 <div class="acad-icon ic-y"><i class="fas fa-calculator"></i></div>
                 <h4>Primary Classes (Grades 1 to 5)</h4>
-                <p>English, Mathematics, Environmental Science, Social Studies, General Knowledge, Computer Education, Art and Craft, and Physical Education.</p>
+                <p>English, Tamil, Mathematics, Environmental Science, Social Studies, General Knowledge, Computer Education, Art and Craft, and Physical Education delivered with care.</p>
             </div>
         </div>
         <div class="grade-row reveal">
@@ -957,27 +1218,31 @@
     </div>
 </section>
 
-<!-- ======================================================
+<!-- ================================================================
      GALLERY TEASER
-====================================================== -->
-<section id="gallery" class="sec">
+================================================================ -->
+<section id="gallery" class="sec sec-alt">
     <div class="wrap">
         <div class="sec-header reveal">
             <h2>School Gallery</h2>
-            <p>A glimpse into campus life, celebrations, and learning moments at Evergreen.</p>
+            <p>A glimpse into campus life, celebrations, learning moments, and the everyday joy at Evergreen.</p>
         </div>
         <div class="gallery-teaser-grid reveal">
             <a href="lifeatevergreen.html" class="gt-item">
                 <img src="gallery/1.jpg" alt="Evergreen School campus life">
+                <div class="gt-overlay"><span><i class="fas fa-images"></i> View More</span></div>
             </a>
             <a href="lifeatevergreen.html" class="gt-item">
                 <img src="gallery/2.jpg" alt="Students at Evergreen School">
+                <div class="gt-overlay"><span><i class="fas fa-images"></i> View More</span></div>
             </a>
             <a href="lifeatevergreen.html" class="gt-item">
                 <img src="gallery/vijaya/1.jpg" alt="Vijayadhasami Celebration">
+                <div class="gt-overlay"><span><i class="fas fa-images"></i> View More</span></div>
             </a>
             <a href="lifeatevergreen.html" class="gt-item">
                 <img src="gallery/3.jpg" alt="Annual Day at Evergreen School">
+                <div class="gt-overlay"><span><i class="fas fa-images"></i> View More</span></div>
             </a>
         </div>
         <div class="gt-cta reveal">
@@ -988,17 +1253,16 @@
     </div>
 </section>
 
-<!-- ======================================================
+<!-- ================================================================
      EVENTS AND NOTICES
-====================================================== -->
-<section id="events" class="sec sec-alt">
+================================================================ -->
+<section id="events" class="sec">
     <div class="wrap">
         <div class="sec-header reveal">
             <h2>Events and Notices</h2>
-            <p>Stay updated with what is happening at Evergreen this term.</p>
+            <p>Stay informed about what is happening at Evergreen this term. Dates are updated each academic term.</p>
         </div>
         <div class="events-grid">
-
             <div class="event-card reveal">
                 <div class="event-head">
                     <div class="event-date-block">
@@ -1011,11 +1275,10 @@
                     </div>
                 </div>
                 <div class="event-body">
-                    <p>Parents are warmly invited to meet class teachers and review their child's academic progress and overall development for the current term.</p>
+                    <p>Parents are warmly invited to meet class teachers and review their child's academic progress, behaviour, and overall development for the current term.</p>
                     <span class="event-tag">Academic</span>
                 </div>
             </div>
-
             <div class="event-card reveal d1">
                 <div class="event-head">
                     <div class="event-date-block">
@@ -1028,11 +1291,10 @@
                     </div>
                 </div>
                 <div class="event-body">
-                    <p>A full day of sporting events, track activities, and team games celebrating fitness, team spirit, and healthy competition among all students.</p>
+                    <p>A full day of sporting events, track activities, and team games celebrating fitness, sportsmanship, and healthy competition among all students across grades.</p>
                     <span class="event-tag">Sports</span>
                 </div>
             </div>
-
             <div class="event-card reveal d2">
                 <div class="event-head">
                     <div class="event-date-block">
@@ -1045,19 +1307,18 @@
                     </div>
                 </div>
                 <div class="event-body">
-                    <p>Summer holidays commence on 2nd May 2026. The school will communicate the exact reopening date for the new academic year well in advance.</p>
+                    <p>Summer holidays commence from 2nd May 2026. The school will communicate the exact reopening date for the new academic year well in advance to all parents.</p>
                     <span class="event-tag">Notice</span>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
 
-<!-- ======================================================
+<!-- ================================================================
      ADMISSIONS
-====================================================== -->
-<section id="admissions" class="sec">
+================================================================ -->
+<section id="admissions" class="sec sec-alt">
     <div class="wrap">
         <div class="sec-header reveal">
             <h2>Admissions</h2>
@@ -1065,53 +1326,53 @@
         </div>
         <div class="adm-grid">
             <div class="reveal">
-                <h3 style="margin-bottom:22px;font-size:1.25rem;">Admission Process</h3>
+                <h3 style="margin-bottom:22px;font-size:1.26rem;">Admission Process</h3>
                 <div class="steps">
                     <div class="step">
                         <div class="step-num">1</div>
                         <div>
                             <h5>Enquiry and Interaction</h5>
-                            <p>Visit the school or call us. Speak with our admissions team and get a campus tour.</p>
+                            <p>Visit the school or call us. Speak with our admissions team and get a guided campus tour at your convenience.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-num">2</div>
                         <div>
                             <h5>Application Form</h5>
-                            <p>Fill and submit the application form, available at the school office or via our enquiry form.</p>
+                            <p>Fill and submit the application form. It is available at the school office or through the enquiry form on this page.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-num">3</div>
                         <div>
                             <h5>Document Verification</h5>
-                            <p>Submit the required documents. Our team will verify and confirm eligibility.</p>
+                            <p>Submit the required documents listed below. Our team will verify and confirm the child's eligibility for the applied grade.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-num">4</div>
                         <div>
                             <h5>Admission Confirmed</h5>
-                            <p>Complete the fee process and receive your admission confirmation and class details.</p>
+                            <p>Complete the fee payment process and receive your official admission confirmation along with class and timing details.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="reveal d2">
-                <h3 style="margin-bottom:22px;font-size:1.25rem;">Documents Required</h3>
-                <div class="card">
+                <h3 style="margin-bottom:22px;font-size:1.26rem;">Documents Required</h3>
+                <div style="background:#fff;border-radius:var(--r-md);box-shadow:var(--sh-s);padding:28px;">
                     <ul class="plain-list">
                         <li>Birth Certificate (Original and Photocopy)</li>
                         <li>Passport-size photographs (4 copies)</li>
-                        <li>Transfer Certificate for Grade 2 and above</li>
+                        <li>Transfer Certificate (for Grade 2 and above)</li>
                         <li>Parent or Guardian identity proof</li>
                         <li>Aadhaar card copy <span class="mandatory">Mandatory</span></li>
                     </ul>
                     <div class="adm-note">
-                        School timings are 7:45 AM to 5:30 PM, Monday to Saturday. Contact us to schedule a personalised counselling session.
+                        School timings are 7:45 AM to 5:30 PM, Monday to Saturday. Contact us to schedule a personalised counselling session before applying.
                     </div>
                     <a href="#contact" class="btn btn-green" style="margin-top:22px;width:100%;justify-content:center;">
-                        Send Admission Enquiry
+                        <i class="fas fa-paper-plane"></i> Send Admission Enquiry
                     </a>
                 </div>
             </div>
@@ -1119,151 +1380,183 @@
     </div>
 </section>
 
-<!-- ======================================================
+<!-- ================================================================
      INFRASTRUCTURE
-====================================================== -->
-<section id="infrastructure" class="sec sec-alt">
+================================================================ -->
+<section id="infrastructure" class="sec">
     <div class="wrap">
         <div class="sec-header reveal">
             <h2>Infrastructure</h2>
-            <p>A safe, modern, and child-friendly campus designed for joyful learning.</p>
+            <p>A safe, modern, and child-friendly campus thoughtfully designed for joyful, distraction-free learning.</p>
         </div>
         <div class="infra-grid">
             <div class="infra-card reveal">
                 <div class="infra-icon"><i class="fas fa-building"></i></div>
                 <h5>Spacious Classrooms</h5>
-                <p>Well-ventilated, bright classrooms with age-appropriate furniture and learning tools.</p>
+                <p>Well-ventilated, bright classrooms with age-appropriate furniture, clean boards, and all learning aids in place.</p>
             </div>
             <div class="infra-card reveal d1">
                 <div class="infra-icon"><i class="fas fa-book"></i></div>
                 <h5>School Library</h5>
-                <p>A curated collection of age-appropriate books, storybooks, and educational resources.</p>
+                <p>A curated collection of age-appropriate books, storybooks, picture books, and reference materials for curious young readers.</p>
             </div>
             <div class="infra-card reveal d2">
                 <div class="infra-icon"><i class="fas fa-running"></i></div>
                 <h5>Outdoor Play Area</h5>
-                <p>Safe, open play area encouraging physical activity, team sports, and outdoor learning.</p>
+                <p>Safe, open grounds encouraging physical activity, team sports, and outdoor learning in a nature-friendly setting.</p>
             </div>
             <div class="infra-card reveal d3">
                 <div class="infra-icon"><i class="fas fa-desktop"></i></div>
                 <h5>Smart Classrooms</h5>
-                <p>Digital teaching aids and audio-visual tools that make learning engaging and effective.</p>
+                <p>Digital teaching aids and audio-visual tools that make every lesson engaging, visual, and memorable for young learners.</p>
             </div>
             <div class="infra-card reveal">
                 <div class="infra-icon"><i class="fas fa-heartbeat"></i></div>
                 <h5>Health and Safety</h5>
-                <p>Regular medical check-ups, clean drinking water, proper sanitation, and a child-safe campus.</p>
+                <p>Regular medical check-ups, clean drinking water, proper sanitation, and a fully child-safe, supervised campus at all times.</p>
             </div>
             <div class="infra-card reveal d1">
                 <div class="infra-icon"><i class="fas fa-palette"></i></div>
                 <h5>Art and Activity Room</h5>
-                <p>Dedicated space for creative arts, craft work, and co-curricular activities.</p>
+                <p>A dedicated creative space for drawing, craft, music basics, and all co-curricular activities that bring out each child's talent.</p>
             </div>
             <div class="infra-card reveal d2">
                 <div class="infra-icon"><i class="fas fa-shield-alt"></i></div>
                 <h5>Secure Campus</h5>
-                <p>Monitored entry, responsible supervision, and a fully child-safe environment at all times.</p>
+                <p>Monitored entry points, responsible adult supervision, and a fully child-safe environment that parents can trust completely.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ======================================================
+<!-- ================================================================
      TESTIMONIALS
-====================================================== -->
-<section id="testimonials" class="sec">
+================================================================ -->
+<section id="testimonials" class="sec sec-alt">
     <div class="wrap">
         <div class="sec-header reveal">
             <h2>Parent Voices</h2>
-            <p>What families from our Evergreen community are saying.</p>
+            <p>What families from our Evergreen community have to say about their experience with us.</p>
         </div>
         <div class="test-grid">
             <div class="test-card reveal">
-                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p>"The focus on values and discipline at Evergreen is exactly what we were looking for. My child loves going to school every single day!"</p>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>"The focus on values and discipline at Evergreen is exactly what we were looking for. My child loves going to school every single day. The teachers genuinely care."</p>
                 <div class="test-foot">
                     <h6>Google Review</h6>
                     <a href="https://www.google.com/search?q=Evergreen+International+School+Therkkupalayam" target="_blank" rel="noopener"><i class="fab fa-google"></i> View</a>
                 </div>
             </div>
             <div class="test-card reveal d1">
-                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p>"A wonderful environment for early learners. The teachers are very caring and the facilities are excellent."</p>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>"A wonderful environment for early learners. The teachers are caring, the campus is clean, and the facilities are excellent for the age group they serve."</p>
                 <div class="test-foot">
                     <h6>Google Review</h6>
                     <a href="https://www.google.com/search?q=Evergreen+International+School+Therkkupalayam" target="_blank" rel="noopener"><i class="fab fa-google"></i> View</a>
                 </div>
             </div>
             <div class="test-card reveal d2">
-                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p>"We have seen remarkable improvement in our son's confidence. The activity-based learning approach really works."</p>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>"We have seen remarkable improvement in our son's confidence and communication since he joined. The activity-based learning approach truly works wonders."</p>
                 <div class="test-foot">
                     <h6>Google Review</h6>
                     <a href="https://www.google.com/search?q=Evergreen+International+School+Therkkupalayam" target="_blank" rel="noopener"><i class="fab fa-google"></i> View</a>
                 </div>
             </div>
         </div>
+        <div style="text-align:center;margin-top:36px;" class="reveal">
+            <a href="https://www.google.com/search?q=Evergreen+International+School+Therkkupalayam" target="_blank" rel="noopener" class="btn btn-outline">
+                <i class="fab fa-google"></i> See All Google Reviews
+            </a>
+        </div>
     </div>
 </section>
 
-<!-- ======================================================
+<!-- ================================================================
      LEADERSHIP
-====================================================== -->
-<section id="leadership" class="sec sec-alt">
+================================================================ -->
+<section id="leadership" class="sec">
     <div class="wrap">
         <div class="sec-header reveal">
-            <h2>Leadership</h2>
-            <p>The people who guide, manage, and inspire Evergreen every day.</p>
+            <h2>School Leadership</h2>
+            <p>The people who guide, manage, and inspire Evergreen International School every single day.</p>
         </div>
         <div class="lead-grid">
+
             <div class="lead-card reveal">
-                <!-- Replace with: <img src="faculty/raja.jpg" alt="Mr. Raja A P" class="lead-photo"> -->
-                <div class="lead-photo-placeholder"><i class="fas fa-user"></i></div>
+                <div class="lead-photo-area">
+                    <img src="Teachers & staffs/Correspondent.jpg" alt="Mr. Raja A P, Correspondent"
+                         class="lead-photo"
+                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="lead-photo-placeholder" style="display:none"><i class="fas fa-user"></i></div>
+                </div>
                 <h4>Mr. Raja A P</h4>
                 <span class="lead-role">Correspondent</span>
                 <blockquote>
-                    "Evergreen International School was established with a simple and sincere purpose: to provide young children with a strong, caring, and meaningful start to their educational journey."
+                    "Evergreen was established with a sincere purpose: to give young children a strong, caring, and meaningful start to their educational journey."
                 </blockquote>
                 <div class="lead-contact">
-                    <a href="mailto:correspondent@evergreen-school.in"><i class="fas fa-envelope"></i> correspondent@evergreen-school.in</a>
+                    <a href="mailto:correspondent@evergreen-school.in">
+                        <i class="fas fa-envelope"></i> correspondent@evergreen-school.in
+                    </a>
                 </div>
             </div>
+
             <div class="lead-card reveal d1">
-                <!-- Replace with: <img src="faculty/santhiya.jpg" alt="Ms. Santhiya R" class="lead-photo"> -->
-                <div class="lead-photo-placeholder"><i class="fas fa-user"></i></div>
+                <div class="lead-photo-area">
+                    <img src="Teachers & staffs/Principal.jpg" alt="Ms. Santhiya R, Principal"
+                         class="lead-photo"
+                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="lead-photo-placeholder" style="display:none"><i class="fas fa-user"></i></div>
+                </div>
                 <h4>Ms. Santhiya R</h4>
                 <span class="lead-role">Principal</span>
                 <blockquote>
-                    "At Evergreen, we understand that the early years of a child's education are the most important. These years shape not only academic ability, but also confidence, curiosity, and character."
+                    "The early years of a child's education are the most important. These years shape not only academic ability, but also confidence, curiosity, and character."
                 </blockquote>
                 <div class="lead-contact">
-                    <a href="mailto:principal@evergreen-school.in"><i class="fas fa-envelope"></i> principal@evergreen-school.in</a>
+                    <a href="mailto:principal@evergreen-school.in">
+                        <i class="fas fa-envelope"></i> principal@evergreen-school.in
+                    </a>
                 </div>
             </div>
+
             <div class="lead-card reveal d2">
-                <!-- Replace with: <img src="faculty/jabendra.jpg" alt="Mr. Jabendra Raja" class="lead-photo"> -->
-                <div class="lead-photo-placeholder"><i class="fas fa-user"></i></div>
+                <div class="lead-photo-area">
+                    <img src="Teachers & staffs/Administration Advisor.jpg" alt="Mr. Jabendra Raja, Administration Advisor"
+                         class="lead-photo"
+                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="lead-photo-placeholder" style="display:none"><i class="fas fa-user"></i></div>
+                </div>
                 <h4>Mr. Jabendra Raja</h4>
                 <span class="lead-role">Administration Advisor</span>
                 <blockquote>
-                    "Good administration is the foundation on which good education is built. At Evergreen, we are committed to creating a system that supports every teacher, every parent, and every child."
+                    "Good administration is the foundation on which good education is built. We are committed to creating a system that supports every teacher, parent, and child."
                 </blockquote>
                 <div class="lead-contact">
-                    <a href="mailto:jabendra@evergreen-school.in"><i class="fas fa-envelope"></i> jabendra@evergreen-school.in</a>
+                    <a href="mailto:jabendra@evergreen-school.in">
+                        <i class="fas fa-envelope"></i> jabendra@evergreen-school.in
+                    </a>
                 </div>
             </div>
+
+        </div>
+        <div style="text-align:center;margin-top:40px;" class="reveal">
+            <a href="faculty.html" class="btn btn-outline">
+                <i class="fas fa-users"></i> Meet Our Full Teaching Team
+            </a>
         </div>
     </div>
 </section>
 
-<!-- ======================================================
+<!-- ================================================================
      CONTACT
-====================================================== -->
-<section id="contact" class="sec">
+================================================================ -->
+<section id="contact" class="sec sec-alt">
     <div class="wrap">
         <div class="sec-header reveal">
             <h2>Contact Us</h2>
-            <p>We would love to hear from you. Fill in the form or visit us directly at the school.</p>
+            <p>We would love to hear from you. Fill in the form below or visit us at the school directly.</p>
         </div>
         <div class="contact-grid">
             <div class="reveal">
@@ -1277,7 +1570,7 @@
                         </div>
                     </div>
                     <div class="c-row">
-                        <div class="c-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="c-icon"><i class="fas fa-phone-alt" style="transform:scaleX(-1)"></i></div>
                         <div class="c-text">
                             <strong>Phone</strong>
                             <p>
@@ -1310,9 +1603,10 @@
                     </div>
                 </div>
                 <div class="map-box">
-                    <iframe src="https://maps.google.com/maps?q=Evergreen+International+School+Therkkupalayam+Pallipalayam&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    <iframe
+                        src="https://maps.google.com/maps?q=Evergreen+International+School+Therkkupalayam+Pallipalayam&t=&z=14&ie=UTF8&iwloc=&output=embed"
                         width="100%" height="220" frameborder="0" allowfullscreen loading="lazy"
-                        title="School Location" style="border:0;"></iframe>
+                        title="Evergreen International School Location" style="border:0;"></iframe>
                 </div>
             </div>
             <div class="reveal d2">
@@ -1332,23 +1626,29 @@
                         </div>
                         <div class="f-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            <input type="email" id="email" name="email" placeholder="your@email.com">
                         </div>
                         <div class="f-group">
                             <label for="grade">Enquiry for Grade</label>
                             <select id="grade" name="grade">
                                 <option value="">Select a grade</option>
-                                <option>Pre-KG</option><option>KG</option>
-                                <option>Grade 1</option><option>Grade 2</option>
-                                <option>Grade 3</option><option>Grade 4</option>
-                                <option>Grade 5</option><option>General Enquiry</option>
+                                <option>Pre-KG</option>
+                                <option>KG</option>
+                                <option>Grade 1</option>
+                                <option>Grade 2</option>
+                                <option>Grade 3</option>
+                                <option>Grade 4</option>
+                                <option>Grade 5</option>
+                                <option>General Enquiry</option>
                             </select>
                         </div>
                         <div class="f-group">
                             <label for="message">Message or Questions</label>
                             <textarea id="message" name="message" placeholder="Write your message or questions here..."></textarea>
                         </div>
-                        <button type="submit" class="btn-submit">Send Message</button>
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
                     </form>
                 </div>
             </div>
@@ -1356,9 +1656,9 @@
     </div>
 </section>
 
-<!-- ======================================================
+<!-- ================================================================
      FOOTER
-====================================================== -->
+================================================================ -->
 <footer>
     <div class="wrap">
         <div class="footer-grid">
@@ -1377,7 +1677,8 @@
                 <div class="footer-links">
                     <a href="#about">Our Vision</a>
                     <a href="#about">Our Mission</a>
-                    <a href="#leadership">Leadership</a>
+                    <a href="#leadership">School Leadership</a>
+                    <a href="faculty.html">Faculty and Staff</a>
                     <a href="lifeatevergreen.html" class="f-highlight">Life @ Evergreen</a>
                     <a href="blog.html">School Blog</a>
                 </div>
@@ -1387,9 +1688,10 @@
                 <div class="footer-links">
                     <a href="#academics">Academics</a>
                     <a href="#admissions">Admissions</a>
-                    <a href="#events">Events</a>
+                    <a href="#events">Events and Notices</a>
                     <a href="#gallery">Gallery</a>
                     <a href="#infrastructure">Infrastructure</a>
+                    <a href="#testimonials">Parent Voices</a>
                     <a href="#contact">Contact Us</a>
                 </div>
             </div>
@@ -1404,31 +1706,32 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>2026 Evergreen International School. All Rights Reserved. | <a href="https://evergreen-school.in" target="_blank">evergreen-school.in</a> | Therkkupalayam, Pallipalayam, Erode, Tamil Nadu</p>
+            <p>2026 Evergreen International School. All Rights Reserved. |
+               <a href="https://evergreen-school.in" target="_blank">evergreen-school.in</a> |
+               Therkkupalayam, Pallipalayam, Erode, Tamil Nadu
+            </p>
         </div>
     </div>
 </footer>
 
-<!-- WhatsApp float -->
+<!-- WhatsApp float button -->
 <a href="https://wa.me/919842712666?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20admissions%20at%20Evergreen%20International%20School."
    target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- ======================================================
+<!-- ================================================================
      SCRIPTS
-====================================================== -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+================================================================ -->
 <script>
-    /* ---------- Achievements Ticker ---------- */
+    /* ---- Achievements Ticker ---- */
     var tickerItems = [
         'CBSE Affiliated School',
         'English Medium Education',
         '10 Years of Excellence',
         'Pre-KG to Grade 5',
         'Co-educational Day School',
-        'NEP 2020 Aligned',
+        'NEP 2020 Aligned Curriculum',
         'Activity-Based Learning',
         'Safe and Nurturing Campus',
         'Dedicated Teaching Faculty',
@@ -1436,7 +1739,6 @@
         'Pallipalayam, Erode'
     ];
     var track = document.getElementById('tickerTrack');
-    // Duplicate items for seamless loop
     [1, 2].forEach(function() {
         tickerItems.forEach(function(item) {
             var el = document.createElement('span');
@@ -1446,12 +1748,12 @@
         });
     });
 
-    /* ---------- Scroll Hint ---------- */
+    /* ---- Scroll Hint ---- */
     document.getElementById('scrollHint').addEventListener('click', function() {
         document.getElementById('infoStrip').scrollIntoView({ behavior: 'smooth' });
     });
 
-    /* ---------- Animated Counters ---------- */
+    /* ---- Animated Counters ---- */
     var countersStarted = false;
     function startCounters() {
         if (countersStarted) return;
@@ -1460,16 +1762,14 @@
         if (rect.top < window.innerHeight * 0.85) {
             countersStarted = true;
             document.querySelectorAll('.counter').forEach(function(el) {
-                var target = +el.dataset.target;
-                var suffix = el.dataset.suffix || '';
+                var target  = +el.dataset.target;
                 var duration = 1800;
                 var startTime = null;
                 function step(ts) {
                     if (!startTime) startTime = ts;
                     var progress = Math.min((ts - startTime) / duration, 1);
-                    // Ease out cubic
                     var ease = 1 - Math.pow(1 - progress, 3);
-                    el.textContent = Math.floor(ease * target) + suffix;
+                    el.textContent = Math.floor(ease * target);
                     if (progress < 1) requestAnimationFrame(step);
                 }
                 requestAnimationFrame(step);
@@ -1479,41 +1779,54 @@
     window.addEventListener('scroll', startCounters, { passive: true });
     startCounters();
 
-    /* ---------- Scroll Reveal ---------- */
+    /* ---- Scroll Reveal ---- */
     var revealObs = new IntersectionObserver(function(entries) {
         entries.forEach(function(e) {
-            if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                revealObs.unobserve(e.target);
+            }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.09 });
     document.querySelectorAll('.reveal').forEach(function(el) { revealObs.observe(el); });
 
-    /* ---------- Active Nav on Scroll ---------- */
-    var sections = document.querySelectorAll('section[id]');
-    var navAs    = document.querySelectorAll('.nav-links a[href^="#"]');
-    var bnItems  = document.querySelectorAll('.bn-item');
+    /* ---- Active Nav on Scroll ---- */
+    var allSections = document.querySelectorAll('section[id]');
+    var navAnchors  = document.querySelectorAll('.nav-links a[href^="#"]');
     window.addEventListener('scroll', function() {
         var cur = '';
-        sections.forEach(function(s) { if (window.scrollY >= s.offsetTop - 130) cur = s.id; });
-        navAs.forEach(function(a) {
+        allSections.forEach(function(s) {
+            if (window.scrollY >= s.offsetTop - 140) cur = s.id;
+        });
+        navAnchors.forEach(function(a) {
             a.classList.remove('active');
             if (a.getAttribute('href') === '#' + cur) a.classList.add('active');
         });
     }, { passive: true });
 
-    /* ---------- Header Shadow ---------- */
+    /* ---- Header shadow on scroll ---- */
     var hdr = document.getElementById('siteHeader');
     window.addEventListener('scroll', function() {
         hdr.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
 
-    /* ---------- Hamburger ---------- */
+    /* ---- Hamburger menu ---- */
     var burger = document.getElementById('hamburger');
     var mobNav = document.getElementById('mobileNav');
-    burger.addEventListener('click', function() { mobNav.classList.toggle('open'); });
-    document.addEventListener('click', function(e) {
-        if (!burger.contains(e.target) && !mobNav.contains(e.target)) mobNav.classList.remove('open');
+    burger.addEventListener('click', function() {
+        burger.classList.toggle('open');
+        mobNav.classList.toggle('open');
     });
-    function closeMob() { mobNav.classList.remove('open'); }
+    document.addEventListener('click', function(e) {
+        if (!burger.contains(e.target) && !mobNav.contains(e.target)) {
+            burger.classList.remove('open');
+            mobNav.classList.remove('open');
+        }
+    });
+    function closeMob() {
+        burger.classList.remove('open');
+        mobNav.classList.remove('open');
+    }
 </script>
 </body>
 </html>
